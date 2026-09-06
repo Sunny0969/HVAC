@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #044A5F;
+  --color-secondary: #EE5B2C;
+  --color-black: #000000;
+  --color-white: #ffffff;
+}
+
+:root {
+  --primary: #044A5F;
+  --secondary: #EE5B2C;
+  --black: #000000;
+  --white: #ffffff;
+  --background: var(--white);
+  --foreground: var(--black);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); } /* Shift by 50% assuming the content is duplicated to be twice as long */
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  will-change: transform;
+}
