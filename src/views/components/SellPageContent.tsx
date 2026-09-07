@@ -39,7 +39,7 @@ export default function SellPageContent() {
             Deciding to sell the company you built is rarely simple - there's the business itself, your team, your customers, and what comes next for you. Most Florida HVAC owners we work with aren't asking "should I sell," they're asking "how do I sell without blowing up my business in the process." That's the part a specialist broker actually solves.
           </p>
           <p>
-            SunState HVAC Brokers works exclusively with heating and cooling companies across Florida - we don't sell restaurants one week and HVAC shops the next. That focus means we already know how Florida buyers value seasonal service revenue, maintenance-agreement books, and technician retention, before we ever look at your P&L.
+            HVAC Exit Advisors works exclusively with heating and cooling companies across Florida - we don't sell restaurants one week and HVAC shops the next. That focus means we already know how Florida buyers value seasonal service revenue, maintenance-agreement books, and technician retention, before we ever look at your P&L.
           </p>
         </div>
       </motion.div>
@@ -202,7 +202,7 @@ export default function SellPageContent() {
           <div className="p-8 md:p-12 md:col-span-3 bg-white">
             <Link href="/why-sell-with-us" className="group inline-block mb-8">
               <h2 className="text-3xl font-black text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors flex items-center">
-                Why Florida HVAC Owners Choose SunState
+                Why Florida HVAC Owners Choose HVAC Exit Advisors
                 <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span>
               </h2>
             </Link>
@@ -252,7 +252,7 @@ export default function SellPageContent() {
             { q: "Will my employees or customers find out I'm selling?", a: "Not through us. We market confidentially, require signed NDAs before releasing any identifying details, and control disclosure timing with you throughout the process." },
             { q: "What's my HVAC business worth?", a: "It depends on revenue mix (install vs. service vs. maintenance agreements), technician retention, fleet condition, and current Florida buyer demand. A free valuation gives you a real, data-backed range." },
             { q: "Do I need to have my financials perfectly organized before reaching out?", a: "No - many owners start the conversation before financials are fully clean. Part of what we do is help you understand what documentation buyers will expect and get you ready." },
-            { q: "What does it cost to work with SunState HVAC Brokers?", a: "We don't charge a fee unless your business sells. Your free valuation and initial consultation carry no obligation." }
+            { q: "What does it cost to work with HVAC Exit Advisors?", a: "We don't charge a fee unless your business sells. Your free valuation and initial consultation carry no obligation." }
           ].map((faq, i) => (
             <motion.div 
               key={i} 

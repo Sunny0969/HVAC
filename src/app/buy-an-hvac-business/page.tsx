@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import BuyPageContent from "@/views/components/BuyPageContent";
 import Link from "next/link";
 
@@ -40,12 +41,12 @@ export default function BuyHvacBusinessPage() {
             "serviceType": "HVAC Business Acquisition Brokerage",
             "provider": {
               "@type": "LocalBusiness",
-              "name": "SunState HVAC Brokers",
+              "name": "HVAC Exit Advisors",
               "areaServed": {
                 "@type": "State",
                 "name": "Florida"
               },
-              "telephone": "+1-XXX-XXX-XXXX",
+              "telephone": "+1-954-864-9161",
               "url": "https://[domain]/buy-an-hvac-business"
             },
             "audience": {
@@ -107,18 +108,32 @@ export default function BuyHvacBusinessPage() {
         }}
       />
 
-      {/* Hero Section - Calm, conversion-focused */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-[#022B3A] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left relative z-10">
-          <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight">
-            Buy a Florida HVAC Business Backed by the Right Guidance
+      {/* Hero Section - Full Screen */}
+      <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/buy-an-hvac-business.jpg"
+            alt="Business meeting for HVAC acquisition"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/70" />
+        </div>
+
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left mt-16 md:mt-0">
+          <h1 className="max-w-5xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
+            Buy a Florida <span className="text-[#EE5B2C]">HVAC<br className="hidden md:block" /> Business</span> With Confidence
           </h1>
           
-          <p className="max-w-3xl text-xl text-white/90 leading-relaxed font-medium mb-10">
-            Skip the guesswork. SunState HVAC Brokers connects serious buyers with <Link href="/listings" className="text-[#EE5B2C] hover:underline font-bold transition-colors">vetted, cash-flowing businesses</Link> across Florida - and walks you through every step from first look to closing table.
+          <p className="max-w-4xl text-xl md:text-2xl text-white/90 leading-relaxed font-medium mb-10 drop-shadow-md">
+            Skip the guesswork. We connect you with <Link href="/listings" className="text-[#EE5B2C] hover:underline font-bold transition-colors">vetted, cash-flowing businesses</Link> across Florida and expertly guide you to a successful closing.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 mb-12">
             <Link 
               href="/listings" 
               className="w-full sm:w-auto px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"

@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import FaqAccordionList from '../../views/components/FaqAccordionList';
 import FaqSidebar from '../../views/components/FaqSidebar';
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   title: 'HVAC Business Broker FAQs | Buying & Selling in Florida',
   description: 'Straight answers on valuing, selling, or buying an HVAC business in Florida - confidentiality, financing, timelines, and more.',
   alternates: {
-    canonical: 'https://www.sunstatehvacbrokers.com/faqs'
+    canonical: 'https://www.hvacexitadvisors.com/faqs'
   }
 };
 
@@ -37,8 +38,22 @@ export default function FaqsPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-[#022B3A] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left relative z-10">
+      <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1665789318391-6057c533005e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFxc3xlbnwwfDB8MHx8fDI%3D"
+            alt="FAQ Hero background"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+          {/* Dark Overlay for Text Contrast */}
+          <div className="absolute inset-0 bg-black/70" />
+        </div>
+
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left mt-16 md:mt-0">
           <nav className="text-sm font-medium text-white/60 mb-6 flex items-center space-x-2">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <span>/</span>
@@ -47,12 +62,12 @@ export default function FaqsPage() {
             <span className="text-[#EE5B2C]">FAQs</span>
           </nav>
           
-          <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight">
-            Buying & Selling an HVAC Business in Florida: FAQs
+          <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
+            Buying & Selling an <span className="text-[#EE5B2C]">HVAC Business</span> in Florida: FAQs
           </h1>
           
-          <p className="max-w-3xl text-xl text-white/90 leading-relaxed font-medium">
-            Whether you're a Florida HVAC owner thinking about your exit, or a buyer evaluating your first acquisition, these are the questions we hear most. If you don't see yours answered here, <Link href="/contact-us" className="text-[#EE5B2C] hover:underline font-bold">contact us directly</Link> - we'll walk you through it.
+          <p className="max-w-3xl text-xl md:text-2xl text-white/90 leading-relaxed font-medium drop-shadow-md">
+            Whether you're a Florida HVAC owner thinking about your exit, or a buyer evaluating your first acquisition, these are the questions we hear most. If you don't see yours answered here, <Link href="/contact-us" className="text-[#EE5B2C] hover:underline font-bold transition-colors">contact us directly</Link> - we'll walk you through it.
           </p>
         </div>
       </section>

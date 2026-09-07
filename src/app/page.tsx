@@ -27,7 +27,7 @@ const featuredListings: CarouselItem[] = [
 const testimonials: CarouselItem[] = [
   { id: 1, title: "John D.", subtitle: "Former Owner, Sunshine Cooling", content: "They understood exactly how to value our recurring revenue. We sold for 30% more than my CPA estimated.", rating: 5 },
   { id: 2, title: "Sarah M.", subtitle: "Buyer, Tampa FL", content: "The diligence process was incredibly smooth. The blind profile matched the actual numbers perfectly.", rating: 5 },
-  { id: 3, title: "Robert & Elaine P.", subtitle: "Retired Founders", content: "Selling a family business of 40 years is emotional. SunState handled the transition with absolute grace and discretion.", rating: 5 }
+  { id: 3, title: "Robert & Elaine P.", subtitle: "Retired Founders", content: "Selling a family business of 40 years is emotional. HVAC Exit Advisors handled the transition with absolute grace and discretion.", rating: 5 }
 ];
 
 export default function Home() {

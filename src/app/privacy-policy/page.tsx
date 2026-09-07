@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | SunState HVAC Brokers',
-  description: 'How SunState HVAC Brokers collects, uses, and protects your information when you visit our site or request a valuation.',
+  title: 'Privacy Policy | HVAC Exit Advisors',
+  description: 'How HVAC Exit Advisors collects, uses, and protects your information when you visit our site or request a valuation.',
   alternates: {
-    canonical: 'https://www.kmfbusinessadvisor.com/privacy-policy'
+    canonical: 'https://www.hvacexitadvisors.com/privacy-policy'
   },
   robots: {
     index: true,
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="prose prose-lg prose-blue max-w-none text-gray-700 space-y-6">
             <p>
-              This Privacy Policy explains how <strong>KMF Business Advisors</strong> ("we," "us," or "our") collects, uses, discloses, and protects information when you visit <a href="https://www.kmfbusinessadvisor.com" className="text-[#EE5B2C] hover:underline">www.kmfbusinessadvisor.com</a> (the "Site") or interact with our forms, tools, or communications. By using the Site, you agree to the practices described below.
+              This Privacy Policy explains how <strong>HVAC Exit Advisors</strong> ("we," "us," or "our") collects, uses, discloses, and protects information when you visit <a href="https://www.hvacexitadvisors.com" className="text-[#EE5B2C] hover:underline">www.hvacexitadvisors.com</a> (the "Site") or interact with our forms, tools, or communications. By using the Site, you agree to the practices described below.
             </p>
 
             <h2 className="text-2xl font-bold text-[#022B3A] mt-10 mb-4">1. Information We Collect</h2>
@@ -107,14 +107,21 @@ export default function PrivacyPolicyPage() {
               We retain information for as long as reasonably necessary to fulfill the purposes described in this policy, or as required by law. Inquiry and form-submission records are generally retained for our business records unless you request deletion.
             </p>
 
-            <h2 className="text-2xl font-bold text-[#022B3A] mt-10 mb-4">9. Contact Us</h2>
-            <p>If you have questions about this Privacy Policy or want to exercise any of the rights above, contact us:</p>
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 mt-4">
-              <p className="font-bold text-[#022B3A] mb-2">KMF Business Advisors</p>
-              <p>Florida Office: Serving Statewide Florida Operations</p>
-              <p>Phone: +1 (800) KMF-ADVISE</p>
-              <p>Email: <a href="mailto:info@kmfbusinessadvisor.com" className="text-[#EE5B2C] hover:underline">info@kmfbusinessadvisor.com</a></p>
-            </div>
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-[#022B3A] mb-4">9. Contact Us</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                If you have any questions about this Privacy Policy, please contact us:
+              </p>
+              <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                <p className="font-bold text-[#022B3A] mb-2">HVAC Exit Advisors</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=10242+NW+47th+St,+Ste+39C,+Sunrise,+FL+33351" target="_blank" rel="noopener noreferrer" className="block text-gray-600 mb-1 hover:text-[#EE5B2C] hover:underline">
+                  10242 NW 47th St, Ste 39C<br />
+                  Sunrise, FL 33351
+                </a>
+                <p className="text-gray-600 mb-1">Email: <a href="mailto:contact@hvacexitadvisors.com" className="text-[#EE5B2C] hover:underline">contact@hvacexitadvisors.com</a></p>
+                <p className="text-gray-600">Phone: <a href="https://wa.me/19548649161" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">(954) 864-9161</a></p>
+              </div>
+            </section>
 
             <h2 className="text-2xl font-bold text-[#022B3A] mt-10 mb-4">10. Changes to This Policy</h2>
             <p>

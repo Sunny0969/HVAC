@@ -151,7 +151,7 @@ export default function BuyPageContent() {
             className="bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 mb-12 overflow-hidden"
           >
             <div className="p-8 md:p-12">
-              <h2 className="text-3xl font-black text-[#022B3A] mb-8">Why Buyers Work With SunState</h2>
+              <h2 className="text-3xl font-black text-[#022B3A] mb-8">Why Buyers Work With HVAC Exit Advisors</h2>
               <motion.div 
                 variants={staggerContainer}
                 initial="hidden"

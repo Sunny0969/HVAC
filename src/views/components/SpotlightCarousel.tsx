@@ -127,55 +127,6 @@ export default function SpotlightCarousel({ items, title }: SpotlightCarouselPro
     activeIndexRef.current = activeIndex;
   }, [activeIndex]);
 
-  // Translate vertical wheel scroll to horizontal scroll when hovering over the carousel
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    let isScrolling = false;
-    let wheelTimer: NodeJS.Timeout;
-
-    const handleWheel = (e: WheelEvent) => {
-      // Only intercept if we are scrolling vertically
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        const isScrollingDown = e.deltaY > 0;
-        const isAtRightEdge = container.scrollLeft + container.clientWidth >= container.scrollWidth - 1;
-        const isAtLeftEdge = container.scrollLeft <= 1;
-
-        // Let the page scroll normally if we're at the edge and pushing into it
-        if (isScrollingDown && isAtRightEdge) return;
-        if (!isScrollingDown && isAtLeftEdge) return;
-
-        // Otherwise, intercept
-        e.preventDefault();
-
-        // Ignore tiny micro-scrolls and prevent rapid firing
-        if (isScrolling || Math.abs(e.deltaY) < 10) return;
-
-        isScrolling = true;
-        const currentIndex = activeIndexRef.current;
-
-        if (isScrollingDown) {
-          scrollTo(Math.min(items.length - 1, currentIndex + 1));
-        } else {
-          scrollTo(Math.max(0, currentIndex - 1));
-        }
-
-        // Lock additional scroll events for 600ms while the smooth scroll animation completes
-        clearTimeout(wheelTimer);
-        wheelTimer = setTimeout(() => {
-          isScrolling = false;
-        }, 600);
-      }
-    };
-
-    container.addEventListener('wheel', handleWheel, { passive: false });
-    return () => {
-      container.removeEventListener('wheel', handleWheel);
-      clearTimeout(wheelTimer);
-    };
-  }, [items.length, scrollTo]);
-
   const scrollTo = useCallback((index: number) => {
     if (!containerRef.current || !cardRefs.current[index]) return;
     const container = containerRef.current;
@@ -184,6 +135,34 @@ export default function SpotlightCarousel({ items, title }: SpotlightCarouselPro
     // Calculate the scroll position to center the card
     const scrollLeft = card.offsetLeft - (container.clientWidth / 2) + (card.clientWidth / 2);
     container.scrollTo({ left: scrollLeft, behavior: "smooth" });
+  }, []);
+
+  // Translate vertical wheel scroll to horizontal scroll when hovering over the carousel
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // Only intercept if we are scrolling vertically (typical mouse wheel)
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        // ALWAYS prevent default to stop the page from scrolling vertically 
+        // when the user's mouse is over the carousel.
+        e.preventDefault();
+        
+        // Smoothly translate the vertical scroll into horizontal scroll
+        // Multiplying by a small factor can make it feel smoother
+        container.scrollBy({
+          left: e.deltaY,
+          behavior: 'auto' // 'auto' feels more responsive for continuous wheel scrolling than 'smooth'
+        });
+      }
+    };
+
+    // Use passive: false so we can preventDefault() and stop page scrolling
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      container.removeEventListener('wheel', handleWheel);
+    };
   }, []);
 
   const activeItem = items[activeIndex];

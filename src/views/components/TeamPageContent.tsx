@@ -43,7 +43,7 @@ export default function TeamPageContent() {
                 <span className="text-[#EE5B2C] font-bold tracking-wider uppercase text-sm mb-2 block">Owner & Principal Advisor</span>
                 <h2 className="text-3xl font-black text-[#022B3A] mb-4">Sanjay Wadhwani</h2>
                 <p className="text-gray-700 leading-relaxed font-medium mb-4">
-                  Sanjay Wadhwani brings years of specialized expertise to the business brokerage sector. Under his leadership, KMF Business Advisors has grown into a premier brokerage firm focused strictly on matching serious buyers with financially-verified service companies across Florida.
+                  Sanjay Wadhwani brings years of specialized expertise to the business brokerage sector. Under his leadership, HVAC Exit Advisors has grown into a premier brokerage firm focused strictly on matching serious buyers with financially-verified service companies across Florida.
                 </p>
                 <p className="text-gray-700 leading-relaxed font-medium">
                   With a deep understanding of complex acquisitions and real-world operational insights, Sanjay ensures every deal is structured for maximum confidentiality, accuracy, and mutual success.
@@ -86,7 +86,7 @@ export default function TeamPageContent() {
                 </div>
                 <div>
                   <span className="block text-sm text-white/60 font-bold mb-1 uppercase tracking-wider">Direct Advisory Line</span>
-                  <a href="tel:+18005632384" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors">+1 (800) KMF-ADVISE</a>
+                  <a href="https://wa.me/19548649161" target="_blank" rel="noopener noreferrer" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors">(954) 864-9161</a>
                 </div>
               </div>
 
@@ -96,8 +96,8 @@ export default function TeamPageContent() {
                   <svg className="w-6 h-6 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
-                  <span className="block text-sm text-white/60 font-bold mb-1 uppercase tracking-wider">Confidential Email</span>
-                  <a href="mailto:info@kmfbusinessadvisor.com" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors break-all">info@kmfbusinessadvisor.com</a>
+                  <span className="block text-sm text-white/60 font-bold mb-1 uppercase tracking-wider">Direct Email</span>
+                  <a href="mailto:contact@hvacexitadvisors.com" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors break-all">contact@hvacexitadvisors.com</a>
                 </div>
               </div>
 
@@ -114,7 +114,7 @@ export default function TeamPageContent() {
             </div>
             
             <div className="mt-10 pt-8 border-t border-white/10 relative z-10">
-              <a href="mailto:info@kmfbusinessadvisor.com" className="flex items-center justify-center w-full bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center">
+              <a href="mailto:contact@hvacexitadvisors.com" className="flex items-center justify-center w-full bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center">
                 Email Advisory Team &rarr;
               </a>
             </div>

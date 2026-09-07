@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://sunstatehvacbrokers.com/sitemap.xml',
+    sitemap: 'https://hvacexitadvisors.com/sitemap.xml',
   };
 }

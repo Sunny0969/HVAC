@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const storyChapters: ColonnadeItem[] = [
   { id: "c1", label: "Chapter 1", title: "In The Trenches", content: "Before we were brokers, we were operators. We spent decades building, scaling, and ultimately selling our own mechanical contracting firms in Florida.", gradientClass: "bg-gradient-to-tr from-slate-700 to-slate-500" },
   { id: "c2", label: "Chapter 2", title: "The Problem", content: "When we sold our businesses, we realized generalist brokers didn't speak our language. They didn't understand the value of maintenance contracts, fleet management, or technician retention.", gradientClass: "bg-gradient-to-br from-indigo-800 to-blue-600" },
-  { id: "c3", label: "Chapter 3", title: "The Solution", content: "We founded SunState to be the brokerage we wish we had. A firm dedicated 100% exclusively to the HVAC industry.", gradientClass: "bg-gradient-to-br from-blue-500 to-cyan-400" },
+  { id: "c3", label: "Chapter 3", title: "The Solution", content: "We founded HVAC Exit Advisors to be the brokerage we wish we had. A firm dedicated 100% exclusively to the HVAC industry.", gradientClass: "bg-gradient-to-br from-blue-500 to-cyan-400" },
   { id: "c4", label: "Chapter 4", title: "Our Mission", content: "Today, we protect the legacies of Florida's hardest-working entrepreneurs, securing life-changing exits that reward decades of early mornings and late nights.", gradientClass: "bg-gradient-to-r from-orange-500 to-amber-400" }
 ];
 
