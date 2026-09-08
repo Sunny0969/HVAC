@@ -36,7 +36,7 @@ export default function Header() {
             {/* Logo View */}
             <div className="flex-shrink-0 flex items-center">
               <Link href="/" className="text-xl font-bold tracking-wide flex items-center gap-3" onClick={() => isMobileMenuOpen && toggleMobileMenu()}>
-                <Image src="/logo.png" alt="HVAC Exit Advisors Logo" width={52} height={52} className="rounded-full bg-white" />
+                <Image src="/logo.png" alt="HVAC Exit Advisors Logo" width={52} height={52} className="rounded-full bg-white" priority />
                 <span className="hidden sm:block">HVAC Exit Advisors</span>
               </Link>
             </div>
@@ -51,7 +51,11 @@ export default function Header() {
                       onMouseLeave={closeDropdown}
                       className="h-full flex items-center"
                     >
-                      <button className="flex items-center space-x-1 hover:text-secondary transition-colors duration-200 py-6">
+                      <button 
+                        aria-label={`Toggle ${item.label} menu`}
+                        aria-expanded={activeDropdown === item.label}
+                        className="flex items-center space-x-1 hover:text-secondary transition-colors duration-200 py-6"
+                      >
                         <span>{item.label}</span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -111,7 +115,12 @@ export default function Header() {
 
             {/* Mobile Menu Button View */}
             <div className="md:hidden flex items-center">
-              <button onClick={toggleMobileMenu} className="text-white hover:text-secondary focus:outline-none">
+              <button 
+                onClick={toggleMobileMenu} 
+                aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMobileMenuOpen}
+                className="text-white hover:text-secondary focus:outline-none"
+              >
                 {isMobileMenuOpen ? (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

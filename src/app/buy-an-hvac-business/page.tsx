@@ -5,9 +5,9 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Buy an HVAC Business in Florida",
-  description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing.",
+  description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing. Browse our listings!",
   alternates: {
-    canonical: "https://[domain]/buy-an-hvac-business",
+    canonical: "https://www.hvacexitadvisors.com/buy-an-hvac-business",
   },
   robots: {
     index: true,
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Buy an HVAC Business in Florida",
-    description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing.",
+    description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing. Browse our listings!",
     images: [
       {
         url: "/images/og-buy-hvac.webp", // placeholder
@@ -27,8 +27,13 @@ export const metadata: Metadata = {
   }
 };
 
+import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
+
 export default function BuyHvacBusinessPage() {
+  const breadcrumbs = [{ name: 'Home', item: 'https://www.hvacexitadvisors.com/' }, { name: 'Buy an HVAC Business', item: 'https://www.hvacexitadvisors.com/buy-an-hvac-business' }];
   return (
+    <>
+      <BreadcrumbSchema items={breadcrumbs} />
     <main className="min-h-screen flex flex-col bg-gray-50">
       
       {/* Schema Markup for SEO */}
@@ -47,7 +52,7 @@ export default function BuyHvacBusinessPage() {
                 "name": "Florida"
               },
               "telephone": "+1-954-864-9161",
-              "url": "https://[domain]/buy-an-hvac-business"
+              "url": "https://www.hvacexitadvisors.com/buy-an-hvac-business"
             },
             "audience": {
               "@type": "BusinessAudience",
@@ -169,5 +174,6 @@ export default function BuyHvacBusinessPage() {
       <BuyPageContent />
 
     </main>
+    </>
   );
 }

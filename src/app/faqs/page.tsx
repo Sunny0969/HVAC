@@ -6,14 +6,26 @@ import FaqSidebar from '../../views/components/FaqSidebar';
 import { faqCategories } from '../../lib/faq-data';
 
 export const metadata: Metadata = {
-  title: 'HVAC Business Broker FAQs | Buying & Selling in Florida',
-  description: 'Straight answers on valuing, selling, or buying an HVAC business in Florida - confidentiality, financing, timelines, and more.',
+  title: 'HVAC Broker FAQs: Buying & Selling in Florida',
+  description: 'Get straight answers on valuing, selling, or buying an HVAC business in Florida. Explore FAQs about confidentiality, financing, and timelines. Read more here!',
   alternates: {
     canonical: 'https://www.hvacexitadvisors.com/faqs'
-  }
+  },
+  openGraph: {
+    title: 'HVAC Broker FAQs: Buying & Selling in Florida | HVAC Exit Advisors',
+    description: 'Get straight answers on valuing, selling, or buying an HVAC business in Florida. Explore FAQs about confidentiality, financing, and timelines.',
+    url: 'https://www.hvacexitadvisors.com/faqs',
+  },
 };
 
+import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
+
 export default function FaqsPage() {
+  const breadcrumbs = [
+    { name: 'Home', item: 'https://www.hvacexitadvisors.com/' },
+    { name: 'FAQs', item: 'https://www.hvacexitadvisors.com/faqs' }
+  ];
+
   const mainEntity = faqCategories.flatMap((cat) =>
     cat.items.map((item) => ({
       "@type": "Question",
@@ -29,13 +41,15 @@ export default function FaqsPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
-      
-      {/* JSON-LD Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
-      />
+    <>
+      <BreadcrumbSchema items={breadcrumbs} />
+      <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
+        
+        {/* JSON-LD Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
 
       {/* Hero Section */}
       <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
@@ -112,6 +126,7 @@ export default function FaqsPage() {
           </div>
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }

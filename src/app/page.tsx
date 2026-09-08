@@ -7,7 +7,16 @@ import { differentiators } from '../data/differentiators';
 
 export const metadata: Metadata = {
   title: 'Florida HVAC Business Broker',
-  description: 'The premier Florida HVAC business broker.',
+  description: 'The premier Florida HVAC business broker helping owners sell and buyers acquire commercial and residential HVAC businesses. Get your free valuation today!',
+  alternates: {
+    canonical: 'https://www.hvacexitadvisors.com',
+  },
+  openGraph: {
+    title: 'Florida HVAC Business Broker | HVAC Exit Advisors',
+    description: 'The premier Florida HVAC business broker helping owners sell and buyers acquire commercial and residential HVAC businesses. Get your free valuation today!',
+    url: 'https://www.hvacexitadvisors.com',
+    type: 'website',
+  },
 };
 
 const homeSteps: RoadmapStep[] = [
@@ -18,10 +27,10 @@ const homeSteps: RoadmapStep[] = [
 ];
 
 const featuredListings: CarouselItem[] = [
-  { id: 1, title: "Coastal Mechanical Group", subtitle: "Miami, FL", content: "Highly profitable commercial HVAC contractor dominating the high-rise market.", tags: ["$8.2M Revenue", "$1.5M Cash Flow"], href: "/listings/coastal-mechanical", image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80" },
-  { id: 2, title: "Sunshine Cooling & Heating", subtitle: "Orlando, FL", content: "Residential service powerhouse with 2,500+ active maintenance agreements.", tags: ["$3.1M Revenue", "$650k Cash Flow"], href: "/listings/sunshine-cooling", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80" },
-  { id: 3, title: "Gulf Coast Refrigeration", subtitle: "Tampa, FL", content: "Niche B2B refrigeration and HVAC services for the restaurant industry.", tags: ["$4.5M Revenue", "$900k Cash Flow"], href: "/listings/gulf-coast-refrigeration", image: "https://images.unsplash.com/photo-1621905252472-747262ba94a4?auto=format&fit=crop&q=80" },
-  { id: 4, title: "Panhandle HVAC Pro", subtitle: "Pensacola, FL", content: "Premier HVAC services with deep roots in the community.", tags: ["$2.2M Revenue", "$400k Cash Flow"], href: "/listings/panhandle-hvac", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80" }
+  { id: 1, title: "Coastal Mechanical Group", subtitle: "Miami, FL", content: "Highly profitable commercial HVAC contractor dominating the high-rise market.", tags: ["$8.2M Revenue", "$1.5M Cash Flow"], href: "/listings/coastal-mechanical", image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=75" },
+  { id: 2, title: "Sunshine Cooling & Heating", subtitle: "Orlando, FL", content: "Residential service powerhouse with 2,500+ active maintenance agreements.", tags: ["$3.1M Revenue", "$650k Cash Flow"], href: "/listings/sunshine-cooling", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=75" },
+  { id: 3, title: "Gulf Coast Refrigeration", subtitle: "Tampa, FL", content: "Niche B2B refrigeration and HVAC services for the restaurant industry.", tags: ["$4.5M Revenue", "$900k Cash Flow"], href: "/listings/gulf-coast-refrigeration", image: "https://images.unsplash.com/photo-1621905252472-747262ba94a4?auto=format&fit=crop&w=600&q=75" },
+  { id: 4, title: "Panhandle HVAC Pro", subtitle: "Pensacola, FL", content: "Premier HVAC services with deep roots in the community.", tags: ["$2.2M Revenue", "$400k Cash Flow"], href: "/listings/panhandle-hvac", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=75" }
 ];
 
 const testimonials: CarouselItem[] = [

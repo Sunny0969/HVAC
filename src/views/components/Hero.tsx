@@ -79,7 +79,7 @@ export default function Hero() {
         style={isMobileOrReducedMotion ? {} : { x: bgX, y: bgY }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1558442074-3c19857bc1dc?auto=format&fit=crop&q=80"
+          src="/florida-hvac-business-broker-home.jpg"
           alt="Florida commercial rooftop HVAC units at dusk"
           fill
           priority

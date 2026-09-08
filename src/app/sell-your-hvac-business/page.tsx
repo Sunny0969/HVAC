@@ -5,9 +5,9 @@ import SellPageContent from '../../views/components/SellPageContent';
 
 export const metadata: Metadata = {
   title: 'Sell Your HVAC Business in Florida',
-  description: 'Selling your Florida HVAC company? Get a free, confidential valuation and a broker who sells HVAC businesses only. No fee until you close.',
+  description: 'Thinking of selling your Florida HVAC company? Get a free, confidential valuation from a specialized broker. No fee until you close. Secure your exit today!',
   alternates: {
-    canonical: 'https://hvacexitadvisors.com/sell-your-hvac-business',
+    canonical: 'https://www.hvacexitadvisors.com/sell-your-hvac-business',
   },
   robots: {
     index: true,
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Sell Your HVAC Business in Florida',
-    description: 'Selling your Florida HVAC company? Get a free, confidential valuation and a broker who sells HVAC businesses only. No fee until you close.',
+    description: 'Thinking of selling your Florida HVAC company? Get a free, confidential valuation from a specialized broker. No fee until you close. Secure your exit today!',
     images: [
       {
         url: '/images/og-hvac-rooftop-florida.webp',
@@ -27,7 +27,10 @@ export const metadata: Metadata = {
   },
 };
 
+import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
+
 export default function SellYourHVACBusiness() {
+  const breadcrumbs = [{ name: 'Home', item: 'https://www.hvacexitadvisors.com/' }, { name: 'Sell Your HVAC Business', item: 'https://www.hvacexitadvisors.com/sell-your-hvac-business' }];
   const jsonLdService = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -39,8 +42,8 @@ export default function SellYourHVACBusiness() {
         "@type": "State",
         "name": "Florida"
       },
-      "telephone": "+1-555-555-5555",
-      "url": "https://hvacexitadvisors.com/sell-your-hvac-business"
+      "telephone": "+1-954-864-9161",
+      "url": "https://www.hvacexitadvisors.com/sell-your-hvac-business"
     },
     "audience": {
       "@type": "BusinessAudience",
@@ -96,6 +99,8 @@ export default function SellYourHVACBusiness() {
   };
 
   return (
+    <>
+      <BreadcrumbSchema items={breadcrumbs} />
     <div className="w-full bg-[#F7F5F0] min-h-screen font-sans">
       <script
         type="application/ld+json"
@@ -185,5 +190,6 @@ export default function SellYourHVACBusiness() {
         </div>
       </section>
     </div>
+    </>
   );
 }

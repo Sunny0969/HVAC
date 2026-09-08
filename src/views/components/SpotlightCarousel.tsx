@@ -49,7 +49,7 @@ const CarouselCard = memo(function CarouselCard({
     >
       {item.image && (
         <div className="h-48 w-full bg-gray-200 relative">
-          <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+          <img src={item.image} alt={item.title} loading="lazy" width={450} height={192} className="w-full h-full object-cover" />
           {item.tags && (
             <div className="absolute top-4 left-4 flex gap-2">
               {item.tags.map(tag => (
