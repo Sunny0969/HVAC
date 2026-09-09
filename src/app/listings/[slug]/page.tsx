@@ -104,9 +104,40 @@ export default async function Page({ params }: Props) {
     { name: listing.title, item: `https://www.hvacexitadvisors.com/listings/${slug}` }
   ];
 
+  const numericPrice = parseInt(listing.askingPrice.replace(/[^0-9]/g, ''), 10);
+
+  const listingSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${listing.title} - ${listing.location}`,
+    "description": listing.overview,
+    "category": "Business for Sale",
+    "brand": {
+      "@type": "Brand",
+      "name": "HVAC Exit Advisors"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://www.hvacexitadvisors.com/listings/${slug}`,
+      "priceCurrency": "USD",
+      ...(numericPrice > 0 ? { "price": numericPrice } : { "price": 0, "description": "Price upon confidential inquiry" }),
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "HVAC Exit Advisors",
+        "telephone": "+1-954-864-9161",
+        "url": "https://www.hvacexitadvisors.com"
+      }
+    }
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(listingSchema) }}
+      />
       <main className="w-full bg-[#F7F5F0] min-h-screen py-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">

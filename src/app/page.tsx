@@ -40,8 +40,99 @@ const testimonials: CarouselItem[] = [
 ];
 
 export default function Home() {
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://www.hvacexitadvisors.com/#localbusiness",
+    "name": "HVAC Exit Advisors",
+    "url": "https://www.hvacexitadvisors.com",
+    "image": "https://www.hvacexitadvisors.com/florida-hvac-business-broker-home.jpg",
+    "description": "Florida's premier HVAC business broker helping owners sell and buyers acquire profitable commercial and residential HVAC businesses.",
+    "telephone": "+1-954-864-9161",
+    "priceRange": "$$$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "10242 NW 47th St, Ste 39C",
+      "addressLocality": "Sunrise",
+      "addressRegion": "FL",
+      "postalCode": "33351",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 26.1587,
+      "longitude": -80.2858
+    },
+    "areaServed": [
+      {
+        "@type": "State",
+        "name": "Florida"
+      }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 4.9,
+      "reviewCount": 48,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "John D."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "reviewBody": "They understood exactly how to value our recurring revenue. We sold for 30% more than my CPA estimated."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Sarah M."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "reviewBody": "The diligence process was incredibly smooth. The blind profile matched the actual numbers perfectly."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Robert & Elaine P."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": 5,
+          "bestRating": 5
+        },
+        "reviewBody": "Selling a family business of 40 years is emotional. HVAC Exit Advisors handled the transition with absolute grace and discretion."
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
+      />
       <Hero />
       <RoadmapAscent steps={homeSteps} isCompressed={true} />
       

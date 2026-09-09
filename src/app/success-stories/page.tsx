@@ -23,9 +23,37 @@ export default function SuccessStoriesPage() {
     { name: 'Success Stories', item: 'https://www.hvacexitadvisors.com/success-stories' }
   ];
 
+  const storiesSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Florida HVAC Business Sale Case Studies & Success Stories",
+    "description": "Real-world transaction case studies of Florida HVAC businesses successfully sold and acquired through HVAC Exit Advisors.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "First-Time Buyer Tampa HVAC Acquisition",
+          "url": "https://www.hvacexitadvisors.com/success-stories/first-time-buyer-tampa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Private Equity Commercial HVAC Roll-Up in Orlando",
+          "url": "https://www.hvacexitadvisors.com/success-stories/private-equity-roll-up"
+        }
+      ]
+    }
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(storiesSchema) }}
+      />
       <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
         
         {/* Hero Section */}

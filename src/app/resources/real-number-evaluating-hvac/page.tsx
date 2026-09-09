@@ -25,23 +25,32 @@ export default function RealNumberEvaluatingHvacPage() {
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": "What's the Real Number That Matters When Evaluating an HVAC Business?",
     "description": "A comprehensive guide on evaluating HVAC businesses in Florida using normalized SDE and recurring revenue analysis.",
+    "image": [
+      "https://www.hvacexitadvisors.com/how-to-sell-hvac-business-florida.jpg"
+    ],
+    "datePublished": "2024-03-20",
+    "dateModified": "2026-09-08",
     "author": {
-      "@type": "Organization",
-      "name": "HVAC Exit Advisors",
-      "url": "https://www.hvacexitadvisors.com"
+      "@type": "Person",
+      "name": "Sanjay Wadhwani",
+      "jobTitle": "Owner & Principal Advisor",
+      "url": "https://www.hvacexitadvisors.com/about-us/team"
     },
     "publisher": {
       "@type": "Organization",
       "name": "HVAC Exit Advisors",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.hvacexitadvisors.com/logo.png"
+        "url": "https://www.hvacexitadvisors.com/icon.png"
       }
     },
-    "mainEntityOfPage": "https://www.hvacexitadvisors.com/resources/real-number-evaluating-hvac"
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.hvacexitadvisors.com/resources/real-number-evaluating-hvac"
+    }
   };
 
   return (

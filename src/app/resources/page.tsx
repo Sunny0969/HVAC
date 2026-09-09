@@ -46,9 +46,30 @@ export default function ResourcesPage() {
     }
   ];
 
+  const hubSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Florida HVAC Business Valuation & M&A Resources",
+    "description": "Guides, financial analyses, and educational resources for Florida HVAC business owners and prospective buyers.",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": resourceArticles.map((article, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "name": article.title,
+        "description": article.description,
+        "url": `https://www.hvacexitadvisors.com${article.href}`
+      }))
+    }
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(hubSchema) }}
+      />
       <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
         {/* Hero Section */}
         <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">

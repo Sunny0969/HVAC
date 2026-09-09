@@ -25,23 +25,32 @@ export default function HvacMultiplesExplainedPage() {
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": "HVAC Business Valuation Multiples Explained: SDE vs. EBITDA",
     "description": "An in-depth breakdown of transaction multiples applied to Florida heating, air conditioning, and refrigeration contracting businesses.",
+    "image": [
+      "https://www.hvacexitadvisors.com/florida-hvac-business-valuation.jpg"
+    ],
+    "datePublished": "2024-03-15",
+    "dateModified": "2026-09-08",
     "author": {
-      "@type": "Organization",
-      "name": "HVAC Exit Advisors",
-      "url": "https://www.hvacexitadvisors.com"
+      "@type": "Person",
+      "name": "Sanjay Wadhwani",
+      "jobTitle": "Owner & Principal Advisor",
+      "url": "https://www.hvacexitadvisors.com/about-us/team"
     },
     "publisher": {
       "@type": "Organization",
       "name": "HVAC Exit Advisors",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.hvacexitadvisors.com/logo.png"
+        "url": "https://www.hvacexitadvisors.com/icon.png"
       }
     },
-    "mainEntityOfPage": "https://www.hvacexitadvisors.com/resources/hvac-business-multiples-explained"
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.hvacexitadvisors.com/resources/hvac-business-multiples-explained"
+    }
   };
 
   return (

@@ -24,9 +24,31 @@ export default function WhySellWithUsPage() {
     { name: 'Why Sell With Us', item: 'https://www.hvacexitadvisors.com/why-sell-with-us' }
   ];
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "HVAC Brokerage & Exit Advisory Services",
+    "serviceType": "HVAC Business Mergers and Acquisitions",
+    "description": "Confidential advisory, valuation, and M&A brokerage services designed exclusively for Florida HVAC and mechanical contracting company owners.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "HVAC Exit Advisors",
+      "telephone": "+1-954-864-9161",
+      "url": "https://www.hvacexitadvisors.com/why-sell-with-us"
+    },
+    "areaServed": {
+      "@type": "State",
+      "name": "Florida"
+    }
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <main className="min-h-screen flex flex-col bg-gray-50">
         
         {/* Hero Section */}

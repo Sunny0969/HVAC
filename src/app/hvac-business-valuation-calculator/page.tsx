@@ -31,7 +31,7 @@ export default function ValuationCalculatorPage() {
     "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": 0,
       "priceCurrency": "USD"
     },
     "description": "Interactive valuation calculator for Florida heating and air conditioning contractors based on SDE, EBITDA, and recurring service agreement multiples."

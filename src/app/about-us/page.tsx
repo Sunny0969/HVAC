@@ -29,9 +29,30 @@ export default function Page() {
     { name: 'About Us', item: 'https://www.hvacexitadvisors.com/about-us' }
   ];
 
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "HVAC Exit Advisors",
+      "url": "https://www.hvacexitadvisors.com",
+      "description": "Florida's premier HVAC business brokerage firm founded by former mechanical contractors to help owners achieve maximum exit value.",
+      "founder": {
+        "@type": "Person",
+        "name": "Sanjay Wadhwani",
+        "jobTitle": "Owner & Principal Advisor"
+      },
+      "areaServed": "Florida"
+    }
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       <div className="w-full bg-[#F7F5F0] min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
           <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">

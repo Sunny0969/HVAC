@@ -56,9 +56,28 @@ export default function ListingsPage() {
     { name: 'Listings', item: 'https://www.hvacexitadvisors.com/listings' }
   ];
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Florida HVAC Businesses For Sale",
+    "description": "Exclusive portfolio of profitable commercial and residential HVAC businesses for sale across Florida.",
+    "numberOfItems": activeListings.length,
+    "itemListElement": activeListings.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.title,
+      "description": item.description,
+      "url": `https://www.hvacexitadvisors.com/listings/${item.slug}`
+    }))
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-12">
         <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">
           <Link href="/" className="hover:text-[#EE5B2C] transition-colors">Home</Link>

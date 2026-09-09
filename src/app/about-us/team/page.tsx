@@ -24,9 +24,37 @@ export default function TeamPage() {
     { name: 'Meet the Team', item: 'https://www.hvacexitadvisors.com/about-us/team' }
   ];
 
+  const teamSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Meet the Florida HVAC Brokerage Team",
+    "description": "Leadership and M&A advisory team at HVAC Exit Advisors, led by Sanjay Wadhwani.",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Sanjay Wadhwani",
+      "jobTitle": "Owner & Principal Advisor",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "HVAC Exit Advisors",
+        "url": "https://www.hvacexitadvisors.com"
+      },
+      "description": "Specialized HVAC business broker with extensive experience in Florida mechanical contractor mergers, acquisitions, and valuations.",
+      "knowsAbout": [
+        "HVAC Business Valuation",
+        "Mergers & Acquisitions",
+        "Florida Mechanical Contractor Licensing",
+        "EBITDA Multiple Analysis"
+      ]
+    }
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(teamSchema) }}
+      />
       <main className="min-h-screen flex flex-col bg-gray-50">
         {/* Hero Section */}
         <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">

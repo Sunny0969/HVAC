@@ -63,17 +63,68 @@ import Script from "next/script";
 export default function RootLayout({ children }: LayoutProps<"/">) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "HVAC Exit Advisors",
-    "url": "https://www.hvacexitadvisors.com",
-    "logo": "https://www.hvacexitadvisors.com/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-954-864-9161",
-      "contactType": "customer service",
-      "areaServed": "US",
-      "availableLanguage": "en"
-    }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.hvacexitadvisors.com/#organization",
+        "name": "HVAC Exit Advisors",
+        "url": "https://www.hvacexitadvisors.com",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://www.hvacexitadvisors.com/#logo",
+          "url": "https://www.hvacexitadvisors.com/icon.png",
+          "caption": "HVAC Exit Advisors Logo"
+        },
+        "image": "https://www.hvacexitadvisors.com/florida-hvac-business-broker-home.jpg",
+        "description": "Florida's premier HVAC business brokerage and M&A advisory firm specializing in confidential acquisitions and exits for commercial and residential mechanical contractors.",
+        "telephone": "+1-954-864-9161",
+        "email": "contact@hvacexitadvisors.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "10242 NW 47th St, Ste 39C",
+          "addressLocality": "Sunrise",
+          "addressRegion": "FL",
+          "postalCode": "33351",
+          "addressCountry": "US"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-954-864-9161",
+            "contactType": "customer service",
+            "areaServed": "US",
+            "availableLanguage": ["en", "es"]
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Sanjay Wadhwani",
+          "jobTitle": "Owner & Principal Advisor"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/hvac-exit-advisors"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.hvacexitadvisors.com/#website",
+        "url": "https://www.hvacexitadvisors.com",
+        "name": "HVAC Exit Advisors",
+        "description": "Florida HVAC Business Brokerage, Valuations, and M&A Advisory.",
+        "publisher": {
+          "@id": "https://www.hvacexitadvisors.com/#organization"
+        },
+        "inLanguage": "en-US",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.hvacexitadvisors.com/listings?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
   };
 
   const gaId = process.env.NEXT_PUBLIC_GA_ID;

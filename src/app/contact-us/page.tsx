@@ -23,19 +23,42 @@ export default function ContactPage() {
 
   const contactSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "HVAC Exit Advisors",
-    "telephone": "+1-954-864-9161",
-    "email": "contact@hvacexitadvisors.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "10242 NW 47th St, Ste 39C",
-      "addressLocality": "Sunrise",
-      "addressRegion": "FL",
-      "postalCode": "33351",
-      "addressCountry": "US"
-    },
-    "url": "https://www.hvacexitadvisors.com/contact-us"
+    "@type": "ContactPage",
+    "name": "Contact HVAC Exit Advisors",
+    "description": "Confidential consultation for buyers and sellers of heating, ventilation, and air conditioning businesses in Florida.",
+    "mainEntity": {
+      "@type": "ProfessionalService",
+      "name": "HVAC Exit Advisors",
+      "telephone": "+1-954-864-9161",
+      "email": "contact@hvacexitadvisors.com",
+      "url": "https://www.hvacexitadvisors.com",
+      "priceRange": "$$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "10242 NW 47th St, Ste 39C",
+        "addressLocality": "Sunrise",
+        "addressRegion": "FL",
+        "postalCode": "33351",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.1587,
+        "longitude": -80.2858
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "State",
+        "name": "Florida"
+      }
+    }
   };
 
   return (

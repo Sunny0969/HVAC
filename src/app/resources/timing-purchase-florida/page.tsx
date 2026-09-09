@@ -25,23 +25,32 @@ export default function TimingPurchaseFloridaPage() {
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     "headline": "Timing Your HVAC Business Purchase: What Florida Buyers Should Know",
     "description": "An advisory guide for prospective Florida HVAC business buyers navigating seasonal revenue fluctuations and optimal closing dates.",
+    "image": [
+      "https://www.hvacexitadvisors.com/florida-hvac-business-broker-home.jpg"
+    ],
+    "datePublished": "2024-04-05",
+    "dateModified": "2026-09-08",
     "author": {
-      "@type": "Organization",
-      "name": "HVAC Exit Advisors",
-      "url": "https://www.hvacexitadvisors.com"
+      "@type": "Person",
+      "name": "Sanjay Wadhwani",
+      "jobTitle": "Owner & Principal Advisor",
+      "url": "https://www.hvacexitadvisors.com/about-us/team"
     },
     "publisher": {
       "@type": "Organization",
       "name": "HVAC Exit Advisors",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.hvacexitadvisors.com/logo.png"
+        "url": "https://www.hvacexitadvisors.com/icon.png"
       }
     },
-    "mainEntityOfPage": "https://www.hvacexitadvisors.com/resources/timing-purchase-florida"
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.hvacexitadvisors.com/resources/timing-purchase-florida"
+    }
   };
 
   return (

@@ -23,9 +23,36 @@ export default function FirstTimeBuyerTampaPage() {
     { name: 'Tampa Acquisition', item: 'https://www.hvacexitadvisors.com/success-stories/first-time-buyer-tampa' }
   ];
 
+  const caseStudySchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Transitioning from Corporate Executive to HVAC Business Owner in Tampa",
+    "description": "Case study on how HVAC Exit Advisors guided an executive to acquire a $3.1M residential HVAC contractor in Tampa, FL with SBA financing.",
+    "author": {
+      "@type": "Organization",
+      "name": "HVAC Exit Advisors",
+      "url": "https://www.hvacexitadvisors.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HVAC Exit Advisors",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hvacexitadvisors.com/icon.png"
+      }
+    },
+    "datePublished": "2024-02-18",
+    "dateModified": "2026-09-08",
+    "mainEntityOfPage": "https://www.hvacexitadvisors.com/success-stories/first-time-buyer-tampa"
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }}
+      />
       <main className="w-full bg-[#F7F5F0] min-h-screen py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">
