@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export interface ColonnadeItem {
@@ -9,6 +10,7 @@ export interface ColonnadeItem {
   title: string;
   content: string;
   gradientClass: string;
+  image?: string;
 }
 
 interface ColonnadeProps {
@@ -58,11 +60,24 @@ export default function Colonnade({ items }: ColonnadeProps) {
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
             onHoverStart={() => !isMobile && setActiveId(item.id)}
             onClick={() => setActiveId(item.id)}
-            className={`relative overflow-hidden cursor-pointer rounded-2xl group ${item.gradientClass}`}
+            className={`relative overflow-hidden cursor-pointer rounded-2xl group bg-gray-900`}
           >
+            {/* Background Image */}
+            {item.image && (
+              <Image 
+                src={item.image} 
+                alt={item.title} 
+                fill 
+                className={`object-cover transition-transform duration-700 ${isActive ? 'scale-105' : 'scale-100 grayscale'}`} 
+              />
+            )}
+            
+            {/* Gradient Overlay */}
+            <div className={`absolute inset-0 ${item.gradientClass} opacity-80 mix-blend-multiply z-0 transition-opacity duration-300 ${isActive ? 'opacity-60' : 'opacity-90'}`} />
+
             {/* Dark Overlay for inactive state */}
             <motion.div
-              animate={{ opacity: isActive ? 0 : 0.6 }}
+              animate={{ opacity: isActive ? 0 : 0.4 }}
               transition={{ duration: 0.3 }}
               className="absolute inset-0 bg-[#022B3A] z-0"
             />

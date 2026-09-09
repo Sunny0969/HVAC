@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import RoadmapAscent, { RoadmapStep } from '../../views/components/RoadmapAscent';
+import HowItWorksSteps from '../../views/components/HowItWorksSteps';
+import { steps } from '../../data/howItWorksSteps';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
@@ -17,15 +18,6 @@ export const metadata: Metadata = {
   },
 };
 
-const fullSteps: RoadmapStep[] = [
-  { title: "Valuation & Prep", description: "Deep-dive financial analysis to establish maximum market value and package your business.", day: "DAYS 1-14" },
-  { title: "Marketing Launch", description: "Going to market with discrete, blind profiles to our vetted buyer network of private equity and strategics.", day: "DAYS 15-30" },
-  { title: "Buyer Matching", description: "Fielding inquiries, executing strict NDAs, and qualifying buyer financial capacity.", day: "DAYS 30-60" },
-  { title: "Negotiation", description: "Reviewing LOIs and structuring the optimal deal terms for your exit, tax-efficiently.", day: "DAYS 60-90" },
-  { title: "Due Diligence", description: "Managing the data room, CPA reviews, and legal drafting to keep the deal on track.", day: "DAYS 90-120" },
-  { title: "The Close", description: "Final signatures, wire transfers, and securing your hard-earned legacy.", day: "DAYS 120+" }
-];
-
 export default function HowItWorksPage() {
   const breadcrumbs = [
     { name: 'Home', item: 'https://www.hvacexitadvisors.com/' },
@@ -37,7 +29,7 @@ export default function HowItWorksPage() {
     "@type": "HowTo",
     "name": "How to Sell an HVAC Business in Florida",
     "description": "The step-by-step advisory roadmap for confidentially selling a heating and air conditioning company in Florida.",
-    "step": fullSteps.map((step, index) => ({
+    "step": steps.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
       "name": step.title,
@@ -80,22 +72,13 @@ export default function HowItWorksPage() {
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium mb-6 max-w-3xl drop-shadow-md">
-              A proven 6-stage roadmap designed to maximize your transaction multiple while preserving total confidentiality from staff, competitors, and customers.
+              A proven roadmap designed to maximize your transaction multiple while preserving total confidentiality from staff, competitors, and customers.
             </p>
           </div>
         </section>
 
-        {/* Section Heading */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] mb-2">
-            The 6 Phases of a Successful HVAC Exit
-          </h2>
-          <p className="text-gray-600 text-lg font-medium">
-            From initial financial recasting to closing wire transfers, here is how our specialized process works.
-          </p>
-        </div>
-
-        <RoadmapAscent steps={fullSteps} />
+        {/* The Component replacing RoadmapAscent */}
+        <HowItWorksSteps />
 
         {/* Contact Us Form Section */}
         <section className="w-full bg-white py-24 border-t border-gray-100">

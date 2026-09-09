@@ -1,7 +1,10 @@
 import { Metadata } from 'next';
 import Hero from '../views/components/Hero';
 import RoadmapAscent, { RoadmapStep } from '../views/components/RoadmapAscent';
+import HowItWorksSteps from '../views/components/HowItWorksSteps';
 import SpotlightCarousel, { CarouselItem } from '../views/components/SpotlightCarousel';
+import FeaturedOpportunities from '../views/components/FeaturedOpportunities';
+import TestimonialSlider from '../views/components/TestimonialSlider';
 import Colonnade from '../views/components/Colonnade';
 import { differentiators } from '../data/differentiators';
 
@@ -134,7 +137,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
       <Hero />
-      <RoadmapAscent steps={homeSteps} isCompressed={true} />
+      <HowItWorksSteps />
       
       {/* Why Sell With Us - Reused from shared data */}
       <section className="w-full bg-[#F7F5F0] py-24">
@@ -147,8 +150,8 @@ export default function Home() {
         </div>
       </section>
 
-      <SpotlightCarousel title="Featured Opportunities" items={featuredListings} />
-      <SpotlightCarousel title="Client Success" items={testimonials} />
+      <FeaturedOpportunities items={featuredListings} />
+      <TestimonialSlider items={testimonials} />
     </>
   );
 }
