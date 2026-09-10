@@ -26,13 +26,10 @@ export default function PrivateEquityRollUpPage() {
   const caseStudySchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Expanding Regional Footprint: $5.2M Commercial HVAC Acquisition in Orlando",
+    "headline": "Expanding Regional Footprint: $5.2M Commercial HVAC Acquisition in Orlando", 
+    "image": ["https://www.hvacexitadvisors.com/florida-hvac-business-broker-home.jpg"],
     "description": "Case study analyzing the private equity backed strategic roll-up of a commercial mechanical and chiller service provider in Central Florida.",
-    "author": {
-      "@type": "Organization",
-      "name": "HVAC Exit Advisors",
-      "url": "https://www.hvacexitadvisors.com"
-    },
+    "author": { "@type": "Person", "name": "Sanjay Wadhwani", "jobTitle": "Owner & Principal Advisor", "url": "https://www.hvacexitadvisors.com/about-us/team" },
     "publisher": {
       "@type": "Organization",
       "name": "HVAC Exit Advisors",
@@ -134,3 +131,5 @@ export default function PrivateEquityRollUpPage() {
     </>
   );
 }
+
+

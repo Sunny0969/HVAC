@@ -29,6 +29,8 @@ export default function FreeValuationPage() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "HVAC Exit Advisors",
+        "image": "https://www.hvacexitadvisors.com/icon.png",
+        "priceRange": "$$$$",
       "telephone": "+1-954-864-9161",
       "url": "https://www.hvacexitadvisors.com/free-valuation"
     },
@@ -96,3 +98,5 @@ export default function FreeValuationPage() {
     </>
   );
 }
+
+

@@ -38,6 +38,8 @@ export default function SellYourHVACBusiness() {
     "provider": {
       "@type": "LocalBusiness",
       "name": "HVAC Exit Advisors",
+        "image": "https://www.hvacexitadvisors.com/icon.png",
+        "priceRange": "$$$$",
       "areaServed": {
         "@type": "State",
         "name": "Florida"
@@ -193,3 +195,5 @@ export default function SellYourHVACBusiness() {
     </>
   );
 }
+
+

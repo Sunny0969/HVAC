@@ -30,23 +30,25 @@ export default function TestimonialSlider({ items }: TestimonialSliderProps) {
   };
 
   // Helper for professional avatar generation based on name
-  const getAvatar = (name: string, id: number) => {
+  const getAvatar = (name: string, id: string | number) => {
     const defaultImages = [
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&h=150&q=80",
       "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=150&q=80",
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=150&q=80"
     ];
-    return defaultImages[(id - 1) % defaultImages.length];
+    const numId = typeof id === 'number' ? id : parseInt(id, 10) || 1;
+    return defaultImages[(Math.abs(numId) - 1 + defaultImages.length) % defaultImages.length];
   };
 
   // Helper for relevant card top image
-  const getCardImage = (id: number) => {
+  const getCardImage = (id: string | number) => {
     const images = [
       "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&w=600&h=300&q=80", // Handshake/Deal
       "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&h=300&q=80", // HVAC/AC Unit
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&h=300&q=80", // Paperwork/Signatures
     ];
-    return images[(id - 1) % images.length];
+    const numId = typeof id === 'number' ? id : parseInt(id, 10) || 1;
+    return images[(Math.abs(numId) - 1 + images.length) % images.length];
   };
 
   return (

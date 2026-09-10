@@ -26,13 +26,10 @@ export default function FirstTimeBuyerTampaPage() {
   const caseStudySchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Transitioning from Corporate Executive to HVAC Business Owner in Tampa",
+    "headline": "Transitioning from Corporate Executive to HVAC Business Owner in Tampa", 
+    "image": ["https://www.hvacexitadvisors.com/florida-hvac-business-broker-home.jpg"],
     "description": "Case study on how HVAC Exit Advisors guided an executive to acquire a $3.1M residential HVAC contractor in Tampa, FL with SBA financing.",
-    "author": {
-      "@type": "Organization",
-      "name": "HVAC Exit Advisors",
-      "url": "https://www.hvacexitadvisors.com"
-    },
+    "author": { "@type": "Person", "name": "Sanjay Wadhwani", "jobTitle": "Owner & Principal Advisor", "url": "https://www.hvacexitadvisors.com/about-us/team" },
     "publisher": {
       "@type": "Organization",
       "name": "HVAC Exit Advisors",
@@ -134,3 +131,5 @@ export default function FirstTimeBuyerTampaPage() {
     </>
   );
 }
+
+

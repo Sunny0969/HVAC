@@ -106,6 +106,8 @@ export default async function Page({ params }: Props) {
     "provider": {
       "@type": "LocalBusiness",
       "name": "HVAC Exit Advisors",
+        "image": "https://www.hvacexitadvisors.com/icon.png",
+        "priceRange": "$$$$",
       "telephone": "+1-954-864-9161",
       "url": "https://www.hvacexitadvisors.com",
       "areaServed": {
@@ -223,3 +225,5 @@ export default async function Page({ params }: Props) {
     </>
   );
 }
+
+

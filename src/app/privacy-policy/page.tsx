@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | HVAC Exit Advisors',
@@ -13,11 +14,22 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
+  const breadcrumbs = [
+    { name: 'Home', item: 'https://www.hvacexitadvisors.com/' },
+    { name: 'Privacy Policy', item: 'https://www.hvacexitadvisors.com/privacy-policy' }
+  ];
+
   return (
     <main className="min-h-screen bg-[#F7F5F0] pt-32 pb-20">
+      <BreadcrumbSchema items={breadcrumbs} />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-12 lg:p-16">
+          <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">
+            <a href="/" className="hover:text-[#EE5B2C] transition-colors">Home</a>
+            <span>/</span>
+            <span className="text-[#EE5B2C]">Privacy Policy</span>
+          </nav>
           <h1 className="text-4xl md:text-5xl font-black text-[#022B3A] mb-4">Privacy Policy</h1>
           <p className="text-gray-500 font-medium mb-12 pb-8 border-b border-gray-100">Last updated: September 5, 2026</p>
 
