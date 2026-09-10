@@ -122,7 +122,7 @@ function Card({ study, index, total }: { study: typeof caseStudies[0], index: nu
         />
 
         {/* Card Content (Real DOM) */}
-        <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-12 text-white">
+        <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-12 text-white overflow-y-auto overscroll-contain">
           <div className="mb-4">
             <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-xs md:text-sm font-bold tracking-widest uppercase mb-4 shadow-sm">
               DISPATCH - {study.date}

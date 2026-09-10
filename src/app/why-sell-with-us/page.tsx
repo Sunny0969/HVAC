@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Colonnade from '../../views/components/Colonnade';
 import { differentiators } from '../../data/differentiators';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
+import ContactForm from '../../views/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Why Choose the Best Florida HVAC Business Broker',
@@ -131,47 +132,7 @@ export default function WhySellWithUsPage() {
             </div>
             
             <div className="bg-gray-50 rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8 md:p-12">
-              <form className="flex flex-col space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="why-first-name" className="block text-sm font-bold text-[#022B3A] mb-2">First Name *</label>
-                    <input id="why-first-name" type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="John" />
-                  </div>
-                  <div>
-                    <label htmlFor="why-last-name" className="block text-sm font-bold text-[#022B3A] mb-2">Last Name *</label>
-                    <input id="why-last-name" type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="Doe" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="why-email" className="block text-sm font-bold text-[#022B3A] mb-2">Email Address *</label>
-                    <input id="why-email" type="email" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
-                  </div>
-                  <div>
-                    <label htmlFor="why-phone" className="block text-sm font-bold text-[#022B3A] mb-2">Phone Number *</label>
-                    <input id="why-phone" type="tel" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="(555) 123-4567" />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="why-company" className="block text-sm font-bold text-[#022B3A] mb-2">Company Name (Optional)</label>
-                  <input id="why-company" type="text" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="Your HVAC Business" />
-                </div>
-
-                <div>
-                  <label htmlFor="why-message" className="block text-sm font-bold text-[#022B3A] mb-2">How can we help?</label>
-                  <textarea id="why-message" rows={5} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all resize-none" placeholder="Tell us a little bit about your timeline or goals..."></textarea>
-                </div>
-
-                <button type="submit" className="w-full bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-lg mt-4">
-                  Submit Confidential Inquiry
-                </button>
-                
-                <p className="text-sm text-gray-500 text-center mt-4">
-                  <span className="inline-block text-[#EE5B2C] mr-1">🔒</span> 100% Confidential. Your information is never shared.
-                </p>
-              </form>
+              <ContactForm buttonText="Submit Confidential Inquiry" />
             </div>
           </div>
         </section>

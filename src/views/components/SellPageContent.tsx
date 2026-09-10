@@ -19,6 +19,17 @@ const staggerContainer: Variants = {
 
 export default function SellPageContent() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    }, 1500);
+  };
 
   return (
     <article className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -346,31 +357,50 @@ export default function SellPageContent() {
             <p className="text-gray-600 mb-6 font-medium leading-relaxed">
               Confidential, no-obligation conversation about the value of your HVAC business.
             </p>
-            <form className="flex flex-col space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <label className="block text-sm font-bold text-[#022B3A] mb-1">Full Name *</label>
-                <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="John Doe" />
+            {isSuccess ? (
+              <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center mt-4">
+                <div className="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"></path></svg>
+                </div>
+                <h4 className="text-xl font-bold mb-2 text-[#022B3A]">Request Received</h4>
+                <p className="text-gray-600">Thank you for reaching out. Our advisory team will contact you shortly.</p>
+                <button onClick={() => setIsSuccess(false)} className="mt-6 text-[#EE5B2C] font-bold text-sm hover:underline">Submit another request</button>
               </div>
-              <div>
-                <label className="block text-sm font-bold text-[#022B3A] mb-1">Email Address *</label>
-                <input type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
-              </div>
-              <div>
-                <label className="block text-sm font-bold text-[#022B3A] mb-1">Phone Number *</label>
-                <input type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="(555) 123-4567" />
-              </div>
-              <div>
-                <label className="block text-sm font-bold text-[#022B3A] mb-1">Company Name *</label>
-                <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="Sunshine HVAC" />
-              </div>
-              <div>
-                <label className="block text-sm font-bold text-[#022B3A] mb-1">Additional Details (Optional)</label>
-                <textarea rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all resize-none" placeholder="Any specific questions or details?"></textarea>
-              </div>
-              <button type="submit" className="w-full bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 mt-2">
-                Submit Request
-              </button>
-            </form>
+            ) : (
+              <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
+                <div>
+                  <label className="block text-sm font-bold text-[#022B3A] mb-1">Full Name *</label>
+                  <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="John Doe" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-[#022B3A] mb-1">Email Address *</label>
+                  <input type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="john@example.com" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-[#022B3A] mb-1">Phone Number *</label>
+                  <input type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="(555) 123-4567" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-[#022B3A] mb-1">Company Name *</label>
+                  <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="Sunshine HVAC" />
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-[#022B3A] mb-1">Additional Details (Optional)</label>
+                  <textarea rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base resize-none" placeholder="Any specific questions or details?"></textarea>
+                </div>
+                <button type="submit" disabled={isSubmitting} className="w-full bg-[#EE5B2C] hover:bg-orange-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 mt-2 flex justify-center items-center">
+                  {isSubmitting ? (
+                    <span className="flex items-center gap-2">
+                      <svg className="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Submitting...
+                    </span>
+                  ) : "Submit Request"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

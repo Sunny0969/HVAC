@@ -4,6 +4,7 @@ import Link from 'next/link';
 import HowItWorksSteps from '../../views/components/HowItWorksSteps';
 import { steps } from '../../data/howItWorksSteps';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
+import ContactForm from '../../views/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'How to Sell an HVAC Business in Florida',
@@ -29,11 +30,19 @@ export default function HowItWorksPage() {
     "@type": "HowTo",
     "name": "How to Sell an HVAC Business in Florida",
     "description": "The step-by-step advisory roadmap for confidentially selling a heating and air conditioning company in Florida.",
+    "image": "https://www.hvacexitadvisors.com/how-to-sell-hvac-business-florida.jpg",
+    "totalTime": "P120D",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["#how-to-title", "#how-to-description"]
+    },
     "step": steps.map((step, index) => ({
       "@type": "HowToStep",
       "position": index + 1,
       "name": step.title,
-      "text": step.description
+      "text": step.description,
+      "image": step.image,
+      "url": `https://www.hvacexitadvisors.com/how-it-works#step-${index + 1}`
     }))
   };
 
@@ -66,12 +75,12 @@ export default function HowItWorksPage() {
               <span className="text-white">How It Works</span>
             </nav>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
+            <h1 id="how-to-title" className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
               How to Sell Your <br className="hidden sm:block" />
               <span className="text-[#EE5B2C]">Florida HVAC Business</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium mb-6 max-w-3xl drop-shadow-md">
+            <p id="how-to-description" className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium mb-6 max-w-3xl drop-shadow-md">
               A proven roadmap designed to maximize your transaction multiple while preserving total confidentiality from staff, competitors, and customers.
             </p>
           </div>
@@ -89,47 +98,7 @@ export default function HowItWorksPage() {
             </div>
             
             <div className="bg-gray-50 rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8 md:p-12">
-              <form className="flex flex-col space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-bold text-[#022B3A] mb-2">First Name *</label>
-                    <input id="firstName" type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="John" />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-bold text-[#022B3A] mb-2">Last Name *</label>
-                    <input id="lastName" type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="Doe" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-[#022B3A] mb-2">Email Address *</label>
-                    <input id="email" type="email" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-bold text-[#022B3A] mb-2">Phone Number *</label>
-                    <input id="phone" type="tel" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="(555) 123-4567" />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="company" className="block text-sm font-bold text-[#022B3A] mb-2">Company Name (Optional)</label>
-                  <input id="company" type="text" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="Your HVAC Business" />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-[#022B3A] mb-2">How can we help?</label>
-                  <textarea id="message" rows={5} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all resize-none" placeholder="Tell us a little bit about your timeline or goals..."></textarea>
-                </div>
-
-                <button type="submit" className="w-full bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-lg mt-4">
-                  Submit Confidential Inquiry
-                </button>
-                
-                <p className="text-sm text-gray-500 text-center mt-4">
-                  <span className="inline-block text-[#EE5B2C] mr-1">🔒</span> 100% Confidential. Your information is never shared.
-                </p>
-              </form>
+              <ContactForm buttonText="Submit Confidential Inquiry" />
             </div>
           </div>
         </section>

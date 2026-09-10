@@ -5,7 +5,7 @@ export default function NotFound() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full text-center space-y-8">
         <div>
-          <h1 className="text-9xl font-extrabold text-[#003366]">404</h1>
+          <h1 className="text-7xl sm:text-9xl font-extrabold text-[#003366]">404</h1>
           <h2 className="mt-6 text-3xl font-bold text-gray-900">Page Not Found</h2>
           <p className="mt-2 text-lg text-gray-600">
             We couldn't find the page you're looking for. It might have been moved or doesn't exist.

@@ -49,6 +49,7 @@ export default function Header() {
                     <div
                       onMouseEnter={() => toggleDropdown(item.label)}
                       onMouseLeave={closeDropdown}
+                      onClick={() => toggleDropdown(item.label)}
                       className="h-full flex items-center"
                     >
                       <button 
@@ -119,7 +120,7 @@ export default function Header() {
                 onClick={toggleMobileMenu} 
                 aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={isMobileMenuOpen}
-                className="text-white hover:text-secondary focus:outline-none"
+                className="text-white hover:text-secondary focus:outline-none p-2 -mr-2"
               >
                 {isMobileMenuOpen ? (
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,7 +159,7 @@ export default function Header() {
                         key={child.label}
                         href={child.href}
                         onClick={toggleMobileMenu}
-                        className="block px-3 py-2 rounded-md text-base hover:text-secondary hover:bg-white/10"
+                        className="block px-3 py-3 rounded-md text-base hover:text-secondary hover:bg-white/10"
                       >
                         {child.label}
                       </Link>

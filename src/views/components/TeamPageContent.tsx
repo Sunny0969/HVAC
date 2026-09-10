@@ -86,7 +86,7 @@ export default function TeamPageContent() {
                 </div>
                 <div>
                   <span className="block text-sm text-white/60 font-bold mb-1 uppercase tracking-wider">Direct Advisory Line</span>
-                  <a href="https://wa.me/19548649161" target="_blank" rel="noopener noreferrer" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors">(954) 864-9161</a>
+                  <a href="https://wa.me/19548649161" target="_blank" rel="noopener noreferrer" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors py-2">(954) 864-9161</a>
                 </div>
               </div>
 
@@ -97,7 +97,7 @@ export default function TeamPageContent() {
                 </div>
                 <div>
                   <span className="block text-sm text-white/60 font-bold mb-1 uppercase tracking-wider">Direct Email</span>
-                  <a href="mailto:contact@hvacexitadvisors.com" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors break-all">contact@hvacexitadvisors.com</a>
+                  <a href="mailto:contact@hvacexitadvisors.com" className="block font-medium text-lg hover:text-[#EE5B2C] transition-colors break-all py-2">contact@hvacexitadvisors.com</a>
                 </div>
               </div>
 

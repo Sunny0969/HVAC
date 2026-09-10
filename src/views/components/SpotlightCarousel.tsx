@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState, memo, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export interface CarouselItem {
@@ -49,7 +50,7 @@ const CarouselCard = memo(function CarouselCard({
     >
       {item.image && (
         <div className="h-48 w-full bg-gray-200 relative">
-          <img src={item.image} alt={item.title} loading="lazy" width={450} height={192} className="w-full h-full object-cover" />
+          <Image src={item.image} alt={item.title} width={450} height={192} className="w-full h-full object-cover" />
           {item.tags && (
             <div className="absolute top-4 left-4 flex gap-2">
               {item.tags.map(tag => (
@@ -213,14 +214,16 @@ export default function SpotlightCarousel({ items, title }: SpotlightCarouselPro
             </button>
             
             {/* Dots */}
-            <div className="flex gap-2 mx-2">
+            <div className="flex gap-1 mx-2">
               {items.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => scrollTo(i)}
                   aria-label={`Go to slide ${i + 1}`}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === activeIndex ? "w-8 bg-secondary" : "bg-gray-300 hover:bg-gray-400"}`}
-                />
+                  className="p-3 flex items-center justify-center"
+                >
+                  <span className={`w-2.5 h-2.5 rounded-full transition-all duration-300 block ${i === activeIndex ? "w-8 bg-secondary" : "bg-gray-300 hover:bg-gray-400"}`} />
+                </button>
               ))}
             </div>
 

@@ -251,7 +251,7 @@ export default function ValuationCalculator() {
                         <button
                           key={opt.l}
                           onClick={() => updateDriver(driver.id, opt.v as Score)}
-                          className={`px-4 py-2 text-sm font-bold rounded-lg border transition-all ${drivers[driver.id] === opt.v ? 'bg-[#EE5B2C] border-[#EE5B2C] text-white shadow-md' : 'bg-white border-gray-200 text-gray-600 hover:border-[#EE5B2C] hover:text-[#EE5B2C]'}`}
+                          className={`px-4 py-3 text-sm font-bold rounded-lg border transition-all min-h-[44px] ${drivers[driver.id] === opt.v ? 'bg-[#EE5B2C] border-[#EE5B2C] text-white shadow-md' : 'bg-white border-gray-200 text-gray-600 hover:border-[#EE5B2C] hover:text-[#EE5B2C]'}`}
                         >
                           {opt.l}
                         </button>
@@ -382,7 +382,7 @@ export default function ValuationCalculator() {
               </div>
 
               <div className="text-center mt-12">
-                <button onClick={resetAll} className="text-gray-400 hover:text-[#EE5B2C] font-bold text-sm underline transition-colors">
+                <button onClick={resetAll} className="text-gray-400 hover:text-[#EE5B2C] font-bold text-sm underline transition-colors p-4 -m-4">
                   Start Over
                 </button>
               </div>

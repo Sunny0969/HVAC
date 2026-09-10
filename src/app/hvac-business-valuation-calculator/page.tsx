@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ValuationCalculator from '../../views/components/ValuationCalculator';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
+import ContactForm from '../../views/components/ContactForm';
 
 export const metadata: Metadata = {
   title: "Free HVAC Business Valuation Calculator | Florida",
@@ -110,32 +111,7 @@ export default function ValuationCalculatorPage() {
                 <p className="text-gray-600 mb-6 font-medium leading-relaxed">
                   Want a more detailed, customized analysis? Speak with an HVAC exit advisor today.
                 </p>
-                <form className="flex flex-col space-y-4">
-                  <div>
-                    <label htmlFor="calc-name" className="block text-sm font-bold text-[#022B3A] mb-1">Full Name *</label>
-                    <input id="calc-name" type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="John Doe" />
-                  </div>
-                  <div>
-                    <label htmlFor="calc-email" className="block text-sm font-bold text-[#022B3A] mb-1">Email Address *</label>
-                    <input id="calc-email" type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
-                  </div>
-                  <div>
-                    <label htmlFor="calc-phone" className="block text-sm font-bold text-[#022B3A] mb-1">Phone Number *</label>
-                    <input id="calc-phone" type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="(555) 123-4567" />
-                  </div>
-                  <div>
-                    <label htmlFor="calc-company" className="block text-sm font-bold text-[#022B3A] mb-1">Company Name</label>
-                    <input id="calc-company" type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" placeholder="Optional" />
-                  </div>
-                  <div>
-                    <label htmlFor="calc-message" className="block text-sm font-bold text-[#022B3A] mb-1">How can we help?</label>
-                    <textarea id="calc-message" rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all resize-none" placeholder="E.g., I'm thinking of selling in the next 12-24 months..."></textarea>
-                  </div>
-                  <button type="submit" className="w-full bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 mt-2">
-                    Request Free Consultation
-                  </button>
-                  <p className="text-xs text-gray-400 text-center mt-4">100% Confidential. No obligations.</p>
-                </form>
+                <ContactForm buttonText="Request Free Consultation" />
               </div>
             </div>
 

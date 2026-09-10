@@ -128,14 +128,16 @@ export default function FeaturedOpportunities({ items }: FeaturedOpportunitiesPr
           </div>
 
           {/* Navigation Dots/Bars */}
-          <div className="flex items-center justify-center gap-2 mt-6">
+          <div className="flex items-center justify-center gap-1 mt-6">
             {items.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${index === activeIndex ? 'w-8 bg-[#EE5B2C]' : 'w-4 bg-gray-600 hover:bg-gray-400'}`}
+                className="py-3 px-1 flex items-center justify-center"
                 aria-label={`Go to slide ${index + 1}`}
-              />
+              >
+                <span className={`h-1.5 rounded-full transition-all duration-300 block ${index === activeIndex ? 'w-8 bg-[#EE5B2C]' : 'w-4 bg-gray-600 hover:bg-gray-400'}`} />
+              </button>
             ))}
           </div>
         </div>

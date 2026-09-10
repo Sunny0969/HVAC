@@ -51,7 +51,7 @@ export default function FaqSidebar({ categories }: { categories: FaqCategory[] }
   };
 
   return (
-    <nav className="sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-6 pb-8 scrollbar-thin">
+    <nav className="hidden lg:block sticky top-32 max-h-[calc(100vh-10rem)] overflow-y-auto pr-6 pb-8 scrollbar-thin">
       <h3 className="text-xl font-black text-[#022B3A] mb-8 uppercase tracking-wider">Table of Contents</h3>
       
       <div className="space-y-8">
@@ -64,7 +64,7 @@ export default function FaqSidebar({ categories }: { categories: FaqCategory[] }
               <a 
                 href={`#${catId}`}
                 onClick={(e) => handleClick(e, catId)}
-                className={`font-black block mb-3 transition-colors ${isCatActive ? 'text-[#EE5B2C]' : 'text-[#022B3A] hover:text-[#EE5B2C]'}`}
+                className={`font-black block mb-3 py-2 transition-colors ${isCatActive ? 'text-[#EE5B2C]' : 'text-[#022B3A] hover:text-[#EE5B2C]'}`}
               >
                 {cat.category}
               </a>
@@ -79,7 +79,7 @@ export default function FaqSidebar({ categories }: { categories: FaqCategory[] }
                       <a 
                         href={`#${qId}`}
                         onClick={(e) => handleClick(e, qId)}
-                        className={`text-sm block transition-colors line-clamp-2 leading-snug ${isQActive ? 'text-[#EE5B2C] font-bold' : 'text-gray-500 hover:text-[#EE5B2C]'}`}
+                        className={`text-sm block py-2 transition-colors line-clamp-2 leading-snug ${isQActive ? 'text-[#EE5B2C] font-bold' : 'text-gray-500 hover:text-[#EE5B2C]'}`}
                       >
                         {item.q}
                       </a>

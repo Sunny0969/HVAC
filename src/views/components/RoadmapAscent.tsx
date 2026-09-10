@@ -131,10 +131,10 @@ export default function RoadmapAscent({ steps, isCompressed = false }: RoadmapAs
           <h2 className="text-3xl font-bold mb-12 text-center text-lime-400">
             {isCompressed ? "Our Process" : "How It Works"}
           </h2>
-          <div className="space-y-12 border-l-2 border-white/20 pl-6 ml-2">
+          <div className="space-y-12 border-l-2 border-white/20 pl-8 ml-4">
             {steps.map((step, i) => (
               <div key={i} className="relative">
-                <div className="absolute -left-[35px] top-1 w-4 h-4 rounded-full bg-lime-400 shadow-[0_0_15px_rgba(163,230,53,0.5)]" />
+                <div className="absolute -left-[39px] top-1 w-4 h-4 rounded-full bg-lime-400 shadow-[0_0_15px_rgba(163,230,53,0.5)]" />
                 <span className="text-sm font-bold text-lime-400 tracking-widest">{step.day}</span>
                 <h3 className="text-2xl font-bold mt-2 mb-3">{step.title}</h3>
                 <p className="text-white/80">{step.description}</p>

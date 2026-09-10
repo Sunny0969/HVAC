@@ -60,7 +60,7 @@ export default function Colonnade({ items }: ColonnadeProps) {
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
             onHoverStart={() => !isMobile && setActiveId(item.id)}
             onClick={() => setActiveId(item.id)}
-            className={`relative overflow-hidden cursor-pointer rounded-2xl group bg-gray-900`}
+            className={`relative overflow-hidden cursor-pointer rounded-2xl group bg-gray-900 touch-pan-y`}
           >
             {/* Background Image */}
             {item.image && (
