@@ -83,7 +83,7 @@ app.use('/api/blogs/:blogId/faqs', faqRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/leads', leadRoutes);
 app.use('/api/categories', categoryRoutes);
-app.use('/api/listings', auth, listingRoutes);
+app.use('/api/listings', listingRoutes);
 
 // Dynamic sitemap — mounted at root (not /api) so Google accesses /sitemap.xml directly.
 // Also exposes /sitemap-status and /sitemap-refresh for admin use.
@@ -134,5 +134,6 @@ start().catch(async (err) => {
   await printAtlasWhitelistHelp(err);
   process.exit(1);
 });
+
 
 

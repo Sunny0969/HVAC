@@ -1,6 +1,8 @@
 import express from 'express';
 const router = express.Router();
+router.use(requireAuth);
 import Listing from '../models/Listing.js';
+import { requireAuth } from '../middleware/auth.js';
 
 // GET all listings (Admin)
 router.get('/', async (req, res) => {
@@ -69,3 +71,4 @@ router.delete('/:id', async (req, res) => {
 });
 
 export default router;
+
