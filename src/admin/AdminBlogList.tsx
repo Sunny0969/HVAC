@@ -92,8 +92,8 @@ export default function AdminBlogList() {
                 <td>
                   <span className={`admin-status admin-status-${b.status}`}>{b.status}</span>
                 </td>
-                <td>{b.author?.name || '—'}</td>
-                <td>{new Date(b.createdAt).toLocaleString()}</td>
+                <td>{b.author || '—'}</td>
+                <td>{b.createdAt ? new Date(b.createdAt).toLocaleString() : '—'}</td>
                 <td>{b.updatedAt ? new Date(b.updatedAt).toLocaleString() : '—'}</td>
                 <td className="admin-table-actions">
                   <Link to={`/blogs/${b._id}/edit`}>Edit</Link>

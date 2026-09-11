@@ -18,7 +18,7 @@ const TOKEN_KEY = 'ppp_cms_token';
 
 let resolvedApiBase =
 
-  (import.meta.env.VITE_CMS_API_URL as string | undefined)?.replace(/\/$/, '') || '';
+  (process.env.NEXT_PUBLIC_CMS_API_URL as string | undefined)?.replace(/\/$/, '') || '';
 
 
 
@@ -94,14 +94,14 @@ async function resolveAdminApiBase(): Promise<string> {
 
   if (resolvedApiBase) return resolvedApiBase;
 
-  const explicitEnv = (import.meta.env.VITE_CMS_API_URL as string | undefined)?.trim();
+  const explicitEnv = (process.env.NEXT_PUBLIC_CMS_API_URL as string | undefined)?.trim();
   if (explicitEnv) {
     resolvedApiBase = explicitEnv.replace(/\/$/, '');
     return resolvedApiBase;
   }
 
   // Local Node / non-browser: leave empty so callers can still use relative paths where applicable.
-  if (import.meta.env.DEV || isLocalFrontendHost()) {
+  if ((process.env.NODE_ENV !== 'production') || isLocalFrontendHost()) {
     resolvedApiBase = '';
     return resolvedApiBase;
   }
@@ -226,7 +226,7 @@ async function adminRequest<T>(
       );
     }
     const localHint =
-      import.meta.env.DEV || isLocalFrontendHost()
+      (process.env.NODE_ENV !== 'production') || isLocalFrontendHost()
         ? ' Start the CMS API: cd cms-backend && npm start (port 4000), then use npm run dev.'
         : ' Open /health on this site (same-origin proxy). If that fails, restart the Render service and check MongoDB + env vars.';
     throw new Error(`Cannot reach CMS API.${localHint}`);
@@ -480,10 +480,10 @@ async function uploadCoverToCloudinaryDirect(
   filename: string
 ): Promise<{ url: string } | { error: string } | null> {
   const cloudName =
-    (import.meta.env.VITE_CLOUDINARY_CLOUD_NAME as string | undefined)?.trim() ||
+    (process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME as string | undefined)?.trim() ||
     DEFAULT_CLOUDINARY_CLOUD;
   const preset =
-    (import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET as string | undefined)?.trim() ||
+    (process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET as string | undefined)?.trim() ||
     DEFAULT_CLOUDINARY_PRESET;
 
   try {
@@ -676,5 +676,6 @@ export async function markLeadsRead(type?: 'form' | 'whatsapp') {
 export async function deleteLead(id: string) {
   return adminRequest<{ ok: boolean }>(`/api/leads/${id}`, { method: 'DELETE' });
 }
+
 
 
