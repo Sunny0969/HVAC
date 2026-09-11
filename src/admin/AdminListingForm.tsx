@@ -126,7 +126,7 @@ export default function AdminListingForm() {
             <span>Description</span>
             <div style={{ minHeight: '300px', border: '1px solid #ddd', borderRadius: '4px' }}>
               <BlogEditor
-                content={form.description || ''}
+                value={form.description || ''}
                 onChange={(html) => setForm({ ...form, description: html })}
               />
             </div>
