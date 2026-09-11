@@ -1,3 +1,4 @@
+import Listing from '../models/Listing.js';
 import { Router } from 'express';
 import { Blog } from '../models/Blog.js';
 import { Category } from '../models/Category.js';
@@ -239,6 +240,28 @@ router.get('/categories', async (_req, res, next) => {
     return res.json({ categories });
   } catch (err) {
     return next(err);
+  }
+});
+
+
+/** GET /api/public/listings */
+router.get('/listings', async (req, res, next) => {
+  try {
+    const listings = await Listing.find({ status: { $ne: 'Draft' } }).sort({ createdAt: -1 }).select('-__v');
+    res.json({ listings });
+  } catch (error) {
+    next(error);
+  }
+});
+
+/** GET /api/public/listings/:slug */
+router.get('/listings/:slug', async (req, res, next) => {
+  try {
+    const listing = await Listing.findOne({ slug: req.params.slug, status: { $ne: 'Draft' } }).select('-__v');
+    if (!listing) return res.status(404).json({ error: 'Listing not found' });
+    res.json({ listing });
+  } catch (error) {
+    next(error);
   }
 });
 

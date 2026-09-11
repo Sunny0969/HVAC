@@ -6,6 +6,7 @@ import { errorHandler, notFoundHandler } from './middleware/errorHandler.js';
 import authRoutes from './routes/auth.js';
 import blogRoutes from './routes/blogs.js';
 import categoryRoutes from './routes/categories.js';
+import listingRoutes from './routes/listings.js';
 import faqRoutes from './routes/faqs.js';
 import publicRoutes from './routes/public.js';
 import commentRoutes from './routes/comments.js';
@@ -82,6 +83,7 @@ app.use('/api/blogs/:blogId/faqs', faqRoutes);
 app.use('/api/comments', commentRoutes);
 app.use('/api/leads', leadRoutes);
 app.use('/api/categories', categoryRoutes);
+app.use('/api/listings', auth, listingRoutes);
 
 // Dynamic sitemap — mounted at root (not /api) so Google accesses /sitemap.xml directly.
 // Also exposes /sitemap-status and /sitemap-refresh for admin use.
@@ -132,3 +134,5 @@ start().catch(async (err) => {
   await printAtlasWhitelistHelp(err);
   process.exit(1);
 });
+
+

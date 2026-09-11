@@ -680,3 +680,65 @@ export async function deleteLead(id: string) {
 
 
 
+
+// --- LISTINGS API ---
+export type AdminListing = {
+  _id: string;
+  title: string;
+  slug: string;
+  status: 'Active' | 'Under Contract' | 'Sold' | 'Draft';
+  location?: string;
+  industry?: string;
+  askingPrice?: number;
+  revenue?: number;
+  cashFlow?: number;
+  ebitda?: number;
+  description?: string;
+  realEstate?: string;
+  ffe?: string;
+  inventory?: string;
+  employees?: string;
+  yearEstablished?: string;
+  reasonSelling?: string;
+  supportTraining?: string;
+  marketCompetition?: string;
+  coverImage?: string;
+  coverImageAlt?: string;
+  faqs?: BlogFaq[];
+  seo?: BlogSeo;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export async function fetchListings(filters: { status?: string; q?: string } = {}) {
+  const qs = new URLSearchParams();
+  if (filters.status) qs.set('status', filters.status);
+  if (filters.q) qs.set('q', filters.q);
+  const data = await adminRequest<{ listings: AdminListing[] }>(`/api/listings?${qs.toString()}`);
+  return data.listings;
+}
+
+export async function getListing(id: string) {
+  const data = await adminRequest<{ listing: AdminListing }>(`/api/listings/${id}`);
+  return data.listing;
+}
+
+export async function createListing(payload: Partial<AdminListing>) {
+  const data = await adminRequest<{ listing: AdminListing }>('/api/listings', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+  });
+  return data.listing;
+}
+
+export async function updateListing(id: string, payload: Partial<AdminListing>) {
+  const data = await adminRequest<{ listing: AdminListing }>(`/api/listings/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(payload),
+  });
+  return data.listing;
+}
+
+export async function deleteListing(id: string) {
+  await adminRequest<{ success: boolean }>(`/api/listings/${id}`, { method: 'DELETE' });
+}
