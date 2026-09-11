@@ -26,6 +26,9 @@ export default function AdminApp() {
         >
           <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard" element={<AdminDashboard />} />
+          <Route path="listings" element={<AdminListingList />} />
+          <Route path="listings/new" element={<AdminListingForm />} />
+          <Route path="listings/:id/edit" element={<AdminListingForm />} />
           <Route path="blogs" element={<AdminBlogList />} />
           <Route path="blogs/new" element={<AdminBlogForm />} />
           <Route path="blogs/edit/:id" element={<AdminBlogForm />} />

@@ -60,6 +60,7 @@ export default function AdminLayout() {
               </span>
             ) : null}
           </NavLink>
+          <NavLink to="/listings">Listings</NavLink>
           <NavLink to="/blogs">Blogs</NavLink>
           <NavLink to="/comments">Comments</NavLink>
           <NavLink to="/blogs/new">New blog</NavLink>
