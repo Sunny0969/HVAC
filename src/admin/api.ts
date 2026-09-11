@@ -81,7 +81,8 @@ export async function checkCmsApiHealth(): Promise<boolean> {
 
 function isLiveSiteHost(): boolean {
   if (typeof window === 'undefined') return false;
-  return window.location.hostname.replace(/^www\./, '') === 'hvacexitadvisors.com';
+  const host = window.location.hostname;
+  return host.replace(/^www\./, '') === 'hvacexitadvisors.com' || host.endsWith('.vercel.app');
 }
 
 /** Resolve CMS API origin: build env → cms-api-config.json → production default. */

@@ -45,18 +45,19 @@ const nextConfig: NextConfig = {
     ];
   },
   async rewrites() {
+    const backendUrl = process.env.NEXT_PUBLIC_CMS_API_URL?.replace(/\/api\/public$/, '')?.replace(/\/api$/, '') || 'http://localhost:4000';
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:4000/api/:path*',
+        destination: `${backendUrl}/api/:path*`,
       },
       {
         source: '/Images/cms-uploads/:path*',
-        destination: 'http://localhost:4000/Images/cms-uploads/:path*',
+        destination: `${backendUrl}/Images/cms-uploads/:path*`,
       },
       {
         source: '/health',
-        destination: 'http://localhost:4000/health',
+        destination: `${backendUrl}/health`,
       }
     ];
   },
