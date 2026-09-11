@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
     ],
     formats: ['image/avif', 'image/webp'],
   },
@@ -38,6 +42,22 @@ const nextConfig: NextConfig = {
         destination: '/:path*',
         permanent: true,
       },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://localhost:4000/api/:path*',
+      },
+      {
+        source: '/Images/cms-uploads/:path*',
+        destination: 'http://localhost:4000/Images/cms-uploads/:path*',
+      },
+      {
+        source: '/health',
+        destination: 'http://localhost:4000/health',
+      }
     ];
   },
 };

@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useFooterController } from "../../controllers/useFooterController";
 
 export default function Footer() {
+  const pathname = usePathname();
   const { navigationData, floridaCities, isAreasOpen, toggleAreas } = useFooterController();
+
+  if (pathname?.startsWith("/admin")) return null;
 
   return (
     <footer className="bg-primary text-white pt-12 pb-24 md:pb-12 border-t border-white/10">

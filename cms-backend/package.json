@@ -1,0 +1,30 @@
+{
+  "name": "hvacexitadvisors-cms-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pick Pack Pro blog CMS API (Express + MongoDB)",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "start:pm2": "pm2 start ecosystem.config.cjs",
+    "seed:admin": "node src/scripts/seedAdmin.js",
+    "verify": "node src/scripts/verifyConnection.js",
+    "check-ip": "node src/scripts/checkAtlasIp.js",
+    "migrate:blogs": "node src/scripts/migrate-existing-blogs.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.1",
+    "multer": "^2.2.0",
+    "slugify": "^1.6.6"
+  }
+}

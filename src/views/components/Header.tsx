@@ -8,6 +8,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Header() {
   const pathname = usePathname();
+  
+  if (pathname?.startsWith("/admin")) return null;
+
   const isHomePage = pathname === "/";
 
   const {
