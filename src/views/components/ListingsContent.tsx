@@ -45,7 +45,7 @@ export default function ListingsContent({ listings }: Props) {
   }, [listings, search, statusFilter, locationFilter, industryFilter, minPrice, maxPrice, sortOrder]);
 
   const formatMoney = (val?: number) => {
-    if (val == null || val === 0) return '—';
+    if (val == null || val === 0) return '---';
     if (val >= 1000000) return `$${(val / 1000000).toFixed(2)}m`;
     if (val >= 1000) return `$${Math.round(val / 1000)}k`;
     return `$${val}`;

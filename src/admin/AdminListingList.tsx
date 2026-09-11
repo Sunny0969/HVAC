@@ -40,7 +40,7 @@ export default function AdminListingList() {
   };
 
   const formatMoney = (val?: number) => {
-    if (val == null) return '—';
+    if (val == null) return '---';
     if (val >= 1000000) return `$${(val / 1000000).toFixed(2)}M`;
     if (val >= 1000) return `$${Math.round(val / 1000)}k`;
     return `$${val}`;
@@ -103,7 +103,7 @@ export default function AdminListingList() {
                   </td>
                   <td>{formatMoney(l.askingPrice)}</td>
                   <td>{formatMoney(l.revenue)}</td>
-                  <td>{l.location || '—'}</td>
+                  <td>{l.location || '---'}</td>
                   <td className="admin-table-actions">
                     <Link to={`/listings/${l._id}/edit`}>Edit</Link>
                     {l.status !== 'Draft' ? (
