@@ -340,21 +340,6 @@ export default function AdminBlogForm() {
               onChange={(e) => setSeo({ ...seo, metaDescription: e.target.value })}
             />
           </label>
-          <AdminImageField
-            label="OG image (social share)"
-            url={seo.ogImage || ''}
-            alt={seo.ogImageAlt || ''}
-            onUrlChange={(url) => setSeo({ ...seo, ogImage: url })}
-            onAltChange={(alt) => setSeo({ ...seo, ogImageAlt: alt })}
-            urlPlaceholder="Leave empty to use cover image"
-          />
-          <label className="admin-field">
-            <span>Canonical URL</span>
-            <input
-              value={seo.canonicalUrl || ''}
-              onChange={(e) => setSeo({ ...seo, canonicalUrl: e.target.value })}
-            />
-          </label>
           <label className="admin-field">
             <span>Schema type</span>
             <select
