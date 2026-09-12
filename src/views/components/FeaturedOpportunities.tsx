@@ -36,7 +36,7 @@ export default function FeaturedOpportunities({ items }: FeaturedOpportunitiesPr
             src={activeItem.image || ""}
             alt={activeItem.title}
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
           {/* Dark gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/90 to-gray-900/40" />
@@ -113,7 +113,7 @@ export default function FeaturedOpportunities({ items }: FeaturedOpportunitiesPr
                       src={item.image || ""}
                       alt={item.title}
                       fill
-                      className="object-cover transition-transform duration-700 hover:scale-110"
+                      className="object-cover object-center transition-transform duration-700 hover:scale-110"
                     />
                     <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-80'}`} />
                     

@@ -8,6 +8,29 @@ import TestimonialSlider from '../views/components/TestimonialSlider';
 import Colonnade from '../views/components/Colonnade';
 import { differentiators } from '../data/differentiators';
 
+let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
+_rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
+const API_URL = `${_rootUrl}/api/public`;
+
+async function getFeaturedListings() {
+  try {
+    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 } });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.listings || [];
+  } catch (error) {
+    return [];
+  }
+}
+
+const formatMoney = (val?: number) => {
+  if (val == null || val === 0) return '---';
+  if (val >= 1000000) return `${(val / 1000000).toFixed(1)}M`;
+  if (val >= 1000) return `${Math.round(val / 1000)}k`;
+  return `${val}`;
+};
+
+
 export const metadata: Metadata = {
   title: 'Florida HVAC Business Broker',
   description: 'The premier Florida HVAC business broker helping owners sell and buyers acquire commercial and residential HVAC businesses. Get your free valuation today!',
@@ -29,12 +52,7 @@ const homeSteps: RoadmapStep[] = [
   { title: "The Close", description: "Due diligence, signatures, and wire transfers.", day: "PHASE 4" }
 ];
 
-const featuredListings: CarouselItem[] = [
-  { id: 1, title: "Coastal Mechanical Group", subtitle: "Miami, FL", content: "Highly profitable commercial HVAC contractor dominating the high-rise market.", tags: ["$8.2M Revenue", "$1.5M Cash Flow"], href: "/listings/coastal-mechanical", image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=75" },
-  { id: 2, title: "Sunshine Cooling & Heating", subtitle: "Orlando, FL", content: "Residential service powerhouse with 2,500+ active maintenance agreements.", tags: ["$3.1M Revenue", "$650k Cash Flow"], href: "/listings/sunshine-cooling", image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=600&q=75" },
-  { id: 3, title: "Gulf Coast Refrigeration", subtitle: "Tampa, FL", content: "Niche B2B refrigeration and HVAC services for the restaurant industry.", tags: ["$4.5M Revenue", "$900k Cash Flow"], href: "/listings/gulf-coast-refrigeration", image: "https://images.unsplash.com/photo-1621905252472-747262ba94a4?auto=format&fit=crop&w=600&q=75" },
-  { id: 4, title: "Panhandle HVAC Pro", subtitle: "Pensacola, FL", content: "Premier HVAC services with deep roots in the community.", tags: ["$2.2M Revenue", "$400k Cash Flow"], href: "/listings/panhandle-hvac", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=600&q=75" }
-];
+
 
 const testimonials: CarouselItem[] = [
   { id: 1, title: "John D.", subtitle: "Former Owner, Sunshine Cooling", content: "They understood exactly how to value our recurring revenue. We sold for 30% more than my CPA estimated.", rating: 5 },
@@ -42,7 +60,20 @@ const testimonials: CarouselItem[] = [
   { id: 3, title: "Robert & Elaine P.", subtitle: "Retired Founders", content: "Selling a family business of 40 years is emotional. HVAC Exit Advisors handled the transition with absolute grace and discretion.", rating: 5 }
 ];
 
-export default function Home() {
+export const revalidate = 60;
+
+export default async function Home() {
+  const listingsData = await getFeaturedListings();
+  const realFeaturedListings = listingsData.slice(0, 5).map((l: any) => ({
+    id: l._id,
+    title: l.title,
+    subtitle: l.location || "Location not specified",
+    content: (l.description || l.title).replace(/<[^>]*>?/gm, "").substring(0, 150) + "...",
+    tags: [`${formatMoney(l.revenue)} Revenue`, `${formatMoney(l.cashFlow)} Cash Flow`],
+    href: `/listings/${l.slug}`,
+    image: l.coverImage || "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=75"
+  }));
+
   const homeSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -150,7 +181,7 @@ export default function Home() {
         </div>
       </section>
 
-      <FeaturedOpportunities items={featuredListings} />
+      {realFeaturedListings.length > 0 && <FeaturedOpportunities items={realFeaturedListings} />}
       <TestimonialSlider items={testimonials} />
     </>
   );
