@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 import ListingLeadForm from '@/views/components/ListingLeadForm';
 
@@ -118,7 +119,14 @@ export default async function ListingDetailPage({ params }: { params: Promise<{ 
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       
       <main className="min-h-screen bg-[#F7F5F0] py-12 md:py-24 mt-16 md:mt-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="flex flex-col lg:flex-row gap-8"><div className="flex-1 w-full lg:max-w-[70%]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-6">
+            <Link href="/listings" className="inline-flex items-center text-sm font-bold text-[#EE5B2C] hover:text-[#c44922] transition-colors">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+              Back to Listings
+            </Link>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-8"><div className="flex-1 w-full lg:max-w-[70%]">
           
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8">
             {listing.coverImage && (
