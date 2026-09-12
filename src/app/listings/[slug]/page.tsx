@@ -7,6 +7,17 @@ let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").
 _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
 const API_URL = `${_rootUrl}/api/public`;
 
+async function getAllListings() {
+  try {
+    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 } });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.listings || [];
+  } catch (error) {
+    return [];
+  }
+}
+
 async function getListing(slug: string) {
   try {
     const res = await fetch(`${API_URL}/listings/${slug}`, { next: { revalidate: 60 } });
@@ -20,7 +31,11 @@ async function getListing(slug: string) {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const listing = await getListing(slug);
+  const [listing, allListings] = await Promise.all([
+    getListing(slug),
+    getAllListings()
+  ]);
+  const otherListings = allListings.filter((l: any) => l._id !== listing._id).slice(0, 10);
   if (!listing) return { title: 'Not Found' };
 
   const title = listing.seo?.metaTitle || `${listing.title} | HVAC Business for Sale`;
@@ -99,7 +114,7 @@ export default async function ListingDetailPage({ params }: { params: Promise<{ 
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       
       <main className="min-h-screen bg-[#F7F5F0] py-12 md:py-24 mt-16 md:mt-0">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="flex flex-col lg:flex-row gap-8"><div className="flex-1 w-full lg:max-w-[70%]">
           
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-8">
             {listing.coverImage && (
@@ -222,6 +237,23 @@ export default async function ListingDetailPage({ params }: { params: Promise<{ 
           )}
 
           <ListingLeadForm listingTitle={listing.title} />
+            </div>
+
+            <aside className="w-full lg:w-[30%] flex-shrink-0">
+              <div className="sticky top-28 bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-xl font-black text-[#022B3A] mb-4 border-b border-gray-100 pb-3">Other Listings</h3>
+                <div className="space-y-5">
+                  {otherListings.map((l: any) => (
+                    <a href={`/listings/${l.slug}`} key={l._id} className="block group">
+                      <h4 className="text-gray-800 font-bold group-hover:text-[#EE5B2C] transition-colors leading-snug">{l.title}</h4>
+                      {l.location && <p className="text-xs text-gray-500 mt-1">{l.location}</p>}
+                    </a>
+                  ))}
+                  {otherListings.length === 0 && <p className="text-sm text-gray-500">No other listings available.</p>}
+                </div>
+              </div>
+            </aside>
+          </div>
 
         </div>
       </main>
