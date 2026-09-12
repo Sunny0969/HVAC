@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   description: 'Browse our exclusive catalog of HVAC businesses for sale. Filter by location, revenue, and cash flow to find your next acquisition.',
 };
 
-const API_URL = process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api/public";
+const _base = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api").replace(/\/$/, '');
+const API_URL = _base.endsWith('/public') ? _base : _base + '/public';
 
 export default async function ListingsPage() {
   let listings: any[] = [];

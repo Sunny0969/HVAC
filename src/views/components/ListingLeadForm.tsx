@@ -13,7 +13,8 @@ export default function ListingLeadForm({ listingTitle }: { listingTitle: string
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  const API_URL = process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api/public";
+  const _base = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api").replace(/\/$/, '');
+const API_URL = _base.endsWith('/public') ? _base : _base + '/public';
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

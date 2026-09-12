@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 import ListingLeadForm from '@/views/components/ListingLeadForm';
 
-const API_URL = process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api/public";
+const _base = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api").replace(/\/$/, '');
+const API_URL = _base.endsWith('/public') ? _base : _base + '/public';
 
 async function getListing(slug: string) {
   try {
