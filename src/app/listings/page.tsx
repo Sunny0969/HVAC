@@ -9,15 +9,25 @@ export const metadata: Metadata = {
 const _base = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api").replace(/\/$/, '');
 const API_URL = _base.endsWith('/public') ? _base : _base + '/public';
 
+export const revalidate = 0; // Disable static caching completely
+
 export default async function ListingsPage() {
   let listings: any[] = [];
+  let debug = '';
   try {
-    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 } });
+    const fetchUrl = `${API_URL}/listings`;
+    debug += `Fetching: ${fetchUrl} | `;
+    const res = await fetch(fetchUrl, { next: { revalidate: 60 } });
+    debug += `Status: ${res.status} ${res.statusText} | `;
     if (res.ok) {
       const data = await res.json();
       listings = data.listings || [];
+      debug += `Data length: ${listings.length}`;
+    } else {
+      debug += `Res not ok.`;
     }
-  } catch (error) {
+  } catch (error: any) {
+    debug += `Error: ${error?.message || String(error)}`;
     console.error("Failed to fetch listings", error);
   }
 
@@ -32,6 +42,7 @@ export default async function ListingsPage() {
           <p className="text-lg md:text-xl text-white/80 font-medium">
             Explore premium mechanical contractors and HVAC service businesses available for acquisition.
           </p>
+          <div className="mt-4 p-2 bg-black/50 text-xs text-left overflow-hidden">DEBUG: {debug}</div>
         </div>
       </section>
 
