@@ -13,8 +13,9 @@ export default function ListingLeadForm({ listingTitle }: { listingTitle: string
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  const _base = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api").replace(/\/$/, '');
-const API_URL = _base.endsWith('/public') ? _base : _base + '/public';
+  let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
+  _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
+  const API_URL = `${_rootUrl}/api`;
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

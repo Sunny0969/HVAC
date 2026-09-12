@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import BreadcrumbSchema from "@/views/components/BreadcrumbSchema";
 
-const _base = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000/api").replace(/\/$/, '');
-const API_URL = _base.endsWith('/public') ? _base : _base + '/public';
+let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
+_rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
+const API_URL = `${_rootUrl}/api/public`;
 
 async function getBlog(slug: string) {
   try {
