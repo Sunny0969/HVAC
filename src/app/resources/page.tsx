@@ -22,6 +22,14 @@ export const metadata: Metadata = {
 
 const staticArticles = [
   {
+    title: "Ultimate Guide to the Florida HVAC Industry: Salaries, Demand, and Business Rules",
+    category: "Industry Insights",
+    description: "Discover how much HVAC owners make in Florida, understand the $5000 rule, licensing requirements, and find out if Florida is a lucrative market.",
+    href: "/resources/florida-hvac-industry-guide",
+    readTime: "8 min read",
+  },
+
+  {
     title: "What's the Real Number That Matters When Evaluating an HVAC Business?",
     category: "Acquisition Guide",
     description: "Understand why gross revenue can be deceptive and why normalized Seller's Discretionary Earnings (SDE) and recurring maintenance agreements dictate true value.",
