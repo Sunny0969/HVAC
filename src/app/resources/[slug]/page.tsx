@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: blog.seoTitle || blog.title,
     description: blog.seoDescription || blog.excerpt,
-    alternates: { canonical: blog.seo?.canonicalUrl || `https://www.hvacexitadvisors.com/resources/${slug}` },
+    alternates: { canonical: (blog.seo?.canonicalUrl || "").replace("/blog/", "/resources/") || `https://www.hvacexitadvisors.com/resources/${slug}` },
     openGraph: {
       title: blog.seoTitle || blog.title,
       description: blog.seoDescription || blog.excerpt,
