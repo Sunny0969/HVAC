@@ -259,11 +259,11 @@ export default function SellPageContent() {
         <h2 className="text-3xl md:text-4xl font-black mb-10 text-center text-[#022B3A]">Frequently Asked Questions</h2>
         <div className="flex flex-col space-y-4">
           {[
-            { q: "How long does it take to sell an HVAC business in Florida?", a: "<strong>Short Answer:</strong> Timelines vary with business size, financial documentation, and buyer demand in your region, but most Florida HVAC sales we handle move from listing to closing within several months once the business is properly prepared and priced." },
-            { q: "Will my employees or customers find out I'm selling?", a: "<strong>Short Answer:</strong> Not through us. We market confidentially, require signed NDAs before releasing any identifying details, and control disclosure timing with you throughout the process." },
-            { q: "What's my HVAC business worth?", a: "<strong>Short Answer:</strong> It depends on revenue mix (install vs. service vs. maintenance agreements), technician retention, fleet condition, and current Florida buyer demand. A free valuation gives you a real, data-backed range." },
-            { q: "Do I need to have my financials perfectly organized before reaching out?", a: "<strong>Short Answer:</strong> No - many owners start the conversation before financials are fully clean. Part of what we do is help you understand what documentation buyers will expect and get you ready." },
-            { q: "What does it cost to work with HVAC Exit Advisors?", a: "<strong>Short Answer:</strong> We don't charge a fee unless your business sells. Your free valuation and initial consultation carry no obligation." }
+            { q: "How long does it take to sell an HVAC business in Florida?", a: "Timelines vary with business size, financial documentation, and buyer demand in your region, but most Florida HVAC sales we handle move from listing to closing within several months once the business is properly prepared and priced." },
+            { q: "Will my employees or customers find out I'm selling?", a: "Not through us. We market confidentially, require signed NDAs before releasing any identifying details, and control disclosure timing with you throughout the process." },
+            { q: "What's my HVAC business worth?", a: "It depends on revenue mix (install vs. service vs. maintenance agreements), technician retention, fleet condition, and current Florida buyer demand. A free valuation gives you a real, data-backed range." },
+            { q: "Do I need to have my financials perfectly organized before reaching out?", a: "No - many owners start the conversation before financials are fully clean. Part of what we do is help you understand what documentation buyers will expect and get you ready." },
+            { q: "What does it cost to work with HVAC Exit Advisors?", a: "We don't charge a fee unless your business sells. Your free valuation and initial consultation carry no obligation." }
           ].map((faq, i) => (
             <motion.div 
               key={i} 
@@ -296,11 +296,11 @@ export default function SellPageContent() {
                       <p className="pt-4">
                         {faq.q === "What's my HVAC business worth?" ? (
                           <>
-                            {faq.a} <Link href="/faqs" className="text-[#EE5B2C] hover:underline whitespace-nowrap ml-1">Read more in full FAQs &rarr;</Link>
+                            <strong>Short Answer:</strong> {faq.a} <Link href="/faqs" className="text-[#EE5B2C] hover:underline whitespace-nowrap ml-1">Read more in full FAQs &rarr;</Link>
                           </>
                         ) : (
-                          faq.a
-                        )}
+                            <><strong>Short Answer:</strong> {faq.a}</>
+                          )}
                       </p>
                     </div>
                   </motion.div>

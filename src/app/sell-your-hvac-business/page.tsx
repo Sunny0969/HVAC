@@ -132,7 +132,7 @@ export default function SellYourHVACBusiness() {
     <div className="w-full bg-[#F7F5F0] min-h-screen font-sans">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
+        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(articleSchema)},${JSON.stringify(jsonLdService)}]` }}
       />
       <script
         type="application/ld+json"
