@@ -3,6 +3,7 @@ import Hero from '../views/components/Hero';
 import RoadmapAscent, { RoadmapStep } from '../views/components/RoadmapAscent';
 import HowItWorksSteps from '../views/components/HowItWorksSteps';
 import SpotlightCarousel, { CarouselItem } from '../views/components/SpotlightCarousel';
+import MarketInsightsFAQ from '../views/components/MarketInsightsFAQ';
 import FeaturedOpportunities from '../views/components/FeaturedOpportunities';
 import TestimonialSlider from '../views/components/TestimonialSlider';
 import Colonnade from '../views/components/Colonnade';
@@ -181,6 +182,7 @@ export default async function Home() {
         </div>
       </section>
 
+      <MarketInsightsFAQ />
       {realFeaturedListings.length > 0 && <FeaturedOpportunities items={realFeaturedListings} />}
       <TestimonialSlider items={testimonials} />
     </>
