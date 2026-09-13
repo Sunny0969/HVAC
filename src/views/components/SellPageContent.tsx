@@ -347,10 +347,6 @@ export default function SellPageContent() {
           <Link href="/success-stories" className="text-[#EE5B2C] font-bold hover:underline">View All Success Stories &rarr;</Link>
         </div>
       </motion.div>
-
-        </div>
-        
-        
       {/* Block 10: SEO Keywords Section */}
       <motion.div
         variants={fadeUpVariant}
@@ -379,6 +375,12 @@ export default function SellPageContent() {
           Navigating the <strong>buy and sell business</strong> landscape can be complex. Some owners attempt to <strong>sell my business online</strong> or look for ways to <strong>sell my business for free</strong> on generic listing sites. However, to safely manage the <strong>sale of a business</strong> (or "<strong>sale a business</strong>"), you need a broker who uses confidential <Link href="/listings" className="text-[#EE5B2C] font-bold hover:underline">blind profiles</Link>. Whether you intend to <strong>buy or sell business</strong> assets, professional representation prevents competitors from learning your trade secrets while securing the highest possible offer. If you want to know <strong>how to sell a business quickly</strong>, trust Florida's premier HVAC specialists.
         </p>
       </motion.div>
+
+
+        </div>
+        
+        
+      
 
         
         {/* Right Sticky Form Column */}

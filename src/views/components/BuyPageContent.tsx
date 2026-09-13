@@ -305,10 +305,6 @@ export default function BuyPageContent() {
               <Link href="/success-stories" className="text-[#EE5B2C] font-bold hover:underline">View All Success Stories &rarr;</Link>
             </div>
           </motion.div>
-
-        </div>
-        
-        
       {/* Block 9: SEO Keywords Section for Buyers */}
       <motion.div
         variants={fadeUpVariant}
@@ -337,6 +333,12 @@ export default function BuyPageContent() {
           Before you commit capital, you must know <strong>how to value a business to buy</strong>. We guide you through analyzing Seller's Discretionary Earnings (SDE), reviewing add-backs, and assessing fleet condition using our <Link href="/resources" className="text-[#EE5B2C] font-bold hover:underline">market trend resources</Link>. Ultimately, whether you plan to <strong>sell or buy a business</strong>, professional brokerage ensures a seamless transition. If you are ready to <strong>buy business</strong> assets with confidence, contact our advisory team today.
         </p>
       </motion.div>
+
+
+        </div>
+        
+        
+      
 
         
         {/* Right Sticky Form Column (Reusing the requested layout) */}
