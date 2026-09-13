@@ -115,12 +115,7 @@ export default function TestimonialSlider({ items }: TestimonialSliderProps) {
                   <div>
                     {/* Top Image Thumbnail to make card look fuller */}
                     <div className="relative w-full h-44 rounded-2xl overflow-hidden mb-6">
-                      <Image 
-                        src={getCardImage(item.id)} 
-                        alt="Business Transition" 
-                        fill 
-                        className="object-cover group-hover:scale-105 transition-transform duration-700" 
-                      />
+                      <img src={getCardImage(item.id)} alt="Business Transition" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
                         <span className="text-yellow-500 text-sm">★</span>
                         <span className="text-[#022B3A] font-bold text-xs">{item.rating || "5.0"}</span>
@@ -146,12 +141,7 @@ export default function TestimonialSlider({ items }: TestimonialSliderProps) {
                     <div className="w-full h-px bg-gray-200 mb-6"></div>
                     <div className="flex items-center gap-4">
                       <div className="w-14 h-14 rounded-full overflow-hidden relative border-2 border-white shadow-sm">
-                        <Image 
-                          src={item.image || getAvatar(item.title, item.id)}
-                          alt={item.title}
-                          fill
-                          className="object-cover"
-                        />
+                        <img src={item.image || getAvatar(item.title, item.id)} alt={item.title} className="w-full h-full object-cover" />
                       </div>
                       <div>
                         <h3 className="text-[#022B3A] font-bold text-base">{item.title}</h3>
