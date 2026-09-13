@@ -24,14 +24,14 @@ export default function TeamPageContent() {
         {/* Left Column: Team Profiles */}
         <div className="lg:col-span-8">
           <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true, margin: "-50px" }}
             className="space-y-12"
           >
             {/* Sanjay Wadhwani Profile */}
-            <motion.div variants={fadeUpVariant} className="bg-white rounded-[2rem] p-8 md:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col md:flex-row gap-8 items-start">
+            <motion.div  className="bg-white rounded-[2rem] p-8 md:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col md:flex-row gap-8 items-start">
               {/* Profile Image Silhouette / Placeholder */}
               <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gray-50 flex-shrink-0 border-2 border-gray-100 overflow-hidden relative shadow-inner">
                  <div className="absolute inset-0 flex items-center justify-center text-gray-300">

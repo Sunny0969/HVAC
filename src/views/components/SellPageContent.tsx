@@ -38,9 +38,9 @@ export default function SellPageContent() {
       
       {/* Block 1: Intro (Clean White Card) */}
       <motion.div 
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-12"
       >
@@ -57,9 +57,9 @@ export default function SellPageContent() {
 
       {/* Block 2: Confidentiality (Dark Navy Card) */}
       <motion.div 
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="bg-[#022B3A] rounded-[2rem] p-8 md:p-12 shadow-2xl mb-12 text-white relative overflow-hidden"
       >
@@ -77,9 +77,9 @@ export default function SellPageContent() {
         <div className="relative z-10 bg-white/5 border border-white/10 rounded-2xl p-8">
           <p className="text-xl font-bold mb-6 text-[#EE5B2C]">What this looks like in practice:</p>
           <motion.ul 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true }}
             className="grid sm:grid-cols-2 gap-4 text-lg text-white/90"
           >
@@ -89,7 +89,7 @@ export default function SellPageContent() {
               "Buyer pre-screening for financial capability before an introduction happens",
               "You control who finds out, and when"
             ].map((text, i) => (
-              <motion.li key={i} variants={fadeUpVariant} className="flex items-start bg-black/20 p-4 rounded-xl">
+              <motion.li key={i}  className="flex items-start bg-black/20 p-4 rounded-xl">
                 <svg className="w-6 h-6 text-[#EE5B2C] mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                 <span className="font-medium">{text}</span>
               </motion.li>
@@ -100,9 +100,9 @@ export default function SellPageContent() {
 
       {/* Block 3: Valuation (Vibrant Orange Gradient Card) */}
       <motion.div 
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="bg-gradient-to-br from-[#EE5B2C] to-orange-500 rounded-[2rem] p-8 md:p-12 shadow-2xl shadow-orange-500/20 mb-12 text-white relative overflow-hidden"
       >
@@ -150,9 +150,9 @@ export default function SellPageContent() {
       {/* Block 4 & 5 Grid: Marketing & Closing */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <motion.div 
-          variants={fadeUpVariant}
-          initial="hidden"
-          whileInView="visible"
+          
+          
+          
           viewport={{ once: true, margin: "-50px" }}
           className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col"
         >
@@ -169,9 +169,9 @@ export default function SellPageContent() {
         </motion.div>
 
         <motion.div 
-          variants={fadeUpVariant}
-          initial="hidden"
-          whileInView="visible"
+          
+          
+          
           viewport={{ once: true, margin: "-50px" }}
           className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col"
         >
@@ -197,9 +197,9 @@ export default function SellPageContent() {
 
       {/* Block 6 & 7: Right Time & Why Us */}
       <motion.div 
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 mb-12 overflow-hidden"
       >
@@ -218,9 +218,9 @@ export default function SellPageContent() {
               </h2>
             </Link>
             <motion.div 
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
+              
+              
+              
               viewport={{ once: true }}
               className="space-y-4"
             >
@@ -233,7 +233,7 @@ export default function SellPageContent() {
                 { title: "Buyer-qualified process", desc: <>no tire-kickers, no wasted disclosure</> },
                 { title: "No fee until you close", desc: <>our incentive is your outcome, not a listing fee</> }
               ].map((item, i) => (
-                <motion.div key={i} variants={fadeUpVariant} className="flex items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
+                <motion.div key={i}  className="flex items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
                   <div className="w-8 h-8 rounded-full bg-orange-100 text-[#EE5B2C] flex items-center justify-center flex-shrink-0 mr-4">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                   </div>
@@ -250,9 +250,9 @@ export default function SellPageContent() {
 
       {/* Block 8: FAQs (Grid layout for cards) */}
       <motion.div 
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="mb-12"
       >
@@ -267,7 +267,7 @@ export default function SellPageContent() {
           ].map((faq, i) => (
             <motion.div 
               key={i} 
-              variants={fadeUpVariant} 
+               
               className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
             >
               <button 
@@ -313,9 +313,9 @@ export default function SellPageContent() {
 
       {/* Block 9: Success Stories Teasers */}
       <motion.div
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="mb-12"
       >
@@ -349,9 +349,9 @@ export default function SellPageContent() {
       </motion.div>
       {/* Block 10: SEO Keywords Section */}
       <motion.div
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="mb-12 border-t border-gray-200 pt-12"
       >

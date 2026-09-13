@@ -178,7 +178,7 @@ export default function SpotlightCarousel({ items, title }: SpotlightCarouselPro
             {title && <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-4">{title}</h2>}
             
             <div className="h-28 flex flex-col justify-end">
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={activeIndex}
                   initial={{ opacity: 0, y: 10 }}

@@ -159,7 +159,7 @@ export default function ValuationCalculator() {
       </div>
 
       <div className="p-8 md:p-12">
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           
           {/* STEP 1: FINANCIALS */}
           {step === 1 && (

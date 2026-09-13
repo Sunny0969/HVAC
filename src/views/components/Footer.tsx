@@ -90,6 +90,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-lg font-bold mb-4">Areas We Serve (Florida)</h3>
             
+            <Link href="/florida" className="text-white hover:text-secondary font-bold transition-colors text-base block mb-4">Florida State Guide &rarr;</Link>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
               {floridaCities.map((city) => {
                 const slug = city.toLowerCase().replace(/\s+/g, '-');

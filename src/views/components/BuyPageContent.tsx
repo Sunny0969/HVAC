@@ -39,9 +39,9 @@ export default function BuyPageContent() {
       
           {/* Block 1: Why Buy (Clean White Card) */}
           <motion.div 
-            variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true, margin: "-50px" }}
             className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-12"
           >
@@ -58,9 +58,9 @@ export default function BuyPageContent() {
 
           {/* Block 2: What to Look For (Checklist Card) */}
           <motion.div 
-            variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true, margin: "-50px" }}
             className="bg-gray-50 rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 mb-12"
           >
@@ -70,9 +70,9 @@ export default function BuyPageContent() {
             </p>
             
             <motion.ul 
-              variants={staggerContainer}
-              initial="hidden"
-              whileInView="visible"
+              
+              
+              
               viewport={{ once: true }}
               className="space-y-4 mb-8"
             >
@@ -84,7 +84,7 @@ export default function BuyPageContent() {
                 { title: "Budget fit", desc: "purchase price relative to what you can finance or bring in cash" },
                 { title: "True earning power", desc: "what the business actually generates once you normalize for owner perks and one-off expenses" }
               ].map((item, i) => (
-                <motion.li key={i} variants={fadeUpVariant} className="flex items-start bg-white p-5 rounded-xl shadow-sm border border-gray-100">
+                <motion.li key={i}  className="flex items-start bg-white p-5 rounded-xl shadow-sm border border-gray-100">
                   <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                   </div>
@@ -102,9 +102,9 @@ export default function BuyPageContent() {
           {/* Block 3 & 4 Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <motion.div 
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
+              
+              
+              
               viewport={{ once: true, margin: "-50px" }}
               className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col"
             >
@@ -134,9 +134,9 @@ export default function BuyPageContent() {
             </motion.div>
 
             <motion.div 
-              variants={fadeUpVariant}
-              initial="hidden"
-              whileInView="visible"
+              
+              
+              
               viewport={{ once: true, margin: "-50px" }}
               className="bg-[#022B3A] text-white rounded-[2rem] p-8 shadow-xl shadow-[#022B3A]/20 flex flex-col relative overflow-hidden"
             >
@@ -156,18 +156,18 @@ export default function BuyPageContent() {
 
           {/* Block 5: Why Us */}
           <motion.div 
-            variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true, margin: "-50px" }}
             className="bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 mb-12 overflow-hidden"
           >
             <div className="p-8 md:p-12">
               <h2 className="text-3xl font-black text-[#022B3A] mb-8">Why Buyers Work With HVAC Exit Advisors</h2>
               <motion.div 
-                variants={staggerContainer}
-                initial="hidden"
-                whileInView="visible"
+                
+                
+                
                 viewport={{ once: true }}
                 className="space-y-4"
               >
@@ -177,7 +177,7 @@ export default function BuyPageContent() {
                   { title: "Financially-verified listings", desc: "we vet sellers' numbers before you ever see them" },
                   { title: "Full-process support", desc: "financing conversations, due diligence, negotiation, and closing, start to finish" }
                 ].map((item, i) => (
-                  <motion.div key={i} variants={fadeUpVariant} className="flex items-start bg-gray-50 p-5 rounded-xl border border-gray-100">
+                  <motion.div key={i}  className="flex items-start bg-gray-50 p-5 rounded-xl border border-gray-100">
                     <div className="w-8 h-8 rounded-full bg-orange-100 text-[#EE5B2C] flex items-center justify-center flex-shrink-0 mr-4">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                     </div>
@@ -193,9 +193,9 @@ export default function BuyPageContent() {
 
           {/* Block 6: FAQs (Accordion) */}
           <motion.div 
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true, margin: "-50px" }}
             className="mb-12"
           >
@@ -210,7 +210,7 @@ export default function BuyPageContent() {
               ].map((faq, i) => (
                 <motion.div 
                   key={i} 
-                  variants={fadeUpVariant} 
+                   
                   className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
                 >
                   <button 
@@ -248,9 +248,9 @@ export default function BuyPageContent() {
           
           {/* Block 7: Learn More Teasers */}
           <motion.div
-            variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true, margin: "-50px" }}
             className="mb-12"
           >
@@ -277,9 +277,9 @@ export default function BuyPageContent() {
 
           {/* Block 8: Success Stories Teasers */}
           <motion.div
-            variants={fadeUpVariant}
-            initial="hidden"
-            whileInView="visible"
+            
+            
+            
             viewport={{ once: true, margin: "-50px" }}
             className="mb-12"
           >
@@ -307,9 +307,9 @@ export default function BuyPageContent() {
           </motion.div>
       {/* Block 9: SEO Keywords Section for Buyers */}
       <motion.div
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="mb-12 border-t border-gray-200 pt-12"
       >
@@ -398,9 +398,9 @@ export default function BuyPageContent() {
       
       {/* Closing CTA Band */}
       <motion.div 
-        variants={fadeUpVariant}
-        initial="hidden"
-        whileInView="visible"
+        
+        
+        
         viewport={{ once: true, margin: "-50px" }}
         className="mt-16 bg-[#022B3A] rounded-[2rem] p-10 md:p-16 text-center shadow-2xl relative overflow-hidden"
       >
