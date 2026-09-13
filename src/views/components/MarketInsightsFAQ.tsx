@@ -7,15 +7,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const insights = [
   {
     q: "Why Florida HVAC Businesses Are in High Demand?",
-    a: "Florida's climate ensures that HVAC is never a seasonal luxury�it is a year-round critical necessity. Constant high temperatures, extreme humidity, and salty coastal air cause systems to run harder and degrade faster than the national average, leading to frequent repairs and replacements. Combined with explosive population growth and booming real estate markets, Florida offers a permanent, recession-resistant demand curve for mechanical contractors."
+    a: "Florida's climate ensures that HVAC is never a seasonal luxury - it is a year-round critical necessity. Constant high temperatures, extreme humidity, and salty coastal air cause systems to run harder and degrade faster than the national average, leading to frequent repairs and replacements. Combined with explosive population growth and booming real estate markets, Florida offers a permanent, recession-resistant demand curve for mechanical contractors."
   },
   {
     q: "What Buyers Evaluate in a Florida HVAC Business?",
-    a: "Sophisticated buyers�whether private equity firms or individual investors�look beyond gross revenue. They focus on Seller's Discretionary Earnings (SDE), the total number of active Preventative Maintenance Agreements (PMAs), technician retention rates, and the revenue mix (favoring high-margin service and replacement over low-margin new construction). A business with clean books and low owner dependency will always command a premium multiple."
+    a: "Sophisticated buyers - whether private equity firms or individual investors - look beyond gross revenue. They focus on Seller's Discretionary Earnings (SDE), the total number of active Preventative Maintenance Agreements (PMAs), technician retention rates, and the revenue mix (favoring high-margin service and replacement over low-margin new construction). A business with clean books and low owner dependency will always command a premium multiple."
   },
   {
     q: "Why Florida HVAC Owners Choose HVAC Exit Advisors?",
-    a: "Unlike generalist business brokers who sell everything from gas stations to restaurants, we specialize exclusively in the HVAC industry. We know how to properly value your maintenance contracts, recast your financials to show true SDE, and market your business to a pre-vetted network of qualified buyers�all while maintaining strict, ironclad confidentiality so your employees and competitors never know you are selling until the deal is closed."
+    a: "Unlike generalist business brokers who sell everything from gas stations to restaurants, we specialize exclusively in the HVAC industry. We know how to properly value your maintenance contracts, recast your financials to show true SDE, and market your business to a pre-vetted network of qualified buyers - all while maintaining strict, ironclad confidentiality so your employees and competitors never know you are selling until the deal is closed."
   }
 ];
 
