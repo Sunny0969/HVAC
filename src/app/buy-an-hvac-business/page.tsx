@@ -4,7 +4,7 @@ import BuyPageContent from "@/views/components/BuyPageContent";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Buy an HVAC Business in Florida",
+  title: "HVAC Businesses for Sale in Florida | Buyer Representation",
   description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing. Browse our listings!",
   alternates: {
     canonical: "https://www.hvacexitadvisors.com/buy-an-hvac-business",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Buy an HVAC Business in Florida",
+    title: "HVAC Businesses for Sale in Florida | Buyer Representation",
     description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing. Browse our listings!",
     images: [
       {
@@ -37,6 +37,36 @@ export default function BuyHvacBusinessPage() {
     <main className="min-h-screen flex flex-col bg-gray-50">
       
       {/* Schema Markup for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Buy a Florida HVAC Business With Confidence",
+            "description": "Expert guide on how to acquire, value, and finance an HVAC business in Florida.",
+            "datePublished": "2026-09-01T08:00:00+08:00",
+            "dateModified": "2026-09-13T08:00:00+08:00",
+            "author": {
+              "@type": "Organization",
+              "name": "HVAC Exit Advisors",
+              "url": "https://www.hvacexitadvisors.com/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "HVAC Exit Advisors",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.hvacexitadvisors.com/icon.png"
+              }
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://www.hvacexitadvisors.com/buy-an-hvac-business"
+            }
+          })
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

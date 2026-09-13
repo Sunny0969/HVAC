@@ -37,6 +37,20 @@ export default function BuyPageContent() {
       <div className="grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8">
       
+          {/* Executive Summary & Audience Clarity */}
+          <div className="bg-[#022B3A] text-white rounded-[2rem] p-8 md:p-10 mb-12 shadow-xl border border-gray-800">
+            <h2 className="text-2xl font-black mb-4 text-[#EE5B2C]">Executive Summary & Who This Is For</h2>
+            <p className="text-gray-200 font-medium leading-relaxed mb-4">
+              <strong className="text-white">Target Audience & Use Case:</strong> This guide is designed for first-time business buyers, strategic acquirers (existing HVAC owners), and private equity firms looking to acquire cash-flowing HVAC businesses in Florida. Use this advice when evaluating, financing, and structuring an acquisition.
+            </p>
+            <p className="text-gray-200 font-medium leading-relaxed mb-6">
+              <strong className="text-white">Key Takeaway:</strong> Buying an established HVAC company offers immediate recurring revenue and an active customer base. To succeed, you must verify normalized earnings, secure the right financing, and understand transition risks.
+            </p>
+            <p className="text-sm text-gray-400 font-medium">
+              Last Updated: September 13, 2026
+            </p>
+          </div>
+
           {/* Block 1: Why Buy (Clean White Card) */}
           <motion.div 
             
@@ -48,10 +62,10 @@ export default function BuyPageContent() {
             <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] mb-6">Why Buy an HVAC Business Instead of Starting One?</h2>
             <div className="text-lg text-gray-700 leading-relaxed font-medium space-y-6">
               <p>
-                Air conditioning and heating systems in Florida wear out fast - the average residential unit lasts roughly 10-15 years in this climate, which means an established HVAC company already has something a startup doesn't: a customer base that keeps calling. This makes HVAC one of the most recession-resistant service categories in the state.
+                <strong>Short Answer: Immediate cash flow and an established customer base.</strong> Air conditioning and heating systems in Florida wear out fast - the average residential unit lasts roughly 10-15 years in this climate, which means an established HVAC company already has something a startup doesn't: a customer base that keeps calling.
               </p>
               <p>
-                Buying an existing business means you inherit trained technicians, a fleet, vendor relationships, and - most importantly - recurring revenue from service agreements and maintenance contracts, instead of spending years building that from zero.
+                Buying an existing business means you inherit trained technicians, a fleet, vendor relationships, and recurring revenue from service agreements. Financing an acquisition is also heavily supported by the <a href="https://www.sba.gov/funding-programs/loans/7a-loans" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">SBA 7(a) loan program</a>, making it accessible for qualified buyers.
               </p>
             </div>
           </motion.div>
@@ -154,6 +168,37 @@ export default function BuyPageContent() {
             </motion.div>
           </div>
 
+          {/* Structured Answer: Comparison Table */}
+          <div className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 mb-12 overflow-hidden overflow-x-auto">
+            <h2 className="text-2xl font-black text-[#022B3A] mb-6">Buying Unrepresented vs. With HVAC Exit Advisors</h2>
+            <table className="w-full text-left border-collapse min-w-[600px]">
+              <thead>
+                <tr>
+                  <th className="py-4 px-6 bg-gray-50 text-[#022B3A] font-bold border-b border-gray-200 rounded-tl-xl">Process Step</th>
+                  <th className="py-4 px-6 bg-gray-50 text-gray-600 font-bold border-b border-gray-200">Unrepresented Buyer</th>
+                  <th className="py-4 px-6 bg-[#022B3A] text-white font-bold border-b border-[#022B3A] rounded-tr-xl">With HVAC Exit Advisors</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-700 font-medium">
+                <tr>
+                  <td className="py-4 px-6 border-b border-gray-100">Financial Verification</td>
+                  <td className="py-4 px-6 border-b border-gray-100 text-gray-500">Must audit unadjusted tax returns manually</td>
+                  <td className="py-4 px-6 border-b border-gray-100 bg-blue-50/30">We pre-vet SDE (Seller's Discretionary Earnings) and add-backs</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 border-b border-gray-100">Deal Origination</td>
+                  <td className="py-4 px-6 border-b border-gray-100 text-gray-500">Public listings heavily picked over by competitors</td>
+                  <td className="py-4 px-6 border-b border-gray-100 bg-blue-50/30">Access to exclusive, off-market Florida HVAC listings</td>
+                </tr>
+                <tr>
+                  <td className="py-4 px-6 border-b border-gray-100">Financing Support</td>
+                  <td className="py-4 px-6 border-b border-gray-100 text-gray-500">Navigate SBA lenders independently</td>
+                  <td className="py-4 px-6 border-b border-gray-100 bg-blue-50/30">Direct introductions to HVAC-friendly SBA preferred lenders</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           {/* Block 5: Why Us */}
           <motion.div 
             
@@ -202,11 +247,11 @@ export default function BuyPageContent() {
             <h2 className="text-3xl md:text-4xl font-black mb-10 text-center text-[#022B3A]">Frequently Asked Questions</h2>
             <div className="flex flex-col space-y-4">
               {[
-                { q: "How much cash do I need to buy an HVAC business in Florida?", a: "It depends on the purchase price and financing structure - SBA loans, seller financing, and combinations of both are common in HVAC acquisitions. We'll walk you through what's realistic for the listings you're considering." },
-                { q: "What should I check during due diligence on an HVAC company?", a: <>Financial statements and normalized earnings, customer contracts and maintenance-agreement retention, technician retention, equipment and fleet condition, licensing status, and any pending liabilities or warranty obligations. <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold whitespace-nowrap ml-1">Learn more about our due diligence process &rarr;</Link></> },
-                { q: "Is it better to buy a residential or commercial HVAC business?", a: "Both can work well - residential tends to offer more recurring maintenance revenue, while commercial often means larger contract sizes. The right fit depends on your goals, experience, and available capital." },
-                { q: "How long does it typically take to buy an HVAC business?", a: "Timelines vary by financing and due diligence complexity, but most acquisitions move from serious interest to closing within a few months once financing is lined up." },
-                { q: "Do you only work with buyers who already own HVAC experience?", a: "No - we work with first-time buyers, industry veterans, and companies looking to expand through acquisition. We match the guidance to your experience level." }
+                { q: "How much cash do I need to buy an HVAC business in Florida?", a: <><strong className="block mb-2 text-[#022B3A]">Short Answer: Typically 10% to 20% of the purchase price if using an SBA loan.</strong> It depends on the purchase price and financing structure - SBA loans, seller financing, and combinations of both are common in HVAC acquisitions. We'll walk you through what's realistic for the listings you're considering.</> },
+                { q: "What should I check during due diligence on an HVAC company?", a: <><strong className="block mb-2 text-[#022B3A]">Short Answer: Normalized earnings, customer contracts, technician retention, and fleet condition.</strong> Financial statements and normalized earnings, customer contracts and maintenance-agreement retention, technician retention, equipment and fleet condition, licensing status, and any pending liabilities or warranty obligations. <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold whitespace-nowrap ml-1">Learn more about our due diligence process &rarr;</Link></> },
+                { q: "Is it better to buy a residential or commercial HVAC business?", a: <><strong className="block mb-2 text-[#022B3A]">Short Answer: Residential offers steadier recurring revenue, while commercial provides larger contract sizes.</strong> Both can work well - residential tends to offer more recurring maintenance revenue, while commercial often means larger contract sizes. The right fit depends on your goals, experience, and available capital.</> },
+                { q: "How long does it typically take to buy an HVAC business?", a: <><strong className="block mb-2 text-[#022B3A]">Short Answer: Usually 3 to 6 months from letter of intent (LOI) to closing.</strong> Timelines vary by financing and due diligence complexity, but most acquisitions move from serious interest to closing within a few months once financing is lined up.</> },
+                { q: "Do you only work with buyers who already own HVAC experience?", a: <><strong className="block mb-2 text-[#022B3A]">Short Answer: No, we assist first-time buyers, investors, and experienced operators alike.</strong> We work with first-time buyers, industry veterans, and companies looking to expand through acquisition. We match the guidance to your experience level.</> }
               ].map((faq, i) => (
                 <motion.div 
                   key={i} 
