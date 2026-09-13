@@ -55,6 +55,7 @@ export const metadata: Metadata = {
   },
 };
 
+import WhatsAppTracker from "@/views/components/WhatsAppTracker";
 import Header from "../views/components/Header";
 import Footer from "../views/components/Footer";
 
@@ -168,6 +169,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <WhatsAppTracker />
       </body>
     </html>
   );

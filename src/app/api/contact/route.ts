@@ -27,6 +27,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         from: FROM_EMAIL,
         to: 'contact@hvacexitadvisors.com',
+        reply_to: email || undefined,
         subject: `New Lead: ${formType || 'Contact Form'} - ${name}`,
         html: adminHtml,
       }),
@@ -74,7 +75,39 @@ export async function POST(request: Request) {
       }
     }
 
+
+    // 3. Log Lead to CMS Database
+    try {
+      let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
+      _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
+      const API_URL = `${_rootUrl}/api`;
+
+      const payload = {
+        type: formType === 'WhatsApp Click' ? 'whatsapp' : 'contact',
+        source: formType || 'Contact Form',
+        name: name || 'N/A',
+        email: email || 'N/A',
+        phone: phone || 'N/A',
+        message: message || '',
+        pagePath: additionalData?.pagePath || '',
+        pageUrl: additionalData?.pageUrl || '',
+        placement: formType || 'contact_form'
+      };
+
+      const cmsRes = await fetch(`${API_URL}/leads`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!cmsRes.ok) {
+        console.error('Failed to log lead to CMS:', await cmsRes.text());
+      }
+    } catch (cmsErr) {
+      console.error('CMS Logging Error:', cmsErr);
+    }
+
     return NextResponse.json({ success: true });
+
   } catch (error) {
     console.error('API Contact Error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
