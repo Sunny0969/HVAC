@@ -1,4 +1,15 @@
-import { Metadata } from 'next';
+const fs = require('fs');
+
+// 1. Rewrite FaqAccordionList.tsx
+let accCode = fs.readFileSync('src/views/components/FaqAccordionList.tsx', 'utf8');
+accCode = accCode.replace(
+  '<p className="pt-4 leading-relaxed">\n                        {item.aNode || item.a}\n                      </p>',
+  '<p className="pt-4 leading-relaxed">\n                        <strong>Short Answer:</strong> {item.aNode || item.a}\n                      </p>'
+);
+fs.writeFileSync('src/views/components/FaqAccordionList.tsx', accCode, 'utf8');
+
+// 2. Rewrite page.tsx
+let pageCode = `import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import FaqAccordionList from '../../views/components/FaqAccordionList';
@@ -69,7 +80,7 @@ export default function FaqsPage() {
         {/* JSON-LD Schema */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(jsonLdFAQ)},${JSON.stringify(blogSchema)}]` }}
+          dangerouslySetInnerHTML={{ __html: \`[\${JSON.stringify(jsonLdFAQ)},\${JSON.stringify(blogSchema)}]\` }}
         />
 
       {/* Hero Section */}
@@ -180,3 +191,6 @@ export default function FaqsPage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/app/faqs/page.tsx', pageCode, 'utf8');

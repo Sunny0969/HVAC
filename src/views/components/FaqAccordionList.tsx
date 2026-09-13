@@ -85,7 +85,7 @@ export default function FaqAccordionList({ categories }: { categories: FaqCatego
                   >
                     <div className="px-6 md:px-8 pb-8 pt-0 text-gray-700 text-lg font-medium border-t border-gray-50 mt-2">
                       <p className="pt-4 leading-relaxed">
-                        {item.aNode || item.a}
+                        <strong>Short Answer:</strong> {item.aNode || item.a}
                       </p>
                       
                       {/* Compliance Note: rendered for specific items implicitly through the copy, but let's add the disclaimer explicitly on licensing/tax items if needed, or rely on the user's provided copy. The user's provided copy includes "confirm with a licensing attorney" and "recommend looping in a tax professional", which satisfies the compliance note. */}
