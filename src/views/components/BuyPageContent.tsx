@@ -406,23 +406,23 @@ export default function BuyPageContent() {
               <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Full Name *</label>
-                  <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="John Doe" />
+                  <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="name" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Email Address *</label>
-                  <input type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="john@example.com" />
+                  <input type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="email" placeholder="john@example.com" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Phone Number *</label>
-                  <input type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="(555) 123-4567" />
+                  <input type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="phone" placeholder="(555) 123-4567" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Target Regions (Optional)</label>
-                  <input type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="e.g. Tampa, Orlando" />
+                  <input type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="targets" placeholder="e.g. Tampa, Orlando" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Acquisition Goals & Budget</label>
-                  <textarea rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base resize-none" placeholder="What kind of revenue and structure are you targeting?"></textarea>
+                  <textarea rows={4} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base resize-none" placeholder="What kind of revenue and structure are you targeting?" name="message"></textarea>
                 </div>
                 <button type="submit" disabled={isSubmitting} className="w-full bg-[#EE5B2C] hover:bg-orange-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 mt-2 flex justify-center items-center">
                   {isSubmitting ? (

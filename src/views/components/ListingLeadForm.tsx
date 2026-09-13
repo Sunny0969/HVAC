@@ -3,49 +3,35 @@
 import { useState } from 'react';
 
 export default function ListingLeadForm({ listingTitle }: { listingTitle: string }) {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-  });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
-  _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
-  const API_URL = `${_rootUrl}/api`;
-
-  const onSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError('');
     
-    try {
-      const payload = {
-        type: 'contact',
-        source: `Listing Inquiry: ${listingTitle}`,
-        name: `${formData.firstName} ${formData.lastName}`.trim(),
-        email: formData.email,
-        phone: formData.phone,
-        message: `I would like to request more information about the listing: ${listingTitle}`,
-        pagePath: typeof window !== 'undefined' ? window.location.pathname : '',
-        pageUrl: typeof window !== 'undefined' ? window.location.href : '',
-        placement: 'listing_form'
-      };
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: `${formData.get('firstName')} ${formData.get('lastName')}`.trim(),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: 'Listing Inquiry for: ' + listingTitle,
+      formType: 'Listing Inquiry: ' + listingTitle,
+    };
 
-      const res = await fetch(`${API_URL}/leads`, {
+    try {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(data)
       });
-
-      if (!res.ok) throw new Error('Failed to submit');
-      setSuccess(true);
-      setFormData({ firstName: '', lastName: '', email: '', phone: '' });
+      if (res.ok) setSuccess(true);
+      else setError('Failed to submit inquiry. Please try again.');
     } catch (err) {
-      setError('Something went wrong. Please try again.');
+      console.error(err);
+      setError('Failed to submit inquiry. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -74,48 +60,24 @@ export default function ListingLeadForm({ listingTitle }: { listingTitle: string
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-bold text-[#022B3A] mb-2">First name</label>
-            <input
-              required
-              type="text"
-              value={formData.firstName}
-              onChange={e => setFormData({ ...formData, firstName: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]"
-            />
+            <input name="firstName" required type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]" />
           </div>
           <div>
             <label className="block text-sm font-bold text-[#022B3A] mb-2">Last name</label>
-            <input
-              required
-              type="text"
-              value={formData.lastName}
-              onChange={e => setFormData({ ...formData, lastName: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-bold text-[#022B3A] mb-2">Email</label>
-            <input
-              required
-              type="email"
-              placeholder="you@company.com"
-              value={formData.email}
-              onChange={e => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-bold text-[#022B3A] mb-2">Phone number</label>
-            <input
-              required
-              type="tel"
-              placeholder="(xxx) xxx-xxxx"
-              value={formData.phone}
-              onChange={e => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]"
-            />
+            <input name="lastName" required type="text" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]" />
           </div>
         </div>
         
+        <div>
+          <label className="block text-sm font-bold text-[#022B3A] mb-2">Email</label>
+          <input name="email" required type="email" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]" />
+        </div>
+
+        <div>
+          <label className="block text-sm font-bold text-[#022B3A] mb-2">Phone number</label>
+          <input name="phone" required type="tel" className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C]" />
+        </div>
+
         <button
           type="submit"
           disabled={loading}
@@ -123,6 +85,7 @@ export default function ListingLeadForm({ listingTitle }: { listingTitle: string
         >
           {loading ? 'Sending...' : 'Request more details'}
         </button>
+        
         <p className="text-xs text-gray-400 mt-4">This site is protected by reCAPTCHA.</p>
       </form>
     </div>

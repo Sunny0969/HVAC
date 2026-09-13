@@ -10,14 +10,34 @@ export default function ContactForm({ buttonText = "Submit Inquiry" }: ContactFo
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call for lead capture
-    setTimeout(() => {
-      setIsSubmitting(false);
+    
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: `${formData.get('firstName')} ${formData.get('lastName')}`.trim(),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      message: formData.get('message'),
+      formType: 'General Contact',
+      additionalData: {
+        company: formData.get('company')
+      }
+    };
+
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
       setIsSuccess(true);
-    }, 1500);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSuccess) {
@@ -42,33 +62,33 @@ export default function ContactForm({ buttonText = "Submit Inquiry" }: ContactFo
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="block text-sm font-bold text-[#022B3A] mb-2">First Name *</label>
-          <input type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="John" />
+          <input type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="firstName" placeholder="John" />
         </div>
         <div>
           <label className="block text-sm font-bold text-[#022B3A] mb-2">Last Name *</label>
-          <input type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="Doe" />
+          <input type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="lastName" placeholder="Doe" />
         </div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="block text-sm font-bold text-[#022B3A] mb-2">Email Address *</label>
-          <input type="email" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="john@example.com" />
+          <input type="email" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="email" placeholder="john@example.com" />
         </div>
         <div>
           <label className="block text-sm font-bold text-[#022B3A] mb-2">Phone Number *</label>
-          <input type="tel" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="(555) 123-4567" />
+          <input type="tel" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="phone" placeholder="(555) 123-4567" />
         </div>
       </div>
 
       <div>
         <label className="block text-sm font-bold text-[#022B3A] mb-2">Company Name (Optional)</label>
-        <input type="text" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="Your HVAC Business" />
+        <input type="text" className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="company" placeholder="Your HVAC Business" />
       </div>
 
       <div>
         <label className="block text-sm font-bold text-[#022B3A] mb-2">How can we help?</label>
-        <textarea rows={5} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base resize-none" placeholder="Tell us a little bit about your timeline or goals..."></textarea>
+        <textarea rows={5} className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base resize-none" placeholder="Tell us a little bit about your timeline or goals..." name="message"></textarea>
       </div>
 
       <button type="submit" disabled={isSubmitting} className="w-full bg-[#EE5B2C] hover:bg-orange-600 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-lg mt-4 flex justify-center items-center">

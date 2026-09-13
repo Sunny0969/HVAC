@@ -403,15 +403,15 @@ export default function SellPageContent() {
               <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Full Name *</label>
-                  <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="John Doe" />
+                  <input type="text" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="name" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Email Address *</label>
-                  <input type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="john@example.com" />
+                  <input type="email" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="email" placeholder="john@example.com" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Phone Number *</label>
-                  <input type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" placeholder="(555) 123-4567" />
+                  <input type="tel" required className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="phone" placeholder="(555) 123-4567" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold text-[#022B3A] mb-1">Company Name *</label>
