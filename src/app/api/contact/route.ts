@@ -91,7 +91,9 @@ export async function POST(request: Request) {
         message: message || '',
         pagePath: additionalData?.pagePath || '',
         pageUrl: additionalData?.pageUrl || '',
-        placement: formType || 'contact_form'
+        placement: formType || 'contact_form',
+        company: additionalData?.company || '',
+        location: additionalData?.pagePath || ''
       };
 
       const cmsRes = await fetch(`${API_URL}/public/leads`, {

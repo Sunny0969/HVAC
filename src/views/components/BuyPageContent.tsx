@@ -34,7 +34,11 @@ export default function BuyPageContent() {
       message: formData.get('message'),
       formType: 'Buyer Inquiry',
       additionalData: {
+        
         targets: formData.get('targets')
+      ,
+        pagePath: window.location.pathname,
+        pageUrl: window.location.href
       }
     };
 

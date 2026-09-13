@@ -22,7 +22,11 @@ export default function ContactForm({ buttonText = "Submit Inquiry" }: ContactFo
       message: formData.get('message'),
       formType: 'General Contact',
       additionalData: {
+        
         company: formData.get('company')
+      ,
+        pagePath: window.location.pathname,
+        pageUrl: window.location.href
       }
     };
 

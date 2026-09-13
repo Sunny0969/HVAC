@@ -34,7 +34,11 @@ export default function SellPageContent() {
       message: formData.get('message'),
       formType: 'Seller Inquiry',
       additionalData: {
+        
         company: formData.get('company')
+      ,
+        pagePath: window.location.pathname,
+        pageUrl: window.location.href
       }
     };
 

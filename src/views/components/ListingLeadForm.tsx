@@ -19,6 +19,10 @@ export default function ListingLeadForm({ listingTitle }: { listingTitle: string
       phone: formData.get('phone'),
       message: 'Listing Inquiry for: ' + listingTitle,
       formType: 'Listing Inquiry: ' + listingTitle,
+      additionalData: {
+        pagePath: window.location.pathname,
+        pageUrl: window.location.href
+      },
     };
 
     try {
