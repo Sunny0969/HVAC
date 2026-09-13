@@ -25,8 +25,8 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: 'HVAC Website <noreply@hvacexitadvisors.com>',
-        to: 'contact@hvacexitadvisors.com',
+        from: FROM_EMAIL,
+        to: 'suneelpirkash@gmail.com',
         reply_to: email || undefined,
         subject: `New Lead: ${formType || 'Contact Form'} - ${name}`,
         html: adminHtml,
