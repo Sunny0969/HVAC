@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   },
   description: "Premier Florida HVAC business broker. Buy or sell your heating and air conditioning company with our confidential, expert guidance. Contact us today!",
   keywords: ["Florida HVAC Business Broker", "Sell HVAC business in Florida", "Buy HVAC company Florida", "HVAC brokerage firm FL", "HVAC business valuation"],
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+  },
   robots: {
     index: true,
     follow: true,
@@ -138,14 +141,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <head>
-        {isRealGsc && <meta name="google-site-verification" content={gscCode} />}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
+      
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         {/* Google Analytics 4 */}
         {isRealGa && (
           <>
