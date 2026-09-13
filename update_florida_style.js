@@ -1,4 +1,6 @@
-import { Metadata } from 'next';
+const fs = require('fs');
+
+const code = `import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
@@ -103,7 +105,7 @@ export default function FloridaStateGuidePage() {
       <BreadcrumbSchema items={breadcrumbs} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(articleSchema)},${JSON.stringify(faqSchema)}]` }}
+        dangerouslySetInnerHTML={{ __html: \`[\${JSON.stringify(articleSchema)},\${JSON.stringify(faqSchema)}]\` }}
       />
       <main className="w-full bg-[#F7F5F0] min-h-screen font-sans pb-24">
         
@@ -409,3 +411,6 @@ export default function FloridaStateGuidePage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/app/florida/page.tsx', code, 'utf8');
