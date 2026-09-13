@@ -93,10 +93,10 @@ export default function Hero() {
       {/* Foreground Real DOM Content (SEO + LCP) */}
       <div className="relative z-20 px-4 max-w-7xl w-full mx-auto mt-16 md:mt-0 text-left">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-xl tracking-tight">
-          Florida's <span className="text-[#EE5B2C]">HVAC<br className="hidden md:block"/> Business</span> Broker
+          Florida <span className="text-[#EE5B2C]">HVAC<br className="hidden md:block"/> Business</span> Broker
         </h1>
         <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl font-medium drop-shadow-md">
-          Expert valuation and discrete sales for HVAC companies across the Sunshine State.
+          As the leading Florida HVAC Business Broker, we provide expert valuation and discrete sales for HVAC companies across the Sunshine State.
         </p>
         <div className="flex flex-col sm:flex-row items-start justify-start gap-4 flex-wrap">
           <Link 

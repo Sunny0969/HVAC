@@ -154,7 +154,7 @@ export default function TestimonialSlider({ items }: TestimonialSliderProps) {
                         />
                       </div>
                       <div>
-                        <h4 className="text-[#022B3A] font-bold text-base">{item.title}</h4>
+                        <h3 className="text-[#022B3A] font-bold text-base">{item.title}</h3>
                         <p className="text-gray-500 text-sm font-medium">{item.subtitle}</p>
                       </div>
                     </div>

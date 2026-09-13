@@ -75,7 +75,7 @@ export default function MarketInsightsFAQ() {
                       <div className="px-6 md:px-8 pb-8 pt-2">
                         <div className="w-full h-px bg-gray-200/50 mb-6"></div>
                         <p className="text-lg text-gray-700 leading-relaxed font-medium">
-                          {item.a}
+                          <strong>Short Answer:</strong> {item.a}
                         </p>
                       </div>
                     </motion.div>
