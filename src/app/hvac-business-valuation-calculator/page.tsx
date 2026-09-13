@@ -92,14 +92,7 @@ export default function ValuationCalculatorPage() {
         {/* Hero Section */}
         <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
-            <Image
-              src="/florida-hvac-business-valuation.jpg"
-              alt="Florida HVAC Business Valuation and market multiples"
-              fill
-              priority
-              sizes="100vw"
-              className="object-cover object-center"
-            />
+            <img src="/florida-hvac-business-valuation.jpg" alt="Florida HVAC Business Valuation and market multiples" className="w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-black/60" />
           </div>
 
