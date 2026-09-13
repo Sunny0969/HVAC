@@ -1,4 +1,6 @@
-import { Metadata } from 'next';
+const fs = require('fs');
+
+let pageCode = `import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ValuationCalculator from '../../views/components/ValuationCalculator';
@@ -6,7 +8,7 @@ import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 import ContactForm from '../../views/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: "Free HVAC Business Valuation Calculator | Florida",
+  title: "Free Florida HVAC Business Valuation Calculator",
   description: "Calculate your Florida HVAC business market value instantly with our free valuation calculator. Analyze SDE, maintenance contracts, and multiples.",
   alternates: {
     canonical: "https://www.hvacexitadvisors.com/hvac-business-valuation-calculator"
@@ -85,7 +87,7 @@ export default function ValuationCalculatorPage() {
       <BreadcrumbSchema items={breadcrumbs} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(appSchema)},${JSON.stringify(webPageSchema)},${JSON.stringify(faqSchema)}]` }}
+        dangerouslySetInnerHTML={{ __html: \`[\${JSON.stringify(appSchema)},\${JSON.stringify(webPageSchema)},\${JSON.stringify(faqSchema)}]\` }}
       />
       <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
         
@@ -242,3 +244,6 @@ export default function ValuationCalculatorPage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/app/hvac-business-valuation-calculator/page.tsx', pageCode, 'utf8');
