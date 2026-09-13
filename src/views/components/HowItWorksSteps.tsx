@@ -49,12 +49,7 @@ export default function HowItWorksSteps() {
                   </p>
                 </div>
                 <div className="w-full sm:w-[45%] aspect-[4/3] relative rounded-2xl overflow-hidden shadow-inner border border-gray-50">
-                  <Image 
-                    src={step.image} 
-                    alt={step.title}
-                    fill
-                    className="object-cover"
-                  />
+                  <img src={step.image} alt={step.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   {/* Decorative Elements */}
                   <div className="absolute top-3 left-3 flex gap-1.5">
                     <div className="w-2 h-2 rounded-full bg-red-400"></div>

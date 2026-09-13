@@ -64,12 +64,7 @@ export default function Colonnade({ items }: ColonnadeProps) {
           >
             {/* Background Image */}
             {item.image && (
-              <Image 
-                src={item.image} 
-                alt={item.title} 
-                fill 
-                className={`object-cover transition-transform duration-700 ${isActive ? 'scale-105' : 'scale-100 grayscale'}`} 
-              />
+              <img src={item.image} alt={item.title} className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ${isActive ? "scale-105" : "scale-100 grayscale"}`} />
             )}
             
             {/* Gradient Overlay */}
