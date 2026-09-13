@@ -1,4 +1,6 @@
-import { Metadata } from 'next';
+const fs = require('fs');
+
+const code = `import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
@@ -349,3 +351,6 @@ export default function FloridaStateGuidePage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/app/florida/page.tsx', code, 'utf8');

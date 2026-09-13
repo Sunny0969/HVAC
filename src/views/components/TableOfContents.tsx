@@ -49,7 +49,7 @@ export default function TableOfContents({ items }: { items: TocItem[] }) {
   if (!items || items.length === 0) return null;
 
   return (
-    <div className="sticky top-28 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
+    <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100">
       <h3 className="text-xl font-black text-[#022B3A] mb-6 border-b border-gray-100 pb-3">
         Table of Contents
       </h3>
