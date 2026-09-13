@@ -1,4 +1,7 @@
+const fs = require('fs');
+const file = 'src/app/resources/florida-hvac-industry-guide/page.tsx';
 
+const code = `
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbSchema from '../../../views/components/BreadcrumbSchema';
@@ -220,3 +223,6 @@ export default function FloridaHvacIndustryGuidePage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync(file, code, 'utf8');
