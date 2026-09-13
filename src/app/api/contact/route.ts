@@ -78,7 +78,7 @@ export async function POST(request: Request) {
 
     // 3. Log Lead to CMS Database
     try {
-      let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
+      let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "https://hvac-36i3.onrender.com").trim();
       _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
       const API_URL = `${_rootUrl}/api`;
 
@@ -94,7 +94,7 @@ export async function POST(request: Request) {
         placement: formType || 'contact_form'
       };
 
-      const cmsRes = await fetch(`${API_URL}/leads`, {
+      const cmsRes = await fetch(`${API_URL}/public/leads`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
