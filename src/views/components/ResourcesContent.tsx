@@ -260,7 +260,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
                   {recentPosts.map((post) => (
                     <li key={post.id}>
                       <Link
-                        href={`/resources/`}
+                        href={`/resources/${post.slug}`}
                         className="text-sm font-bold text-[#022B3A] hover:text-[#EE5B2C] transition-colors leading-snug block"
                       >
                         {post.title}

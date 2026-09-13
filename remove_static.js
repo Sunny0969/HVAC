@@ -1,11 +1,13 @@
-import { Metadata } from "next";
+const fs = require('fs');
+
+let pageCode = `import { Metadata } from "next";
 import Image from "next/image";
 import BreadcrumbSchema from "@/views/components/BreadcrumbSchema";
 import ResourcesContent from "@/views/components/ResourcesContent";
 
 let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
-_rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
-const API_URL = `${_rootUrl}/api/public`;
+_rootUrl = _rootUrl.replace(/\\/api\\/public\\/?$/, '').replace(/\\/api\\/?$/, '').replace(/\\/$/, '');
+const API_URL = \`\${_rootUrl}/api/public\`;
 
 export const metadata: Metadata = {
   title: "HVAC Business Resources & Exit Guides | Florida",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
 export default async function ResourcesPage() {
   let cmsBlogs: any[] = [];
   try {
-    const res = await fetch(`${API_URL}/blogs`, { next: { revalidate: 60 } });
+    const res = await fetch(\`\${API_URL}/blogs\`, { next: { revalidate: 60 } });
     if (res.ok) {
       const data = await res.json();
       cmsBlogs = data.blogs || [];
@@ -49,7 +51,7 @@ export default async function ResourcesPage() {
         "position": index + 1,
         "name": article.title,
         "description": article.metaDescription || article.title,
-        "url": `https://www.hvacexitadvisors.com/resources/${article.slug}`,
+        "url": \`https://www.hvacexitadvisors.com/resources/\${article.slug}\`,
       })),
     },
   };
@@ -66,7 +68,14 @@ export default async function ResourcesPage() {
         {/* Hero Section - compact */}
         <section className="relative w-full h-[50dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
-            <img src="/florida-hvac-business-valuation.jpg" alt="Florida HVAC business resources and valuation guides" className="w-full h-full object-cover object-center" />
+            <Image
+              src="/florida-hvac-business-valuation.jpg"
+              alt="Florida HVAC business resources and valuation guides"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
           </div>
 
@@ -89,3 +98,6 @@ export default async function ResourcesPage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/app/resources/page.tsx', pageCode, 'utf8');
