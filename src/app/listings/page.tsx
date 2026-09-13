@@ -2,8 +2,25 @@ import { Metadata } from 'next';
 import ListingsContent from '@/views/components/ListingsContent';
 
 export const metadata: Metadata = {
-  title: 'HVAC Businesses for Sale | Listings',
+  title: 'HVAC Businesses for Sale | Listings | HVAC Exit Advisors',
   description: 'Browse our exclusive catalog of HVAC businesses for sale. Filter by location, revenue, and cash flow to find your next acquisition.',
+  alternates: {
+    canonical: 'https://www.hvacexitadvisors.com/listings',
+  },
+  openGraph: {
+    title: 'HVAC Businesses for Sale | Listings | HVAC Exit Advisors',
+    description: 'Browse our exclusive catalog of HVAC businesses for sale. Filter by location, revenue, and cash flow to find your next acquisition.',
+    url: 'https://www.hvacexitadvisors.com/listings',
+    type: 'website',
+    images: [
+      {
+        url: '/images/og-listings.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'HVAC businesses for sale listings',
+      },
+    ],
+  },
 };
 
 let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();

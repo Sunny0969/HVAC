@@ -1,4 +1,6 @@
-import { Metadata } from 'next';
+const fs = require('fs');
+
+let pageCode = `import { Metadata } from 'next';
 import Link from 'next/link';
 import HowItWorksSteps from '../../views/components/HowItWorksSteps';
 import { steps } from '../../data/howItWorksSteps';
@@ -42,40 +44,8 @@ export default function HowItWorksPage() {
       "name": step.title,
       "text": step.description,
       "image": step.image,
-      "url": `https://www.hvacexitadvisors.com/how-it-works#step-${index + 1}`
+      "url": \`https://www.hvacexitadvisors.com/how-it-works#step-\${index + 1}\`
     }))
-  };
-
-  
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does it take to sell an HVAC business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Generally, the entire process takes between 4 to 8 months from valuation to closing."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When is the right time to sell my HVAC business?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The best time to sell is when revenue has shown 3 consecutive years of upward growth."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do you maintain confidentiality during the sale?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We use blind marketing profiles and require strict Non-Disclosure Agreements (NDAs) before revealing any identifying information."
-        }
-      }
-    ]
   };
 
   const webPageSchema = {
@@ -97,7 +67,7 @@ export default function HowItWorksPage() {
       <BreadcrumbSchema items={breadcrumbs} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(howToSchema)},${JSON.stringify(webPageSchema)},${JSON.stringify(faqSchema)}]` }}
+        dangerouslySetInnerHTML={{ __html: \`[\${JSON.stringify(howToSchema)},\${JSON.stringify(webPageSchema)}]\` }}
       />
       <main className="w-full bg-[#F7F5F0] min-h-screen">
         {/* Hero Section */}
@@ -250,3 +220,6 @@ export default function HowItWorksPage() {
     </>
   );
 }
+`;
+
+fs.writeFileSync('src/app/how-it-works/page.tsx', pageCode, 'utf8');

@@ -59,9 +59,9 @@ export default function ListingsContent({ listings }: Props) {
           {/* Main Listings Grid */}
           <div className="flex-1 w-full order-2 lg:order-1">
             <div className="flex justify-between items-center mb-6">
-              <h1 className="text-2xl md:text-3xl font-black text-[#022B3A]">
+              <h2 className="text-2xl md:text-3xl font-black text-[#022B3A]">
                 Available <span className="text-[#EE5B2C]">Businesses</span>
-              </h1>
+              </h2>
               <select
                 value={sortOrder}
                 onChange={e => setSortOrder(e.target.value)}
