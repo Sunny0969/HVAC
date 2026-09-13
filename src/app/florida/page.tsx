@@ -103,7 +103,7 @@ export default function FloridaStateGuidePage() {
       <BreadcrumbSchema items={breadcrumbs} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(articleSchema)},${JSON.stringify(faqSchema)}]` }}
+        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(articleSchema)},${JSON.stringify(faqSchema)},${JSON.stringify(howToSchema)},${JSON.stringify(speakableSchema)}]` }}
       />
       <main className="w-full bg-[#F7F5F0] min-h-screen font-sans pb-24">
         
@@ -149,7 +149,7 @@ export default function FloridaStateGuidePage() {
             </Link>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-12 relative items-start">
+          <div className="flex flex-col lg:flex-row gap-12 relative">
             
             {/* Left Content Area */}
             <div className="lg:w-[65%] xl:w-[70%]">
@@ -397,9 +397,11 @@ export default function FloridaStateGuidePage() {
             </div>
 
             {/* Right Sidebar - Sticky TOC */}
-            <aside className="lg:w-[35%] xl:w-[30%] sticky top-28 self-start">
-              <div className="space-y-8 pb-10 max-h-[85vh] overflow-y-auto custom-scrollbar">
-                <TableOfContents items={tocItems} />
+            <aside className="hidden lg:block lg:w-[35%] xl:w-[30%] relative">
+              <div className="sticky top-28 max-h-[85vh] overflow-y-auto custom-scrollbar space-y-8 pb-10">
+                {tocItems && tocItems.length > 0 && (
+                  <TableOfContents items={tocItems} />
+                )}
               </div>
             </aside>
             
