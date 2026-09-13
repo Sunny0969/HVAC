@@ -4,7 +4,7 @@ import Link from 'next/link';
 import SellPageContent from '../../views/components/SellPageContent';
 
 export const metadata: Metadata = {
-  title: 'Sell Your HVAC Business in Florida',
+  title: 'Sell Your Florida HVAC Business | Expert Brokerage',
   description: 'Thinking of selling your Florida HVAC company? Get a free, confidential valuation from a specialized broker. No fee until you close. Secure your exit today!',
   alternates: {
     canonical: 'https://www.hvacexitadvisors.com/sell-your-hvac-business',
@@ -31,6 +31,32 @@ import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 
 export default function SellYourHVACBusiness() {
   const breadcrumbs = [{ name: 'Home', item: 'https://www.hvacexitadvisors.com/' }, { name: 'Sell Your HVAC Business', item: 'https://www.hvacexitadvisors.com/sell-your-hvac-business' }];
+  
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Sell Your Florida HVAC Business",
+    "description": "Expert guidance on selling your HVAC business in Florida, including valuations, process, and finding the right buyer.",
+    "author": {
+      "@type": "Organization",
+      "name": "HVAC Exit Advisors"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HVAC Exit Advisors",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hvacexitadvisors.com/icon.png"
+      }
+    },
+    "datePublished": "2026-09-01T08:00:00+00:00",
+    "dateModified": new Date().toISOString(),
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.hvacexitadvisors.com/sell-your-hvac-business"
+    }
+  };
+
   const jsonLdService = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -130,7 +156,7 @@ export default function SellYourHVACBusiness() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left relative z-10 w-full mt-16 md:mt-0">
           <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
-            Sell Your Florida <span className="text-[#EE5B2C]">HVAC Business</span> On Your Terms
+            Sell Your <span className="text-[#EE5B2C]">Florida HVAC Business</span> On Your Terms
           </h1>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl leading-relaxed font-medium">
             HVAC Exit Advisors helps Florida heating and air conditioning business owners sell for top dollar confidentially, with buyers who are actually qualified to close.
@@ -165,6 +191,39 @@ export default function SellYourHVACBusiness() {
       </section>
 
       {/* Main Content Area with Animated Cards */}
+      
+      {/* Executive Summary & AEO Box */}
+      <section className="w-full bg-white py-12 border-b border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[#022B3A]/5 border border-[#022B3A]/10 p-8 rounded-2xl">
+            <div className="flex flex-wrap items-center justify-between border-b border-gray-200 pb-4 mb-4">
+              <h2 className="text-2xl font-black text-[#022B3A]">Executive Summary: Selling Your HVAC Business</h2>
+              <span className="text-sm font-bold text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200">Last Updated: Sept 2026</span>
+            </div>
+            
+            <p className="text-gray-700 font-medium leading-relaxed mb-6">
+              <strong>Key Takeaway:</strong> Selling a Florida HVAC business requires specialized valuation of your Maintenance Agreements (PMAs), confidential marketing, and DBPR license transfer expertise. We connect you with vetted buyers and secure top-market multiples.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Target Audience</h3>
+                <ul className="space-y-2 text-sm font-medium text-gray-700">
+                  <li>? HVAC business owners in Florida preparing for retirement or transition.</li>
+                  <li>? Owners seeking private equity roll-up opportunities.</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Our Process</h3>
+                <p className="text-sm font-medium text-gray-700">
+                  We provide a 100% confidential valuation, build blind profiles, and take your business to our network of strategic buyers without upfront fees.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <SellPageContent />
 
       {/* Closing CTA Band */}
