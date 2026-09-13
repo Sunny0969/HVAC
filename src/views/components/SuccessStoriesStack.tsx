@@ -104,13 +104,7 @@ function Card({ study, index, total }: { study: typeof caseStudies[0], index: nu
       >
         {/* Background Cover Image */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src={study.image}
-            alt={`Image of ${study.headline} facility in ${study.city}`}
-            fill
-            sizes="(max-width: 768px) 100vw, 80vw"
-            className="object-cover"
-          />
+          <img src={study.image} alt={`Image of ${study.headline} facility in ${study.city}`} className="absolute inset-0 w-full h-full object-cover" />
           {/* Gradient Overlay for Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/70 to-transparent" />
         </div>

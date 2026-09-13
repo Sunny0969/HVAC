@@ -349,19 +349,19 @@ export default function SellPageContent() {
           <Link href="/success-stories" className="text-[#EE5B2C] font-bold hover:underline hidden sm:block">View All Success Stories &rarr;</Link>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
-          <Link href="/success-stories/coastal-mechanical" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
+          <Link href="/success-stories" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
             <span className="text-xs font-bold tracking-wider text-gray-400 uppercase mb-2 block">Miami, FL</span>
             <h3 className="text-xl font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors mb-3">Coastal Mechanical Group</h3>
             <p className="text-gray-600 font-medium line-clamp-3 mb-4">Acquired by a regional private equity group after a highly competitive 4-buyer bidding war. Closed at 25% above initial expectations.</p>
             <span className="text-sm font-bold text-[#EE5B2C] flex items-center">Read Case Study <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></span>
           </Link>
-          <Link href="/success-stories/sunshine-cooling" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
+          <Link href="/success-stories" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
             <span className="text-xs font-bold tracking-wider text-gray-400 uppercase mb-2 block">Orlando, FL</span>
             <h3 className="text-xl font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors mb-3">Sunshine Cooling</h3>
             <p className="text-gray-600 font-medium line-clamp-3 mb-4">A flawless transition for a retiring founder. Secured a strategic buyer who retained 100% of the existing technician workforce.</p>
             <span className="text-sm font-bold text-[#EE5B2C] flex items-center">Read Case Study <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></span>
           </Link>
-          <Link href="/success-stories/gulf-coast-refrigeration" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
+          <Link href="/success-stories" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
             <span className="text-xs font-bold tracking-wider text-gray-400 uppercase mb-2 block">Tampa, FL</span>
             <h3 className="text-xl font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors mb-3">Gulf Coast Refrigeration</h3>
             <p className="text-gray-600 font-medium line-clamp-3 mb-4">Leveraged commercial maintenance contracts to attract a national buyer looking for a strong foothold in the Tampa market.</p>

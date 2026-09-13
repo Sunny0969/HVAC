@@ -36,8 +36,28 @@ const nextConfig: NextConfig = {
       }
     ];
   },
-  async redirects() {
+    async redirects() {
     return [
+      {
+        source: '/blog/:slug*',
+        destination: '/resources/:slug*',
+        permanent: true,
+      },
+      {
+        source: '/success-stories/coastal-mechanical',
+        destination: '/success-stories',
+        permanent: true,
+      },
+      {
+        source: '/success-stories/sunshine-cooling',
+        destination: '/success-stories',
+        permanent: true,
+      },
+      {
+        source: '/success-stories/gulf-coast-refrigeration',
+        destination: '/success-stories',
+        permanent: true,
+      },
       {
         source: '/en',
         destination: '/',
