@@ -397,8 +397,8 @@ export default function FloridaStateGuidePage() {
             </div>
 
             {/* Right Sidebar - Sticky TOC */}
-            <aside className="lg:w-[35%] xl:w-[30%]">
-              <div className="sticky top-28 space-y-8 pb-10">
+            <aside className="lg:w-[35%] xl:w-[30%] sticky top-28 self-start">
+              <div className="space-y-8 pb-10 max-h-[85vh] overflow-y-auto custom-scrollbar">
                 <TableOfContents items={tocItems} />
               </div>
             </aside>

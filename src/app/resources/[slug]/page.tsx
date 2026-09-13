@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </span>
                     {blog.date && (
                       <span className="text-sm text-gray-500 font-medium">
-                        {new Date(blog.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+                        Published: {new Date(blog.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                       </span>
                     )}
                   </div>
@@ -192,8 +192,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
 
             {/* Right Sidebar - Sticky TOC */}
-            <aside className="lg:w-[35%] xl:w-[30%]">
-              <div className="sticky top-28 space-y-8 pb-10">
+            <aside className="lg:w-[35%] xl:w-[30%] sticky top-28 self-start">
+              <div className="space-y-8 pb-10 max-h-[85vh] overflow-y-auto custom-scrollbar">
                 {tocItems.length > 0 && (
                   <TableOfContents items={tocItems} />
                 )}
