@@ -66,9 +66,59 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     }
   }
 
+  // Generate Article Schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": blog.seoTitle || blog.title,
+    "description": blog.seoDescription || blog.excerpt,
+    "image": blog.seo?.ogImage || blog.image || "https://www.hvacexitadvisors.com/why-sell-with-us.jpg",
+    "author": {
+      "@type": "Person",
+      "name": blog.author || "Sanjay Wadhwani"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "HVAC Exit Advisors",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.hvacexitadvisors.com/icon.png"
+      }
+    },
+    "datePublished": blog.date ? new Date(blog.date).toISOString() : new Date().toISOString(),
+    "dateModified": blog.date ? new Date(blog.date).toISOString() : new Date().toISOString(),
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.hvacexitadvisors.com/resources/${slug}`
+    }
+  };
+
+  // Generate FAQ Schema if FAQs exist
+  let faqSchema = null;
+  if (blog.faqs && blog.faqs.length > 0) {
+    faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": blog.faqs.map((faq: any) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+  }
+
+  const schemasToRender = faqSchema ? [articleSchema, faqSchema] : [articleSchema];
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemasToRender) }}
+      />
       <main className="w-full bg-[#F7F5F0] min-h-screen font-sans pb-24 pt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -130,20 +180,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 )}
                 
               </article>
+              
+              {/* Contact Form at the end of the article */}
+              <div className="mt-12 bg-white rounded-[2rem] shadow-sm border border-gray-100 p-8 md:p-12 mb-20">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] mb-4">Have More Questions?</h2>
+                  <p className="text-lg text-gray-600 font-medium">Contact our Florida HVAC experts for a confidential discussion.</p>
+                </div>
+                <ContactForm buttonText="Send Confidential Message" />
+              </div>
             </div>
 
-            {/* Right Sidebar - Sticky TOC & Form */}
+            {/* Right Sidebar - Sticky TOC */}
             <aside className="lg:w-[35%] xl:w-[30%]">
               <div className="sticky top-28 space-y-8 pb-10">
                 {tocItems.length > 0 && (
                   <TableOfContents items={tocItems} />
                 )}
-                
-                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8">
-                  <h3 className="text-xl font-black text-[#022B3A] mb-2">Need Guidance?</h3>
-                  <p className="text-sm text-gray-600 mb-6 font-medium">Contact our Florida HVAC experts for a confidential discussion.</p>
-                  <ContactForm buttonText="Send Message" />
-                </div>
               </div>
             </aside>
             
