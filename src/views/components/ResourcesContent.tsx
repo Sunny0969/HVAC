@@ -48,7 +48,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
     })),
     ...cmsBlogs.map((b) => ({
       id: b.id,
-      slug: `/blog/${b.slug}`,
+      slug: `/resources/${b.slug}`,
       title: b.title,
       description: b.description,
       image: b.image,
@@ -57,7 +57,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
       category: b.category || "Blog",
       readTime: "",
       isStatic: false,
-      href: `/blog/${b.slug}`,
+      href: `/resources/${b.slug}`,
     })),
   ], [staticArticles, cmsBlogs]);
 
@@ -260,7 +260,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
                   {recentPosts.map((post) => (
                     <li key={post.id}>
                       <Link
-                        href={`/blog/${post.slug}`}
+                        href={`/resources/`}
                         className="text-sm font-bold text-[#022B3A] hover:text-[#EE5B2C] transition-colors leading-snug block"
                       >
                         {post.title}
