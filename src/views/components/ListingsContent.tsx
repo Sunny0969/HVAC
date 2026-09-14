@@ -88,13 +88,13 @@ export default function ListingsContent({ listings }: Props) {
             ) : (
               <div className="space-y-6">
                 {filtered.map(l => (
-                  <div key={l._id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col sm:flex-row hover:shadow-lg transition-shadow">
+                  <div key={l._id} className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col sm:flex-row hover:shadow-lg transition-shadow sm:min-h-[240px]">
                     {/* Image */}
-                    <div className="sm:w-64 h-48 sm:h-auto bg-gray-200 relative flex-shrink-0">
+                    <div className="sm:w-72 h-48 sm:h-auto bg-gray-200 relative flex-shrink-0">
                       {l.coverImage ? (
-                        <img src={l.coverImage} alt={l.coverImageAlt || l.title} className="w-full h-full object-cover" />
+                        <img src={l.coverImage} alt={l.coverImageAlt || l.title} className="absolute inset-0 w-full h-full object-cover" />
                       ) : (
-                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#022B3A] to-blue-900 text-white font-bold text-center px-4">
+                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#022B3A] to-blue-900 text-white font-bold text-center px-4">
                           {l.title}
                         </div>
                       )}
