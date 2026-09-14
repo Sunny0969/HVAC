@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Hero from '../views/components/Hero';
 import RoadmapAscent, { RoadmapStep } from '../views/components/RoadmapAscent';
 import HowItWorksSteps from '../views/components/HowItWorksSteps';
+import IndustriesWeServe from '../views/components/IndustriesWeServe';
 import SpotlightCarousel, { CarouselItem } from '../views/components/SpotlightCarousel';
 import MarketInsightsFAQ from '../views/components/MarketInsightsFAQ';
 import FeaturedOpportunities from '../views/components/FeaturedOpportunities';
@@ -208,6 +209,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* Industries We Serve */}
+      <IndustriesWeServe />
 
       {/* 3. How it Works */}
       <HowItWorksSteps />
