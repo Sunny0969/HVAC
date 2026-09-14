@@ -65,7 +65,7 @@ export default function ListingsContent({ listings }: Props) {
               <select
                 value={sortOrder}
                 onChange={e => setSortOrder(e.target.value)}
-                className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-semibold text-gray-800 shadow-sm focus:outline-none focus:border-[#EE5B2C]"
+                className="px-4 py-2 min-h-[44px] bg-white border border-gray-200 rounded-lg text-base font-semibold text-gray-800 shadow-sm focus:outline-none focus:border-[#EE5B2C]"
               >
                 <option value="newest">Newest</option>
                 <option value="price_asc">Price (Low to High)</option>
@@ -156,7 +156,7 @@ export default function ListingsContent({ listings }: Props) {
                   placeholder="Keyword or location"
                   value={search}
                   onChange={e => setSearch(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-sm"
+                  className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-base"
                 />
               </div>
 
@@ -165,7 +165,7 @@ export default function ListingsContent({ listings }: Props) {
                 <select
                   value={statusFilter}
                   onChange={e => setStatusFilter(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-sm"
+                  className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-base"
                 >
                   <option value="">All Statuses</option>
                   <option value="Active">Active</option>
@@ -179,7 +179,7 @@ export default function ListingsContent({ listings }: Props) {
                 <select
                   value={locationFilter}
                   onChange={e => setLocationFilter(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-sm"
+                  className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-base"
                 >
                   <option value="">All Locations</option>
                   {locations.map(loc => <option key={loc} value={loc}>{loc}</option>)}
@@ -191,7 +191,7 @@ export default function ListingsContent({ listings }: Props) {
                 <select
                   value={industryFilter}
                   onChange={e => setIndustryFilter(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-sm"
+                  className="w-full px-4 py-3 min-h-[44px] rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-base"
                 >
                   <option value="">All Industries</option>
                   {industries.map(ind => <option key={ind} value={ind}>{ind}</option>)}
@@ -206,14 +206,14 @@ export default function ListingsContent({ listings }: Props) {
                     placeholder="Min"
                     value={minPrice}
                     onChange={e => setMinPrice(e.target.value)}
-                    className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-sm"
+                    className="w-full px-3 py-3 min-h-[44px] rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-base"
                   />
                   <input
                     type="number"
                     placeholder="Max"
                     value={maxPrice}
                     onChange={e => setMaxPrice(e.target.value)}
-                    className="w-full px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-sm"
+                    className="w-full px-3 py-3 min-h-[44px] rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#EE5B2C] text-base"
                   />
                 </div>
               </div>

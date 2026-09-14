@@ -138,6 +138,23 @@ export default async function ListingsPage() {
 
       <ListingsContent listings={listings} />
 
+      {/* Contact CTA Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="bg-[#022B3A] rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <h2 className="text-white text-2xl font-black mb-2">Not finding the right business?</h2>
+            <p className="text-white/80 font-medium">Tell us your criteria and we'll match you from our private off-market inventory.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+            <Link href="/contact-us" className="px-6 py-3 min-h-[44px] bg-[#EE5B2C] text-white font-bold rounded-lg hover:bg-orange-600 transition-all text-center whitespace-nowrap">
+              Talk to a Broker →
+            </Link>
+            <Link href="/resources" className="px-6 py-3 min-h-[44px] bg-white/10 text-white font-bold rounded-lg border border-white/20 hover:bg-white/20 transition-all text-center whitespace-nowrap">
+              Browse Resources
+            </Link>
+          </div>
+        </div>
+      </section>
       {/* SEO & Content Depth Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100 mb-12">
@@ -191,7 +208,7 @@ export default async function ListingsPage() {
             <strong>Short Answer: Expect to pay 2.5x to 4x the business's SDE (Seller's Discretionary Earnings).</strong>
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Valuations vary based on recurring revenue, fleet quality, and management structure. A highly systematized business with a general manager in place will command a premium multiple closer to 4x. To learn more about the acquisition process and how we assist buyers, read our comprehensive guide on <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">how to buy an HVAC business</Link> or discover <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">how our brokerage process works</Link>.
+            Valuations vary based on recurring revenue, fleet quality, and management structure. A highly systematized business with a general manager in place will command a premium multiple closer to 4x. To learn more about the acquisition process and how we assist buyers, read our comprehensive guide on <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">how to buy an HVAC business</Link> or discover <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">how our brokerage process works</Link>. You can also explore our <Link href="/resources" className="text-[#EE5B2C] hover:underline font-bold">HVAC industry resources</Link> for deeper market insights.
           </p>
 
         </div>

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
+import ContactForm from '@/views/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact a Florida HVAC Business Broker',
@@ -115,8 +116,27 @@ export default function ContactPage() {
               Office: 10242 NW 47th St, Ste 39C, Sunrise, FL 33351
             </p>
           </div>
+
+          {/* Additional internal links */}
+          <p className="mt-6 text-gray-700">
+            Ready to explore available businesses? Browse our <Link href="/listings" className="text-[#EE5B2C] hover:underline font-bold">active HVAC listings</Link>. 
+            Or read how we have helped other owners through our <Link href="/success-stories" className="text-[#EE5B2C] hover:underline font-bold">client success stories</Link>.
+          </p>
         </div>
       </div>
+
+      {/* Contact Form Section */}
+      <section className="w-full bg-gray-50 border-t border-gray-200 py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] mb-4">Send Us a Message</h2>
+            <p className="text-lg text-gray-600 font-medium">Complete the form below and a senior advisor will respond within one business day.</p>
+          </div>
+          <div className="bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8 md:p-12">
+            <ContactForm buttonText="Send My Inquiry" />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

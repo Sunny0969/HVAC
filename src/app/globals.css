@@ -32,3 +32,25 @@ body {
   animation: marquee 20s linear infinite;
   will-change: transform;
 }
+
+/* ── Mobile UX: prevent iOS auto-zoom on input focus (font-size must be ≥16px) ── */
+input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+/* ── Remove default tap highlight on mobile for cleaner touch feedback ── */
+a,
+button,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* ── Prevent horizontal overflow at root ── */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}

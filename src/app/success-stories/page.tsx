@@ -93,6 +93,18 @@ export default function SuccessStoriesPage() {
               >
                 Get My Free Valuation &rarr;
               </Link>
+              <Link
+                href="/sell-your-hvac-business"
+                className="w-full sm:w-auto px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-bold rounded-lg border border-white/30 text-center transition-all"
+              >
+                Sell Your Business
+              </Link>
+              <Link
+                href="/buy-an-hvac-business"
+                className="w-full sm:w-auto px-8 py-4 bg-white/15 hover:bg-white/25 text-white font-bold rounded-lg border border-white/30 text-center transition-all"
+              >
+                Buy an HVAC Business
+              </Link>
             </div>
           </div>
         </section>
@@ -148,6 +160,16 @@ export default function SuccessStoriesPage() {
                   Our team anticipates due diligence hurdles and manages financing complexities proactively, getting you from listed to closed smoothly and on your terms.
                 </p>
               </div>
+            </div>
+
+            {/* Resources cross-link */}
+            <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-gray-100 text-center">
+              <p className="text-gray-700 font-medium text-lg">
+                Want to learn more before reaching out? Explore our{' '}
+                <Link href="/resources" className="text-[#EE5B2C] hover:underline font-bold">HVAC industry resources</Link>{' '}
+                or understand{' '}
+                <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">how our process works</Link>.
+              </p>
             </div>
           </div>
 
