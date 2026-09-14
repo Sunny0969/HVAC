@@ -48,9 +48,9 @@ button,
   touch-action: manipulation;
 }
 
-/* ── Prevent horizontal overflow at root ── */
+/* ── Prevent horizontal overflow at root without breaking position: sticky ── */
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: clip;
   max-width: 100%;
 }
