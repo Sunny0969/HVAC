@@ -115,10 +115,14 @@ export default function ListingsContent({ listings }: Props) {
                         {l.location}
                       </div>
 
-                      <div className="mt-auto grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-gray-100 pt-4 items-center">
+                      <div className="mt-auto grid grid-cols-2 md:grid-cols-5 gap-4 border-t border-gray-100 pt-4 items-center">
                         <div>
                           <p className="text-xs text-gray-500 mb-1">Asking Price</p>
                           <p className="text-lg font-black text-[#022B3A]">{formatMoney(l.askingPrice)}</p>
+                        </div>
+                        <div>
+                          <p className="text-xs text-gray-500 mb-1">Down Payment</p>
+                          <p className="text-base font-bold text-gray-800">{formatMoney(l.downPayment)}</p>
                         </div>
                         <div>
                           <p className="text-xs text-gray-500 mb-1">Revenue</p>

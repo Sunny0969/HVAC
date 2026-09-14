@@ -23,6 +23,7 @@ export default function AdminListingForm() {
     revenue: 0,
     cashFlow: 0,
     ebitda: 0,
+    downPayment: 0,
     description: '',
     realEstate: '',
     ffe: '',
@@ -234,6 +235,10 @@ export default function AdminListingForm() {
           <label className="admin-field">
             <span>EBITDA ($)</span>
             <input type="number" value={form.ebitda || 0} onChange={(e) => setForm({ ...form, ebitda: Number(e.target.value) })} />
+          </label>
+          <label className="admin-field">
+            <span>Down Payment ($)</span>
+            <input type="number" value={form.downPayment || 0} onChange={(e) => setForm({ ...form, downPayment: Number(e.target.value) })} />
           </label>
           <label className="admin-field">
             <span>URL Slug (Leave blank to auto-generate)</span>

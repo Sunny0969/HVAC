@@ -16,6 +16,7 @@ const listingSchema = new mongoose.Schema(
     revenue: { type: Number },
     cashFlow: { type: Number },
     ebitda: { type: Number },
+    downPayment: { type: Number },
 
     description: { type: String },
     realEstate: { type: String },

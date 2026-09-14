@@ -152,10 +152,14 @@ export default async function ListingDetailPage({ params }: { params: Promise<{ 
                 {listing.location || 'Location not specified'}
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 p-6 bg-gray-50 rounded-xl border border-gray-100">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-6 p-6 bg-gray-50 rounded-xl border border-gray-100">
                 <div>
                   <p className="text-sm text-gray-500 mb-1 font-bold">Asking Price</p>
                   <p className="text-2xl font-black text-[#022B3A]">{formatMoney(listing.askingPrice)}</p>
+                </div>
+                <div>
+                  <p className="text-sm text-gray-500 mb-1 font-bold">Down Payment</p>
+                  <p className="text-xl font-bold text-gray-800">{formatMoney(listing.downPayment)}</p>
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 mb-1 font-bold">Revenue</p>

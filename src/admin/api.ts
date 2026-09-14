@@ -693,6 +693,7 @@ export type AdminListing = {
   revenue?: number;
   cashFlow?: number;
   ebitda?: number;
+  downPayment?: number;
   description?: string;
   realEstate?: string;
   ffe?: string;
