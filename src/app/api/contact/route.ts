@@ -26,7 +26,7 @@ export async function POST(request: Request) {
       },
       body: JSON.stringify({
         from: FROM_EMAIL,
-        to: 'suneelpirkash@gmail.com',
+        to: 'contact@hvacexitadvisors.com',
         reply_to: email || undefined,
         subject: `New Lead: ${formType || 'Contact Form'} - ${name}`,
         html: adminHtml,
