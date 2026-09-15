@@ -4,392 +4,397 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
-// Helper to format currency safely
-const formatCurrency = (value: string | number) => {
-  if (!value) return "";
-  const numericString = value.toString().replace(/[^\d.-]/g, "");
-  if (isNaN(Number(numericString))) return "";
-  return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(Number(numericString));
+// Formatter
+const money = (n: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(Math.max(0, n));
+const num = (v: string) => Number(v) || 0;
+
+const labels: Record<string, Record<string, string>> = {
+  recurring: { '-1': 'Limited recurring revenue', '1': 'Meaningful maintenance revenue', '2': 'Strong recurring maintenance base' },
+  serviceMix: { '-2': 'Heavy construction/project exposure', '2': 'Service-and-replacement emphasis' },
+  owner: { '-2': 'High dependence on owner as technician or salesperson', '-1': 'Daily operations depend on owner', '2': 'Independent management team' },
+  team: { '-2': 'Technician shortage or turnover', '2': 'Strong technician and management bench' },
+  concentration: { '-2': 'Very high customer concentration', '-1': 'Elevated customer concentration', '2': 'Diversified customer base' },
+  license: { '-2': 'License or qualifying-agent continuity is uncertain', '2': 'License continuity is established' },
+  fleet: { '-1': 'Fleet replacement requirements', '1': 'Modern, maintained fleet' },
+  territory: { '-1': 'Scattered service territory', '1': 'Dense and efficient service routes' },
+  growth: { '-2': 'Material revenue decline', '-1': 'Recent revenue decline', '1': 'Consistent growth', '2': 'Strong recent growth' },
+  records: { '-2': 'Incomplete or unverifiable records', '-1': 'Limited financial reporting', '2': 'High-quality financial reporting and supported add-backs' }
 };
-
-// Helper to extract raw number
-const parseCurrency = (value: string) => {
-  const numericString = value.replace(/[^\d.-]/g, "");
-  return Number(numericString) || 0;
-};
-
-// Types
-type Step = 1 | 2 | 3;
-type Score = 0 | 0.5 | 1;
-
-interface Financials {
-  revenue: string;
-  netIncome: string;
-  depreciation: string;
-  interest: string;
-  ownerComp: string;
-  addBacks: string;
-}
-
-interface Drivers {
-  [key: string]: Score;
-}
 
 export default function ValuationCalculator() {
-  const [step, setStep] = useState<Step>(1);
+  const [revenue, setRevenue] = useState<string>("");
+  const [earnings, setEarnings] = useState<string>("");
+  const [basis, setBasis] = useState<string>("SDE");
+
+  const [growth, setGrowth] = useState<string>("0");
+  const [records, setRecords] = useState<string>("0");
   
-  // Step 1: Financials
-  const [financials, setFinancials] = useState<Financials>({
-    revenue: "",
-    netIncome: "",
-    depreciation: "",
-    interest: "",
-    ownerComp: "",
-    addBacks: "",
-  });
+  const [recurring, setRecurring] = useState<string>("0");
+  const [serviceMix, setServiceMix] = useState<string>("0");
+  const [owner, setOwner] = useState<string>("0");
+  const [team, setTeam] = useState<string>("0");
+  const [concentration, setConcentration] = useState<string>("0");
+  const [license, setLicense] = useState<string>("0");
+  const [fleet, setFleet] = useState<string>("0");
+  const [territory, setTerritory] = useState<string>("0");
+  
+  const [assets, setAssets] = useState<string>("");
+  const [liabilities, setLiabilities] = useState<string>("");
 
-  // Calculate SDE live
-  const sde = 
-    parseCurrency(financials.netIncome) + 
-    parseCurrency(financials.depreciation) + 
-    parseCurrency(financials.interest) + 
-    parseCurrency(financials.ownerComp) + 
-    parseCurrency(financials.addBacks);
+  const [results, setResults] = useState<any>(null);
 
-  const canProceedToStep2 = parseCurrency(financials.revenue) > 0 && financials.netIncome !== "";
-
-  // Step 2: Drivers
-  const [drivers, setDrivers] = useState<Drivers>({
-    bookkeeping: 0.5,
-    recurringRev: 0.5,
-    mix: 0.5,
-    customerConc: 0.5,
-    ownerDep: 0.5,
-    team: 0.5,
-    fleet: 0.5,
-    reputation: 0.5,
-    revTrend: 0.5,
-    grossMargin: 0.5,
-    seasonality: 0.5,
-  });
-
-  const updateDriver = (key: string, value: Score) => {
-    setDrivers(prev => ({ ...prev, [key]: value }));
-  };
-
-  // Step 3: Calculation Logic
-  const calculateResults = () => {
-    let multiple = 2.5;
-
-    // Weighting Logic
-    const adjustments: Record<string, { weight: number, name: string, score: Score }> = {
-      recurringRev: { weight: 0.3, name: "Recurring maintenance-agreement revenue %", score: drivers.recurringRev },
-      ownerDep: { weight: 0.3, name: "Owner dependency", score: drivers.ownerDep },
-      customerConc: { weight: 0.3, name: "Customer concentration", score: drivers.customerConc },
-      team: { weight: 0.2, name: "Technician team & licensing", score: drivers.team },
-      revTrend: { weight: 0.2, name: "Revenue trend (last 3 years)", score: drivers.revTrend },
-      grossMargin: { weight: 0.2, name: "Gross margin", score: drivers.grossMargin },
-      bookkeeping: { weight: 0.2, name: "Bookkeeping quality", score: drivers.bookkeeping },
-      reputation: { weight: 0.1, name: "Reputation & reviews", score: drivers.reputation },
-      fleet: { weight: 0.1, name: "Fleet & equipment condition", score: drivers.fleet },
-      mix: { weight: 0.1, name: "Residential vs. commercial revenue mix", score: drivers.mix },
-      seasonality: { weight: 0.1, name: "Seasonality/predictability", score: drivers.seasonality },
-    };
-
-    let totalScore = 0;
+  const calculate = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
     
-    Object.keys(adjustments).forEach(key => {
-      const { weight, score } = adjustments[key];
-      // Normalize score: 0 -> -weight, 0.5 -> 0, 1 -> +weight
-      const adjustment = (score - 0.5) * 2 * weight;
-      multiple += adjustment;
-      totalScore += score;
+    const rev = num(revenue);
+    const earn = num(earnings);
+
+    if (!rev || !earn) {
+      alert("Please enter both annual revenue and normalized earnings.");
+      return;
+    }
+    if (earn > rev) {
+      alert("Normalized earnings should not exceed revenue. Please check the entries.");
+      return;
+    }
+
+    const ids = [
+      { id: 'growth', val: num(growth) },
+      { id: 'records', val: num(records) },
+      { id: 'recurring', val: num(recurring) },
+      { id: 'serviceMix', val: num(serviceMix) },
+      { id: 'owner', val: num(owner) },
+      { id: 'team', val: num(team) },
+      { id: 'concentration', val: num(concentration) },
+      { id: 'license', val: num(license) },
+      { id: 'fleet', val: num(fleet) },
+      { id: 'territory', val: num(territory) }
+    ];
+
+    const raw = ids.reduce((s, x) => s + x.val, 0);
+    const score = Math.max(0, Math.min(100, 50 + raw * 3.2));
+
+    let baseLow, baseMid, baseHigh;
+    if (basis === 'EBITDA') {
+      if (earn < 500000) [baseLow, baseMid, baseHigh] = [3.0, 3.8, 4.6];
+      else if (earn < 1000000) [baseLow, baseMid, baseHigh] = [3.8, 4.8, 5.8];
+      else if (earn < 3000000) [baseLow, baseMid, baseHigh] = [4.8, 6.0, 7.2];
+      else [baseLow, baseMid, baseHigh] = [5.8, 7.2, 8.8];
+    } else {
+      if (rev < 500000) [baseLow, baseMid, baseHigh] = [1.35, 1.75, 2.15];
+      else if (rev < 1000000) [baseLow, baseMid, baseHigh] = [1.55, 2.05, 2.55];
+      else if (rev < 2500000) [baseLow, baseMid, baseHigh] = [1.90, 2.55, 3.20];
+      else if (rev < 5000000) [baseLow, baseMid, baseHigh] = [2.25, 3.05, 3.85];
+      else [baseLow, baseMid, baseHigh] = [2.65, 3.55, 4.50];
+    }
+
+    const qualityAdj = raw * (basis === 'EBITDA' ? 0.08 : 0.055);
+    const ml = Math.max(0.75, baseLow + qualityAdj);
+    const mm = Math.max(1, baseMid + qualityAdj);
+    const mh = Math.max(1.25, baseHigh + qualityAdj);
+
+    const revBase = rev < 500000 ? [0.32, 0.48, 0.61] : rev < 2500000 ? [0.40, 0.57, 0.72] : [0.48, 0.68, 0.90];
+    const revAdj = raw * 0.008;
+    const rl = Math.max(0.15, revBase[0] + revAdj);
+    const rm = Math.max(0.2, revBase[1] + revAdj);
+    const rh = Math.max(0.25, revBase[2] + revAdj);
+
+    const excess = num(assets);
+    const debt = num(liabilities);
+
+    const earnVals = [earn * ml, earn * mm, earn * mh];
+    const revVals = [rev * rl, rev * rm, rev * rh];
+
+    // Earnings 75%, Revenue 25%
+    const estimates = earnVals.map((x, i) => x * 0.75 + revVals[i] * 0.25 + excess - debt);
+    estimates.sort((a, b) => a - b);
+
+    const strengths: string[] = [];
+    const risks: string[] = [];
+
+    ids.forEach(item => {
+      const text = labels[item.id]?.[String(item.val)];
+      if (text) {
+        if (item.val > 0) strengths.push(text);
+        else risks.push(text);
+      }
     });
 
-    multiple = Math.max(2.0, Math.min(3.5, multiple));
-    const readinessScore = Math.round((totalScore / 11) * 100);
+    if (!strengths.length) strengths.push('No premium factors were selected; broker verification may identify additional strengths.');
+    if (!risks.length) risks.push('All selected factors appear favorable, subject to documentation and buyer due diligence.');
 
-    // Identify lowest scoring drivers for improvement bullets
-    const lowestDrivers = Object.values(adjustments)
-      .sort((a, b) => a.score - b.score)
-      .slice(0, 2);
-
-    return {
-      multiple,
-      readinessScore,
-      lowestDrivers,
-      conservative: sde * (multiple - 0.4),
-      likely: sde * multiple,
-      optimistic: sde * (multiple + 0.4)
-    };
+    setResults({
+      low: money(estimates[0]),
+      mid: money(estimates[1]),
+      high: money(estimates[2]),
+      earnMultiple: `${ml.toFixed(2)}× – ${mh.toFixed(2)}× ${basis}`,
+      revMultiple: `${rl.toFixed(2)}× – ${rh.toFixed(2)}× revenue`,
+      score,
+      strengths,
+      risks,
+      basis
+    });
   };
-
-  const results = step === 3 ? calculateResults() : null;
 
   const resetAll = () => {
-    setStep(1);
-    setFinancials({
-      revenue: "",
-      netIncome: "",
-      depreciation: "",
-      interest: "",
-      ownerComp: "",
-      addBacks: "",
-    });
-    setDrivers({
-      bookkeeping: 0.5, recurringRev: 0.5, mix: 0.5, customerConc: 0.5,
-      ownerDep: 0.5, team: 0.5, fleet: 0.5, reputation: 0.5,
-      revTrend: 0.5, grossMargin: 0.5, seasonality: 0.5,
-    });
+    setRevenue(""); setEarnings(""); setBasis("SDE");
+    setGrowth("0"); setRecords("0"); setRecurring("0"); setServiceMix("0");
+    setOwner("0"); setTeam("0"); setConcentration("0"); setLicense("0");
+    setFleet("0"); setTerritory("0"); setAssets(""); setLiabilities("");
+    setResults(null);
   };
 
   return (
-    <div className="bg-white rounded-[2rem] shadow-xl border border-gray-100 overflow-hidden relative">
-      
-      {/* Progress Header */}
-      <div className="bg-gray-50 border-b border-gray-100 p-6 flex flex-col md:flex-row justify-between items-center relative">
-        <div className="font-bold text-[#022B3A] mb-4 md:mb-0">
-          Step {step} of 3: {step === 1 ? "Financial Snapshot" : step === 2 ? "HVAC Value Drivers" : "Estimate of Value"}
-        </div>
-        <div className="flex gap-2 w-full md:w-auto">
-          {[1, 2, 3].map(i => (
-            <div key={i} className={`h-2 rounded-full flex-grow md:w-16 transition-colors duration-500 ${step >= i ? 'bg-[#EE5B2C]' : 'bg-gray-200'}`} />
-          ))}
-        </div>
+    <div className="w-full">
+      <div className="bg-[#022B3A] text-white rounded-t-3xl p-8 md:p-10 shadow-lg">
+        <div className="text-[#EE5B2C] font-bold text-sm tracking-widest uppercase mb-2">Confidential Preliminary Estimate</div>
+        <h2 className="text-3xl md:text-4xl font-black mb-4">HVAC Business Valuation Calculator</h2>
+        <p className="text-gray-300 font-medium text-lg leading-relaxed max-w-3xl">
+          Receive an initial market range based on normalized earnings, revenue, reported sold-business benchmarks, and HVAC-specific value drivers.
+        </p>
       </div>
 
-      <div className="p-8 md:p-12">
-        <AnimatePresence mode="wait" initial={false}>
-          
-          {/* STEP 1: FINANCIALS */}
-          {step === 1 && (
+      <div className="bg-white rounded-b-3xl shadow-xl border border-gray-100 p-6 md:p-10">
+        <div className="bg-orange-50 border-l-4 border-[#EE5B2C] p-4 rounded-r-lg mb-10 text-gray-800 font-medium text-sm">
+          <strong>Important:</strong> This calculator provides an educational preliminary Broker Opinion of Value range—not a certified appraisal, offer, or guaranteed sale price. A final broker opinion can be prepared only after reviewing financial statements, assets, service territories, and owner involvement.
+        </div>
+
+        <form onSubmit={calculate}>
+          {/* Section 1 */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-[#022B3A] border-b border-gray-100 pb-2 mb-6">Financial Performance</h3>
+            <p className="text-gray-500 text-sm mb-6">Use the most recent trailing 12-month figures. Do not include real estate in annual revenue.</p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Annual Revenue</label>
+                <input type="number" required value={revenue} onChange={e => setRevenue(e.target.value)} placeholder="e.g. 1500000" className="w-full border border-gray-300 rounded-lg p-3 text-lg focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" />
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Normalized Annual Earnings</label>
+                <input type="number" required value={earnings} onChange={e => setEarnings(e.target.value)} placeholder="e.g. 325000" className="w-full border border-gray-300 rounded-lg p-3 text-lg focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" />
+                <p className="text-xs text-gray-500 mt-1">Documented SDE or adjusted EBITDA—not gross profit.</p>
+              </div>
+
+              <div className="md:col-span-2">
+                <label className="block text-sm font-bold text-gray-700 mb-2">Earnings Basis</label>
+                <div className="flex flex-wrap gap-4">
+                  <label className="flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-gray-300 flex-1">
+                    <input type="radio" name="basis" value="SDE" checked={basis === 'SDE'} onChange={() => setBasis('SDE')} className="w-4 h-4 text-[#EE5B2C] focus:ring-[#EE5B2C]" />
+                    <span className="font-medium text-gray-800">SDE (Owner-operated)</span>
+                  </label>
+                  <label className="flex items-center gap-2 cursor-pointer bg-gray-50 px-4 py-3 rounded-lg border border-gray-200 hover:border-gray-300 flex-1">
+                    <input type="radio" name="basis" value="EBITDA" checked={basis === 'EBITDA'} onChange={() => setBasis('EBITDA')} className="w-4 h-4 text-[#EE5B2C] focus:ring-[#EE5B2C]" />
+                    <span className="font-medium text-gray-800">Adjusted EBITDA (Management-operated)</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">3-Year Revenue Trend</label>
+                <select value={growth} onChange={e => setGrowth(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-2">Declining more than 10%</option>
+                  <option value="-1">Declining up to 10%</option>
+                  <option value="0">Stable</option>
+                  <option value="1">Growing 5%–15%</option>
+                  <option value="2">Growing more than 15%</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Financial-Record Quality</label>
+                <select value={records} onChange={e => setRecords(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-2">Incomplete / cash not verified</option>
+                  <option value="-1">Basic P&L only</option>
+                  <option value="0">Tax returns and P&L available</option>
+                  <option value="2">Accrual statements and clean add-backs</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 2 */}
+          <div className="mb-10">
+            <h3 className="text-2xl font-bold text-[#022B3A] border-b border-gray-100 pb-2 mb-6">HVAC Operating Quality</h3>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Maintenance / Recurring Revenue</label>
+                <select value={recurring} onChange={e => setRecurring(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-1">Under 5%</option>
+                  <option value="0">5%–15%</option>
+                  <option value="1">16%–30%</option>
+                  <option value="2">More than 30%</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Service and Replacement Mix</label>
+                <select value={serviceMix} onChange={e => setServiceMix(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-2">Mostly new construction/projects</option>
+                  <option value="0">Balanced mix</option>
+                  <option value="2">Mostly service, repair and replacement</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Owner Dependence</label>
+                <select value={owner} onChange={e => setOwner(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-2">Owner is lead technician/salesperson</option>
+                  <option value="-1">Owner runs daily operations</option>
+                  <option value="0">Manager and documented systems</option>
+                  <option value="2">Independent management team</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Technician & Management Stability</label>
+                <select value={team} onChange={e => setTeam(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-2">Short staffed / high turnover</option>
+                  <option value="0">Adequate and stable</option>
+                  <option value="2">Strong bench and management depth</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Largest Customer Share</label>
+                <select value={concentration} onChange={e => setConcentration(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="2">Under 10%</option>
+                  <option value="0">10%–20%</option>
+                  <option value="-1">21%–35%</option>
+                  <option value="-2">Over 35%</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">License / Qualifying-Agent Continuity</label>
+                <select value={license} onChange={e => setLicense(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-2">Uncertain after owner exits</option>
+                  <option value="0">Transition needs planning</option>
+                  <option value="2">Transferable continuity established</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Fleet and Equipment Condition</label>
+                <select value={fleet} onChange={e => setFleet(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-1">Major replacement needed</option>
+                  <option value="0">Average / maintained</option>
+                  <option value="1">Modern and well maintained</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Routes / Service-Territory Density</label>
+                <select value={territory} onChange={e => setTerritory(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none">
+                  <option value="-1">Scattered / long drive times</option>
+                  <option value="0">Average coverage</option>
+                  <option value="1">Dense, efficient routes</option>
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Excess Non-Operating Assets</label>
+                <input type="number" value={assets} onChange={e => setAssets(e.target.value)} placeholder="$0" className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none" />
+                <p className="text-xs text-gray-500 mt-1">Only assets not required to produce earnings.</p>
+              </div>
+              <div>
+                <label className="block text-sm font-bold text-gray-700 mb-2">Debt or Liabilities Assumed</label>
+                <input type="number" value={liabilities} onChange={e => setLiabilities(e.target.value)} placeholder="$0" className="w-full border border-gray-300 rounded-lg p-3 bg-white focus:ring-2 focus:ring-[#EE5B2C] outline-none" />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex gap-4 border-t border-gray-100 pt-8">
+            <button type="submit" className="px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transition-all text-lg">
+              Calculate Preliminary Range
+            </button>
+            <button type="button" onClick={resetAll} className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold rounded-xl transition-all text-lg">
+              Clear
+            </button>
+          </div>
+        </form>
+
+        <AnimatePresence>
+          {results && (
             <motion.div
-              key="step1"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-              className="max-w-2xl mx-auto"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="mt-12 pt-12 border-t-2 border-gray-100"
             >
-              <h2 className="text-3xl font-black text-[#022B3A] mb-2">Financial Snapshot</h2>
-              <p className="text-gray-600 mb-8 font-medium">Please enter values from your last full fiscal year. We use plain-language terms to keep this simple.</p>
-              
-              <div className="space-y-6">
-                {[
-                  { id: 'revenue', label: 'Annual Revenue', sub: 'Total gross sales, last full year' },
-                  { id: 'netIncome', label: 'Net Income', sub: 'As reported on your tax return / P&L' },
-                  { id: 'depreciation', label: 'Depreciation & Amortization', sub: 'Standard add-back' },
-                  { id: 'interest', label: 'Interest Expense', sub: 'Standard add-back' },
-                  { id: 'ownerComp', label: 'Owner Salary/Compensation', sub: 'What you pay yourself, to be added back' },
-                  { id: 'addBacks', label: 'Other Owner Add-Backs', sub: 'Personal vehicle, family-on-payroll, one-time expenses' },
-                ].map((field) => (
-                  <div key={field.id}>
-                    <label className="block text-sm font-bold text-[#022B3A] mb-1">{field.label}</label>
-                    <p className="text-xs text-gray-500 mb-2">{field.sub}</p>
-                    <input 
-                      type="text" 
-                      placeholder="$0"
-                      value={formatCurrency(financials[field.id as keyof Financials])}
-                      onChange={(e) => setFinancials({...financials, [field.id]: e.target.value})}
-                      className="w-full text-xl p-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent transition-shadow outline-none font-medium"
-                    />
-                  </div>
-                ))}
+              <h2 className="text-3xl font-black text-[#022B3A] mb-2 text-center">Preliminary Broker Opinion Range</h2>
+              <p className="text-center text-gray-500 mb-10 font-medium">Based primarily on normalized {results.basis}, with a revenue cross-check and operating-quality adjustments.</p>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
+                  <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">Low</span>
+                  <strong className="text-2xl font-black text-[#022B3A]">{results.low}</strong>
+                </div>
+                <div className="bg-blue-50/50 rounded-2xl p-8 text-center border border-blue-100 shadow-md transform md:-translate-y-2">
+                  <span className="text-sm font-bold text-[#EE5B2C] uppercase tracking-widest mb-2 block">Midpoint</span>
+                  <strong className="text-4xl font-black text-[#022B3A]">{results.mid}</strong>
+                </div>
+                <div className="bg-gray-50 rounded-2xl p-6 text-center border border-gray-200">
+                  <span className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-2 block">High</span>
+                  <strong className="text-2xl font-black text-[#022B3A]">{results.high}</strong>
+                </div>
               </div>
 
-              <div className="mt-8 p-6 bg-[#F7F5F0] rounded-xl border border-gray-200 flex justify-between items-center">
+              <div className="mb-10">
+                <div className="flex justify-between items-end mb-2">
+                  <span className="font-bold text-gray-700">Transferability and Quality Score</span>
+                  <span className="font-black text-[#022B3A] text-lg">{Math.round(results.score)}/100</span>
+                </div>
+                <div className="h-3 w-full bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-orange-400 to-green-500 rounded-full" style={{ width: `${results.score}%` }}></div>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-12">
+                <div className="border border-gray-200 rounded-xl p-5 bg-white">
+                  <span className="block text-sm text-gray-500 font-medium mb-1">Applied Earnings Range</span>
+                  <b className="text-lg text-[#022B3A]">{results.earnMultiple}</b>
+                </div>
+                <div className="border border-gray-200 rounded-xl p-5 bg-white">
+                  <span className="block text-sm text-gray-500 font-medium mb-1">Revenue Cross-Check</span>
+                  <b className="text-lg text-[#022B3A]">{results.revMultiple}</b>
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8 mb-10">
                 <div>
-                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wide">Live Calculation</div>
-                  <div className="text-2xl font-black text-[#022B3A]">Adjusted SDE</div>
-                </div>
-                <div className="text-3xl font-black text-[#EE5B2C]">
-                  {formatCurrency(sde)}
-                </div>
-              </div>
-
-              <div className="mt-10 flex justify-end">
-                <button
-                  onClick={() => setStep(2)}
-                  disabled={!canProceedToStep2}
-                  className={`px-10 py-4 font-bold rounded-xl transition-all ${canProceedToStep2 ? 'bg-[#022B3A] hover:bg-gray-800 text-white shadow-lg' : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}
-                >
-                  Continue to Value Drivers &rarr;
-                </button>
-              </div>
-            </motion.div>
-          )}
-
-          {/* STEP 2: DRIVERS */}
-          {step === 2 && (
-            <motion.div
-              key="step2"
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -20 }}
-            >
-              <h2 className="text-3xl font-black text-[#022B3A] mb-2 text-center">HVAC Value Drivers</h2>
-              <p className="text-gray-600 mb-10 font-medium text-center max-w-2xl mx-auto">These operational specifics are what actually move the needle for HVAC buyers in Florida.</p>
-              
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {/* 11 Drivers Config */}
-                {[
-                  { id: 'recurringRev', label: 'Recurring maintenance-agreement revenue %', opts: [{l: '< 10%', v: 0}, {l: '10-30%', v: 0.5}, {l: '> 30%', v: 1}] },
-                  { id: 'ownerDep', label: 'Owner dependency', opts: [{l: 'Does sales/ops/field', v: 0}, {l: 'Mainly oversees', v: 0.5}, {l: 'Runs independently', v: 1}] },
-                  { id: 'customerConc', label: 'Customer concentration (Top 5 clients)', opts: [{l: '> 30% of Rev', v: 0}, {l: '10-30%', v: 0.5}, {l: '< 10%', v: 1}] },
-                  { id: 'team', label: 'Technician team & licensing', opts: [{l: 'Mostly subs', v: 0}, {l: 'Mixed team', v: 0.5}, {l: 'Fully staffed/licensed', v: 1}] },
-                  { id: 'revTrend', label: 'Revenue trend (last 3 years)', opts: [{l: 'Declining / Flat', v: 0}, {l: 'Growing 5-15%', v: 0.5}, {l: 'Growing > 15%', v: 1}] },
-                  { id: 'grossMargin', label: 'Gross margin', opts: [{l: '< 30%', v: 0}, {l: '30-45%', v: 0.5}, {l: '> 45%', v: 1}] },
-                  { id: 'bookkeeping', label: 'Bookkeeping quality', opts: [{l: 'DIY / Messy', v: 0}, {l: 'Clean monthly', v: 0.5}, {l: 'CPA Reviewed', v: 1}] },
-                  { id: 'reputation', label: 'Reputation & reviews', opts: [{l: 'Few / Poor', v: 0}, {l: 'Decent rating', v: 0.5}, {l: 'Strong (4.5+)', v: 1}] },
-                  { id: 'fleet', label: 'Fleet & equipment condition', opts: [{l: 'Aging', v: 0}, {l: 'Adequate', v: 0.5}, {l: 'Newer / Excellent', v: 1}] },
-                  { id: 'mix', label: 'Residential vs. commercial mix', opts: [{l: 'Mostly Commercial', v: 0.5}, {l: 'Mixed', v: 1}, {l: 'Mostly Residential', v: 0.5}] }, // Special case mapping for UI scale
-                  { id: 'seasonality', label: 'Seasonality/predictability', opts: [{l: 'Highly seasonal', v: 0}, {l: 'Somewhat steady', v: 0.5}, {l: 'Steady year-round', v: 1}] },
-                ].map(driver => (
-                  <div key={driver.id} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                    <label className="block text-sm font-bold text-[#022B3A] mb-3">{driver.label}</label>
-                    <div className="flex flex-wrap gap-2">
-                      {driver.opts.map(opt => (
-                        <button
-                          key={opt.l}
-                          onClick={() => updateDriver(driver.id, opt.v as Score)}
-                          className={`px-4 py-3 text-sm font-bold rounded-lg border transition-all min-h-[44px] ${drivers[driver.id] === opt.v ? 'bg-[#EE5B2C] border-[#EE5B2C] text-white shadow-md' : 'bg-white border-gray-200 text-gray-600 hover:border-[#EE5B2C] hover:text-[#EE5B2C]'}`}
-                        >
-                          {opt.l}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-12 flex justify-between max-w-4xl mx-auto">
-                <button onClick={() => setStep(1)} className="px-6 py-4 font-bold text-gray-500 hover:text-[#022B3A] transition-colors">
-                  &larr; Back
-                </button>
-                <button
-                  onClick={() => setStep(3)}
-                  className="px-10 py-4 font-bold rounded-xl bg-[#022B3A] hover:bg-gray-800 text-white shadow-lg transition-all"
-                >
-                  Calculate My Estimate &rarr;
-                </button>
-              </div>
-            </motion.div>
-          )}
-
-          {/* STEP 3: RESULTS */}
-          {step === 3 && results && (
-            <motion.div
-              key="step3"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="max-w-5xl mx-auto"
-            >
-              <div className="text-center mb-12">
-                <h2 className="text-xl font-bold text-gray-500 uppercase tracking-widest mb-4">Estimated Value Range</h2>
-                <div className="text-5xl md:text-7xl font-black text-[#022B3A] mb-4 tracking-tight">
-                  {formatCurrency(results.likely)}
-                </div>
-                <p className="text-lg text-gray-600 font-medium bg-gray-50 inline-block px-6 py-2 rounded-full border border-gray-200">
-                  Based on an Adjusted SDE of <strong className="text-[#022B3A]">{formatCurrency(sde)}</strong> and a <strong className="text-[#022B3A]">{results.multiple.toFixed(2)}x</strong> estimated multiple
-                </p>
-              </div>
-
-              {/* Scenarios */}
-              <div className="grid md:grid-cols-3 gap-6 mb-16">
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
-                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Conservative</div>
-                  <div className="text-2xl font-black text-[#022B3A] mb-1">{formatCurrency(results.conservative)}</div>
-                  <div className="text-sm text-gray-500">{(results.multiple - 0.4).toFixed(2)}x Multiple</div>
-                </div>
-                <div className="bg-[#022B3A] border border-[#022B3A] rounded-2xl p-6 text-center shadow-lg transform md:-translate-y-2">
-                  <div className="text-sm font-bold text-orange-400 uppercase tracking-wider mb-2">Likely Target</div>
-                  <div className="text-3xl font-black text-white mb-1">{formatCurrency(results.likely)}</div>
-                  <div className="text-sm text-gray-300">{results.multiple.toFixed(2)}x Multiple</div>
-                </div>
-                <div className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-sm">
-                  <div className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Optimistic</div>
-                  <div className="text-2xl font-black text-[#022B3A] mb-1">{formatCurrency(results.optimistic)}</div>
-                  <div className="text-sm text-gray-500">{(results.multiple + 0.4).toFixed(2)}x Multiple</div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-12 items-start mb-16">
-                {/* Readiness Score & Improvements */}
-                <div>
-                  <h3 className="text-2xl font-black text-[#022B3A] mb-6">Sale-Readiness Score</h3>
-                  <div className="flex items-center mb-8">
-                    <div className="w-24 h-24 rounded-full border-8 flex items-center justify-center text-2xl font-black" style={{ borderColor: results.readinessScore > 70 ? '#10B981' : results.readinessScore > 40 ? '#F59E0B' : '#EF4444', color: '#022B3A' }}>
-                      {results.readinessScore}
-                    </div>
-                    <div className="ml-6 flex-1">
-                      <p className="text-gray-600 font-medium">This score reflects how attractive your business looks to buyers today based on your operational drivers.</p>
-                    </div>
-                  </div>
-                  
-                  <div className="bg-[#F7F5F0] rounded-xl p-6 border border-gray-200">
-                    <h4 className="font-bold text-[#022B3A] mb-3">Highest-Leverage Improvements:</h4>
-                    <ul className="space-y-3">
-                      {results.lowestDrivers.map((ld, idx) => (
-                        <li key={idx} className="flex text-sm text-gray-700 font-medium">
-                          <svg className="w-5 h-5 text-[#EE5B2C] mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-                          Improving your {ld.name.toLowerCase()} could significantly boost your valuation multiple.
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                {/* Recast Financials Breakdown */}
-                <div>
-                  <h3 className="text-2xl font-black text-[#022B3A] mb-6">Recast Financials Breakdown</h3>
-                  <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
-                    <div className="p-4 border-b border-gray-100 flex justify-between bg-gray-50">
-                      <span className="text-gray-600 font-medium">Net Income</span>
-                      <span className="font-bold">{formatCurrency(financials.netIncome)}</span>
-                    </div>
-                    {[
-                      { label: '+ Depreciation & Amortization', val: financials.depreciation },
-                      { label: '+ Interest Expense', val: financials.interest },
-                      { label: '+ Owner Compensation', val: financials.ownerComp },
-                      { label: '+ Other Add-Backs', val: financials.addBacks }
-                    ].map((row, i) => parseCurrency(row.val) > 0 && (
-                      <div key={i} className="p-4 border-b border-gray-100 flex justify-between text-green-700">
-                        <span className="font-medium text-sm">{row.label}</span>
-                        <span className="font-bold">{formatCurrency(row.val)}</span>
-                      </div>
+                  <h3 className="text-xl font-bold text-green-700 mb-4 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    Factors Supporting Value
+                  </h3>
+                  <ul className="space-y-3">
+                    {results.strengths.map((str: string, i: number) => (
+                      <li key={i} className="flex text-sm text-gray-700 font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 mr-2 flex-shrink-0"></span>
+                        {str}
+                      </li>
                     ))}
-                    <div className="p-5 flex justify-between items-center bg-[#022B3A] text-white">
-                      <span className="font-black text-lg">Adjusted SDE</span>
-                      <span className="font-black text-2xl">{formatCurrency(sde)}</span>
-                    </div>
-                  </div>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-orange-600 mb-4 flex items-center gap-2">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                    Items Requiring Broker Review
+                  </h3>
+                  <ul className="space-y-3">
+                    {results.risks.map((risk: string, i: number) => (
+                      <li key={i} className="flex text-sm text-gray-700 font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-orange-400 mt-1.5 mr-2 flex-shrink-0"></span>
+                        {risk}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link 
-                  href={{ pathname: '/free-valuation', query: { estimated: results.likely } }}
-                  className="w-full sm:w-auto px-8 py-5 bg-[#EE5B2C] hover:bg-orange-600 text-white font-black rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1 text-center text-lg"
-                >
-                  Get a Broker's Review of This Estimate
-                </Link>
-                <button 
-                  onClick={() => window.print()}
-                  className="w-full sm:w-auto px-8 py-5 bg-gray-100 hover:bg-gray-200 text-[#022B3A] font-bold rounded-xl transition-colors text-center text-lg"
-                >
-                  Save/Email This Report
-                </button>
-              </div>
-
-              <div className="text-center mt-12">
-                <button onClick={resetAll} className="text-gray-400 hover:text-[#EE5B2C] font-bold text-sm underline transition-colors p-4 -m-4">
-                  Start Over
-                </button>
+              <div className="bg-gray-50 rounded-xl p-6 text-xs text-gray-500 leading-relaxed border border-gray-100">
+                The estimate assumes an arm’s-length asset sale of a going concern and excludes real estate unless separately appraised. Working capital, inventory, accounts receivable, debt, taxes, financing, deal structure and transition terms can materially change proceeds.
               </div>
 
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
+
+      <div className="mt-8 text-xs text-gray-400 text-center px-4 leading-relaxed">
+        <strong>Methodology:</strong> The model uses a screened sample of HVAC sold comparables supplied from Business Brokers of Florida and national sold-business benchmarks published by BizBuySell. National BizBuySell data reports 2021–2025 HVAC sold-business quartiles of 1.99×–3.33× owner earnings and 0.38×–0.74× revenue. Results are adjusted for company-specific transferability and risk; they are not a substitute for broker analysis.
       </div>
     </div>
   );

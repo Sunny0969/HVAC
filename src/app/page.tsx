@@ -3,6 +3,7 @@ import Hero from '../views/components/Hero';
 import RoadmapAscent, { RoadmapStep } from '../views/components/RoadmapAscent';
 import HowItWorksSteps from '../views/components/HowItWorksSteps';
 import IndustriesWeServe from '../views/components/IndustriesWeServe';
+import AreasWeServe from '../views/components/AreasWeServe';
 import SpotlightCarousel, { CarouselItem } from '../views/components/SpotlightCarousel';
 import MarketInsightsFAQ from '../views/components/MarketInsightsFAQ';
 import FeaturedOpportunities from '../views/components/FeaturedOpportunities';
@@ -271,10 +272,13 @@ export default async function Home() {
       {/* 6. Featured Opportunities */}
       {realFeaturedListings.length > 0 && <FeaturedOpportunities items={realFeaturedListings} />}
 
-      {/* 7. Reviews (Testimonials) */}
+      {/* 7. Areas We Serve */}
+      <AreasWeServe />
+
+      {/* 8. Reviews (Testimonials) */}
       <TestimonialSlider items={testimonials} />
 
-      {/* 8. Explicit FAQ Section (Moved to Bottom) */}
+      {/* 9. Explicit FAQ Section (Moved to Bottom) */}
       <section className="w-full bg-white py-16 border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-black text-[#022B3A] mb-8 text-center">Frequently Asked Questions</h2>

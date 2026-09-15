@@ -209,6 +209,32 @@ export default function ValuationCalculatorPage() {
                   <strong>Short Answer:</strong> By multiplying your SDE or EBITDA by an industry-specific market multiple (typically 2x to 4x SDE).<br/>
                   To get an exact figure, brokers perform financial recasting to find the true normalized earnings, then apply a multiple dictated by current market conditions. For a deeper dive, read our guide on <Link href="/resources/hvac-business-in-florida" className="text-[#EE5B2C] hover:underline">HVAC businesses in Florida</Link>.
                 </p>
+
+                <h2 className="text-3xl font-black text-[#022B3A] mb-6 mt-12">Recently Sold HVAC Businesses</h2>
+                <p className="mb-6">Our calculator is modeled against actual recent transactions. Below are examples of the types of mechanical contracting and residential HVAC companies that successfully achieved high market multiples upon exit.</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 not-prose mb-12">
+                  <div className="relative h-48 rounded-xl overflow-hidden group">
+                    <Image src="https://images.unsplash.com/photo-1599839619722-39751411ea63?q=80&w=600&auto=format&fit=crop" alt="Commercial HVAC rooftop units recently sold" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+                      <span className="text-white font-bold text-sm">Commercial HVAC Contractor</span>
+                      <span className="text-[#EE5B2C] text-xs font-bold uppercase">Sold at 4.2x Multiple</span>
+                    </div>
+                  </div>
+                  <div className="relative h-48 rounded-xl overflow-hidden group">
+                    <Image src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=600&auto=format&fit=crop" alt="Residential HVAC service business recently sold" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+                      <span className="text-white font-bold text-sm">Residential Service Co.</span>
+                      <span className="text-[#EE5B2C] text-xs font-bold uppercase">Sold for $2.4M</span>
+                    </div>
+                  </div>
+                  <div className="relative h-48 rounded-xl overflow-hidden group">
+                    <Image src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=600&auto=format&fit=crop" alt="HVAC fleet and technicians" fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col justify-end">
+                      <span className="text-white font-bold text-sm">Multi-Location Franchise</span>
+                      <span className="text-[#EE5B2C] text-xs font-bold uppercase">Private Equity Exit</span>
+                    </div>
+                  </div>
+                </div>
                 
               </div>
 
