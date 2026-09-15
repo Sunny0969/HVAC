@@ -60,7 +60,7 @@ export default function FeaturedOpportunities({ items }: FeaturedOpportunitiesPr
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight drop-shadow-lg">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6 leading-tight drop-shadow-lg">
                 {activeItem.title}
               </h2>
               <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8 max-w-lg">
