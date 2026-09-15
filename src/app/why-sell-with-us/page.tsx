@@ -87,9 +87,7 @@ export default function WhySellWithUsPage() {
               <Link 
                 href="/free-valuation" 
                 className="w-full sm:w-auto px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
-              >
-                Get My Free Valuation &rarr;
-              </Link>
+              >Request a Confidential Valuation</Link>
               <Link 
                 href="/contact-us" 
                 className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-lg transition-colors text-center"

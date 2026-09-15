@@ -72,7 +72,7 @@ export default function FreeValuationPage() {
 
           <h3 className="text-2xl font-bold mt-8 mb-4">The HVAC Exit Advisors Difference</h3>
           <p className="mb-4">
-            Unlike general business brokers who sell restaurants today and retail stores tomorrow, we exclusively specialize in the HVAC sector. This means we understand the difference between new construction margins and residential service profitability. We use this deep industry knowledge to position your <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">company for the highest possible sale price</Link>. 
+            Unlike general business brokers who sell restaurants today and retail stores tomorrow, we exclusively specialize in the HVAC sector. This means we understand the difference between new construction margins and residential service profitability. We use this deep industry knowledge to position your <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">company to attract qualified strategic buyers</Link>. 
           </p>
 
           <p className="mb-4">
@@ -82,7 +82,7 @@ export default function FreeValuationPage() {
           <div className="bg-gray-100 p-8 rounded-2xl border-l-4 border-[#EE5B2C] not-prose mt-8">
             <h4 className="text-xl font-bold text-[#022B3A] mb-3">Ready to get started?</h4>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Contact us today to schedule your private consultation. There are no upfront fees, no obligation to sell, and absolute confidentiality is guaranteed from day one.
+              Contact us today to schedule your private consultation. There are no upfront fees, no obligation to sell, and absolute confidentiality is prioritized from day one.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/contact-us" className="px-6 py-3 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg transition-colors text-sm">

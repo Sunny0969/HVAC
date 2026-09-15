@@ -165,9 +165,7 @@ export default function SellYourHVACBusiness() {
             <Link 
               href="/free-valuation" 
               className="w-full sm:w-auto px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
-            >
-              Get My Free Valuation &rarr;
-            </Link>
+            >Request a Confidential Valuation</Link>
             <a 
               href="https://wa.me/19548649161" 
               target="_blank" 
@@ -235,9 +233,7 @@ export default function SellYourHVACBusiness() {
             <Link 
               href="/free-valuation" 
               className="w-full sm:w-auto px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold text-lg rounded-lg shadow-lg hover:shadow-xl transition-all"
-            >
-              Get My Free Valuation &rarr;
-            </Link>
+            >Request a Confidential Valuation</Link>
             <a 
               href="https://wa.me/19548649161" 
               target="_blank" 

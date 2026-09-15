@@ -285,9 +285,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
               <Link
                 href="/free-valuation"
                 className="block w-full text-center px-5 py-3 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-xl transition-all text-sm"
-              >
-                Get Free Valuation ?
-              </Link>
+              >Request a Confidential Valuation</Link>
             </div>
 
           </aside>

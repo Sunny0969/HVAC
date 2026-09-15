@@ -123,9 +123,7 @@ export default function Page() {
               <Link
                 href="/free-valuation"
                 className="px-6 py-3 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg transition-colors"
-              >
-                Request Free Valuation
-              </Link>
+              >Request a Confidential Valuation</Link>
             </div>
           </div>
         </div>

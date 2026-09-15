@@ -17,9 +17,12 @@ export default function Footer() {
           
           {/* Logo & Info */}
           <div className="col-span-1 md:col-span-1">
-            <Link href="/" className="text-2xl font-bold tracking-wider mb-6 block">
+            <Link href="/" className="text-2xl font-bold tracking-wider mb-2 block">
               LOGO
             </Link>
+            <p className="text-white/70 text-sm mb-6 leading-relaxed">
+              HVAC Exit Advisors helps owners and qualified buyers of HVAC and related mechanical-service businesses evaluate opportunities, prepare for transactions and move through the sale process confidentially.
+            </p>
             
             <div className="space-y-4 mb-8">
               {/* Address */}
@@ -108,7 +111,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center text-sm text-white/60">
+        {/* Website Disclaimer */}
+        <div className="pt-8 border-t border-white/20 mb-8 text-xs text-white/50 leading-relaxed text-justify">
+          Website information is provided for general educational purposes and does not constitute a certified appraisal, legal advice, tax advice, investment advice or a guarantee of transaction results. Business values and transaction outcomes depend on the company, market conditions, buyer qualifications, financing and deal terms. Clients should consult qualified legal, tax, accounting and licensing professionals before completing a transaction.
+        </div>
+
+        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-white/60">
           <p className="mb-4 md:mb-0">&copy; {new Date().getFullYear()} HVAC Exit Advisors. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link href="/privacy-policy" className="hover:text-secondary transition-colors">

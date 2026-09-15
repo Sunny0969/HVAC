@@ -135,9 +135,7 @@ export default function RealNumberEvaluatingHvacPage() {
                 <Link
                   href="/hvac-business-valuation-calculator"
                   className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-lg transition-colors"
-                >
-                  Try Free Valuation Calculator
-                </Link>
+                >Request a Confidential Valuation</Link>
               </div>
             </div>
           </article>

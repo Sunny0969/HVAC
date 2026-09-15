@@ -143,9 +143,7 @@ export default function SellPageContent() {
               We build your valuation from real, current market data: comparable Florida HVAC sales, buyer demand in your specific region, and the financial and operational details that move a multiple up or down. You'll walk away knowing what a serious buyer would actually pay - not a generic estimate.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/free-valuation" className="inline-block px-8 py-4 bg-[#022B3A] hover:bg-[#033b50] text-white font-bold rounded-lg transition-colors shadow-lg text-center">
-                Get My Free Valuation &rarr;
-              </Link>
+              <Link href="/free-valuation" className="inline-block px-8 py-4 bg-[#022B3A] hover:bg-[#033b50] text-white font-bold rounded-lg transition-colors shadow-lg text-center">Request a Confidential Valuation</Link>
               <Link href="/hvac-business-valuation-calculator" className="inline-block px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold rounded-lg transition-colors shadow-lg text-center backdrop-blur-sm">
                 Try Free Calculator
               </Link>
@@ -392,18 +390,6 @@ export default function SellPageContent() {
 
         <h2 className="text-2xl font-bold text-[#022B3A] mb-4">Family Business Exit Strategy & Business Succession</h2>
         <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          Planning a <strong>family business exit strategy</strong> requires preserving your legacy. If you are exploring internal <strong>business succession</strong> or seeking a third-party acquisition, our brokers guide you through the intricacies to ensure your employees and family are protected.
-        </p>
-
-        <h2 className="text-2xl font-bold text-[#022B3A] mb-4">Buy and Sell Business Market</h2>
-        <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          Navigating the <strong>buy and sell business</strong> landscape can be complex. Some owners attempt to <strong>sell my business online</strong> or look for ways to <strong>sell my business for free</strong> on generic listing sites. However, to safely manage the <strong>sale of a business</strong> (or "<strong>sale a business</strong>"), you need a broker who uses confidential <Link href="/listings" className="text-[#EE5B2C] font-bold hover:underline">blind profiles</Link>. Whether you intend to <strong>buy or sell business</strong> assets, professional representation prevents competitors from learning your trade secrets while securing the highest possible offer. If you want to know <strong>how to sell a business quickly</strong>, trust Florida's premier HVAC specialists.
-        </p>
-      </motion.div>
-
-
-        </div>
-        
         
       
 

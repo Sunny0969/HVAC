@@ -112,7 +112,7 @@ export default function Header() {
                 href="/free-valuation"
                 className="bg-secondary text-white px-5 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all flex items-center space-x-2"
               >
-                <span>Get Free Valuation</span>
+                <span>Request a Confidential Valuation</span>
                 <span>→</span>
               </Link>
             </div>
@@ -183,9 +183,7 @@ export default function Header() {
                 href="/free-valuation"
                 onClick={toggleMobileMenu}
                 className="block text-center w-full bg-secondary text-white px-5 py-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all"
-              >
-                Get Free Valuation →
-              </Link>
+              >Request a Confidential Valuation</Link>
           </div>
         </div>
       </header>
