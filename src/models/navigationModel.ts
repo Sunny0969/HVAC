@@ -28,8 +28,8 @@ export const navigationData: NavItem[] = [
     label: "Valuation",
     href: "#",
     children: [
-      { label: "HVAC Business Valuation", href: "#" },
-      { label: "Valuation Calculator", href: "/hvac-business-valuation" },
+      { label: "HVAC Business Valuation", href: "/hvac-business-valuation" },
+      { label: "Valuation Calculator", href: "/hvac-business-valuation-calculator" },
       { label: "Value Drivers", href: "#" },
     ]
   },
