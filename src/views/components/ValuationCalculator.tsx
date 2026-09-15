@@ -127,8 +127,8 @@ export default function ValuationCalculator() {
       low: money(estimates[0]),
       mid: money(estimates[1]),
       high: money(estimates[2]),
-      earnMultiple: `${ml.toFixed(2)}× – ${mh.toFixed(2)}× ${basis}`,
-      revMultiple: `${rl.toFixed(2)}× – ${rh.toFixed(2)}× revenue`,
+      earnMultiple: `${ml.toFixed(2)}x - ${mh.toFixed(2)}x ${basis}`,
+      revMultiple: `${rl.toFixed(2)}x - ${rh.toFixed(2)}x revenue`,
       score,
       strengths,
       risks,
@@ -156,7 +156,7 @@ export default function ValuationCalculator() {
 
       <div className="bg-white rounded-b-3xl shadow-xl border border-gray-100 p-6 md:p-10">
         <div className="bg-orange-50 border-l-4 border-[#EE5B2C] p-4 rounded-r-lg mb-10 text-gray-800 font-medium text-sm">
-          <strong>Important:</strong> This calculator provides an educational preliminary Broker Opinion of Value range—not a certified appraisal, offer, or guaranteed sale price. A final broker opinion can be prepared only after reviewing financial statements, assets, service territories, and owner involvement.
+          <strong>Important:</strong> This calculator provides an educational preliminary Broker Opinion of Value range - not a certified appraisal, offer, or guaranteed sale price. A final broker opinion can be prepared only after reviewing financial statements, assets, service territories, and owner involvement.
         </div>
 
         <form onSubmit={calculate}>
@@ -173,7 +173,7 @@ export default function ValuationCalculator() {
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-2">Normalized Annual Earnings</label>
                 <input type="number" required value={earnings} onChange={e => setEarnings(e.target.value)} placeholder="e.g. 325000" className="w-full border border-gray-300 rounded-lg p-3 text-lg focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all" />
-                <p className="text-xs text-gray-500 mt-1">Documented SDE or adjusted EBITDA—not gross profit.</p>
+                <p className="text-xs text-gray-500 mt-1">Documented SDE or adjusted EBITDA - not gross profit.</p>
               </div>
 
               <div className="md:col-span-2">
