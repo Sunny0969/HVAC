@@ -92,13 +92,13 @@ export default function Hero() {
 
       {/* Foreground Real DOM Content (SEO + LCP) */}
       <div className="relative z-20 px-4 max-w-7xl w-full mx-auto mt-16 md:mt-0 text-left">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-xl tracking-tight leading-tight">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 drop-shadow-xl tracking-tight leading-tight max-w-4xl">
           Sell Your HVAC Business Confidentially and With Confidence
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-4xl font-medium drop-shadow-md leading-relaxed">
+        <p className="text-lg md:text-xl text-white/90 mb-4 max-w-3xl font-medium drop-shadow-md leading-relaxed">
           You spent years building your company, serving customers and developing a skilled team. When you begin considering a sale, you deserve clear information about value, preparation, buyer qualifications and the terms that can affect what you ultimately receive.
         </p>
-        <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl font-medium drop-shadow-md leading-relaxed">
+        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl font-medium drop-shadow-md leading-relaxed">
           HVAC Exit Advisors helps business owners evaluate their options, prepare the company for qualified buyers and navigate a confidential sale from valuation through closing.
         </p>
         <div className="flex flex-col sm:flex-row items-start justify-start gap-4 flex-wrap">
