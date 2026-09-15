@@ -319,10 +319,10 @@ export default function SellPageContent() {
                       <p className="pt-4">
                         {faq.q === "What's my HVAC business worth?" ? (
                           <>
-                            <strong>Short Answer:</strong> {faq.a} <Link href="/faqs" className="text-[#EE5B2C] hover:underline whitespace-nowrap ml-1">Read more in full FAQs &rarr;</Link>
+                            {faq.a} <Link href="/faqs" className="text-[#EE5B2C] hover:underline whitespace-nowrap ml-1">Read more in full FAQs &rarr;</Link>
                           </>
                         ) : (
-                            <><strong>Short Answer:</strong> {faq.a}</>
+                            <>{faq.a}</>
                           )}
                       </p>
                     </div>
@@ -452,4 +452,5 @@ export default function SellPageContent() {
     </article>
   );
 }
+
 

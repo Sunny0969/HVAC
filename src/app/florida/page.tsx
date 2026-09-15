@@ -370,15 +370,15 @@ export default function FloridaStateGuidePage() {
                 </h2>
                 
                 <h3 className="text-xl font-bold text-[#EE5B2C] mt-6">What license do I actually need to run an HVAC business in Florida?</h3>
-                <p className="bg-gray-50 border-l-4 border-[#EE5B2C] p-4 font-medium text-gray-800 my-4"><strong>Short Answer:</strong> You need a DBPR mechanical contractor license (Class A or B).</p>
+                <p className="bg-gray-50 border-l-4 border-[#EE5B2C] p-4 font-medium text-gray-800 my-4">You need a DBPR mechanical contractor license (Class A or B).</p>
                 <p>Florida requires a DBPR Construction Industry Licensing Board mechanical contractor license - Class A or Class B - for any central HVAC installation or repair work. A county-level competency card isn't sufficient on its own.</p>
 
                 <h3 className="text-xl font-bold text-[#EE5B2C] mt-6">How much does it cost to start an HVAC business in Florida?</h3>
-                <p className="bg-gray-50 border-l-4 border-[#EE5B2C] p-4 font-medium text-gray-800 my-4"><strong>Short Answer:</strong> Startup costs range from $15,000 for solo operators to over $200,000 for commercial fleets.</p>
+                <p className="bg-gray-50 border-l-4 border-[#EE5B2C] p-4 font-medium text-gray-800 my-4">Startup costs range from $15,000 for solo operators to over $200,000 for commercial fleets.</p>
                 <p>Costs range from around $15,000 for a solo, service-only operation to $200,000 or more for a multi-crew commercial business, depending on your fleet size, tools, insurance, and staffing.</p>
                 
                 <h3 className="text-xl font-bold text-[#EE5B2C] mt-6">Are HVAC jobs taxable in Florida?</h3>
-                <p className="bg-gray-50 border-l-4 border-[#EE5B2C] p-4 font-medium text-gray-800 my-4"><strong>Short Answer:</strong> Yes, but the tax rules vary by equipment type.</p>
+                <p className="bg-gray-50 border-l-4 border-[#EE5B2C] p-4 font-medium text-gray-800 my-4">Yes, but the tax rules vary by equipment type.</p>
                 <p>It depends. Ducted systems are real property improvements (tax on materials paid by you). Portable units are tangible property (tax charged to customer on parts and labor).</p>
 
               </article>
@@ -441,3 +441,4 @@ export default function FloridaStateGuidePage() {
     </>
   );
 }
+

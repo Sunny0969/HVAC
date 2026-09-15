@@ -210,7 +210,7 @@ export default function HowItWorksPage() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 mb-6">
               <h3 className="text-xl font-bold text-[#022B3A] mb-2">How long does it take to sell an HVAC business?</h3>
               <p className="text-gray-700 font-medium">
-                <strong>Short Answer:</strong> Generally, the entire process takes between 4 to 8 months from valuation to closing.<br/>
+                Generally, the entire process takes between 4 to 8 months from valuation to closing.<br/>
                 This timeframe depends heavily on how clean your financial statements are and the current demand for strategic acquisitions in your specific Florida territory.
               </p>
             </div>
@@ -218,7 +218,7 @@ export default function HowItWorksPage() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 mb-6">
               <h3 className="text-xl font-bold text-[#022B3A] mb-2">When is the right time to sell my HVAC business?</h3>
               <p className="text-gray-700 font-medium">
-                <strong>Short Answer:</strong> The best time to sell is when revenue has shown 3 consecutive years of upward growth.<br/>
+                The best time to sell is when revenue has shown 3 consecutive years of upward growth.<br/>
                 Buyers pay premium multiples for growing companies with high technician retention and a strong ratio of preventative maintenance agreements (PMAs) to new construction revenue.
               </p>
             </div>
@@ -226,7 +226,7 @@ export default function HowItWorksPage() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 mb-6">
               <h3 className="text-xl font-bold text-[#022B3A] mb-2">How do you maintain confidentiality during the sale?</h3>
               <p className="text-gray-700 font-medium">
-                <strong>Short Answer:</strong> We use blind marketing profiles and require strict Non-Disclosure Agreements (NDAs) before revealing any identifying information.<br/>
+                We use blind marketing profiles and require strict Non-Disclosure Agreements (NDAs) before revealing any identifying information.<br/>
                 Your employees, competitors, and customers will have no idea your business is on the market until the transaction is successfully closed.
               </p>
             </div>
@@ -238,7 +238,7 @@ export default function HowItWorksPage() {
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-black text-white mb-4">Ready to Discuss Your Exit?</h2>
-              <p className="text-lg text-white/80 font-medium"><strong>Short Answer:</strong> Yes, if you want to maximize your valuation. Contact us today for a completely confidential, no-obligation conversation.</p>
+              <p className="text-lg text-white/80 font-medium">Yes, if you want to maximize your valuation. Contact us today for a completely confidential, no-obligation conversation.</p>
             </div>
             
             <div className="bg-white rounded-[2rem] shadow-2xl p-8 md:p-12">
@@ -250,3 +250,4 @@ export default function HowItWorksPage() {
     </>
   );
 }
+

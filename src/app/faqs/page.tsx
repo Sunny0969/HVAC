@@ -30,7 +30,7 @@ export default function FaqsPage() {
     cat.items.map((item) => ({
       "@type": "Question",
       name: item.q,
-      acceptedAnswer: { "@type": "Answer", text: "Short Answer: " + item.a },
+      acceptedAnswer: { "@type": "Answer", text: "" + item.a },
     }))
   );
 
@@ -178,3 +178,4 @@ export default function FaqsPage() {
     </>
   );
 }
+

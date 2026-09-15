@@ -161,7 +161,7 @@ export default async function ListingsPage() {
           
           <h2 className="text-3xl font-black text-[#022B3A] mb-6">What to look for in HVAC businesses for sale?</h2>
           <p className="text-lg text-gray-700 mb-6 font-medium">
-            <strong>Short Answer: Prioritize businesses with recurring maintenance revenue, clean financial records, and a stable technician team.</strong>
+            <strong>Prioritize businesses with recurring maintenance revenue, clean financial records, and a stable technician team.</strong>
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             When you browse HVAC businesses for sale, the most critical factor is the quality of revenue. A business heavily reliant on new construction contracts is vulnerable to economic shifts, whereas a company with hundreds of residential maintenance agreements offers predictable, recession-resistant cash flow. We recommend consulting with the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a> standards for business valuation to understand fair market multiples.
@@ -205,7 +205,7 @@ export default async function ListingsPage() {
 
           <h2 className="text-2xl font-bold text-[#022B3A] mb-6">How much does it cost to buy an HVAC company in Florida?</h2>
           <p className="text-lg text-gray-700 mb-6 font-medium">
-            <strong>Short Answer: Expect to pay 2.5x to 4x the business's SDE (Seller's Discretionary Earnings).</strong>
+            <strong>Expect to pay 2.5x to 4x the business's SDE (Seller's Discretionary Earnings).</strong>
           </p>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
             Valuations vary based on recurring revenue, fleet quality, and management structure. A highly systematized business with a general manager in place will command a premium multiple closer to 4x. To learn more about the acquisition process and how we assist buyers, read our comprehensive guide on <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">how to buy an HVAC business</Link> or discover <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">how our brokerage process works</Link>. You can also explore our <Link href="/resources" className="text-[#EE5B2C] hover:underline font-bold">HVAC industry resources</Link> for deeper market insights.
@@ -218,3 +218,4 @@ export default async function ListingsPage() {
     </>
   );
 }
+
