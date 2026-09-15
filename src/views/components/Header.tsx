@@ -5,47 +5,118 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useHeaderController } from "../../controllers/useHeaderController";
 import { AnimatePresence, motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { areasWeServeData, industriesData } from "../../models/navigationModel";
+
+function MegaMenu({ type, data, onClose }: { type: 'areas' | 'industries', data: Record<string, string[]>, onClose: () => void }) {
+  const categories = Object.keys(data);
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
+  const items = data[activeCategory] || [];
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      transition={{ duration: 0.2 }}
+      className="absolute top-[100%] left-0 mt-2 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-200 overflow-hidden z-50 flex"
+      style={{ width: '800px', minHeight: '400px' }}
+    >
+      {/* Left Sidebar */}
+      <div className="w-[30%] bg-gray-50/50 p-6 border-r border-gray-100 flex flex-col gap-2">
+        <h3 className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">
+          {type === 'areas' ? 'Regions' : 'Categories'}
+        </h3>
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            onClick={() => setActiveCategory(cat)}
+            className={`text-left px-4 py-2.5 rounded-lg text-sm font-bold transition-colors ${
+              activeCategory === cat 
+                ? 'bg-[#E3F2FD] text-[#022B3A]' 
+                : 'text-gray-600 hover:bg-gray-100'
+            }`}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Right Content */}
+      <div className="w-[70%] bg-white p-6">
+        <h3 className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-wider">
+          {type === 'areas' ? 'Featured Cities' : 'Featured Industries'}
+        </h3>
+        <div className="grid grid-cols-3 gap-6">
+          {items.map((item) => (
+            <div key={item} className="flex items-center gap-3 group cursor-pointer">
+              <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative flex-shrink-0">
+                <Image 
+                  src={`https://images.unsplash.com/photo-${type === 'areas' ? '1449844908441-8829872d2607' : '1581091226825-a6a2a5aee158'}?w=100&h=100&fit=crop&q=80`}
+                  alt={item}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div>
+                <div className="text-sm font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors">{item}</div>
+                <div className="text-xs text-gray-500">{activeCategory}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Header() {
   const pathname = usePathname();
-  
   if (pathname?.startsWith("/admin")) return null;
-
-  const isHomePage = pathname === "/";
 
   const {
     navigationData,
     activeDropdown,
+    activeMegaMenu,
     isMobileMenuOpen,
-    isScrolled,
     toggleDropdown,
     closeDropdown,
+    toggleMegaMenu,
+    closeMegaMenu,
     toggleMobileMenu,
   } = useHeaderController();
 
-  // Dynamic header classes: transparent if at top of HOMEPAGE, SELL, BUY, CALC, HOW-IT-WORKS, WHY-SELL-WITH-US, TEAM, SUCCESS-STORIES, FAQS, or RESOURCES pages, otherwise solid navy
-  const isDarkHeroPage = pathname === "/" || pathname === "/sell-your-hvac-business" || pathname === "/buy-an-hvac-business" || pathname === "/hvac-business-valuation-calculator" || pathname === "/how-it-works" || pathname === "/why-sell-with-us" || pathname === "/about-us/team" || pathname === "/success-stories" || pathname === "/faqs" || pathname === "/resources";
-  const isSolid = isScrolled || isMobileMenuOpen || !isDarkHeroPage;
-  const headerBgClass = isSolid ? "bg-primary shadow-md" : "bg-transparent hover:bg-primary";
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        closeMegaMenu();
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [closeMegaMenu]);
 
   return (
     <>
-      {/* 80px Sentinel for IntersectionObserver to detect scroll depth cheaply */}
-      <div id="scroll-sentinel" className="absolute top-0 left-0 w-full h-[80px] pointer-events-none -z-50 opacity-0" aria-hidden="true" />
-
-      <header className={`fixed top-0 left-0 right-0 z-50 text-white transition-all duration-300 ${headerBgClass}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20 relative z-50">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white text-[#022B3A] shadow-sm border-b border-gray-200 transition-all duration-300">
+        
+        {/* TOP ROW: Logo & Main Navigation */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-100 hidden md:block">
+          <div className="flex justify-between items-center h-20">
             {/* Logo View */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-xl font-bold tracking-wide flex items-center gap-3" onClick={() => isMobileMenuOpen && toggleMobileMenu()}>
-                <Image src="/logo.png" alt="HVAC Exit Advisors Logo" width={52} height={52} className="rounded-full bg-white" priority />
-                <span className="hidden sm:block">HVAC Exit Advisors</span>
+              <Link href="/" className="text-xl font-bold tracking-wide flex items-center gap-3 text-[#022B3A]">
+                <div className="bg-[#022B3A] rounded-full p-1">
+                  <Image src="/logo.png" alt="HVAC Exit Advisors Logo" width={42} height={42} className="rounded-full bg-white" priority />
+                </div>
+                <span>HVAC Exit Advisors</span>
               </Link>
             </div>
 
             {/* Desktop Navigation View */}
-            <nav className="hidden md:flex space-x-8 items-center">
+            <nav className="hidden lg:flex space-x-6 items-center">
               {navigationData.map((item) => (
                 <div key={item.label} className="relative group">
                   {item.children ? (
@@ -53,19 +124,17 @@ export default function Header() {
                       onMouseEnter={() => toggleDropdown(item.label)}
                       onMouseLeave={closeDropdown}
                       onClick={() => toggleDropdown(item.label)}
-                      className="h-full flex items-center"
+                      className="h-full flex items-center cursor-pointer"
                     >
                       <button 
-                        aria-label={`Toggle ${item.label} menu`}
                         aria-expanded={activeDropdown === item.label}
-                        className="flex items-center space-x-1 hover:text-secondary transition-colors duration-200 py-6"
+                        className="flex items-center space-x-1 hover:text-[#EE5B2C] text-sm font-bold transition-colors duration-200 py-6"
                       >
                         <span>{item.label}</span>
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
                       </button>
-                      {/* Dropdown Menu */}
                       <AnimatePresence>
                         {activeDropdown === item.label && (
                           <motion.div 
@@ -73,9 +142,9 @@ export default function Header() {
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 10 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute left-0 top-[100%] pt-0 w-56"
+                            className="absolute left-0 top-[100%] pt-0 w-56 z-50"
                           >
-                            <div className="bg-white text-black shadow-xl rounded-xl overflow-hidden border border-gray-100 py-2">
+                            <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-gray-100 py-2">
                               {item.children.map((child) => (
                                 <Link
                                   key={child.label}
@@ -94,7 +163,7 @@ export default function Header() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="hover:text-secondary transition-colors duration-200 py-2"
+                      className="hover:text-[#EE5B2C] text-sm font-bold transition-colors duration-200 py-2"
                     >
                       {item.label}
                     </Link>
@@ -103,37 +172,80 @@ export default function Header() {
               ))}
             </nav>
 
-            <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
-              <a href="https://api.whatsapp.com/send/?phone=19548649161&text=Welcome+to+HVAC+Exit+Advisors%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all flex items-center space-x-2 border border-white/30 px-4 py-2 rounded-lg bg-transparent text-white font-bold">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                <span>WhatsApp Us</span>
-              </a>
+            {/* CTAs */}
+            <div className="hidden md:flex items-center space-x-4">
               <Link
                 href="/free-valuation"
-                className="bg-secondary text-white px-5 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all flex items-center space-x-2"
+                className="bg-[#EE5B2C] text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-orange-600 transition-all shadow-md"
               >
-                <span>Request a Confidential Valuation</span>
-                <span>→</span>
+                Request a Confidential Valuation
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* BOTTOM ROW: Mega Menu Triggers (Pills) & Mobile Header */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16 relative" ref={menuRef}>
+            
+            {/* Mobile Logo (Visible only on mobile) */}
+            <div className="md:hidden flex items-center">
+              <Link href="/" className="text-lg font-bold tracking-wide flex items-center gap-2 text-[#022B3A]">
+                <Image src="/logo.png" alt="HVAC Exit Advisors Logo" width={32} height={32} className="rounded-full bg-white" />
+                <span>HVAC Exit Advisors</span>
               </Link>
             </div>
 
-            {/* Mobile Menu Button View */}
+            {/* Desktop Pills */}
+            <div className="hidden md:flex space-x-3 h-full items-center">
+              <button 
+                onClick={() => toggleMegaMenu('areas')}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-bold transition-all ${
+                  activeMegaMenu === 'areas' 
+                    ? 'border-[#022B3A] text-[#022B3A] bg-gray-50 shadow-inner' 
+                    : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                <span>Areas We Serve</span>
+                <svg className={`w-3 h-3 transition-transform ${activeMegaMenu === 'areas' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+
+              <button 
+                onClick={() => toggleMegaMenu('industries')}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-bold transition-all ${
+                  activeMegaMenu === 'industries' 
+                    ? 'border-[#022B3A] text-[#022B3A] bg-gray-50 shadow-inner' 
+                    : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
+                }`}
+              >
+                <svg className="w-4 h-4 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                <span>Industries</span>
+                <svg className={`w-3 h-3 transition-transform ${activeMegaMenu === 'industries' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+
+              <AnimatePresence>
+                {activeMegaMenu === 'areas' && (
+                  <MegaMenu type="areas" data={areasWeServeData} onClose={closeMegaMenu} />
+                )}
+                {activeMegaMenu === 'industries' && (
+                  <MegaMenu type="industries" data={industriesData} onClose={closeMegaMenu} />
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center">
               <button 
                 onClick={toggleMobileMenu} 
-                aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-                aria-expanded={isMobileMenuOpen}
-                className="text-white hover:text-secondary focus:outline-none p-2 -mr-2"
+                className="text-[#022B3A] p-2"
               >
-                {isMobileMenuOpen ? (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                ) : (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                )}
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {isMobileMenuOpen 
+                    ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  }
+                </svg>
               </button>
             </div>
           </div>
@@ -141,7 +253,7 @@ export default function Header() {
 
         {/* Mobile Full-Screen Drawer */}
         <div 
-          className={`md:hidden fixed inset-0 bg-primary text-white z-40 flex flex-col pt-20 transition-transform duration-300 ${
+          className={`md:hidden fixed inset-0 top-16 bg-[#022B3A] text-white z-40 flex flex-col pt-4 transition-transform duration-300 ${
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -162,7 +274,7 @@ export default function Header() {
                         key={child.label}
                         href={child.href}
                         onClick={toggleMobileMenu}
-                        className="block px-3 py-3 rounded-md text-base hover:text-secondary hover:bg-white/10"
+                        className="block px-3 py-3 rounded-md text-base text-gray-300 hover:text-white"
                       >
                         {child.label}
                       </Link>
@@ -172,35 +284,12 @@ export default function Header() {
               </div>
             ))}
           </div>
-          
-          {/* Bottom Pinned Phone + CTA inside drawer */}
-          <div className="p-6 border-t border-white/20 bg-primary/95 mt-auto">
-             <a href="https://api.whatsapp.com/send/?phone=19548649161&text=Welcome+to+HVAC+Exit+Advisors%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center space-x-2 text-lg font-bold text-white mb-4 bg-[#25D366] py-3 rounded-md hover:bg-green-600 transition-colors">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                <span>WhatsApp Us</span>
-             </a>
-             <Link
-                href="/free-valuation"
-                onClick={toggleMobileMenu}
-                className="block text-center w-full bg-secondary text-white px-5 py-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition-all"
-              >Request a Confidential Valuation</Link>
-          </div>
         </div>
       </header>
 
-      {/* Sticky Mini CTA Bar at the bottom for Mobile (Visible when nav is closed) */}
-      {!isMobileMenuOpen && (
-        <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 flex bg-white border-t border-gray-200 shadow-[0_-4px_10px_rgba(0,0,0,0.05)]" style={{paddingBottom: 'env(safe-area-inset-bottom)'}}>
-          <a href="https://api.whatsapp.com/send/?phone=19548649161&text=Welcome+to+HVAC+Exit+Advisors%21&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="flex-1 text-center min-h-[48px] py-3 text-[#25D366] hover:bg-gray-50 font-bold border-r border-gray-200 flex justify-center items-center space-x-2 transition-colors touch-manipulation">
-            <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span>WhatsApp</span>
-          </a>
-          <Link href="/free-valuation" className="flex-1 text-center min-h-[48px] py-3 bg-secondary text-white font-bold flex justify-center items-center space-x-2 touch-manipulation">
-            <span className="text-sm">Confidential Valuation</span>
-            <span>→</span>
-          </Link>
-        </div>
-      )}
+      {/* spacer to prevent content from going under the fixed white header */}
+      <div className="h-[144px] hidden md:block"></div>
+      <div className="h-16 md:hidden"></div>
     </>
   );
 }
