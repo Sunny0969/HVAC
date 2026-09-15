@@ -390,11 +390,12 @@ export default function SellPageContent() {
 
         <h2 className="text-2xl font-bold text-[#022B3A] mb-4">Family Business Exit Strategy & Business Succession</h2>
         <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-        
-      
+          A successful family business exit strategy ensures your legacy continues while providing you with the liquidity you deserve. We specialize in structuring business succession plans and outright sales that protect both your financial future and your employees.
+        </p>
+      </motion.div>
+      </div>
 
-        
-        {/* Right Sticky Form Column */}
+      {/* Right Sticky Form Column */}
         <div className="lg:col-span-4">
           <div className="sticky top-32 bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8 max-h-[calc(100vh-10rem)] overflow-y-auto">
             <h3 className="text-2xl font-black text-[#022B3A] mb-3">Request a Free Valuation</h3>
@@ -451,3 +452,4 @@ export default function SellPageContent() {
     </article>
   );
 }
+
