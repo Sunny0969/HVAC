@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, Variants } from "framer-motion";
 
 export default function SellPageContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,10 +44,40 @@ export default function SellPageContent() {
       <div className="grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 space-y-12">
           
+          {/* Executive Summary (GEO/AEO) */}
+          <div className="bg-[#022B3A]/5 border border-[#022B3A]/10 p-8 rounded-2xl">
+            <div className="flex flex-wrap items-center justify-between border-b border-gray-200 pb-4 mb-4">
+              <h2 className="text-2xl font-black text-[#022B3A]">Executive Summary</h2>
+              <span className="text-sm font-bold text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200">Last Updated: September 2026</span>
+            </div>
+            
+            <p className="text-gray-700 font-medium leading-relaxed mb-6">
+              <strong>The bottom line:</strong> Selling a Florida HVAC business requires specialized valuation of Maintenance Agreements (PMAs), confidential marketing, and strategic buyer selection. 
+            </p>
+            <p className="text-gray-700 font-medium leading-relaxed mb-6">
+              <strong>What is an HVAC business sale?</strong> It is the strategic transfer of ownership, assets, customer contracts, and licensing of a heating, ventilation, and air conditioning company to a qualified buyer.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Audience & Use Case</h3>
+                <p className="text-sm font-medium text-gray-700">
+                  This guide is for Florida HVAC, plumbing, and mechanical contractors planning for retirement, succession, or an outright exit.
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Market Data</h3>
+                <p className="text-sm font-medium text-gray-700">
+                  Most healthy businesses currently trade between 2.5x and 4x SDE, depending heavily on recurring commercial and residential revenue.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Opening Copy */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
-              Selling an HVAC business can involve several connected decisions: timing, value, confidentiality, buyer selection, financing, employee transition and the owner’s role after closing. A properly managed process gives buyers the information they need while protecting the company’s day-to-day operations.
+              Selling an HVAC business can involve several connected decisions: timing, value, confidentiality, buyer selection, financing, employee transition and the owner’s role after closing. A properly managed <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">structured process</Link> gives buyers the information they need while protecting the company’s day-to-day operations.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed font-medium">
               We help owners prepare the business, present its strengths accurately, screen prospective buyers and evaluate the complete economics of each offer.
@@ -59,7 +88,7 @@ export default function SellPageContent() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Before the Business Goes to Market</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-              Preparation reduces surprises during buyer review. We organize the information buyers and lenders commonly request and identify issues that may affect value or closing risk.
+              Preparation reduces surprises during buyer review. We organize the information buyers and lenders commonly request and identify issues that may affect value or closing risk. If you are unsure where you stand, utilizing an <Link href="/hvac-business-valuation-calculator" className="text-[#EE5B2C] hover:underline font-bold">HVAC valuation calculator</Link> can set a baseline before gathering these documents.
             </p>
             <ul className="space-y-4 text-lg text-gray-700 font-medium">
               <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Three years of business tax returns and profit-and-loss statements</li>
@@ -84,11 +113,47 @@ export default function SellPageContent() {
             </p>
           </div>
 
+          {/* Comparing Buyers (Structured Table for AEO) */}
+          <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
+            <h2 className="text-3xl font-black text-[#022B3A] mb-6">Comparing Buyer Types</h2>
+            <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
+              When screening prospective buyers, we categorize them based on their operational background and financing strategy. Here is a brief comparison of typical HVAC buyers.
+            </p>
+            <div className="overflow-x-auto rounded-xl border border-gray-200">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="p-4 font-bold text-[#022B3A] border-b border-gray-200">Buyer Profile</th>
+                    <th className="p-4 font-bold text-[#022B3A] border-b border-gray-200">Primary Goal</th>
+                    <th className="p-4 font-bold text-[#022B3A] border-b border-gray-200">Deal Structure</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-100 text-gray-700 font-medium">
+                  <tr>
+                    <td className="p-4 bg-white">Strategic / Competitor</td>
+                    <td className="p-4 bg-white">Market share, route density, technician acquisition</td>
+                    <td className="p-4 bg-white">Asset purchases with heavy cash at closing</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 bg-gray-50">Private Equity</td>
+                    <td className="p-4 bg-gray-50">Financial return, scaling regional platforms</td>
+                    <td className="p-4 bg-gray-50">Often involves owner rollover equity</td>
+                  </tr>
+                  <tr>
+                    <td className="p-4 bg-white">Individual Owner-Operator</td>
+                    <td className="p-4 bg-white">Entrepreneurship, replacing current income</td>
+                    <td className="p-4 bg-white">Heavily reliant on SBA lending and seller notes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           {/* Evaluating Offers */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Evaluating Offers</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium">
-              The highest headline price is not always the strongest offer. We help the seller compare cash at closing, financing conditions, seller notes, earnouts, working capital, assumed liabilities, real-estate terms, transition requirements and the buyer’s ability to close.
+              The highest headline price is not always the strongest offer. We help the seller compare cash at closing, financing conditions (including <a href="https://www.sba.gov/funding-programs/loans" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">SBA loan requirements</a>), seller notes, earnouts, working capital, assumed liabilities, real-estate terms, transition requirements and the buyer’s ability to close.
             </p>
           </div>
 
@@ -97,6 +162,21 @@ export default function SellPageContent() {
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Employee and Customer Protection</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium">
               Employees and customers should not be contacted by a prospective buyer unless the seller approves the communication and the transaction documents permit it. Premature contact can damage confidentiality, employee retention and customer relationships.
+            </p>
+          </div>
+          
+          {/* FAQ / Direct Answers for AEO */}
+          <div className="bg-[#F8FAFC] rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
+            <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions About Selling</h2>
+            
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">How do you protect my business confidentiality?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              <strong>The bottom line:</strong> We use blind marketing profiles and require strict NDAs before releasing any identifiable financial or operational data.
+            </p>
+            
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">What is the most important factor buyers look for?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              <strong>The bottom line:</strong> Recurring revenue via maintenance agreements (PMAs) and a reliable, tenured technician workforce are the two highest value drivers.
             </p>
           </div>
 
