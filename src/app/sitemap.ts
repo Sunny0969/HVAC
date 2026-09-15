@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next';
+﻿import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.hvacexitadvisors.com';
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/hvac-business-valuation-calculator`,
+      url: `${baseUrl}/hvac-business-valuation`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
@@ -205,3 +205,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   ];
 }
+

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import HowItWorksSteps from '../../views/components/HowItWorksSteps';
 import { steps } from '../../data/howItWorksSteps';
@@ -155,7 +155,7 @@ export default function HowItWorksPage() {
                 <div>
                   <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Internal Resources</h3>
                   <ul className="space-y-2 text-sm font-medium text-gray-700">
-                    <li><Link href="/hvac-business-valuation-calculator" className="hover:text-orange-600 underline">Free Online Valuation Calculator</Link></li>
+                    <li><Link href="/hvac-business-valuation" className="hover:text-orange-600 underline">Free Online Valuation Calculator</Link></li>
                     <li><Link href="/resources/hvac-business-in-florida" className="hover:text-orange-600 underline">The Complete Florida HVAC Industry Guide</Link></li>
                   </ul>
                 </div>
@@ -250,4 +250,5 @@ export default function HowItWorksPage() {
     </>
   );
 }
+
 

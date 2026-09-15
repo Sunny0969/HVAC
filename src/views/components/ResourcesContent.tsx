@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
@@ -300,7 +300,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
             </p>
           </div>
           <Link
-            href="/hvac-business-valuation-calculator"
+            href="/hvac-business-valuation"
             className="px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transition-all whitespace-nowrap"
           >
             Open Valuation Calculator ?
@@ -310,3 +310,4 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
     </section>
   );
 }
+

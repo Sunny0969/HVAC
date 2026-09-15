@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 
@@ -133,7 +133,7 @@ export default function RealNumberEvaluatingHvacPage() {
                   Schedule a Consultation &rarr;
                 </Link>
                 <Link
-                  href="/hvac-business-valuation-calculator"
+                  href="/hvac-business-valuation"
                   className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-lg transition-colors"
                 >Request a Confidential Valuation</Link>
               </div>
@@ -144,3 +144,4 @@ export default function RealNumberEvaluatingHvacPage() {
     </>
   );
 }
+

@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 
@@ -88,7 +88,7 @@ export default function FreeValuationPage() {
               <Link href="/contact-us" className="px-6 py-3 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg transition-colors text-sm">
                 Schedule Private Consultation &rarr;
               </Link>
-              <Link href="/hvac-business-valuation-calculator" className="px-6 py-3 bg-[#022B3A] hover:bg-[#033b50] text-white font-bold rounded-lg transition-colors text-sm">
+              <Link href="/hvac-business-valuation" className="px-6 py-3 bg-[#022B3A] hover:bg-[#033b50] text-white font-bold rounded-lg transition-colors text-sm">
                 Use Free Online Calculator
               </Link>
             </div>
@@ -98,5 +98,6 @@ export default function FreeValuationPage() {
     </>
   );
 }
+
 
 

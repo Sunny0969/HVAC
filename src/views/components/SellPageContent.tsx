@@ -88,7 +88,7 @@ export default function SellPageContent() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Before the Business Goes to Market</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-              Preparation reduces surprises during buyer review. We organize the information buyers and lenders commonly request and identify issues that may affect value or closing risk. If you are unsure where you stand, utilizing an <Link href="/hvac-business-valuation-calculator" className="text-[#EE5B2C] hover:underline font-bold">HVAC valuation calculator</Link> can set a baseline before gathering these documents.
+              Preparation reduces surprises during buyer review. We organize the information buyers and lenders commonly request and identify issues that may affect value or closing risk. If you are unsure where you stand, utilizing an <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">HVAC valuation calculator</Link> can set a baseline before gathering these documents.
             </p>
             <ul className="space-y-4 text-lg text-gray-700 font-medium">
               <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Three years of business tax returns and profit-and-loss statements</li>
@@ -249,3 +249,4 @@ export default function SellPageContent() {
     </article>
   );
 }
+

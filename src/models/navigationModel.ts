@@ -29,7 +29,7 @@ export const navigationData: NavItem[] = [
     href: "#",
     children: [
       { label: "HVAC Business Valuation", href: "#" },
-      { label: "Valuation Calculator", href: "/hvac-business-valuation-calculator" },
+      { label: "Valuation Calculator", href: "/hvac-business-valuation" },
       { label: "Value Drivers", href: "#" },
     ]
   },
@@ -89,3 +89,4 @@ export const floridaCities = [
     "Sarasota",
     "Clearwater"
 ];
+
