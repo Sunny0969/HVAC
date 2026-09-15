@@ -61,135 +61,79 @@ export default function BuyPageContent() {
       <div className="grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8">
       
-          {/* Executive Summary & Audience Clarity */}
-          <div className="bg-[#022B3A] text-white rounded-[2rem] p-8 md:p-10 mb-12 shadow-xl border border-gray-800">
-            <h2 className="text-2xl font-black mb-4 text-[#EE5B2C]">Executive Summary & Who This Is For</h2>
-            <p className="text-gray-200 font-medium leading-relaxed mb-4">
-              <strong className="text-white">Target Audience & Use Case:</strong> This guide is designed for first-time business buyers, strategic acquirers (existing HVAC owners), and private equity firms looking to acquire cash-flowing HVAC businesses in Florida. Use this advice when evaluating, financing, and structuring an acquisition.
+          {/* Opening Copy */}
+          <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-12">
+            <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
+              An HVAC acquisition should match the buyer&apos;s experience, available capital, financing capacity, preferred geography and operational plan. We help qualified buyers define their criteria, review appropriate opportunities and follow a structured transaction process.
             </p>
-            <p className="text-gray-200 font-medium leading-relaxed mb-6">
-              <strong className="text-white">Key Takeaway:</strong> Buying an established HVAC company offers immediate recurring revenue and an active customer base. To succeed, you must verify normalized earnings, secure the right financing, and understand transition risks.
-            </p>
-            <p className="text-sm text-gray-400 font-medium">
-              Last Updated: September 13, 2026
+            <h2 className="text-3xl font-black text-[#022B3A] mb-5">Buyer Qualification</h2>
+            <p className="text-lg text-gray-700 leading-relaxed font-medium">
+              Before receiving confidential company information or speaking with a seller, prospective buyers may be required to sign a nondisclosure agreement and provide proof of funds, a lender letter or other evidence of financial capacity. These requirements protect the seller and reduce unnecessary disclosure.
             </p>
           </div>
 
-          {/* Block 1: Why Buy (Clean White Card) */}
-          <motion.div 
-            
-            
-            
-            viewport={{ once: true, margin: "-50px" }}
-            className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] mb-6">Why Buy an HVAC Business Instead of Starting One?</h2>
-            <div className="text-lg text-gray-700 leading-relaxed font-medium space-y-6">
-              <p>
-                <strong>Immediate cash flow and an established customer base.</strong> Air conditioning and heating systems in Florida wear out fast - the average residential unit lasts roughly 10-15 years in this climate, which means an established HVAC company already has something a startup doesn't: a customer base that keeps calling.
-              </p>
-              <p>
-                Buying an existing business means you inherit trained technicians, a fleet, vendor relationships, and recurring revenue from service agreements. Financing an acquisition is also heavily supported by the <a href="https://www.sba.gov/funding-programs/loans/7a-loans" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">SBA 7(a) loan program</a>, making it accessible for qualified buyers.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Block 2: What to Look For (Checklist Card) */}
-          <motion.div 
-            
-            
-            
-            viewport={{ once: true, margin: "-50px" }}
-            className="bg-gray-50 rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] mb-6">What to Look for Before You Buy an HVAC Company</h2>
-            <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-              Not every listing that looks good on paper is a good fit. Before you get attached to a number, you need real answers on:
-            </p>
-            
-            <motion.ul 
-              
-              
-              
-              viewport={{ once: true }}
-              className="space-y-4 mb-8"
-            >
+          {/* What Buyers Should Examine */}
+          <div className="bg-gray-50 rounded-[2rem] p-8 md:p-12 shadow-md border border-gray-100 mb-12">
+            <h2 className="text-3xl font-black text-[#022B3A] mb-6">What Buyers Should Examine</h2>
+            <ul className="space-y-4">
               {[
-                { title: "Service area", desc: "is the territory big enough (or too spread out) for how you plan to operate?" },
-                { title: "Residential vs. commercial mix", desc: "different margins, different growth ceilings" },
-                { title: "New construction vs. service & maintenance", desc: "construction-heavy revenue is more cyclical; service and maintenance agreements are the steadier, more valuable base" },
-                { title: "Team structure", desc: "is this a one-owner-operator shop, or does it run with staff who'll stay after the sale?" },
-                { title: "Budget fit", desc: "purchase price relative to what you can finance or bring in cash" },
-                { title: "True earning power", desc: "what the business actually generates once you normalize for owner perks and one-off expenses" }
+                "Quality and consistency of reported earnings",
+                "Maintenance agreements and recurring revenue",
+                "Customer concentration and commercial-contract terms",
+                "Technician retention and compensation",
+                "Owner responsibilities and transition requirements",
+                "Licensing and qualifying-agent continuity",
+                "Fleet, equipment and expected capital expenditures",
+                "Seasonality, service territory and marketing sources",
+                "Lease, real estate and facility requirements",
+                "Working capital, inventory and transaction structure",
               ].map((item, i) => (
-                <motion.li key={i}  className="flex items-start bg-white p-5 rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                <li key={i} className="flex items-start bg-white p-4 rounded-xl shadow-sm border border-gray-100 text-gray-700 font-medium list-none">
+                  <div className="w-8 h-8 rounded-full bg-[#EE5B2C]/10 text-[#EE5B2C] flex items-center justify-center flex-shrink-0 mr-4 mt-0.5">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                   </div>
-                  <div className="text-gray-700 font-medium">
-                    <strong className="text-[#022B3A]">{item.title}</strong> - {item.desc}
-                  </div>
-                </motion.li>
+                  {item}
+                </li>
               ))}
-            </motion.ul>
-            <p className="text-lg text-[#022B3A] font-bold">
-              We walk through each of these with you against the specific listings you're considering - not as a generic checklist, but against real numbers.
-            </p>
-          </motion.div>
+            </ul>
+          </div>
 
-          {/* Block 3 & 4 Grid */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <motion.div 
-              
-              
-              
-              viewport={{ once: true, margin: "-50px" }}
-              className="bg-white rounded-[2rem] p-8 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col"
-            >
-              <div className="w-14 h-14 bg-orange-50 text-[#EE5B2C] rounded-2xl flex items-center justify-center mb-6">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-              </div>
-              <h2 className="text-2xl font-black text-[#022B3A] mb-4">You've Found a Business You Like - Now What?</h2>
-              <p className="text-gray-700 leading-relaxed mb-6 font-medium">
-                Finding the right company is only the first half of the deal. Before you move forward, you'll need clear answers on:
-              </p>
-              <ul className="space-y-3 mb-6 flex-1">
-                {[
-                  "Financing (SBA, seller financing, cash)",
-                  "Which financing route fits this deal",
-                  "Due diligence (financials, licensing, equipment)",
-                  "Fair market value based on comparables",
-                  "Transition planning (ownership, staff, customers)"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start text-sm text-gray-700 font-medium">
-                    <span className="text-[#EE5B2C] mr-3 font-bold">•</span> {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-sm font-bold text-[#022B3A] p-4 bg-gray-50 rounded-xl">
-                We work through all of this alongside you so you're negotiating from an informed position, not guessing.
-              </p>
-            </motion.div>
+          {/* Standard Transaction Process */}
+          <div className="bg-[#022B3A] rounded-[2rem] p-8 md:p-12 shadow-xl text-white mb-12">
+            <h2 className="text-3xl font-black mb-8">Standard Transaction Process</h2>
+            <div className="space-y-4">
+              {[
+                "Define acquisition criteria and financial capacity.",
+                "Complete confidentiality and qualification requirements.",
+                "Review the confidential information memorandum.",
+                "Submit an appropriate purchase contract and escrow deposit.",
+                "Complete the agreed due-diligence review.",
+                "Resolve financing, licensing, landlord and closing conditions.",
+                "Complete closing and the agreed transition.",
+              ].map((step, idx) => (
+                <div key={idx} className="flex items-center bg-white/5 border border-white/10 p-4 rounded-xl">
+                  <div className="w-10 h-10 rounded-full bg-[#EE5B2C] text-white font-bold flex items-center justify-center flex-shrink-0 mr-4 text-lg">
+                    {idx + 1}
+                  </div>
+                  <p className="text-lg font-medium text-white/90">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-            <motion.div 
-              
-              
-              
-              viewport={{ once: true, margin: "-50px" }}
-              className="bg-[#022B3A] text-white rounded-[2rem] p-8 shadow-xl shadow-[#022B3A]/20 flex flex-col relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#EE5B2C] opacity-20 rounded-full blur-[80px]" />
-              <div className="w-14 h-14 bg-white/10 text-white rounded-2xl flex items-center justify-center mb-6 relative z-10">
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+          {/* Communication Notice */}
+          <div className="bg-orange-50 border border-orange-100 rounded-[2rem] p-8 md:p-10 mb-12">
+            <div className="flex items-start gap-5">
+              <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#EE5B2C]/15 flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" /></svg>
               </div>
-              <h2 className="text-2xl font-black mb-4 relative z-10">Why Recurring Revenue Should Drive Your Search</h2>
-              <p className="text-white/80 leading-relaxed mb-4 font-medium relative z-10">
-                The most valuable HVAC businesses aren't necessarily the ones with the highest top-line revenue - they're the ones with the most predictable revenue. A company built around maintenance agreements and repeat service calls is worth more, and more stable to own, than one that depends heavily on new construction contracts that dry up when building slows down.
-              </p>
-              <p className="text-white/80 leading-relaxed font-medium mt-auto relative z-10 pt-6 border-t border-white/20">
-                When we help you evaluate a listing, we look specifically at how much of the revenue is contracted and recurring versus one-time - because that number tells you more about your future cash flow than almost anything else on the P&L.
-              </p>
-            </motion.div>
+              <div>
+                <h3 className="text-xl font-bold text-[#022B3A] mb-3">Communication With Employees and Customers</h3>
+                <p className="text-lg text-gray-700 font-medium leading-relaxed">
+                  Prospective buyers may not contact employees, customers, vendors or other parties connected with a confidential listing unless the seller gives written approval and the transaction process permits the communication.
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Structured Answer: Comparison Table */}

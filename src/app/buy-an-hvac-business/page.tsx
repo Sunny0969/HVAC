@@ -4,8 +4,8 @@ import BuyPageContent from "@/views/components/BuyPageContent";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "HVAC Businesses for Sale in Florida | Buyer Representation",
-  description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing. Browse our listings!",
+  title: "Buy an HVAC Business in Florida",
+  description: "Search for Florida HVAC and mechanical-service acquisitions with a confidential and financially qualified buyer process.",
   alternates: {
     canonical: "https://www.hvacexitadvisors.com/buy-an-hvac-business",
   },
@@ -14,14 +14,14 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "HVAC Businesses for Sale in Florida | Buyer Representation",
-    description: "Looking to buy a Florida HVAC company? Get matched with vetted, cash-flowing businesses and expert guidance from search to closing. Browse our listings!",
+    title: "Buy an HVAC Business in Florida",
+    description: "Search for Florida HVAC and mechanical-service acquisitions with a confidential and financially qualified buyer process.",
     images: [
       {
-        url: "/images/og-buy-hvac.webp", // placeholder
+        url: "/buy-an-hvac-business.jpg",
         width: 1200,
         height: 630,
-        alt: "Florida HVAC technician servicing unit",
+        alt: "Buy an HVAC Business in Florida",
       }
     ]
   }
@@ -162,12 +162,17 @@ export default function BuyHvacBusinessPage() {
         </div>
 
         <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left mt-16 md:mt-0">
-          <h1 className="max-w-5xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
-            Buy a Florida <span className="text-[#EE5B2C]">HVAC<br className="hidden md:block" /> Business</span> With Confidence
+          <nav aria-label="Breadcrumb" className="text-sm font-semibold text-white/70 mb-6 flex items-center space-x-2">
+            <Link href="/" className="hover:text-[#EE5B2C] transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-white">Buy an HVAC Business</span>
+          </nav>
+          <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
+            Acquire an HVAC Business That Fits Your Objectives
           </h1>
           
-          <p className="max-w-4xl text-xl md:text-2xl text-white/90 leading-relaxed font-medium mb-10 drop-shadow-md">
-            Skip the guesswork. We connect you with <Link href="/listings" className="text-[#EE5B2C] hover:underline font-bold transition-colors">vetted, cash-flowing businesses</Link> across Florida and expertly guide you to a successful closing.
+          <p className="max-w-3xl text-xl text-white/90 leading-relaxed font-medium mb-10 drop-shadow-md">
+            Search for Florida HVAC and mechanical-service acquisitions with a confidential and financially qualified buyer process.
           </p>
           
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-start gap-4 mb-12">
@@ -175,20 +180,20 @@ export default function BuyHvacBusinessPage() {
               href="/listings" 
               className="w-full sm:w-auto px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
             >
-              See Current Listings &rarr;
+              View Current Listings &rarr;
             </Link>
             <Link 
               href="/contact-us" 
               className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-lg transition-colors text-center"
             >
-              Talk to a Broker
+              Register as a Qualified Buyer
             </Link>
           </div>
 
           <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-bold text-white/80">
             {[
               "Florida-only focus",
-              "Vetted, financially-verified listings",
+              "Confidential & Qualified Buyer Process",
               "Guidance through financing & due diligence"
             ].map((text, i) => (
               <div key={i} className="flex items-center">
