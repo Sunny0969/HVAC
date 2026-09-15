@@ -208,6 +208,7 @@ export default function ValuationCalculatorPage() {
                 <p className="mb-6">
                   <strong>Short Answer:</strong> By multiplying your SDE or EBITDA by an industry-specific market multiple (typically 2x to 4x SDE).<br/>
                   To get an exact figure, brokers perform financial recasting to find the true normalized earnings, then apply a multiple dictated by current market conditions. For a deeper dive, read our guide on <Link href="/resources/hvac-business-in-florida" className="text-[#EE5B2C] hover:underline">HVAC businesses in Florida</Link>.
+                </p>
               </div>
 
               {/* Disclaimer */}

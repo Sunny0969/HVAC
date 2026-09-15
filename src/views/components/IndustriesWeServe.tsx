@@ -20,10 +20,13 @@ export default function IndustriesWeServe() {
     <section className="w-full bg-[#F7F5F0] py-16 border-t border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] tracking-tight">
-            HVAC Industries <span className="text-[#EE5B2C]">We Serve</span>
+          <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] tracking-tight mb-4">
+            Who We Serve
           </h2>
-          <div className="w-24 h-1 bg-[#EE5B2C] mx-auto mt-4 rounded-full"></div>
+          <p className="max-w-3xl mx-auto text-lg text-gray-700 font-medium">
+            We work with owners and qualified buyers of residential HVAC, commercial HVAC, refrigeration, plumbing, electrical, mechanical contracting, indoor air quality, ductwork and related service companies.
+          </p>
+          <div className="w-24 h-1 bg-[#EE5B2C] mx-auto mt-6 rounded-full"></div>
         </div>
 
         {/* CSS Grid for exactly 6 columns, resulting in 2 rows on large screens */}

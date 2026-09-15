@@ -6,23 +6,28 @@ export interface Step {
 
 export const steps: Step[] = [
   {
-    title: "Valuation",
-    description: "Establish maximum market value. We perform a deep-dive financial analysis to properly package your HVAC business.",
+    title: "Consultation",
+    description: "Private consultation to understand your objectives and timing.",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=400&q=75"
   },
   {
-    title: "Marketing",
-    description: "Going to market with discrete, blind profiles. We target our vetted network of private equity and strategic buyers.",
+    title: "Financial Review",
+    description: "Financial and operational review to identify value drivers and concerns.",
     image: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=400&q=75"
   },
   {
-    title: "Matching & Negotiation",
-    description: "We field inquiries, execute strict NDAs, qualify buyers, and structure optimal deal terms for your exit.",
+    title: "Market Positioning",
+    description: "Market positioning and preparation of confidential buyer materials.",
     image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=75"
   },
   {
-    title: "The Close",
-    description: "Managing due diligence, CPA reviews, legal drafting, final signatures, and secure wire transfers.",
+    title: "Buyer Outreach",
+    description: "Controlled outreach to qualified buyers and investors.",
     image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=400&q=75"
+  },
+  {
+    title: "The Close",
+    description: "Offer review, contract coordination, due diligence and closing support.",
+    image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=400&q=75"
   }
 ];

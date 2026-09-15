@@ -1,5 +1,8 @@
 import { Metadata } from 'next';
 import Hero from '../views/components/Hero';
+import WhatBuyersEvaluate from '../views/components/WhatBuyersEvaluate';
+import WhyOwnersContactUs from '../views/components/WhyOwnersContactUs';
+import ClosingSection from '../views/components/ClosingSection';
 import RoadmapAscent, { RoadmapStep } from '../views/components/RoadmapAscent';
 import HowItWorksSteps from '../views/components/HowItWorksSteps';
 import IndustriesWeServe from '../views/components/IndustriesWeServe';
@@ -35,14 +38,14 @@ const formatMoney = (val?: number) => {
 
 
 export const metadata: Metadata = {
-  title: 'Florida HVAC Business Broker & M&A Advisors',
-  description: 'The premier Florida HVAC business broker. Buy or sell your Florida HVAC company with our confidential valuation and M&A advisory services.',
+  title: 'Florida HVAC Business Broker and Valuation Advisor',
+  description: 'Confidential guidance for selling, valuing or buying HVAC, refrigeration and mechanical-service businesses in Florida.',
   alternates: {
     canonical: 'https://www.hvacexitadvisors.com',
   },
   openGraph: {
-    title: 'Florida HVAC Business Broker & M&A Advisors',
-    description: 'The premier Florida HVAC business broker. Buy or sell your Florida HVAC company with our confidential valuation and M&A advisory services.',
+    title: 'Florida HVAC Business Broker and Valuation Advisor',
+    description: 'Confidential guidance for selling, valuing or buying HVAC, refrigeration and mechanical-service businesses in Florida.',
     url: 'https://www.hvacexitadvisors.com',
     type: 'website',
     images: [{ url: "https://www.hvacexitadvisors.com/why-sell-with-us.jpg" }]
@@ -50,10 +53,11 @@ export const metadata: Metadata = {
 };
 
 const homeSteps: RoadmapStep[] = [
-  { title: "Valuation", description: "Establish maximum market value.", day: "PHASE 1" },
-  { title: "Marketing", description: "Discrete blind profiles to vetted buyers.", day: "PHASE 2" },
-  { title: "Matching & Negotiation", description: "Qualify buyers and structure optimal LOIs.", day: "PHASE 3" },
-  { title: "The Close", description: "Due diligence, signatures, and wire transfers.", day: "PHASE 4" }
+  { title: "Consultation", description: "Private consultation to understand your objectives and timing.", day: "PHASE 1" },
+  { title: "Financial Review", description: "Financial and operational review to identify value drivers and concerns.", day: "PHASE 2" },
+  { title: "Market Positioning", description: "Market positioning and preparation of confidential buyer materials.", day: "PHASE 3" },
+  { title: "Buyer Outreach", description: "Controlled outreach to qualified buyers and investors.", day: "PHASE 4" },
+  { title: "The Close", description: "Offer review, contract coordination, due diligence and closing support.", day: "PHASE 5" }
 ];
 
 
@@ -174,44 +178,17 @@ export default async function Home() {
       {/* 1. Hero Section */}
       <Hero />
       
-      {/* 2. Executive Summary & AEO Box */}
-      <section className="w-full bg-white py-12 border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#022B3A]/5 border border-[#022B3A]/10 p-8 rounded-2xl">
-            <div className="flex flex-wrap items-center justify-between border-b border-gray-200 pb-4 mb-4">
-              <h2 className="text-2xl font-black text-[#022B3A]">The Premier Florida HVAC Business Broker & Advisory Firm</h2>
-              <span className="text-sm font-bold text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200">Last Updated: Sept 2026</span>
-            </div>
-            
-            <p className="text-gray-700 font-medium leading-relaxed mb-6">
-              <strong>Key Takeaway:</strong> Welcome to HVAC Exit Advisors, a specialized M&A firm entirely dedicated to the mechanical contracting space. If you're looking for a <strong>Florida HVAC Business Broker</strong> to help you evaluate, market, and sell your heating and air conditioning company, you're in the right place.
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Target Audience & Use Case</h3>
-                <ul className="space-y-2 text-sm font-medium text-gray-700">
-                  <li>? <strong>Sellers:</strong> HVAC owners seeking a discreet exit or private equity recapitalization.</li>
-                  <li>? <strong>Buyers:</strong> Investors and technicians acquiring established cash flow.</li>
-                  <li>? <strong>Decision Context:</strong> Securing the highest multiple during a business sale.</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Our First-Hand Experience</h3>
-                <p className="text-sm font-medium text-gray-700">
-                  Backed by decades of <a href="https://www.ibba.org" target="_blank" rel="noopener noreferrer" className="underline hover:text-orange-500">IBBA-standard</a> valuation experience and direct operational knowledge of Florida DBPR regulations, we consistently secure 15-30% higher multiples than generalist brokers. (Source: IBBA Standards).
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries We Serve */}
+      {/* 2. Industries We Serve */}
       <IndustriesWeServe />
 
-      {/* 3. How it Works */}
+      {/* 3. What Buyers Evaluate */}
+      <WhatBuyersEvaluate />
+
+      {/* 4. How it Works */}
       <HowItWorksSteps />
+      
+      {/* 5. Why Owners Contact Us */}
+      <WhyOwnersContactUs />
 
       {/* 4. Merged: Why Sell With Us + Comparison Table */}
       <section className="w-full bg-[#F7F5F0] py-24">
@@ -296,6 +273,9 @@ export default async function Home() {
           </div>
         </div>
       </section>
+
+      {/* 10. Closing Section */}
+      <ClosingSection />
     </>
   );
 }

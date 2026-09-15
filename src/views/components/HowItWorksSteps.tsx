@@ -15,13 +15,13 @@ export default function HowItWorksSteps() {
             <div className="sticky top-32">
               <div className="inline-flex items-center gap-2 border border-gray-200 rounded-full px-4 py-1.5 text-sm font-semibold mb-6 bg-white shadow-sm text-gray-700">
                 <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-                How it works
+                Our Process
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-tight text-[#022B3A] tracking-tight font-serif mb-6">
-                From initial valuation to closing – <span className="text-[#EE5B2C] italic">in four steps.</span>
+                From initial consultation to <span className="text-[#EE5B2C] italic">successful closing.</span>
               </h2>
               <p className="text-gray-500 text-lg md:text-xl font-medium leading-relaxed">
-                Our streamlined advisory process ensures you get a professional valuation and a profitable exit quickly and efficiently from start to finish.
+                Our streamlined advisory process ensures you get a professional valuation and a profitable exit efficiently from start to finish.
               </p>
             </div>
           </div>
