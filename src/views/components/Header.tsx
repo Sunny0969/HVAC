@@ -175,7 +175,7 @@ export default function Header() {
             {/* CTAs */}
             <div className="hidden md:flex items-center space-x-4">
               <Link
-                href="/free-valuation"
+                href="/free-confidential-valuation"
                 className="bg-[#EE5B2C] text-white px-5 py-2.5 rounded-full text-sm font-bold hover:bg-orange-600 transition-all shadow-md"
               >
                 Request a Confidential Valuation

@@ -162,7 +162,7 @@ export default function FaqsPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
-              href="/free-valuation" 
+              href="/free-confidential-valuation" 
               className="w-full sm:w-auto px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
             >Request a Confidential Valuation</Link>
             <Link 

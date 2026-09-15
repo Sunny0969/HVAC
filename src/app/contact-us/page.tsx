@@ -97,7 +97,7 @@ export default function ContactPage() {
 
           <h3 className="text-2xl font-bold mt-8 mb-4">How the Process Works</h3>
           <p className="mb-4">
-            When you reach out to us, there is no high-pressure sales pitch. Our first step is a simple, private conversation to understand your goals. If you are a seller, we will discuss your timeline and provide a <Link href="/free-valuation" className="text-[#EE5B2C] hover:underline font-bold">free business valuation</Link>. If you are a buyer, we will learn about your investment criteria, preferred Florida markets, and financial capacity.
+            When you reach out to us, there is no high-pressure sales pitch. Our first step is a simple, private conversation to understand your goals. If you are a seller, we will discuss your timeline and provide a <Link href="/free-confidential-valuation" className="text-[#EE5B2C] hover:underline font-bold">free business valuation</Link>. If you are a buyer, we will learn about your investment criteria, preferred Florida markets, and financial capacity.
           </p>
 
           <p className="mb-8">

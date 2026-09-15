@@ -12,7 +12,7 @@ export default function ClosingSection() {
           A confidential conversation can help you understand what buyers may value, which records will be needed and whether your company is ready for the market.
         </p>
         <Link 
-          href="/free-valuation"
+          href="/free-confidential-valuation"
           className="inline-block px-10 py-5 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all text-xl"
         >
           Start My Confidential Review

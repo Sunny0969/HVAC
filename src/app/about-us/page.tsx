@@ -121,7 +121,7 @@ export default function Page() {
                 Meet Our Advisory Team &rarr;
               </Link>
               <Link
-                href="/free-valuation"
+                href="/free-confidential-valuation"
                 className="px-6 py-3 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg transition-colors"
               >Request a Confidential Valuation</Link>
             </div>

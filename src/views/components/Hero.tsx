@@ -103,7 +103,7 @@ export default function Hero() {
         </p>
         <div className="flex flex-col sm:flex-row items-start justify-start gap-4 flex-wrap">
           <Link 
-            href="/free-valuation"
+            href="/free-confidential-valuation"
             className="w-full sm:w-auto px-6 py-3 bg-secondary text-white rounded-md font-bold text-base hover:bg-white hover:text-secondary transition-colors shadow-xl text-center"
           >
             Request a Confidential Valuation

@@ -112,7 +112,7 @@ export default function PrivateEquityRollUpPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
-                  href="/free-valuation"
+                  href="/free-confidential-valuation"
                   className="px-6 py-3 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg transition-colors"
                 >
                   Request Confidential Valuation &rarr;

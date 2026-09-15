@@ -1,4 +1,4 @@
-﻿export interface NavItem {
+export interface NavItem {
   label: string;
   href: string;
   children?: NavItem[];
@@ -10,7 +10,7 @@ export const navigationData: NavItem[] = [
     href: "#",
     children: [
       { label: "Sell Your HVAC Business", href: "/sell-your-hvac-business" },
-      { label: "Free Confidential Valuation", href: "/free-valuation" },
+      { label: "Free Confidential Valuation", href: "/free-confidential-valuation" },
       { label: "Why Sell With Us", href: "/why-sell-with-us" },
     ]
   },

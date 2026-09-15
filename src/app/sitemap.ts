@@ -1,4 +1,4 @@
-﻿import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.hvacexitadvisors.com';
@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
-      url: `${baseUrl}/free-valuation`,
+      url: `${baseUrl}/free-confidential-valuation`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,

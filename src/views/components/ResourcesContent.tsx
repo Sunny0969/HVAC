@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
@@ -283,7 +283,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
                 Find out what your Florida HVAC business is worth - confidentially.
               </p>
               <Link
-                href="/free-valuation"
+                href="/free-confidential-valuation"
                 className="block w-full text-center px-5 py-3 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-xl transition-all text-sm"
               >Request a Confidential Valuation</Link>
             </div>
