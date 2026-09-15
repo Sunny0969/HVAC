@@ -108,7 +108,8 @@ export default function ContactForm({ buttonText = "Submit Inquiry" }: ContactFo
       </button>
       
       <p className="text-sm text-gray-500 text-center mt-4">
-        <span className="inline-block text-[#EE5B2C] mr-1">??</span> 100% Confidential. Your information is never shared.
+        <span className="inline-block text-[#EE5B2C] mr-1">🔒</span> 
+        Your inquiry will be handled confidentially. We do not contact employees, customers, vendors or other third parties without authorization. Information about a business is released only through the appropriate confidentiality and qualification process.
       </p>
     </form>
   );

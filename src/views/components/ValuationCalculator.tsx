@@ -296,7 +296,7 @@ export default function ValuationCalculator() {
             </div>
           </div>
 
-          <div className="flex gap-4 border-t border-gray-100 pt-8">
+          <div className="flex gap-4 border-t border-gray-100 pt-8 mb-6">
             <button type="submit" className="px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transition-all text-lg">
               Calculate Preliminary Range
             </button>
@@ -304,6 +304,11 @@ export default function ValuationCalculator() {
               Clear
             </button>
           </div>
+          
+          <p className="text-sm text-gray-500 text-left">
+            <span className="inline-block text-[#EE5B2C] mr-1">🔒</span> 
+            Your inquiry will be handled confidentially. We do not contact employees, customers, vendors or other third parties without authorization. Information about a business is released only through the appropriate confidentiality and qualification process.
+          </p>
         </form>
 
         <AnimatePresence>

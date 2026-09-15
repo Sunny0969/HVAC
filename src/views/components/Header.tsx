@@ -196,7 +196,7 @@ export default function Header() {
             <span>WhatsApp</span>
           </a>
           <Link href="/free-valuation" className="flex-1 text-center min-h-[48px] py-3 bg-secondary text-white font-bold flex justify-center items-center space-x-2 touch-manipulation">
-            <span>Free Valuation</span>
+            <span className="text-sm">Confidential Valuation</span>
             <span>→</span>
           </Link>
         </div>

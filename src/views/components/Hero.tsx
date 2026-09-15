@@ -92,36 +92,27 @@ export default function Hero() {
 
       {/* Foreground Real DOM Content (SEO + LCP) */}
       <div className="relative z-20 px-4 max-w-7xl w-full mx-auto mt-16 md:mt-0 text-left">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-xl tracking-tight">
-          Florida <span className="text-[#EE5B2C]">HVAC<br className="hidden md:block"/> Business</span> Broker
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-xl tracking-tight leading-tight">
+          Sell Your HVAC Business Confidentially and With Confidence
         </h1>
+        <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-4xl font-medium drop-shadow-md leading-relaxed">
+          You spent years building your company, serving customers and developing a skilled team. When you begin considering a sale, you deserve clear information about value, preparation, buyer qualifications and the terms that can affect what you ultimately receive.
+        </p>
         <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-4xl font-medium drop-shadow-md leading-relaxed">
-          HVAC Exit Advisors provides confidential business-brokerage and transaction guidance to owners and qualified buyers of HVAC, refrigeration, plumbing, electrical and mechanical-service companies. We help owners understand value, prepare for the market, protect confidentiality and navigate the transaction from the first consultation through closing.
+          HVAC Exit Advisors helps business owners evaluate their options, prepare the company for qualified buyers and navigate a confidential sale from valuation through closing.
         </p>
         <div className="flex flex-col sm:flex-row items-start justify-start gap-4 flex-wrap">
           <Link 
-            href="/sell-your-hvac-business"
+            href="/free-valuation"
             className="w-full sm:w-auto px-8 py-4 bg-secondary text-white rounded-md font-bold text-lg hover:bg-white hover:text-secondary transition-colors shadow-xl text-center"
           >
-            Schedule a Private Consultation
-          </Link>
-          <Link 
-            href="/buy-an-hvac-business"
-            className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-md font-bold text-lg hover:bg-white/20 transition-all shadow-xl text-center"
-          >
-            Register as a Qualified Buyer
-          </Link>
-          <Link 
-            href="/listings"
-            className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-md font-bold text-lg hover:bg-white/20 transition-all shadow-xl text-center"
-          >
-            View HVAC Businesses for Sale
-          </Link>
-          <Link 
-            href="/hvac-business-valuation-calculator"
-            className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-md font-bold text-lg hover:bg-white/20 transition-all shadow-xl text-center"
-          >
             Request a Confidential Valuation
+          </Link>
+          <Link 
+            href="/contact-us"
+            className="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white rounded-md font-bold text-lg hover:bg-white/20 transition-all shadow-xl text-center"
+          >
+            Schedule a Private Consultation
           </Link>
         </div>
       </div>
