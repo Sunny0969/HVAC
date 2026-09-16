@@ -8,6 +8,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { areasWeServeData, industriesData } from "../../models/navigationModel";
 
+
+function getCityImage(cityName: string) {
+  const filename = cityName.toLowerCase().replace(/ /g, '-');
+  const availableCities = ['miami', 'fort-lauderdale', 'west-palm-beach', 'boca-raton', 'hollywood', 'pompano-beach', 'coral-springs', 'pembroke-pines', 'miramar', 'hialeah', 'homestead'];
+  if (availableCities.includes(filename)) {
+    return `/images/cities/${filename}.jpg`;
+  }
+  return `https://images.unsplash.com/photo-1449844908441-8829872d2607?w=100&h=100&fit=crop&q=80`;
+}
+
 function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onClose: () => void }) {
   const categories = Object.keys(data);
   const [activeCategory, setActiveCategory] = useState(categories[0]);
@@ -54,7 +64,7 @@ function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onCl
               <Link key={item} href={`/florida/${slug}`} onClick={onClose} className="flex items-center gap-3 group cursor-pointer">
                 <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative flex-shrink-0">
                   <Image 
-                    src={`https://images.unsplash.com/photo-1449844908441-8829872d2607?w=100&h=100&fit=crop&q=80`}
+                    src={getCityImage(item)}
                     alt={item}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
