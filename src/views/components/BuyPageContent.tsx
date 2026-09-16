@@ -204,12 +204,6 @@ export default function BuyPageContent() {
               </motion.div>
             </div>
           </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
           
           {/* Block 7: Learn More Teasers */}
           <motion.div
