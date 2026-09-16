@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import SellYourHvacFaq from "./SellYourHvacFaq";
 import Link from "next/link";
 
 export default function SellPageContent() {
@@ -166,34 +167,15 @@ export default function SellPageContent() {
           </div>
           
           {/* FAQ / Direct Answers for AEO */}
-          <div className="bg-[#F8FAFC] rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
-            <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions About Selling</h2>
-            
-            <h3 className="text-xl font-bold text-[#022B3A] mb-2">What should I prepare before selling my HVAC business?</h3>
-            <p className="text-gray-700 font-medium mb-6">
-              Prepare three years of tax returns and profit-and-loss statements, current year-to-date financials, a balance sheet, payroll and owner compensation details, maintenance-agreement data, revenue by service category, fleet and equipment schedules, lease information, licensing arrangements, and major customer or vendor information.
-            </p>
-            
-            <h3 className="text-xl font-bold text-[#022B3A] mb-2">Will employees and customers be told that the business is for sale?</h3>
-            <p className="text-gray-700 font-medium mb-6">
-              Not during confidential marketing. Employees, customers, vendors, and competitors should not be contacted without the seller's prior written authorization and the permissions established in the transaction documents.
-            </p>
-
-            <h3 className="text-xl font-bold text-[#022B3A] mb-2">Is the highest offer always the best offer?</h3>
-            <p className="text-gray-700 font-medium mb-6">
-              No. A seller should compare cash at closing, financing contingencies, escrow, seller financing, earnouts, working-capital requirements, assumed liabilities, transition obligations, licensing conditions, and the buyer's actual ability to close.
-            </p>
-
-            <h3 className="text-xl font-bold text-[#022B3A] mb-2">How long does it take to sell an HVAC business?</h3>
-            <p className="text-gray-700 font-medium mb-6">
-              Timing varies with preparation, price, buyer qualification, financing, licensing, landlord approval, due diligence, and legal documentation. A well-prepared cash transaction may close faster, while an SBA-financed or more complex transaction can take several months.
-            </p>
-          </div>
+          <SellYourHvacFaq />
 
           {/* Closing Copy */}
           <div className="bg-gradient-to-br from-[#EE5B2C] to-orange-500 rounded-[2rem] p-8 md:p-12 shadow-2xl text-white text-center">
-            <p className="text-xl leading-relaxed font-medium mb-8">
+            <p className="text-xl leading-relaxed font-medium mb-6">
               If you are considering a sale within the next several months or planning years ahead, begin by understanding the company’s current position and the records buyers will expect.
+            </p>
+            <p className="text-lg leading-relaxed font-medium mb-8 text-white/90">
+              Taking the right steps now ensures that you maximize your business valuation and attract the most qualified private equity or strategic buyers when the time comes to exit. Let our experienced Florida advisors guide you through a seamless, highly confidential transition from valuation to closing.
             </p>
             <a href="#seller-form" className="inline-block px-8 py-4 bg-[#022B3A] hover:bg-[#033b50] text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all">
               Discuss My HVAC Business Confidentially

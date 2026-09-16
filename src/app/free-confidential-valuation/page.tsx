@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 import { motion } from 'framer-motion';
+import FreeValuationFaq from '@/views/components/FreeValuationFaq';
 
 export default function FreeConfidentialValuationPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
