@@ -57,6 +57,25 @@ export default function FreeConfidentialValuationPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({
           "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Confidential Review of Your HVAC Business",
+          "description": "Request a free, confidential valuation review for your Florida HVAC business to understand its market value, valuation drivers, and readiness for sale.",
+          "url": "https://www.hvacexitadvisors.com/free-confidential-valuation",
+          "dateModified": new Date().toISOString().split('T')[0],
+          "publisher": {
+            "@type": "Organization",
+            "name": "HVAC Exit Advisors",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.hvacexitadvisors.com/icon.png"
+            }
+          }
+        }) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [
             {
@@ -121,7 +140,7 @@ export default function FreeConfidentialValuationPage() {
               of Your HVAC Business
             </h1>
             <p className="text-xl text-white/90 leading-relaxed font-medium mb-10 max-w-3xl">
-              The initial review helps us understand your company&apos;s size, services, earnings, recurring revenue and ownership structure — with no obligation to proceed.
+              The initial review helps us understand your company&apos;s size, services, earnings, recurring revenue and ownership structure ??? with no obligation to proceed.
             </p>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm md:text-base font-medium text-white/80">
               {["100% Confidential", "No Obligation", "No Fee Until You Close", "Florida-Focused Specialists"].map((badge) => (
@@ -134,36 +153,86 @@ export default function FreeConfidentialValuationPage() {
           </div>
         </section>
 
+        {/* Top Summary / Key Takeaway */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 -mb-8">
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl">
+            <p className="text-lg text-blue-900 font-medium leading-relaxed">
+              <strong>Key Takeaway:</strong> This review is designed specifically for Florida HVAC business owners considering an exit. By evaluating your maintenance agreements, SDE, and team structure, we help you understand your market value before you formally go to market.
+            </p>
+          </div>
+        </div>
+
         {/* Main Content + Sticky Form */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
 
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-10">
+              {/* How to Value Section (Conversational & H2) */}
+              <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
+                <h2 className="text-3xl font-black text-[#022B3A] mb-4">How to Value an HVAC Business?</h2>
+                <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
+                  Valuing an HVAC company isn't as simple as applying a rule-of-thumb multiple to top-line revenue. A proper valuation requires analyzing normalized cash flow (SDE or EBITDA), recurring maintenance agreements, and operational risk.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
+                  In our experience with Florida HVAC businesses, those with high commercial contract retention and low owner-dependence command premium multiples. We follow standards similar to those outlined by the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a> to ensure accurate pricing.
+                </p>
+                
+                <h3 className="text-2xl font-bold text-[#022B3A] mt-10 mb-4">Certified Appraisal vs. Broker Opinion of Value</h3>
+                <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
+                  Not sure which valuation type you need? Here is a quick comparison:
+                </p>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr>
+                        <th className="py-3 px-4 bg-gray-50 text-[#022B3A] font-bold border-b border-gray-200">Feature</th>
+                        <th className="py-3 px-4 bg-gray-50 text-[#022B3A] font-bold border-b border-gray-200">Broker Opinion (Initial Review)</th>
+                        <th className="py-3 px-4 bg-gray-50 text-[#022B3A] font-bold border-b border-gray-200">Certified Appraisal</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-gray-700 text-sm font-medium">
+                      <tr>
+                        <td className="py-3 px-4 border-b border-gray-100">Best For</td>
+                        <td className="py-3 px-4 border-b border-gray-100">Going to market, exit planning</td>
+                        <td className="py-3 px-4 border-b border-gray-100">Litigation, IRS, partner buyouts</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 border-b border-gray-100">Cost</td>
+                        <td className="py-3 px-4 border-b border-gray-100">Often free for prospective sellers</td>
+                        <td className="py-3 px-4 border-b border-gray-100">$3,000 - $10,000+</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 border-b border-gray-100">Timeline</td>
+                        <td className="py-3 px-4 border-b border-gray-100">1 to 2 weeks</td>
+                        <td className="py-3 px-4 border-b border-gray-100">4 to 8 weeks</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* What We Review Section */}
               <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
                 <h2 className="text-3xl font-black text-[#022B3A] mb-6">What We Review</h2>
                 <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-                  Submitting this form starts a confidential conversation — not a formal listing engagement. A senior broker will review the information you provide and follow up to discuss next steps and any questions.
+                  Submitting this form starts a confidential conversation ??? not a formal listing engagement. A senior broker will review the information you provide and follow up to discuss next steps.
                 </p>
-                <ul className="space-y-4">
-                  {[
-                    "Owner name and preferred contact information",
-                    "Business location and service territory",
-                    "Years in operation",
-                    "Approximate annual revenue",
-                    "Approximate SDE or EBITDA, if known",
-                    "Residential and commercial revenue split",
-                    "Number of employees and technicians",
-                    "Number and value of active maintenance agreements",
-                    "Reason for considering a sale",
-                    "Preferred timing",
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start text-lg text-gray-700 font-medium list-none">
-                      <span className="text-[#EE5B2C] mr-3 mt-1 font-bold flex-shrink-0">✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                
+                {/* Numbered Steps / Checklist */}
+                <ol className="space-y-4 list-decimal list-inside text-lg text-gray-700 font-medium marker:text-[#EE5B2C] marker:font-bold">
+                  <li className="pl-2"><strong>Basic Details:</strong> Owner name and business location.</li>
+                  <li className="pl-2"><strong>Financials:</strong> Approximate annual revenue and SDE/EBITDA.</li>
+                  <li className="pl-2"><strong>Operations:</strong> Residential vs. commercial revenue split.</li>
+                  <li className="pl-2"><strong>Team:</strong> Number of employees and active technicians.</li>
+                  <li className="pl-2"><strong>Recurring Revenue:</strong> Active maintenance agreements (PMAs).</li>
+                  <li className="pl-2"><strong>Goals:</strong> Reason for sale and preferred exit timing.</li>
+                </ol>
+                
+                <p className="mt-8 text-gray-700 font-medium">
+                  Want to learn more about how we calculate value? Try our <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">Interactive Valuation Calculator</Link> or read our guide on <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">what buyers look for</Link>.
+                </p>
               </div>
 
               {/* Privacy card */}
@@ -180,30 +249,8 @@ export default function FreeConfidentialValuationPage() {
                 </div>
               </div>
 
-              {/* FAQ Section */}
-              <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mt-10">
-                <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions</h2>
-                
-                <h3 className="text-xl font-bold text-[#022B3A] mb-2">Is the initial confidential valuation a certified appraisal?</h3>
-                <p className="text-gray-700 font-medium mb-6">
-                  No. The initial review is an advisory estimate intended to help an owner understand a potential market range. A certified appraisal or formal valuation engagement is separate and may be required for litigation, tax, partnership, or financing purposes.
-                </p>
-                
-                <h3 className="text-xl font-bold text-[#022B3A] mb-2">What information is needed for the initial review?</h3>
-                <p className="text-gray-700 font-medium mb-6">
-                  Helpful information includes annual revenue, adjusted SDE or EBITDA, years in operation, service territory, residential and commercial mix, employee and technician counts, maintenance agreements, owner responsibilities, reason for selling, and desired timing.
-                </p>
-
-                <h3 className="text-xl font-bold text-[#022B3A] mb-2">Will submitting the valuation form obligate me to sell?</h3>
-                <p className="text-gray-700 font-medium mb-6">
-                  No. The request begins a private discussion and does not create a listing obligation. Any brokerage engagement should be documented separately and reviewed before the business is marketed.
-                </p>
-
-                <h3 className="text-xl font-bold text-[#022B3A] mb-2">Will my information be shared with buyers?</h3>
-                <p className="text-gray-700 font-medium mb-6">
-                  Not merely because you requested a valuation. Protected company information should be shared only with your authorization and through a controlled process after the prospective buyer satisfies confidentiality and qualification requirements.
-                </p>
-              </div>
+              {/* FAQ Section replaces old hardcoded FAQs */}
+              <FreeValuationFaq />
             </div>
 
             {/* Sticky Form */}
@@ -300,3 +347,4 @@ export default function FreeConfidentialValuationPage() {
     </>
   );
 }
+
