@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 import { motion } from 'framer-motion';
 
@@ -56,10 +57,13 @@ export default function FreeConfidentialValuationPage() {
         {/* Hero Section */}
         <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
-            <img
-              src="/sell-your-hvac-business.jpg"
+            <Image
+              src="https://res.cloudinary.com/db05hw4ri/image/upload/v1789541386/hvac-hero-images/free_confidential_hero.jpg"
               alt="Confidential HVAC Business Valuation"
-              className="w-full h-full object-cover object-center"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-black/65" />
           </div>

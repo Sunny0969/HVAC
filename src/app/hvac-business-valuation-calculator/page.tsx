@@ -93,7 +93,7 @@ export default function ValuationCalculatorPage() {
         <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://images.unsplash.com/photo-1504379117850-07f0e27b6b64?w=1200&auto=format&fit=crop&q=80&ixlib=rb-4.1.0"
+              src="https://res.cloudinary.com/db05hw4ri/image/upload/v1789541388/hvac-hero-images/valuation_calculator_hero.jpg"
               alt="Florida HVAC Business Valuation and market multiples"
               fill
               className="object-cover object-center"
