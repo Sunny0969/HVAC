@@ -41,7 +41,6 @@ export const navigationData: NavItem[] = [
       { label: "Buyer Guides", href: "/resources" },
       { label: "FAQs", href: "/faqs" },
       { label: "Gallery", href: "#" },
-      { label: "Resources", href: "/resources" },
     ]
   },
   {
