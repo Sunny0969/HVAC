@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -169,14 +169,24 @@ export default function SellPageContent() {
           <div className="bg-[#F8FAFC] rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions About Selling</h2>
             
-            <h3 className="text-xl font-bold text-[#022B3A] mb-2">How do you protect my business confidentiality?</h3>
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">What should I prepare before selling my HVAC business?</h3>
             <p className="text-gray-700 font-medium mb-6">
-              <strong>The bottom line:</strong> We use blind marketing profiles and require strict NDAs before releasing any identifiable financial or operational data.
+              Prepare three years of tax returns and profit-and-loss statements, current year-to-date financials, a balance sheet, payroll and owner compensation details, maintenance-agreement data, revenue by service category, fleet and equipment schedules, lease information, licensing arrangements, and major customer or vendor information.
             </p>
             
-            <h3 className="text-xl font-bold text-[#022B3A] mb-2">What is the most important factor buyers look for?</h3>
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">Will employees and customers be told that the business is for sale?</h3>
             <p className="text-gray-700 font-medium mb-6">
-              <strong>The bottom line:</strong> Recurring revenue via maintenance agreements (PMAs) and a reliable, tenured technician workforce are the two highest value drivers.
+              Not during confidential marketing. Employees, customers, vendors, and competitors should not be contacted without the seller's prior written authorization and the permissions established in the transaction documents.
+            </p>
+
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">Is the highest offer always the best offer?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              No. A seller should compare cash at closing, financing contingencies, escrow, seller financing, earnouts, working-capital requirements, assumed liabilities, transition obligations, licensing conditions, and the buyer's actual ability to close.
+            </p>
+
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">How long does it take to sell an HVAC business?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              Timing varies with preparation, price, buyer qualification, financing, licensing, landlord approval, due diligence, and legal documentation. A well-prepared cash transaction may close faster, while an SBA-financed or more complex transaction can take several months.
             </p>
           </div>
 

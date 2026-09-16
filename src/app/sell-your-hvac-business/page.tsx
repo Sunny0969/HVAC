@@ -85,42 +85,34 @@ export default function SellYourHVACBusiness() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How long does it take to sell an HVAC business in Florida?",
+        "name": "What should I prepare before selling my HVAC business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Timelines vary with business size, financial documentation, and buyer demand in your region, but most Florida HVAC sales we handle move from listing to closing within several months once the business is properly prepared and priced."
+          "text": "Prepare three years of tax returns and profit-and-loss statements, current year-to-date financials, a balance sheet, payroll and owner compensation details, maintenance-agreement data, revenue by service category, fleet and equipment schedules, lease information, licensing arrangements, and major customer or vendor information."
         }
       },
       {
         "@type": "Question",
-        "name": "Will my employees or customers find out I'm selling?",
+        "name": "Will employees and customers be told that the business is for sale?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Not through us. We market confidentially, require signed NDAs before releasing any identifying details, and control disclosure timing with you throughout the process."
+          "text": "Not during confidential marketing. Employees, customers, vendors, and competitors should not be contacted without the seller's prior written authorization and the permissions established in the transaction documents."
         }
       },
       {
         "@type": "Question",
-        "name": "What's my HVAC business worth?",
+        "name": "Is the highest offer always the best offer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "It depends on revenue mix (install vs. service vs. maintenance agreements), technician retention, fleet condition, and current Florida buyer demand. A free valuation gives you a real, data-backed range."
+          "text": "No. A seller should compare cash at closing, financing contingencies, escrow, seller financing, earnouts, working-capital requirements, assumed liabilities, transition obligations, licensing conditions, and the buyer's actual ability to close."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I need to have my financials perfectly organized before reaching out?",
+        "name": "How long does it take to sell an HVAC business?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No - many owners start the conversation before financials are fully clean. Part of what we do is help you understand what documentation buyers will expect and get you ready."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does it cost to work with HVAC Exit Advisors?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We don't charge a fee unless your business sells. Your free valuation and initial consultation carry no obligation."
+          "text": "Timing varies with preparation, price, buyer qualification, financing, licensing, landlord approval, due diligence, and legal documentation. A well-prepared cash transaction may close faster, while an SBA-financed or more complex transaction can take several months."
         }
       }
     ]
