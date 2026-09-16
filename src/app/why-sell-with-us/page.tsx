@@ -169,7 +169,7 @@ export default function WhySellWithUsPage() {
             </p>
           </div>
 
-          {/* Card 5: Offer Analysis */}
+          {/* Offer Analysis */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-12">
             <div className="flex items-start gap-5 mb-5">
               <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-[#022B3A]/10 flex items-center justify-center">
@@ -181,6 +181,9 @@ export default function WhySellWithUsPage() {
               We help owners compare the complete offer, including cash at closing, financing, contingencies, seller notes, earnouts, working capital, real estate, transition requirements and closing risk.
             </p>
           </div>
+
+          {/* FAQs */}
+          <WhySellFaq />
 
           {/* CTA Button */}
           <div className="text-center">
