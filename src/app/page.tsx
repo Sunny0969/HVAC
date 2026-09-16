@@ -11,6 +11,7 @@ import SpotlightCarousel, { CarouselItem } from '../views/components/SpotlightCa
 import MarketInsightsFAQ from '../views/components/MarketInsightsFAQ';
 import FeaturedOpportunities from '../views/components/FeaturedOpportunities';
 import TestimonialSlider from '../views/components/TestimonialSlider';
+import HomeTopSummary from '../views/components/HomeTopSummary';
 
 let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
 _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
@@ -192,6 +193,9 @@ export default async function Home() {
       {/* 1. Hero Section */}
       <Hero />
       
+      {/* 1.5 Top Summary & SEO Content */}
+      <HomeTopSummary />
+
       {/* 2. Industries We Serve */}
       <IndustriesWeServe />
 
