@@ -90,18 +90,34 @@ export default async function ListingsPage() {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "What should I look for in HVAC businesses for sale?",
+                "name": "Why are some listing details limited?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Look for high recurring revenue from maintenance agreements, a strong technician team, clean financial records (SDE), and a reliable service area."
+                  "text": "Confidential HVAC listings usually omit the company name, exact address, customer identities, employee information, and other details that could identify the seller. Additional information is released only after buyer screening."
                 }
               },
               {
                 "@type": "Question",
-                "name": "How much does it cost to buy an HVAC company in Florida?",
+                "name": "How do I request financial information for a listing?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "HVAC companies are typically valued at 2.5x to 4x their Seller's Discretionary Earnings (SDE). A company earning $300k SDE might sell for $750k to $1.2M."
+                  "text": "Complete the inquiry, sign the NDA, and provide proof of funds. Once qualified, you may receive the confidential information memorandum and approved financial information before a broker-hosted seller conference."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does an asking price include working capital, inventory, vehicles, and real estate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Not automatically. Included assets and required working capital vary by listing and must be confirmed in the confidential materials and purchase contract. Real estate may be included, leased, or offered separately."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I submit an offer without an escrow deposit?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A serious purchase contract should include an escrow deposit appropriate to the transaction. The deposit demonstrates commitment and supports an orderly due-diligence process; its disposition is governed by the signed contract."
                 }
               }
             ]
@@ -125,6 +141,33 @@ export default async function ListingsPage() {
       </section>
 
       <ListingsContent listings={listings} />
+
+      {/* Frequently Asked Questions */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100">
+          <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions</h2>
+          
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Why are some listing details limited?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            Confidential HVAC listings usually omit the company name, exact address, customer identities, employee information, and other details that could identify the seller. Additional information is released only after buyer screening.
+          </p>
+
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">How do I request financial information for a listing?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            Complete the inquiry, sign the NDA, and provide proof of funds. Once qualified, you may receive the confidential information memorandum and approved financial information before a broker-hosted seller conference.
+          </p>
+
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Does an asking price include working capital, inventory, vehicles, and real estate?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            Not automatically. Included assets and required working capital vary by listing and must be confirmed in the confidential materials and purchase contract. Real estate may be included, leased, or offered separately.
+          </p>
+
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Can I submit an offer without an escrow deposit?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            A serious purchase contract should include an escrow deposit appropriate to the transaction. The deposit demonstrates commitment and supports an orderly due-diligence process; its disposition is governed by the signed contract.
+          </p>
+        </div>
+      </section>
 
       {/* Contact CTA Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
