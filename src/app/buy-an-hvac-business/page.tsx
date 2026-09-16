@@ -102,42 +102,34 @@ export default function BuyHvacBusinessPage() {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "How much cash do I need to buy an HVAC business in Florida?",
+                "name": "What must I provide before receiving confidential HVAC business information?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "It depends on the purchase price and financing structure - SBA loans, seller financing, and combinations of both are common in HVAC acquisitions. We'll walk you through what's realistic for the listings you're considering."
+                  "text": "A buyer should sign the NDA and provide proof of funds. Financing-dependent buyers may also be asked for a lender letter or SBA prequalification before detailed financials, seller contact, or a private meeting is arranged."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What should I check during due diligence on an HVAC company?",
+                "name": "Can I speak with employees or customers during due diligence?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Financial statements and normalized earnings, customer contracts and maintenance-agreement retention, technician retention, equipment and fleet condition, licensing status, and any pending liabilities or warranty obligations."
+                  "text": "No, unless the seller gives prior written authorization. HVAC transactions are handled confidentially, and unauthorized contact can harm employee retention, customer relationships, and the transaction."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Is it better to buy a residential or commercial HVAC business?",
+                "name": "What should I verify during HVAC due diligence?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Both can work well - residential tends to offer more recurring maintenance revenue, while commercial often means larger contract sizes. The right fit depends on your goals, experience, and available capital."
+                  "text": "Review tax returns, financial statements, bank support, revenue by service type, maintenance-agreement records, customer concentration, payroll, technician credentials, licensing, fleet and equipment, leases, warranties, litigation, liens, working capital, and required future capital expenditures."
                 }
               },
               {
                 "@type": "Question",
-                "name": "How long does it typically take to buy an HVAC business?",
+                "name": "Is a letter of intent required to buy an HVAC business?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Timelines vary by financing and due diligence complexity, but most acquisitions move from serious interest to closing within a few months once financing is lined up."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do you only work with buyers who already own HVAC experience?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No - we work with first-time buyers, industry veterans, and companies looking to expand through acquisition. We match the guidance to your experience level."
+                  "text": "HVAC Exit Advisors generally reserves letters of intent for transactions of $10 million or more or unusually complex deals. Smaller transactions normally proceed through a purchase contract supported by an escrow deposit and a defined due-diligence period."
                 }
               }
             ]

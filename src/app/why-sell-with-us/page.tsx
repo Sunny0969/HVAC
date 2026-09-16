@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 import ContactForm from '../../views/components/ContactForm';
+import WhySellFaq from '../../views/components/WhySellFaq';
 
 export const metadata: Metadata = {
   title: 'Why Choose the Best Florida HVAC Business Broker',
