@@ -23,7 +23,6 @@ export const navigationData: NavItem[] = [
       { label: "Businesses for Sale", href: "/listings" },
     ]
   },
-  { label: "Listings", href: "/listings" },
   {
     label: "Valuation",
     href: "#",
