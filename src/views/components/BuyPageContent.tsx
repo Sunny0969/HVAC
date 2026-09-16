@@ -241,35 +241,38 @@ export default function BuyPageContent() {
         viewport={{ once: true, margin: "-50px" }}
         className="mb-12 border-t border-gray-200 pt-12"
       >
-        <h2 className="text-3xl font-black text-[#022B3A] mb-4">Are You a Business Buyer Looking to Buy an Existing Business?</h2>
-        <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          Every serious <strong>business buyer</strong> eventually discovers that deciding to <strong>buy an existing business</strong> is often more profitable than starting from scratch. When you are <strong>buying businesses</strong> in the Florida HVAC sector, you immediately gain trained technicians, established vendor accounts, and active customer maintenance agreements. If you want to safely <strong>purchase a business</strong> with verified cash flow, our <Link href="/listings" className="text-[#EE5B2C] font-bold hover:underline">premium listings</Link> are your starting point.
-        </p>
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm mt-12">
+          <h2 className="text-3xl font-black text-[#022B3A] mb-8">Common Questions When Buying an HVAC Business</h2>
+          
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-[#022B3A] mb-3">What is the $5000 rule for HVAC systems?</h2>
+            <p className="text-gray-700 font-medium leading-relaxed">
+              The $5,000 rule is a common rule of thumb used by homeowners and contractors to decide whether to repair or replace an HVAC system. You multiply the age of the equipment by the estimated repair cost; if the result exceeds $5,000, the unit should be replaced. For buyers acquiring an HVAC business, understanding this rule helps evaluate the company's service-to-replacement conversion rate and future equipment sales potential.
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-bold text-[#022B3A] mb-4">Where to Buy a Business & Find Small Businesses to Buy</h2>
-        <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          A common question from investors is "<strong>where to buy a business</strong> safely?" While there are many general brokers, finding the right <strong>small businesses to buy</strong> requires industry expertise. Whether you are looking for a single <strong>business to buy</strong> to become an owner-operator, or multiple <strong>businesses to buy</strong> for a private equity roll-up, HVAC Exit Advisors provides Florida's most vetted portfolio.
-        </p>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-[#022B3A] mb-3">What type of business is an HVAC business?</h2>
+            <p className="text-gray-700 font-medium leading-relaxed">
+              An HVAC (Heating, Ventilation, and Air Conditioning) business is a skilled trade and mechanical services company. It operates in the construction, home services, and commercial facilities sectors. HVAC businesses are highly valued by private equity because they generate consistent, recurring revenue through preventative maintenance agreements (PMAs) and non-discretionary emergency repairs.
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-bold text-[#022B3A] mb-4">Can You Buy a Business Online or Buy a Business Cheap?</h2>
-        <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          Many aspiring entrepreneurs attempt to <strong>buy a business online</strong> through public bulletin boards, searching for ways to <strong>buy a business cheap</strong>. Unfortunately, public <strong>online businesses to buy</strong> often suffer from unverified financials or hidden liabilities. Quality HVAC acquisitions are rarely "cheap," but they offer incredible return on investment. We help you source fairly priced, highly profitable companies rather than risky discount deals.
-        </p>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-[#022B3A] mb-3">Can HVAC make $100,000 a year?</h2>
+            <p className="text-gray-700 font-medium leading-relaxed">
+              Yes, a well-run independent HVAC business owner can easily make well over $100,000 a year in seller's discretionary earnings (SDE). In Florida, many established owner-operated HVAC companies generate between $200,000 and $500,000+ in annual SDE, while larger, manager-run mechanical contractors can produce multi-million dollar EBITDA figures.
+            </p>
+          </div>
 
-        <h2 className="text-2xl font-bold text-[#022B3A] mb-4">How to Value a Business to Buy & Sell or Buy a Business Effectively</h2>
-        <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-          Before you commit capital, you must know <strong>how to value a business to buy</strong>. We guide you through analyzing Seller's Discretionary Earnings (SDE), reviewing add-backs, and assessing fleet condition using our <Link href="/resources" className="text-[#EE5B2C] font-bold hover:underline">market trend resources</Link>. Ultimately, whether you plan to <strong>sell or buy a business</strong>, professional brokerage ensures a seamless transition. If you are ready to <strong>buy business</strong> assets with confidence, contact our advisory team today.
-        </p>
-      </motion.div>
-
-      {/* Block 10: Frequently Asked Questions */}
-      <motion.div
-        viewport={{ once: true, margin: "-50px" }}
-        className="mb-12 border-t border-gray-200 pt-12"
-      >
-        
-        
-        <BuyYourHvacFaq />
+          <div className="mb-0">
+            <h2 className="text-2xl font-bold text-[#022B3A] mb-3">Why is the HVAC industry struggling?</h2>
+            <p className="text-gray-700 font-medium leading-relaxed">
+              While the HVAC industry is seeing record growth and consolidation, individual independent operators often struggle due to severe technician labor shortages, complex state licensing requirements (such as the Florida DBPR), and supply chain unpredictability. Acquiring an existing HVAC business with a stable, trained workforce allows buyers to bypass these common industry struggles.
+            </p>
+          </div>
+        </div>
+<BuyYourHvacFaq />
       </motion.div>
 
         </div>

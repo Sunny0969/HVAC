@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import BuyPageContent from "@/views/components/BuyPageContent";
+import BuyTopSummary from "@/views/components/BuyTopSummary";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -200,6 +201,7 @@ export default function BuyHvacBusinessPage() {
       </section>
 
       {/* Main Content Area */}
+      <BuyTopSummary />
       <BuyPageContent />
 
     </main>
