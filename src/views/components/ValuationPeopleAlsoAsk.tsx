@@ -18,12 +18,34 @@ export default function ValuationPeopleAlsoAsk() {
           <p className="text-gray-700 font-medium leading-relaxed mb-4">
             Key value drivers for an HVAC company include:
           </p>
-          <ul className="space-y-2 text-gray-700 font-medium ml-4">
-            <li className="flex items-start"><span className="text-[#EE5B2C] mr-2">â€¢</span> <strong>Preventative Maintenance Agreements (PMAs):</strong> Guaranteed recurring revenue.</li>
-            <li className="flex items-start"><span className="text-[#EE5B2C] mr-2">â€¢</span> <strong>Customer Diversification:</strong> No single customer accounts for more than 10% of total revenue.</li>
-            <li className="flex items-start"><span className="text-[#EE5B2C] mr-2">â€¢</span> <strong>Management Team:</strong> Capable leadership and dispatched technicians who operate independently of the owner.</li>
-            <li className="flex items-start"><span className="text-[#EE5B2C] mr-2">â€¢</span> <strong>Clean Financials:</strong> CPA-prepared or verified tax returns matching daily bank deposits.</li>
-          </ul>
+          <div className="overflow-x-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-2">
+            <table className="w-full text-left border-collapse min-w-[500px]">
+              <thead>
+                <tr>
+                  <th className="p-4 font-black text-[#022B3A] bg-gray-50 border-b-2 border-gray-100 text-lg rounded-tl-xl w-1/3">Value Driver</th>
+                  <th className="p-4 font-bold text-gray-700 bg-gray-50 border-b-2 border-gray-100 text-lg rounded-tr-xl">Impact on Business Value</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <td className="p-4 font-bold text-[#EE5B2C] bg-orange-50/20">Preventative Maintenance Agreements (PMAs)</td>
+                  <td className="p-4 font-medium text-gray-700">Provides guaranteed recurring revenue and a locked-in customer base.</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-bold text-[#EE5B2C] bg-orange-50/20">Customer Diversification</td>
+                  <td className="p-4 font-medium text-gray-700">Ensures no single customer accounts for more than 10% of total revenue, lowering risk.</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-bold text-[#EE5B2C] bg-orange-50/20">Management Team</td>
+                  <td className="p-4 font-medium text-gray-700">Capable leadership and dispatched technicians who operate independently of the owner.</td>
+                </tr>
+                <tr>
+                  <td className="p-4 font-bold text-[#EE5B2C] bg-orange-50/20">Clean Financials</td>
+                  <td className="p-4 font-medium text-gray-700">CPA-prepared or verified tax returns matching daily bank deposits for smooth due diligence.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div>
