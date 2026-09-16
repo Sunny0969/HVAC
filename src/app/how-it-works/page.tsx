@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
 import HowItWorksSteps from '../../views/components/HowItWorksSteps';
 import { steps } from '../../data/howItWorksSteps';
@@ -28,8 +28,8 @@ export default function HowItWorksPage() {
   const howToSchema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Sell Your Florida HVAC Business",
-    "description": "The step-by-step advisory roadmap for confidentially selling a heating and air conditioning company in Florida.",
+    "name": "The HVAC Business Sale Process",
+    "description": "An eight-step structured process for confidentially selling an HVAC or mechanical-service business in Florida.",
     "image": "https://www.hvacexitadvisors.com/how-to-sell-hvac-business-florida.jpg",
     "totalTime": "P120D",
     "speakable": {
@@ -119,12 +119,12 @@ export default function HowItWorksPage() {
             </nav>
 
             <h1 id="how-to-title" className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
-              How to Sell Your <br className="hidden sm:block" />
-              <span className="text-[#EE5B2C]">Florida HVAC Business</span>
+              The HVAC Business{' '}
+              <span className="text-[#EE5B2C]">Sale Process</span>
             </h1>
             
             <p id="how-to-description" className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium mb-6 max-w-3xl drop-shadow-md">
-              A proven roadmap designed to maximize your transaction multiple while preserving total confidentiality from staff, competitors, and customers.
+              An eight-step structured process for confidentially selling an HVAC or mechanical-service business — from owner consultation through closing and transition.
             </p>
           </div>
         </section>
@@ -134,29 +134,28 @@ export default function HowItWorksPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-[#022B3A]/5 border border-[#022B3A]/10 p-8 rounded-2xl">
               <div className="flex flex-wrap items-center justify-between border-b border-gray-200 pb-4 mb-4">
-                <h2 className="text-2xl font-black text-[#022B3A]">Executive Summary: The M&A Sales Process</h2>
+                <h2 className="text-2xl font-black text-[#022B3A]">Eight Steps — Owner Consultation Through Closing</h2>
                 <span className="text-sm font-bold text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200">Last Updated: Sept 2026</span>
               </div>
               
               <p className="text-gray-700 font-medium leading-relaxed mb-6">
-                <strong>Key Takeaway:</strong> Successfully selling your HVAC company requires rigorous financial preparation, completely confidential marketing, and competitive buyer negotiations. We use first-hand transaction data and <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">IBBA standards</a> to execute your exit strategy flawlessly.
-                <br /><br />
-                <strong>Definition:</strong> The M&A (Mergers and Acquisitions) exit process for HVAC businesses is a multi-step structured framework where a broker prepares the financial prospectus, vets potential strategic and private equity buyers, and negotiates terms to finalize the transfer of ownership.
+                Each step is designed to protect confidentiality, prepare the business for buyer review and support a complete transaction from the first conversation through the agreed ownership transition.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Target Audience & Use Case</h3>
+                  <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Target Audience</h3>
                   <ul className="space-y-2 text-sm font-medium text-gray-700">
-                    <li>? <strong>Audience:</strong> Mechanical contracting business owners in Florida.</li>
-                    <li>? <strong>Use Case:</strong> Preparing for retirement, partnership dissolution, or liquidity events.</li>
+                    <li>✓ <strong>Audience:</strong> HVAC, refrigeration, plumbing, electrical and mechanical-service business owners in Florida.</li>
+                    <li>✓ <strong>Use Case:</strong> Preparing for retirement, partnership dissolution, or a liquidity event.</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Internal Resources</h3>
+                  <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Related Resources</h3>
                   <ul className="space-y-2 text-sm font-medium text-gray-700">
-                    <li><Link href="/hvac-business-valuation" className="hover:text-orange-600 underline">Free Online Valuation Calculator</Link></li>
-                    <li><Link href="/resources/hvac-business-in-florida" className="hover:text-orange-600 underline">The Complete Florida HVAC Industry Guide</Link></li>
+                    <li><Link href="/hvac-business-valuation" className="hover:text-orange-600 underline">HVAC Business Valuation — What Drives Your Multiple</Link></li>
+                    <li><Link href="/hvac-business-valuation-calculator" className="hover:text-orange-600 underline">Free Online Valuation Calculator</Link></li>
+                    <li><Link href="/resources/hvac-business-multiples-explained" className="hover:text-orange-600 underline">HVAC Business Multiples Explained</Link></li>
                   </ul>
                 </div>
               </div>
