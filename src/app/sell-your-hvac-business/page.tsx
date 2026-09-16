@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import SellPageContent from '../../views/components/SellPageContent';
+import SellTopSummary from '../../views/components/SellTopSummary';
 
 export const metadata: Metadata = {
   title: 'Sell Your HVAC Business in Florida',
@@ -180,6 +181,8 @@ export default function SellYourHVACBusiness() {
 
       {/* Main Content Area with Animated Cards */}
       
+      <SellTopSummary />
+
       <SellPageContent />
 
       
