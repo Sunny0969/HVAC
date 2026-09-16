@@ -73,8 +73,26 @@ function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onCl
   );
 }
 
+function getIndustryIcon(item: string) {
+  switch(item) {
+    case 'Residential HVAC':
+      return <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>;
+    case 'Commercial HVAC':
+      return <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>;
+    case 'Refrigeration':
+      return <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01" /></svg>;
+    case 'Plumbing':
+      return <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>;
+    case 'Electrical':
+      return <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>;
+    case 'Mechanical Services':
+      return <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>;
+    default:
+      return <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>;
+  }
+}
+
 function SimpleDropdown({ items, onClose }: { items: string[], onClose: () => void }) {
-  // Height approx for 4 items: ~48px each + padding. We set max-h-[200px] to show ~4 items and scroll for the rest.
   return (
     <motion.div 
       initial={{ opacity: 0, y: 10 }}
@@ -83,13 +101,11 @@ function SimpleDropdown({ items, onClose }: { items: string[], onClose: () => vo
       transition={{ duration: 0.2 }}
       className="absolute top-[100%] left-0 mt-2 w-72 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-200 overflow-hidden z-50 py-2"
     >
-      <div className="max-h-[200px] overflow-y-auto overscroll-contain custom-scrollbar">
+      <div className="max-h-[400px] overflow-y-auto overscroll-contain custom-scrollbar">
         {items.map((item) => (
           <div key={item} onClick={onClose} className="px-5 py-3 hover:bg-gray-50 cursor-pointer flex items-center gap-3 group transition-colors">
-            <div className="w-8 h-8 rounded-full bg-[#E3F2FD] text-[#022B3A] flex items-center justify-center flex-shrink-0 group-hover:bg-[#EE5B2C] group-hover:text-white transition-colors">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-              </svg>
+            <div className="w-10 h-10 rounded-full bg-[#E3F2FD] text-[#022B3A] flex items-center justify-center flex-shrink-0 group-hover:bg-[#EE5B2C] group-hover:text-white transition-colors">
+              {getIndustryIcon(item)}
             </div>
             <span className="text-sm font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors">{item}</span>
           </div>
@@ -239,40 +255,47 @@ export default function Header() {
 
             {/* Desktop Pills */}
             <div className="hidden md:flex space-x-3 h-full items-center">
-              <button 
-                onClick={() => toggleMegaMenu('areas')}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-bold transition-all ${
-                  activeMegaMenu === 'areas' 
-                    ? 'border-[#022B3A] text-[#022B3A] bg-gray-50 shadow-inner' 
-                    : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
-                }`}
-              >
-                <svg className="w-4 h-4 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                <span>Areas We Serve</span>
-                <svg className={`w-3 h-3 transition-transform ${activeMegaMenu === 'areas' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-              </button>
+              
+              <div className="relative h-full flex items-center">
+                <button 
+                  onClick={() => toggleMegaMenu('areas')}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-bold transition-all ${
+                    activeMegaMenu === 'areas' 
+                      ? 'border-[#022B3A] text-[#022B3A] bg-gray-50 shadow-inner' 
+                      : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
+                  }`}
+                >
+                  <svg className="w-4 h-4 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  <span>Areas We Serve</span>
+                  <svg className={`w-3 h-3 transition-transform ${activeMegaMenu === 'areas' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <AnimatePresence>
+                  {activeMegaMenu === 'areas' && (
+                    <AreasMegaMenu data={areasWeServeData} onClose={closeMegaMenu} />
+                  )}
+                </AnimatePresence>
+              </div>
 
-              <button 
-                onClick={() => toggleMegaMenu('industries')}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-bold transition-all ${
-                  activeMegaMenu === 'industries' 
-                    ? 'border-[#022B3A] text-[#022B3A] bg-gray-50 shadow-inner' 
-                    : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
-                }`}
-              >
-                <svg className="w-4 h-4 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
-                <span>Industries</span>
-                <svg className={`w-3 h-3 transition-transform ${activeMegaMenu === 'industries' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-              </button>
+              <div className="relative h-full flex items-center">
+                <button 
+                  onClick={() => toggleMegaMenu('industries')}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-full border text-sm font-bold transition-all ${
+                    activeMegaMenu === 'industries' 
+                      ? 'border-[#022B3A] text-[#022B3A] bg-gray-50 shadow-inner' 
+                      : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'
+                  }`}
+                >
+                  <svg className="w-4 h-4 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+                  <span>Industries</span>
+                  <svg className={`w-3 h-3 transition-transform ${activeMegaMenu === 'industries' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <AnimatePresence>
+                  {activeMegaMenu === 'industries' && (
+                    <SimpleDropdown items={industriesData["HVAC & Mechanical"]} onClose={closeMegaMenu} />
+                  )}
+                </AnimatePresence>
+              </div>
 
-              <AnimatePresence>
-                {activeMegaMenu === 'areas' && (
-                  <AreasMegaMenu data={areasWeServeData} onClose={closeMegaMenu} />
-                )}
-                {activeMegaMenu === 'industries' && (
-                  <SimpleDropdown items={industriesData["HVAC & Mechanical"]} onClose={closeMegaMenu} />
-                )}
-              </AnimatePresence>
             </div>
 
             {/* Mobile Menu Button */}
