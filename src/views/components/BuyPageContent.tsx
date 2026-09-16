@@ -287,37 +287,6 @@ export default function BuyPageContent() {
               <Link href="/resources" className="text-[#EE5B2C] font-bold hover:underline">View All Resources &rarr;</Link>
             </div>
           </motion.div>
-
-          {/* Block 8: Success Stories Teasers */}
-          <motion.div
-            
-            
-            
-            viewport={{ once: true, margin: "-50px" }}
-            className="mb-12"
-          >
-            <div className="flex justify-between items-end mb-8 px-2">
-              <h2 className="text-3xl font-black text-[#022B3A]">Recent Buyer Success Stories</h2>
-              <Link href="/success-stories" className="text-[#EE5B2C] font-bold hover:underline hidden sm:block">View All Success Stories &rarr;</Link>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <Link href="/success-stories/first-time-buyer-tampa" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
-                <span className="text-xs font-bold tracking-wider text-gray-400 uppercase mb-2 block">First-Time Buyer • Tampa, FL</span>
-                <h3 className="text-xl font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors mb-3">Transitioning from Corporate to HVAC Ownership</h3>
-                <p className="text-gray-600 font-medium line-clamp-3 mb-4">How we helped a former operations executive secure SBA financing to acquire a heavily residential, $3M revenue HVAC business with 800+ active maintenance agreements.</p>
-                <span className="text-sm font-bold text-[#EE5B2C] flex items-center">Read Case Study <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></span>
-              </Link>
-              <Link href="/success-stories/private-equity-roll-up" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
-                <span className="text-xs font-bold tracking-wider text-gray-400 uppercase mb-2 block">Strategic Acquisition • Orlando, FL</span>
-                <h3 className="text-xl font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors mb-3">Expanding Territory with Commercial Focus</h3>
-                <p className="text-gray-600 font-medium line-clamp-3 mb-4">Navigating complex due diligence and commercial contract transfers for a regional group adding a $5M commercial HVAC operator to their portfolio.</p>
-                <span className="text-sm font-bold text-[#EE5B2C] flex items-center">Read Case Study <span className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity">&rarr;</span></span>
-              </Link>
-            </div>
-            <div className="mt-6 text-center sm:hidden">
-              <Link href="/success-stories" className="text-[#EE5B2C] font-bold hover:underline">View All Success Stories &rarr;</Link>
-            </div>
-          </motion.div>
       {/* Block 9: SEO Keywords Section for Buyers */}
       <motion.div
         
