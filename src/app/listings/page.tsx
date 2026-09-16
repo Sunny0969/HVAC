@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import ListingsContent from '@/views/components/ListingsContent';
+import ListingsTopSummary from '@/views/components/ListingsTopSummary';
+import ListingsYourHvacFaq from '@/views/components/ListingsYourHvacFaq';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 
 export const metadata: Metadata = {
@@ -140,33 +142,13 @@ export default async function ListingsPage() {
         </div>
       </section>
 
+      <ListingsTopSummary />
+
       <ListingsContent listings={listings} />
 
       {/* Frequently Asked Questions */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-        <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100">
-          <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions</h2>
-          
-          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Why are some listing details limited?</h3>
-          <p className="text-gray-700 font-medium mb-6">
-            Confidential HVAC listings usually omit the company name, exact address, customer identities, employee information, and other details that could identify the seller. Additional information is released only after buyer screening.
-          </p>
-
-          <h3 className="text-xl font-bold text-[#022B3A] mb-2">How do I request financial information for a listing?</h3>
-          <p className="text-gray-700 font-medium mb-6">
-            Complete the inquiry, sign the NDA, and provide proof of funds. Once qualified, you may receive the confidential information memorandum and approved financial information before a broker-hosted seller conference.
-          </p>
-
-          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Does an asking price include working capital, inventory, vehicles, and real estate?</h3>
-          <p className="text-gray-700 font-medium mb-6">
-            Not automatically. Included assets and required working capital vary by listing and must be confirmed in the confidential materials and purchase contract. Real estate may be included, leased, or offered separately.
-          </p>
-
-          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Can I submit an offer without an escrow deposit?</h3>
-          <p className="text-gray-700 font-medium mb-6">
-            A serious purchase contract should include an escrow deposit appropriate to the transaction. The deposit demonstrates commitment and supports an orderly due-diligence process; its disposition is governed by the signed contract.
-          </p>
-        </div>
+        <ListingsYourHvacFaq />
       </section>
 
       {/* Contact CTA Banner */}
