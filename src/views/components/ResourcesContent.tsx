@@ -291,6 +291,31 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
           </aside>
         </div>
 
+        {/* Frequently Asked Questions */}
+        <div className="mt-16 bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100">
+          <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions</h2>
+          
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Who are the HVAC business resources written for?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            The guides are intended for HVAC owners considering an exit, buyers evaluating acquisitions, and contractors seeking to understand valuation, preparation, licensing, financing, confidentiality, and transaction planning.
+          </p>
+
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">Can the guides replace legal, tax, accounting, or licensing advice?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            No. The resources provide general educational information. Transaction parties should retain qualified attorneys, accountants, tax advisers, lenders, insurance professionals, and licensing specialists for advice based on their circumstances.
+          </p>
+
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">How should a seller use the resource library?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            Begin with valuation and exit-planning materials, then assemble the financial, operational, employee, contract, asset, licensing, and lease records buyers will request. Address material weaknesses before confidential marketing begins.
+          </p>
+
+          <h3 className="text-xl font-bold text-[#022B3A] mb-2">How should a buyer use the resource library?</h3>
+          <p className="text-gray-700 font-medium mb-6">
+            Use it to establish acquisition criteria, understand qualification requirements, prepare proof of funds or financing, create a due-diligence plan, and compare risks associated with residential, commercial, service, replacement, and installation revenue.
+          </p>
+        </div>
+
         {/* CTA Band */}
         <div className="mt-20 bg-[#022B3A] text-white p-8 md:p-12 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="max-w-2xl">

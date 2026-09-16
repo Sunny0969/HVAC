@@ -54,12 +54,51 @@ export default async function ResourcesPage() {
     },
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who are the HVAC business resources written for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The guides are intended for HVAC owners considering an exit, buyers evaluating acquisitions, and contractors seeking to understand valuation, preparation, licensing, financing, confidentiality, and transaction planning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can the guides replace legal, tax, accounting, or licensing advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The resources provide general educational information. Transaction parties should retain qualified attorneys, accountants, tax advisers, lenders, insurance professionals, and licensing specialists for advice based on their circumstances."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should a seller use the resource library?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Begin with valuation and exit-planning materials, then assemble the financial, operational, employee, contract, asset, licensing, and lease records buyers will request. Address material weaknesses before confidential marketing begins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How should a buyer use the resource library?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use it to establish acquisition criteria, understand qualification requirements, prepare proof of funds or financing, create a due-diligence plan, and compare risks associated with residential, commercial, service, replacement, and installation revenue."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(hubSchema) }}
+        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(hubSchema)}, ${JSON.stringify(faqSchema)}]` }}
       />
       <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
 
