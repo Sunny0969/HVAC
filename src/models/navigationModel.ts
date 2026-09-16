@@ -48,7 +48,6 @@ export const navigationData: NavItem[] = [
     href: "#",
     children: [
       { label: "About Us", href: "/about-us" },
-      { label: "Team", href: "/about-us/team" },
       { label: "How It Works", href: "/how-it-works" },
       { label: "Contact", href: "/contact-us" },
     ]

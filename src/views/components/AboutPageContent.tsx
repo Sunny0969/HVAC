@@ -1,59 +1,90 @@
 "use client";
 
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-const fadeUpVariant: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-};
-
-const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
-
-export default function TeamPageContent() {
+export default function AboutPageContent() {
   return (
     <div className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
       <div className="grid lg:grid-cols-12 gap-12">
         
-        {/* Left Column: Team Profiles */}
-        <div className="lg:col-span-8">
+        {/* Left Column: About Information */}
+        <div className="lg:col-span-8 space-y-10">
+          
+          {/* About the firm */}
           <motion.div 
-            
-            
-            
-            viewport={{ once: true, margin: "-50px" }}
-            className="space-y-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100"
           >
-            {/* Sanjay Wadhwani Profile */}
-            <motion.div  className="bg-white rounded-[2rem] p-8 md:p-10 shadow-xl shadow-gray-200/50 border border-gray-100 flex flex-col md:flex-row gap-8 items-start">
-              {/* Profile Image Silhouette / Placeholder */}
-              <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gray-50 flex-shrink-0 border-2 border-gray-100 overflow-hidden relative shadow-inner">
-                 <div className="absolute inset-0 flex items-center justify-center text-gray-300">
-                    <svg className="w-24 h-24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                 </div>
-              </div>
-              
-              <div>
-                <span className="text-[#EE5B2C] font-bold tracking-wider uppercase text-sm mb-2 block">Owner & Principal Advisor</span>
-                <h2 className="text-3xl font-black text-[#022B3A] mb-4">Sanjay Wadhwani</h2>
-                <p className="text-gray-700 leading-relaxed font-medium mb-4">
-                  Sanjay Wadhwani brings years of specialized expertise to the business brokerage sector. Under his leadership, HVAC Exit Advisors has grown into a premier brokerage firm focused strictly on matching serious buyers with financially-verified service companies across Florida.
-                </p>
-                <p className="text-gray-700 leading-relaxed font-medium">
-                  With a deep understanding of complex acquisitions and real-world operational insights, Sanjay ensures every deal is structured for maximum confidentiality, accuracy, and mutual success.
-                </p>
-              </div>
-            </motion.div>
+            <h2 className="text-3xl font-black text-[#022B3A] mb-6">Our Mission</h2>
+            <p className="text-lg text-gray-700 font-medium leading-relaxed mb-6">
+              HVAC Exit Advisors is a specialized division supported by KMF Business Advisors. We work with owners and qualified buyers of HVAC and related mechanical-service businesses, with particular attention to Florida opportunities.
+            </p>
+            <p className="text-lg text-gray-700 font-medium leading-relaxed">
+              Our role is to help owners understand the information buyers will require, prepare a confidential market presentation, screen prospective buyers and coordinate the transaction process. We believe owners should understand both the value and the terms of an offer before making a decision.
+            </p>
           </motion.div>
+
+          {/* About Sanjay */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-[#022B3A] rounded-[2rem] p-8 md:p-12 shadow-xl text-white"
+          >
+            <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
+              <div className="w-24 h-24 sm:w-20 sm:h-20 rounded-full bg-[#EE5B2C]/20 flex items-center justify-center flex-shrink-0 border-2 border-[#EE5B2C]/30">
+                <svg className="w-10 h-10 sm:w-8 sm:h-8 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+              </div>
+              <div>
+                <span className="text-[#EE5B2C] font-bold tracking-wider uppercase text-xs mb-1 block">Owner & Principal Advisor</span>
+                <h2 className="text-2xl md:text-3xl font-black text-white">Sanjay Wadhwani</h2>
+                <p className="text-white/70 text-sm font-medium mt-1">Business, Franchise & Commercial Real-Estate Broker · KMF Business Advisors</p>
+              </div>
+            </div>
+            <p className="text-lg text-white/90 font-medium leading-relaxed mb-6">
+              Sanjay L. Wadhwani is a business, franchise and commercial real-estate broker with KMF Business Advisors. His work includes business valuations, confidential marketing, buyer qualification, negotiations and transaction coordination. He works directly with owners, buyers and professional advisers throughout the sale process.
+            </p>
+            <p className="text-lg text-white/90 font-medium leading-relaxed">
+              Sanjay's approach emphasizes confidentiality, financial qualification and clear transaction procedures. His established buyer and investor network supports targeted outreach while each prospective buyer remains subject to the requirements of the individual opportunity.
+            </p>
+          </motion.div>
+
+          {/* Developer Note */}
+          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+            <div className="flex items-start gap-3">
+              <svg className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <div>
+                <p className="text-sm font-bold text-amber-800 mb-1">Biography Verification Note</p>
+                <p className="text-sm text-amber-700 font-medium leading-relaxed">
+                  Add license numbers, memberships, awards, transaction totals and years of experience only after the owner verifies each statement and provides the exact approved wording.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <Link
+              href="/contact-us"
+              className="px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all text-center"
+            >
+              Schedule a Private Consultation
+            </Link>
+            <Link
+              href="/free-confidential-valuation"
+              className="px-8 py-4 bg-white border-2 border-[#022B3A] hover:bg-gray-50 text-[#022B3A] font-bold rounded-xl transition-colors text-center"
+            >
+              Request a Confidential Valuation
+            </Link>
+          </div>
+
         </div>
         
-        {/* Right Sticky Column: Contact Information */}
+        {/* Right Sticky Column: Contact Information (from old Team page) */}
         <div className="lg:col-span-4">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

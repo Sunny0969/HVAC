@@ -1,6 +1,6 @@
-const crypto = require('crypto');
+﻿const crypto = require('crypto');
 async function test() {
-  const cloudName = 'HVAC';
+  const cloudName = 'demo';
   const apiKey = '868297842448925';
   const apiSecret = 'w4eBW-D1QqbWMabfeCUgHvJZU-I';
   const timestamp = Math.floor(Date.now() / 1000);
