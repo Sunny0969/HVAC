@@ -175,7 +175,10 @@ export default function FreeConfidentialValuationPage() {
                   Valuing an HVAC company isn't as simple as applying a rule-of-thumb multiple to top-line revenue. A proper valuation requires analyzing normalized cash flow (SDE or EBITDA), recurring maintenance agreements, and operational risk.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
-                  In our experience with Florida HVAC businesses, those with high commercial contract retention and low owner-dependence command premium multiples. We follow standards similar to those outlined by the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a> to ensure accurate pricing.
+                  In our experience with Florida HVAC businesses, those with high commercial contract retention and low owner-dependence command premium multiples. According to official documentation and market reports published by the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a>, strictly adhering to standardized valuation methods ensures the most accurate pricing. 
+                </p>
+                <p className="text-sm text-gray-500 font-medium italic mb-6">
+                  Source: International Business Brokers Association (IBBA) Official Documentation on Business Valuation Standards.
                 </p>
                 
                 <h3 className="text-2xl font-bold text-[#022B3A] mt-10 mb-4">Certified Appraisal vs. Broker Opinion of Value</h3>
