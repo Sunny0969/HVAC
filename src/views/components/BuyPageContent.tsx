@@ -267,27 +267,9 @@ export default function BuyPageContent() {
         viewport={{ once: true, margin: "-50px" }}
         className="mb-12 border-t border-gray-200 pt-12"
       >
-        <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions</h2>
         
-        <h3 className="text-xl font-bold text-[#022B3A] mb-2">What must I provide before receiving confidential HVAC business information?</h3>
-        <p className="text-gray-700 font-medium mb-6">
-          A buyer should sign the NDA and provide proof of funds. Financing-dependent buyers may also be asked for a lender letter or SBA prequalification before detailed financials, seller contact, or a private meeting is arranged.
-        </p>
-
-        <h3 className="text-xl font-bold text-[#022B3A] mb-2">Can I speak with employees or customers during due diligence?</h3>
-        <p className="text-gray-700 font-medium mb-6">
-          No, unless the seller gives prior written authorization. HVAC transactions are handled confidentially, and unauthorized contact can harm employee retention, customer relationships, and the transaction.
-        </p>
-
-        <h3 className="text-xl font-bold text-[#022B3A] mb-2">What should I verify during HVAC due diligence?</h3>
-        <p className="text-gray-700 font-medium mb-6">
-          Review tax returns, financial statements, bank support, revenue by service type, maintenance-agreement records, customer concentration, payroll, technician credentials, licensing, fleet and equipment, leases, warranties, litigation, liens, working capital, and required future capital expenditures.
-        </p>
-
-        <h3 className="text-xl font-bold text-[#022B3A] mb-2">Is a letter of intent required to buy an HVAC business?</h3>
-        <p className="text-gray-700 font-medium mb-6">
-          HVAC Exit Advisors generally reserves letters of intent for transactions of $10 million or more or unusually complex deals. Smaller transactions normally proceed through a purchase contract supported by an escrow deposit and a defined due-diligence period.
-        </p>
+        
+        <BuyYourHvacFaq />
       </motion.div>
 
         </div>
@@ -296,7 +278,7 @@ export default function BuyPageContent() {
       
 
         
-        <div className="mb-12"><BuyYourHvacFaq /></div>
+        
         {/* Right Sticky Form Column (Reusing the requested layout) */}
         <div className="lg:col-span-4">
           <div className="sticky top-32 bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8 max-h-[calc(100vh-10rem)] overflow-y-auto">
