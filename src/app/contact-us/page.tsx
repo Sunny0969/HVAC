@@ -76,12 +76,12 @@ export default function ContactPage() {
           <span className="text-[#022B3A]">Contact Us</span>
         </nav>
 
-        <h1 className="text-4xl font-bold text-primary mb-6">Contact Our Florida HVAC Business Brokers</h1>
-        <h2 className="text-2xl font-semibold text-secondary mb-4">Confidential Consultation for Buyers and Sellers</h2>
+        <h1 className="text-4xl md:text-5xl font-black text-[#022B3A] mb-6">Schedule a Confidential Conversation</h1>
+        <p className="text-xl text-gray-700 font-medium leading-relaxed mb-8 max-w-4xl">
+          Tell us whether you are considering selling, planning a future exit, requesting a valuation or searching for an HVAC acquisition. We will review your inquiry and contact you privately.
+        </p>
+
         <div className="prose max-w-none text-black mt-8">
-          <p className="text-lg leading-relaxed mb-6">
-            Are you ready to speak with an expert <strong>Florida HVAC business broker</strong>? Whether you are looking to <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">sell your lifelong heating and cooling company</Link> or you are a qualified buyer seeking profitable HVAC acquisitions in the state, HVAC Exit Advisors is here to help. Contact us today for a completely confidential consultation.
-          </p>
 
           <h3 className="text-2xl font-bold mt-8 mb-4">Why Contact HVAC Exit Advisors?</h3>
           <p className="mb-4">

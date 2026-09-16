@@ -78,15 +78,15 @@ export const industriesData = {
 };
 
 export const floridaCities = [
-    "Miami",
-    "Orlando",
-    "Tampa",
-    "Jacksonville",
-    "Naples",
-    "Fort Lauderdale",
-    "Boca Raton",
-    "West Palm Beach",
-    "Sarasota",
-    "Clearwater"
+  "Miami",
+  "Fort Lauderdale",
+  "Boca Raton",
+  "West Palm Beach",
+  "Naples",
+  "Fort Myers",
+  "Tampa",
+  "Orlando",
+  "Jacksonville",
+  "Sarasota"
 ];
 
