@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import BreadcrumbSchema from '@/views/components/BreadcrumbSchema';
 import ContactForm from '@/views/components/ContactForm';
+import ContactUsFaq from '@/views/components/ContactUsFaq';
 
 export const metadata: Metadata = {
   title: 'Contact a Florida HVAC Business Broker',
@@ -124,6 +125,9 @@ export default function ContactPage() {
           </p>
         </div>
       </div>
+
+      {/* FAQs */}
+      <ContactUsFaq />
 
       {/* Contact Form Section */}
       <section className="w-full bg-gray-50 border-t border-gray-200 py-20">
