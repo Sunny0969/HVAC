@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { areasWeServeData, industriesData } from "../../models/navigationModel";
 
-function MegaMenu({ type, data, onClose }: { type: 'areas' | 'industries', data: Record<string, string[]>, onClose: () => void }) {
+function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onClose: () => void }) {
   const categories = Object.keys(data);
   const [activeCategory, setActiveCategory] = useState(categories[0]);
   const items = data[activeCategory] || [];
@@ -20,12 +20,12 @@ function MegaMenu({ type, data, onClose }: { type: 'areas' | 'industries', data:
       exit={{ opacity: 0, y: 10 }}
       transition={{ duration: 0.2 }}
       className="absolute top-[100%] left-0 mt-2 bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-200 overflow-hidden z-50 flex"
-      style={{ width: '800px', minHeight: '400px' }}
+      style={{ width: '800px' }}
     >
       {/* Left Sidebar */}
-      <div className="w-[30%] bg-gray-50/50 p-6 border-r border-gray-100 flex flex-col gap-2">
+      <div className="w-[30%] bg-gray-50/50 p-6 border-r border-gray-100 flex flex-col gap-2 max-h-[400px] overflow-y-auto overscroll-contain custom-scrollbar">
         <h3 className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">
-          {type === 'areas' ? 'Regions' : 'Categories'}
+          Regions
         </h3>
         {categories.map((cat) => (
           <button
@@ -43,28 +43,57 @@ function MegaMenu({ type, data, onClose }: { type: 'areas' | 'industries', data:
       </div>
 
       {/* Right Content */}
-      <div className="w-[70%] bg-white p-6">
+      <div className="w-[70%] bg-white p-6 max-h-[400px] overflow-y-auto overscroll-contain custom-scrollbar">
         <h3 className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-wider">
-          {type === 'areas' ? 'Featured Cities' : 'Featured Industries'}
+          Featured Cities
         </h3>
         <div className="grid grid-cols-3 gap-6">
-          {items.map((item) => (
-            <div key={item} className="flex items-center gap-3 group cursor-pointer">
-              <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative flex-shrink-0">
-                <Image 
-                  src={`https://images.unsplash.com/photo-${type === 'areas' ? '1449844908441-8829872d2607' : '1581091226825-a6a2a5aee158'}?w=100&h=100&fit=crop&q=80`}
-                  alt={item}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div>
-                <div className="text-sm font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors">{item}</div>
-                <div className="text-xs text-gray-500">{activeCategory}</div>
-              </div>
-            </div>
-          ))}
+          {items.map((item) => {
+            const slug = item.toLowerCase().replace(/\s+/g, '-');
+            return (
+              <Link key={item} href={`/florida/${slug}`} onClick={onClose} className="flex items-center gap-3 group cursor-pointer">
+                <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative flex-shrink-0">
+                  <Image 
+                    src={`https://images.unsplash.com/photo-1449844908441-8829872d2607?w=100&h=100&fit=crop&q=80`}
+                    alt={item}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors">{item}</div>
+                  <div className="text-xs text-gray-500">{activeCategory}</div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
+      </div>
+    </motion.div>
+  );
+}
+
+function SimpleDropdown({ items, onClose }: { items: string[], onClose: () => void }) {
+  // Height approx for 4 items: ~48px each + padding. We set max-h-[200px] to show ~4 items and scroll for the rest.
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 10 }}
+      transition={{ duration: 0.2 }}
+      className="absolute top-[100%] left-0 mt-2 w-72 bg-white rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.1)] border border-gray-200 overflow-hidden z-50 py-2"
+    >
+      <div className="max-h-[200px] overflow-y-auto overscroll-contain custom-scrollbar">
+        {items.map((item) => (
+          <div key={item} onClick={onClose} className="px-5 py-3 hover:bg-gray-50 cursor-pointer flex items-center gap-3 group transition-colors">
+            <div className="w-8 h-8 rounded-full bg-[#E3F2FD] text-[#022B3A] flex items-center justify-center flex-shrink-0 group-hover:bg-[#EE5B2C] group-hover:text-white transition-colors">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <span className="text-sm font-bold text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors">{item}</span>
+          </div>
+        ))}
       </div>
     </motion.div>
   );
@@ -97,6 +126,18 @@ export default function Header() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [closeMegaMenu]);
+
+  // Lock body scroll ONLY when mobile menu is open to prevent jumping layout on desktop hover
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   return (
     <>
@@ -144,7 +185,7 @@ export default function Header() {
                             transition={{ duration: 0.2 }}
                             className="absolute left-0 top-[100%] pt-0 w-56 z-50"
                           >
-                            <div className="bg-white shadow-xl rounded-xl overflow-hidden border border-gray-100 py-2">
+                            <div className="bg-white shadow-xl rounded-xl border border-gray-100 py-2 max-h-[60vh] overflow-y-auto overscroll-contain custom-scrollbar">
                               {item.children.map((child) => (
                                 <Link
                                   key={child.label}
@@ -226,10 +267,10 @@ export default function Header() {
 
               <AnimatePresence>
                 {activeMegaMenu === 'areas' && (
-                  <MegaMenu type="areas" data={areasWeServeData} onClose={closeMegaMenu} />
+                  <AreasMegaMenu data={areasWeServeData} onClose={closeMegaMenu} />
                 )}
                 {activeMegaMenu === 'industries' && (
-                  <MegaMenu type="industries" data={industriesData} onClose={closeMegaMenu} />
+                  <SimpleDropdown items={industriesData["HVAC & Mechanical"]} onClose={closeMegaMenu} />
                 )}
               </AnimatePresence>
             </div>
@@ -257,7 +298,7 @@ export default function Header() {
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex-1 overflow-y-auto px-4 py-6 space-y-2">
+          <div className="flex-1 overflow-y-auto px-4 py-6 space-y-2 overscroll-contain">
             {navigationData.map((item) => (
               <div key={item.label}>
                 <Link
@@ -283,6 +324,40 @@ export default function Header() {
                 )}
               </div>
             ))}
+            
+            {/* Added Areas and Industries to Mobile Menu */}
+            <div className="pt-4 mt-4 border-t border-white/10 space-y-2">
+              <div>
+                <span className="block px-3 py-3 rounded-md text-xl font-medium text-gray-400">Areas We Serve</span>
+                <div className="pl-6 pb-2 space-y-1">
+                  {Object.entries(areasWeServeData).map(([region, cities]) => (
+                    <div key={region} className="pb-2">
+                      <div className="text-sm font-bold text-gray-500 mb-1">{region}</div>
+                      {cities.map(city => {
+                        const slug = city.toLowerCase().replace(/\s+/g, '-');
+                        return (
+                          <Link key={city} href={`/florida/${slug}`} onClick={toggleMobileMenu} className="block py-2 text-base text-gray-300 hover:text-white">
+                            {city}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <span className="block px-3 py-3 rounded-md text-xl font-medium text-gray-400">Industries</span>
+                <div className="pl-6 pb-2 space-y-1">
+                  {industriesData["HVAC & Mechanical"].map(ind => (
+                    <div key={ind} className="block py-2 text-base text-gray-300">
+                      {ind}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </header>
