@@ -5,6 +5,7 @@ import ValuationCalculator from '../../views/components/ValuationCalculator';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 import ContactForm from '../../views/components/ContactForm';
 import CalculatorFaq from '../../views/components/CalculatorFaq';
+import CalculatorPeopleAlsoAsk from '../../views/components/CalculatorPeopleAlsoAsk';
 
 export const metadata: Metadata = {
   title: "Free HVAC Business Valuation Calculator | Florida",
@@ -151,7 +152,7 @@ export default function ValuationCalculatorPage() {
                 <div>
                   <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Next Step</h3>
                   <p className="text-sm font-medium text-gray-700">
-                    Use the calculator below for a rough estimate, then <Link href="/free-valuation" className="text-[#EE5B2C] hover:underline">request a free professional valuation</Link> for an accurate, confidential analysis.
+                    Use the calculator below for a rough estimate, then <Link href="/free-confidential-valuation" className="text-[#EE5B2C] hover:underline">request a free professional valuation</Link> for an accurate, confidential analysis.
                   </p>
                 </div>
               </div>
@@ -205,6 +206,7 @@ export default function ValuationCalculatorPage() {
                 </div>
 
                 {/* FAQs */}
+              <CalculatorPeopleAlsoAsk />
               <CalculatorFaq />
               </div>
 
