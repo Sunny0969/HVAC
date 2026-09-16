@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import SellYourHvacFaq from "./SellYourHvacFaq";
+import SellPagePeopleAlsoAsk from "./SellPagePeopleAlsoAsk";
 import Link from "next/link";
 
 export default function SellPageContent() {
@@ -166,6 +167,8 @@ export default function SellPageContent() {
             </p>
           </div>
           
+          <SellPagePeopleAlsoAsk />
+
           {/* FAQ / Direct Answers for AEO */}
           <SellYourHvacFaq />
 
