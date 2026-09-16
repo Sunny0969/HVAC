@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import HowItWorksSteps from '../../views/components/HowItWorksSteps';
 import { steps } from '../../data/howItWorksSteps';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
@@ -103,10 +104,13 @@ export default function HowItWorksPage() {
         {/* Hero Section */}
         <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
-            <img 
-              src="/how-to-sell-hvac-business-florida.jpg" 
+            <Image 
+              src="https://res.cloudinary.com/db05hw4ri/image/upload/v1789541948/hvac-hero-images/how_it_works_hero_bg.jpg"
               alt="Florida HVAC business transition and handshake" 
-              className="w-full h-full object-cover object-center" 
+              fill
+              className="object-cover object-center" 
+              priority
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-black/70" />
           </div>
