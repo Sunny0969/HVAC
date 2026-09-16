@@ -1,8 +1,9 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import ContactForm from '../../views/components/ContactForm';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
+import ContactForm from '../../views/components/ContactForm';
+import HvacValuationFaq from '../../views/components/HvacValuationFaq';
 
 export const metadata: Metadata = {
   title: "HVAC Business Valuation in Florida",
@@ -124,6 +125,9 @@ export default function HVACBusinessValuationPage() {
                   ))}
                 </div>
               </div>
+
+              {/* FAQs */}
+              <HvacValuationFaq />
 
               {/* Disclaimer */}
               <div className="bg-gray-50 border border-gray-200 rounded-[2rem] p-8 text-sm text-gray-500 leading-relaxed text-center">

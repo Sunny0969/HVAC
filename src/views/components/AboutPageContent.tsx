@@ -66,6 +66,31 @@ export default function AboutPageContent() {
             </div>
           </div>
 
+          {/* Frequently Asked Questions */}
+          <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100 mt-12 mb-8">
+            <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions</h2>
+            
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">What does HVAC Exit Advisors specialize in?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              The firm focuses on confidential sales, acquisitions, and valuation guidance for HVAC and related mechanical-service businesses, with particular attention to Florida markets and industry-specific operating issues.
+            </p>
+
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">Why does industry specialization matter in an HVAC transaction?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              HVAC companies have distinctive value drivers and risks, including licensing, maintenance agreements, technician retention, seasonal demand, installation backlog, warranty obligations, fleet needs, and residential versus commercial revenue mix.
+            </p>
+
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">Does HVAC Exit Advisors represent both sellers and buyers?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              The firm can assist owners preparing to sell and qualified buyers pursuing acquisitions. Representation, duties, fees, confidentiality, and any potential conflicts should be clearly documented for each engagement.
+            </p>
+
+            <h3 className="text-xl font-bold text-[#022B3A] mb-2">Does an advisor make the final legal or tax decisions?</h3>
+            <p className="text-gray-700 font-medium mb-6">
+              No. The advisor coordinates the transaction and provides brokerage and market guidance. The parties should rely on their own attorneys, accountants, tax advisers, lenders, and licensing professionals for specialized decisions.
+            </p>
+          </div>
+
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Link

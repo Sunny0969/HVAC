@@ -40,12 +40,51 @@ export default function Page() {
     }
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does HVAC Exit Advisors specialize in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The firm focuses on confidential sales, acquisitions, and valuation guidance for HVAC and related mechanical-service businesses, with particular attention to Florida markets and industry-specific operating issues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does industry specialization matter in an HVAC transaction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "HVAC companies have distinctive value drivers and risks, including licensing, maintenance agreements, technician retention, seasonal demand, installation backlog, warranty obligations, fleet needs, and residential versus commercial revenue mix."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does HVAC Exit Advisors represent both sellers and buyers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The firm can assist owners preparing to sell and qualified buyers pursuing acquisitions. Representation, duties, fees, confidentiality, and any potential conflicts should be clearly documented for each engagement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does an advisor make the final legal or tax decisions?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The advisor coordinates the transaction and provides brokerage and market guidance. The parties should rely on their own attorneys, accountants, tax advisers, lenders, and licensing professionals for specialized decisions."
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(aboutSchema)}, ${JSON.stringify(faqSchema)}]` }}
       />
       <main className="min-h-screen bg-[#F7F5F0]">
         
