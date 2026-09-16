@@ -4,6 +4,8 @@ import Link from 'next/link';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 import ContactForm from '../../views/components/ContactForm';
 import HvacValuationFaq from '../../views/components/HvacValuationFaq';
+import ValuationTopSummary from '../../views/components/ValuationTopSummary';
+import ValuationPeopleAlsoAsk from '../../views/components/ValuationPeopleAlsoAsk';
 
 export const metadata: Metadata = {
   title: "HVAC Business Valuation in Florida",
@@ -28,6 +30,24 @@ export default function HVACBusinessValuationPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "HVAC Business Valuation in Florida",
+            "description": "Learn how Florida HVAC businesses are valued using SDE and EBITDA, and explore the factors that drive higher multiples.",
+            "url": "https://www.hvacexitadvisors.com/hvac-business-valuation",
+            "datePublished": "2026-09-01T08:00:00+00:00",
+            "dateModified": "2026-09-16T12:00:00+00:00",
+            "publisher": {
+              "@type": "Organization",
+              "name": "HVAC Exit Advisors"
+            }
+          })
+        }}
+      />
       <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
         
         {/* Hero Section */}
@@ -44,9 +64,7 @@ export default function HVACBusinessValuationPage() {
               <span className="text-white">HVAC Business Valuation</span>
             </nav>
 
-            <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
-              Understand What Drives the Value of Your HVAC Company
-            </h1>
+            <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">HVAC Business Valuation Methods and Key Value Drivers</h1>
             
             <p className="text-xl text-white/90 leading-relaxed font-medium mb-10 max-w-3xl">
               Learn how earnings, recurring agreements, technicians, service mix and owner dependence affect the value of an HVAC business.
@@ -60,6 +78,7 @@ export default function HVACBusinessValuationPage() {
             
             {/* Main Column: Content */}
             <div className="lg:col-span-8 space-y-12">
+              <ValuationTopSummary />
               
               {/* Opening Copy & SDE */}
               <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
@@ -127,6 +146,7 @@ export default function HVACBusinessValuationPage() {
               </div>
 
               {/* FAQs */}
+              <ValuationPeopleAlsoAsk />
               <HvacValuationFaq />
 
               {/* Disclaimer */}
