@@ -114,23 +114,11 @@ export default async function ListingsPage() {
       <section className="bg-[#022B3A] text-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 text-center mt-16 md:mt-0">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-black mb-6">
-            HVAC Businesses <span className="text-[#EE5B2C]">for Sale</span>
+            Confidential HVAC and{' '}
+            <span className="text-[#EE5B2C]">Mechanical-Service Opportunities</span>
           </h1>
-          
-          {/* Executive Summary & Audience Clarity (GEO/AEO Fix) */}
-          <div className="bg-white/10 p-6 md:p-8 rounded-2xl text-left border border-white/20 mb-6 backdrop-blur-sm">
-            <h2 className="text-xl font-bold text-[#EE5B2C] mb-2">Executive Summary & Who This Is For</h2>
-            <p className="text-white font-medium mb-3">
-              <strong>Target Audience:</strong> First-time buyers, strategic acquirers, and private equity firms looking to acquire vetted, cash-flowing HVAC businesses in Florida.
-            </p>
-            <p className="text-white font-medium mb-3">
-              <strong>Key Takeaway:</strong> Purchasing an established HVAC business provides immediate cash flow, trained technicians, and recurring revenue. Browse our active listings below and work with our specialized brokers to evaluate, finance, and close your ideal acquisition securely.
-            </p>
-            <p className="text-xs text-white/60 mt-4">Last Updated: September 13, 2026</p>
-          </div>
-
-          <p className="text-lg md:text-xl text-white/80 font-medium">
-            Explore premium mechanical contractors and HVAC service businesses available for acquisition.
+          <p className="text-lg md:text-xl text-white/85 font-medium max-w-3xl mx-auto leading-relaxed mb-4">
+            Review available opportunities and request additional information through the qualification process. To protect confidentiality, listing summaries may omit the company name, exact address and other identifying information.
           </p>
           <div className="mt-4 p-2 bg-black/50 text-xs text-left overflow-hidden hidden">DEBUG: {debug}</div>
         </div>
@@ -142,74 +130,79 @@ export default async function ListingsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="bg-[#022B3A] rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
-            <h2 className="text-white text-2xl font-black mb-2">Not finding the right business?</h2>
-            <p className="text-white/80 font-medium">Tell us your criteria and we'll match you from our private off-market inventory.</p>
+            <h2 className="text-white text-2xl font-black mb-2">Not finding the right opportunity?</h2>
+            <p className="text-white/80 font-medium">Register confidentially to receive appropriate future opportunities after qualification.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link href="/contact-us" className="px-6 py-3 min-h-[44px] bg-[#EE5B2C] text-white font-bold rounded-lg hover:bg-orange-600 transition-all text-center whitespace-nowrap">
-              Talk to a Broker →
+              Register as a Qualified Buyer →
             </Link>
-            <Link href="/resources" className="px-6 py-3 min-h-[44px] bg-white/10 text-white font-bold rounded-lg border border-white/20 hover:bg-white/20 transition-all text-center whitespace-nowrap">
-              Browse Resources
+            <Link href="/free-confidential-valuation" className="px-6 py-3 min-h-[44px] bg-white/10 text-white font-bold rounded-lg border border-white/20 hover:bg-white/20 transition-all text-center whitespace-nowrap">
+              Request a Valuation
             </Link>
           </div>
         </div>
       </section>
-      {/* SEO & Content Depth Section */}
+
+      {/* Information Table + Disclaimer */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl border border-gray-100 mb-12">
-          
-          <h2 className="text-3xl font-black text-[#022B3A] mb-6">What to look for in HVAC businesses for sale?</h2>
-          <p className="text-lg text-gray-700 mb-6 font-medium">
-            <strong>Prioritize businesses with recurring maintenance revenue, clean financial records, and a stable technician team.</strong>
-          </p>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            When you browse HVAC businesses for sale, the most critical factor is the quality of revenue. A business heavily reliant on new construction contracts is vulnerable to economic shifts, whereas a company with hundreds of residential maintenance agreements offers predictable, recession-resistant cash flow. We recommend consulting with the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a> standards for business valuation to understand fair market multiples.
-          </p>
-          
-          <h2 className="text-2xl font-bold text-[#022B3A] mt-10 mb-6">How to Evaluate an HVAC Listing</h2>
-          <p className="text-lg text-gray-700 mb-6">
-            Follow this 4-step checklist when reviewing the listings above:
-          </p>
-          <ul className="list-decimal pl-6 space-y-4 text-lg text-gray-700 mb-10 font-medium">
-            <li><strong>Verify the SDE:</strong> Ensure the Seller's Discretionary Earnings (SDE) are accurately calculated with legitimate add-backs.</li>
-            <li><strong>Analyze Revenue Mix:</strong> Aim for at least 30-40% of revenue coming from service and maintenance rather than pure installs.</li>
-            <li><strong>Check Team Tenure:</strong> A business is only as good as its technicians. Review average employee tenure and licensing structures.</li>
-            <li><strong>Review the Fleet:</strong> Are the service vans owned outright or leased? What is their mileage and condition?</li>
-          </ul>
 
-          <h2 className="text-2xl font-bold text-[#022B3A] mb-6">Commercial vs. Residential HVAC Acquisitions</h2>
-          <div className="overflow-x-auto mb-10">
+          {/* Required Listing Fields Table */}
+          <h2 className="text-3xl font-black text-[#022B3A] mb-6">Required Listing Fields</h2>
+          <p className="text-lg text-gray-700 font-medium mb-8 leading-relaxed">
+            Public listing summaries contain general information to allow initial evaluation. Confidential details are released only after the buyer completes the required qualification and confidentiality process.
+          </p>
+          <div className="overflow-x-auto mb-12">
             <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
                 <tr>
-                  <th className="py-4 px-6 bg-gray-50 text-[#022B3A] font-bold border-b border-gray-200">Business Type</th>
-                  <th className="py-4 px-6 bg-gray-50 text-gray-600 font-bold border-b border-gray-200">Pros</th>
-                  <th className="py-4 px-6 bg-gray-50 text-gray-600 font-bold border-b border-gray-200">Cons</th>
+                  <th className="py-4 px-6 bg-gray-50 text-[#022B3A] font-bold border-b border-gray-200 rounded-tl-xl">Public Listing Information</th>
+                  <th className="py-4 px-6 bg-[#022B3A] text-white font-bold border-b border-[#022B3A] rounded-tr-xl">Confidential Information Released Later</th>
                 </tr>
               </thead>
               <tbody className="text-gray-700 font-medium">
-                <tr>
-                  <td className="py-4 px-6 border-b border-gray-100"><strong>Residential HVAC</strong></td>
-                  <td className="py-4 px-6 border-b border-gray-100">High volume of recurring maintenance, recession-resistant.</td>
-                  <td className="py-4 px-6 border-b border-gray-100">Requires larger marketing budgets to acquire retail customers.</td>
-                </tr>
-                <tr>
-                  <td className="py-4 px-6 border-b border-gray-100"><strong>Commercial HVAC</strong></td>
-                  <td className="py-4 px-6 border-b border-gray-100">Large contract sizes, B2B relationships, high barrier to entry.</td>
-                  <td className="py-4 px-6 border-b border-gray-100">Longer sales cycles, payment terms can strain cash flow (Net 30/60).</td>
-                </tr>
+                {[
+                  ['General Florida region', 'Business name and exact address'],
+                  ['Residential and commercial mix', 'Detailed customer information'],
+                  ['Service and installation mix', 'Employee names and individual compensation'],
+                  ['Asking price, revenue and SDE or EBITDA when approved', 'Full financial statements and tax returns'],
+                  ['General reason for sale', 'Licenses, contracts and detailed operating records'],
+                  ['Financing indication', 'Seller identity and direct contact information'],
+                ].map(([pub, conf], i) => (
+                  <tr key={i}>
+                    <td className="py-4 px-6 border-b border-gray-100 align-top">
+                      <div className="flex items-start gap-3">
+                        <svg className="w-4 h-4 text-[#022B3A] flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+                        {pub}
+                      </div>
+                    </td>
+                    <td className="py-4 px-6 border-b border-gray-100 align-top bg-[#022B3A]/5">
+                      <div className="flex items-start gap-3 text-[#022B3A]">
+                        <svg className="w-4 h-4 text-[#EE5B2C] flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                        <span className="font-semibold">{conf}</span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
 
-          <h2 className="text-2xl font-bold text-[#022B3A] mb-6">How much does it cost to buy an HVAC company in Florida?</h2>
-          <p className="text-lg text-gray-700 mb-6 font-medium">
-            <strong>Expect to pay 2.5x to 4x the business's SDE (Seller's Discretionary Earnings).</strong>
-          </p>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Valuations vary based on recurring revenue, fleet quality, and management structure. A highly systematized business with a general manager in place will command a premium multiple closer to 4x. To learn more about the acquisition process and how we assist buyers, read our comprehensive guide on <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">how to buy an HVAC business</Link> or discover <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">how our brokerage process works</Link>. You can also explore our <Link href="/resources" className="text-[#EE5B2C] hover:underline font-bold">HVAC industry resources</Link> for deeper market insights.
-          </p>
+          {/* Listing Disclaimer */}
+          <div className="bg-[#022B3A] rounded-2xl p-6 md:p-8 text-white">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#EE5B2C]/20 flex items-center justify-center">
+                <svg className="w-5 h-5 text-[#EE5B2C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold mb-2">Listing Disclaimer</h3>
+                <p className="text-white/85 font-medium leading-relaxed">
+                  Information is provided by the seller and is subject to buyer verification. Availability, price, financing and transaction terms may change. Prospective buyers must complete the required confidentiality and qualification process before receiving protected information.
+                </p>
+              </div>
+            </div>
+          </div>
 
         </div>
       </section>
