@@ -11,6 +11,23 @@ import { areasWeServeData, industriesData } from "../../models/navigationModel";
 
 function getCityImage(cityName: string) {
   const filename = cityName.toLowerCase().replace(/ /g, '-');
+  
+  const customImages: Record<string, string> = {
+    'naples': 'https://images.unsplash.com/photo-1710625361134-332bc2801df3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmFwbGVzfGVufDB8MHwwfHx8Mg%3D%3D',
+    'fort-myers': 'https://images.unsplash.com/photo-1667869373278-4cb33c25ee4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9ydCUyMG15ZXJzfGVufDB8MHwwfHx8Mg%3D%3D',
+    'cape-coral': 'https://images.unsplash.com/photo-1702435445689-0f686b23fd5d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FwZSUyMGNvcmFsfGVufDB8MHwwfHx8Mg%3D%3D',
+    'bonita-springs': 'https://images.unsplash.com/photo-1599622638531-14f74e38699b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9uaXRhJTIwc3ByaW5nfGVufDB8MHwwfHx8Mg%3D%3D',
+    'orlando': 'https://images.unsplash.com/photo-1661231134432-bebf986499a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b3JsYW5kb3xlbnwwfDB8MHx8fDI%3D',
+    'kissimmee': 'https://images.unsplash.com/photo-1455906876003-298dd8c44ec8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2lzc2ltbWVlfGVufDB8MHwwfHx8Mg%3D%3D',
+    'sanford': 'https://images.unsplash.com/photo-1679778170121-48c9c9129c27?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FuZm9yZHxlbnwwfDB8MHx8fDI%3D',
+    'lakeland': 'https://images.unsplash.com/photo-1674858766243-fa24ff6a6004?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFrZWxhbmR8ZW58MHwwfDB8fHwy',
+    'winter-haven': 'https://images.unsplash.com/photo-1643674372898-ed5950f83d7c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2ludGVyJTIwaGF2ZW58ZW58MHwwfDB8fHwy'
+  };
+
+  if (customImages[filename]) {
+    return customImages[filename];
+  }
+
   const availableCities = ['miami', 'fort-lauderdale', 'west-palm-beach', 'boca-raton', 'hollywood', 'pompano-beach', 'coral-springs', 'pembroke-pines', 'miramar', 'hialeah', 'homestead'];
   if (availableCities.includes(filename)) {
     return `/images/cities/${filename}.jpg`;
