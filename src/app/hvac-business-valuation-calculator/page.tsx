@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ValuationCalculator from '../../views/components/ValuationCalculator';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 import ContactForm from '../../views/components/ContactForm';
+import CalculatorFaq from '../../views/components/CalculatorFaq';
 
 export const metadata: Metadata = {
   title: "Free HVAC Business Valuation Calculator | Florida",
@@ -203,19 +204,8 @@ export default function ValuationCalculatorPage() {
                   </table>
                 </div>
 
-                <h2 className="text-3xl font-black text-[#022B3A] mb-6">Frequently Asked Questions About HVAC Valuations</h2>
-                
-                <h3 className="text-xl font-bold text-[#022B3A] mb-2 mt-6">What is an HVAC business valuation?</h3>
-                <p className="mb-6">
-                  It is a formal assessment of a company's market worth based on its cash flow, assets, and operational risks.<br/>
-                  A true valuation examines every aspect of your business, from your technician retention rates to your inventory and fleet condition, to determine what a willing buyer would pay.
-                </p>
-
-                <h3 className="text-xl font-bold text-[#022B3A] mb-2 mt-6">How do you calculate HVAC business value?</h3>
-                <p className="mb-6">
-                  By multiplying your SDE or EBITDA by an industry-specific market multiple (typically 2x to 4x SDE).<br/>
-                  To get an exact figure, brokers perform financial recasting to find the true normalized earnings, then apply a multiple dictated by current market conditions. For a deeper dive, read our guide on <Link href="/resources/hvac-business-in-florida" className="text-[#EE5B2C] hover:underline">HVAC businesses in Florida</Link>.
-                </p>
+                {/* FAQs */}
+              <CalculatorFaq />
               </div>
 
               {/* Disclaimer */}
