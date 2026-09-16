@@ -1,4 +1,4 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import ValuationCalculator from '../../views/components/ValuationCalculator';
@@ -92,7 +92,14 @@ export default function ValuationCalculatorPage() {
         {/* Hero Section */}
         <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
-            <img src="/florida-hvac-business-valuation.jpg" alt="Florida HVAC Business Valuation and market multiples" className="w-full h-full object-cover object-center" />
+            <Image 
+              src="https://images.unsplash.com/photo-1504379117850-07f0e27b6b64?w=1200&auto=format&fit=crop&q=80&ixlib=rb-4.1.0"
+              alt="Florida HVAC Business Valuation and market multiples"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
             <div className="absolute inset-0 bg-black/60" />
           </div>
 
