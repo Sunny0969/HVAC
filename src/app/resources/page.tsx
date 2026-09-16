@@ -66,7 +66,14 @@ export default async function ResourcesPage() {
         {/* Hero Section - compact */}
         <section className="relative w-full h-[50dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
-            <img src="/florida-hvac-business-valuation.jpg" alt="Florida HVAC business resources and valuation guides" className="w-full h-full object-cover object-center" />
+            <Image 
+              src="https://res.cloudinary.com/db05hw4ri/image/upload/v1789541566/hvac-hero-images/resources_hero_bg.jpg" 
+              alt="Florida HVAC business resources and valuation guides" 
+              fill
+              className="object-cover object-center" 
+              priority
+              sizes="100vw"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
           </div>
 
