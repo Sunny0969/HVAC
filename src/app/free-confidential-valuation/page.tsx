@@ -52,6 +52,47 @@ export default function FreeConfidentialValuationPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is the initial confidential valuation a certified appraisal?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The initial review is an advisory estimate intended to help an owner understand a potential market range. A certified appraisal or formal valuation engagement is separate and may be required for litigation, tax, partnership, or financing purposes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What information is needed for the initial review?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Helpful information includes annual revenue, adjusted SDE or EBITDA, years in operation, service territory, residential and commercial mix, employee and technician counts, maintenance agreements, owner responsibilities, reason for selling, and desired timing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will submitting the valuation form obligate me to sell?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The request begins a private discussion and does not create a listing obligation. Any brokerage engagement should be documented separately and reviewed before the business is marketed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will my information be shared with buyers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Not merely because you requested a valuation. Protected company information should be shared only with your authorization and through a controlled process after the prospective buyer satisfies confidentiality and qualification requirements."
+              }
+            }
+          ]
+        }) }}
+      />
       <main className="min-h-screen bg-[#F7F5F0]">
 
         {/* Hero Section */}
@@ -136,6 +177,31 @@ export default function FreeConfidentialValuationPage() {
                     <p className="text-white/85 font-medium leading-relaxed">Submitting this form does not obligate you to sell or engage our firm. Your information will be used only to respond to your request and will not be shared with prospective buyers without your explicit authorization.</p>
                   </div>
                 </div>
+              </div>
+
+              {/* FAQ Section */}
+              <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mt-10">
+                <h2 className="text-3xl font-black text-[#022B3A] mb-8">Frequently Asked Questions</h2>
+                
+                <h3 className="text-xl font-bold text-[#022B3A] mb-2">Is the initial confidential valuation a certified appraisal?</h3>
+                <p className="text-gray-700 font-medium mb-6">
+                  No. The initial review is an advisory estimate intended to help an owner understand a potential market range. A certified appraisal or formal valuation engagement is separate and may be required for litigation, tax, partnership, or financing purposes.
+                </p>
+                
+                <h3 className="text-xl font-bold text-[#022B3A] mb-2">What information is needed for the initial review?</h3>
+                <p className="text-gray-700 font-medium mb-6">
+                  Helpful information includes annual revenue, adjusted SDE or EBITDA, years in operation, service territory, residential and commercial mix, employee and technician counts, maintenance agreements, owner responsibilities, reason for selling, and desired timing.
+                </p>
+
+                <h3 className="text-xl font-bold text-[#022B3A] mb-2">Will submitting the valuation form obligate me to sell?</h3>
+                <p className="text-gray-700 font-medium mb-6">
+                  No. The request begins a private discussion and does not create a listing obligation. Any brokerage engagement should be documented separately and reviewed before the business is marketed.
+                </p>
+
+                <h3 className="text-xl font-bold text-[#022B3A] mb-2">Will my information be shared with buyers?</h3>
+                <p className="text-gray-700 font-medium mb-6">
+                  Not merely because you requested a valuation. Protected company information should be shared only with your authorization and through a controlled process after the prospective buyer satisfies confidentiality and qualification requirements.
+                </p>
               </div>
             </div>
 
