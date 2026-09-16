@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import BuyYourHvacFaq from "./BuyYourHvacFaq";
 import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 
@@ -203,55 +204,6 @@ export default function BuyPageContent() {
               </motion.div>
             </div>
           </motion.div>
-
-          {/* Block 6: FAQs (Accordion) */}
-          <motion.div 
-            
-            
-            
-            viewport={{ once: true, margin: "-50px" }}
-            className="mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-black mb-10 text-center text-[#022B3A]">Frequently Asked Questions</h2>
-            <div className="flex flex-col space-y-4">
-              {[
-                { q: "How much cash do I need to buy an HVAC business in Florida?", a: <><strong className="block mb-2 text-[#022B3A]">Typically 10% to 20% of the purchase price if using an SBA loan.</strong> It depends on the purchase price and financing structure - SBA loans, seller financing, and combinations of both are common in HVAC acquisitions. We'll walk you through what's realistic for the listings you're considering.</> },
-                { q: "What should I check during due diligence on an HVAC company?", a: <><strong className="block mb-2 text-[#022B3A]">Normalized earnings, customer contracts, technician retention, and fleet condition.</strong> Financial statements and normalized earnings, customer contracts and maintenance-agreement retention, technician retention, equipment and fleet condition, licensing status, and any pending liabilities or warranty obligations. <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold whitespace-nowrap ml-1">Learn more about our due diligence process &rarr;</Link></> },
-                { q: "Is it better to buy a residential or commercial HVAC business?", a: <><strong className="block mb-2 text-[#022B3A]">Residential offers steadier recurring revenue, while commercial provides larger contract sizes.</strong> Both can work well - residential tends to offer more recurring maintenance revenue, while commercial often means larger contract sizes. The right fit depends on your goals, experience, and available capital.</> },
-                { q: "How long does it typically take to buy an HVAC business?", a: <><strong className="block mb-2 text-[#022B3A]">Usually 3 to 6 months from letter of intent (LOI) to closing.</strong> Timelines vary by financing and due diligence complexity, but most acquisitions move from serious interest to closing within a few months once financing is lined up.</> },
-                { q: "Do you only work with buyers who already own HVAC experience?", a: <><strong className="block mb-2 text-[#022B3A]">No, we assist first-time buyers, investors, and experienced operators alike.</strong> We work with first-time buyers, industry veterans, and companies looking to expand through acquisition. We match the guidance to your experience level.</> }
-              ].map((faq, i) => (
-                <motion.div 
-                  key={i} 
-                   
-                  className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden"
-                >
-                  <button 
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full text-left p-6 md:p-8 flex justify-between items-center focus:outline-none group"
-                  >
-                    <h3 className="text-xl font-black text-[#022B3A] group-hover:text-[#EE5B2C] transition-colors pr-6">
-                      {faq.q}
-                    </h3>
-                    <span 
-                      className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-[#EE5B2C] transition-transform duration-300" 
-                      style={{ transform: openFaq === i ? 'rotate(180deg)' : 'rotate(0deg)' }}
-                    >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                    </span>
-                  </button>
-                  <AnimatePresence>
-                    {openFaq === i && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                      >
-                        <div className="px-6 md:px-8 pb-8 pt-0 text-gray-600 text-lg font-medium border-t border-gray-50 mt-2">
-                          <p className="pt-4">{faq.a}</p>
-                        </div>
-                      </motion.div>
                     )}
                   </AnimatePresence>
                 </motion.div>
@@ -350,6 +302,7 @@ export default function BuyPageContent() {
       
 
         
+        <div className="mb-12"><BuyYourHvacFaq /></div>
         {/* Right Sticky Form Column (Reusing the requested layout) */}
         <div className="lg:col-span-4">
           <div className="sticky top-32 bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8 max-h-[calc(100vh-10rem)] overflow-y-auto">
