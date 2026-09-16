@@ -1,8 +1,19 @@
 import { MetadataRoute } from 'next';
+import { floridaCities } from '@/models/navigationModel';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.hvacexitadvisors.com';
   
+  const cityRoutes: MetadataRoute.Sitemap = floridaCities.map(city => {
+    const slug = city.toLowerCase().replace(/\s+/g, '-');
+    return {
+      url: `${baseUrl}/florida/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    };
+  });
+
   return [
     // Core Transactional Pages
     {
@@ -127,42 +138,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     // Florida City Landing Pages
-    {
-      url: `${baseUrl}/florida/miami`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/florida/tampa`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/florida/orlando`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/florida/jacksonville`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/florida/fort-myers`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/florida/sarasota`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+    ...cityRoutes,
 
     // Active Featured Listings
     {
