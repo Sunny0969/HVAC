@@ -30,7 +30,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: "When should employees be told?",
-        a: "The timing depends on the transaction and the seller’s plan. Prospective buyers may not contact employees without authorization. The seller should coordinate the communication plan with legal and transaction advisers."
+        a: "The timing depends on the transaction and the sellerâ€™s plan. Prospective buyers may not contact employees without authorization. The seller should coordinate the communication plan with legal and transaction advisers."
       },
       {
         q: "What makes an HVAC company attractive to buyers?",
@@ -42,7 +42,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: "Do I need to stay after closing?",
-        a: "Many buyers request a transition or training period. The length and the owner’s responsibilities should be negotiated and documented before closing."
+        a: "Many buyers request a transition or training period. The length and the ownerâ€™s responsibilities should be negotiated and documented before closing."
       },
       {
         q: "Can I sell the real estate with the business?",
@@ -54,7 +54,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: "Should I accept the highest offer?",
-        a: "The seller should compare price with cash at closing, financing risk, contingencies, seller financing, earnouts, working capital, transition duties and the buyer’s ability to complete the transaction."
+        a: "The seller should compare price with cash at closing, financing risk, contingencies, seller financing, earnouts, working capital, transition duties and the buyerâ€™s ability to complete the transaction."
       }
     ]
   },
@@ -65,10 +65,7 @@ export const faqCategories: FaqCategory[] = [
         q: "What is required before I receive financial information?",
         a: "A signed nondisclosure agreement is generally required. Proof of funds, lender information or other financial qualification may also be required before detailed financial information or seller access is provided."
       },
-      {
-        q: "Can I speak directly with the seller?",
-        a: "A qualified buyer may participate in a broker-coordinated call or meeting after completing the required confidentiality and financial qualification steps."
-      },
+      
       {
         q: "Can I submit an offer without an escrow deposit?",
         a: "An appropriate escrow deposit is generally required to demonstrate commitment and support the transaction. The amount and timing depend on the opportunity and contract."
@@ -77,10 +74,7 @@ export const faqCategories: FaqCategory[] = [
         q: "Is a letter of intent accepted?",
         a: "For this brokerage process, an LOI is generally reserved for transactions of $10 million or more or for situations where complexity makes it appropriate. Smaller transactions generally proceed through an asset-purchase contract with escrow and a defined due-diligence period."
       },
-      {
-        q: "Can the due-diligence period be extended?",
-        a: "An extension may be considered when reasonably required, but it must be agreed to by the parties and documented properly."
-      },
+      
       {
         q: "Can I contact employees or customers during due diligence?",
         a: "No. The business is being sold confidentially. Any authorized communication must be coordinated by the seller and follow the NDA and transaction documents."
@@ -94,5 +88,27 @@ export const faqCategories: FaqCategory[] = [
         a: "The buyer and professional advisers should verify financial statements, tax returns, customers, contracts, employees, licenses, assets, fleet, leases, insurance, legal matters and the assumptions used in the offer."
       }
     ]
+  },
+  {
+    category: "Transaction Process",
+    items: [
+      {
+        q: "What is the first step for an HVAC owner considering a sale?",
+        a: "The first step is a confidential review of goals, timing, financial performance, operating structure, licensing, recurring revenue, and owner involvement. This helps determine whether to prepare now, improve the company first, or begin a sale process."
+      },
+      {
+        q: "What is required before a buyer can communicate with the seller?",
+        a: "The buyer should sign the NDA and provide acceptable proof of funds or financing readiness. Approved questions can then be handled through a broker-hosted call or meeting without exposing employees or customers."
+      },
+      {
+        q: "When does formal due diligence begin?",
+        a: "Formal due diligence normally begins after the purchase contract is signed and the required escrow deposit is received. The contract establishes the review period, document access, extension rights, and remedies."
+      },
+      {
+        q: "Can the due-diligence period be extended?",
+        a: "It may be extended when additional time is reasonably needed and both parties agree in writing. Buyers should request an extension before the deadline and explain the remaining information or approval required."
+      }
+    ]
   }
 ];
+
