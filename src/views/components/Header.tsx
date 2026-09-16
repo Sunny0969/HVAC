@@ -52,12 +52,24 @@ function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onCl
         ))}
       </div>
 
-      {/* Right Content */}
-      <div className="w-[70%] bg-white p-6 max-h-[400px] overflow-y-auto overscroll-contain custom-scrollbar">
-        <h3 className="text-xs font-bold text-gray-400 mb-6 uppercase tracking-wider">
-          Featured Cities
-        </h3>
-        <div className="grid grid-cols-3 gap-6">
+      
+        {/* Right Content */}
+        <div className="w-[70%] bg-white p-6 max-h-[400px] overflow-y-auto overscroll-contain custom-scrollbar relative flex flex-col">
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider">
+              Featured Cities
+            </h3>
+            <Link 
+              href={`/${activeCategory.toLowerCase().replace(/\s+/g, '-')}`}
+              onClick={onClose}
+              className="text-xs font-bold text-[#EE5B2C] hover:underline flex items-center gap-1"
+            >
+              View Full {activeCategory} Guide →
+            </Link>
+          </div>
+          <div className="grid grid-cols-3 gap-6 mb-6">
+            {items.map((item) => {
+
           {items.map((item) => {
             const slug = item.toLowerCase().replace(/\s+/g, '-');
             return (
@@ -364,8 +376,14 @@ export default function Header() {
                 <span className="block px-3 py-3 rounded-md text-xl font-medium text-gray-400">Areas We Serve</span>
                 <div className="pl-6 pb-2 space-y-1">
                   {Object.entries(areasWeServeData).map(([region, cities]) => (
-                    <div key={region} className="pb-2">
-                      <div className="text-sm font-bold text-gray-500 mb-1">{region}</div>
+                                          <div key={region} className="pb-2">
+                        <Link 
+                          href={`/${region.toLowerCase().replace(/\s+/g, '-')}`}
+                          onClick={toggleMobileMenu}
+                          className="text-sm font-bold text-[#EE5B2C] mb-1 block hover:underline"
+                        >
+                          {region} Guide →
+                        </Link>
                       {cities.map(city => {
                         const slug = city.toLowerCase().replace(/\s+/g, '-');
                         return (
