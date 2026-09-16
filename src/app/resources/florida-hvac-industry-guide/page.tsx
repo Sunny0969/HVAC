@@ -68,8 +68,8 @@ export default function FloridaHvacIndustryGuidePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <main className="w-full bg-[#F7F5F0] min-h-screen py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+      <main className="w-full bg-[#F7F5F0] min-h-screen py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
           
           <div className="mb-6 flex justify-between items-center">
             <Link href="/resources" className="inline-flex items-center text-sm font-bold text-[#EE5B2C] hover:text-[#c44922] transition-colors">

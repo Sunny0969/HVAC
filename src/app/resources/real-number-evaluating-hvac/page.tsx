@@ -60,8 +60,8 @@ export default function RealNumberEvaluatingHvacPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <main className="w-full bg-[#F7F5F0] min-h-screen py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+      <main className="w-full bg-[#F7F5F0] min-h-screen py-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
           <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">
             <Link href="/" className="hover:text-[#EE5B2C] transition-colors">Home</Link>
             <span>/</span>
