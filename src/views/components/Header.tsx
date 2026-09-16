@@ -86,8 +86,6 @@ function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onCl
           </div>
           <div className="grid grid-cols-3 gap-6 mb-6">
             {items.map((item) => {
-
-          {items.map((item) => {
             const slug = item.toLowerCase().replace(/\s+/g, '-');
             return (
               <Link key={item} href={`/florida/${slug}`} onClick={onClose} className="flex items-center gap-3 group cursor-pointer">
