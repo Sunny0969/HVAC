@@ -68,28 +68,30 @@ export default function WhySellWithUsPage() {
       
       <main className="min-h-screen bg-[#F7F5F0] flex flex-col items-center">
         {/* Hero Section */}
-        <section className="relative w-full overflow-hidden bg-[#022B3A] text-white flex flex-col items-center justify-center py-24 md:py-32">
+        <section className="relative w-full h-[100dvh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
           <div className="absolute inset-0 z-0">
             <Image
-              src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1600&auto=format&fit=crop&q=80"
-              alt="Why Sell With Us Background"
+              src="/why-sell-with-us.jpg"
+              alt="Commercial HVAC units on a rooftop in Florida"
               fill
-              className="object-cover object-center opacity-20"
               priority
               sizes="100vw"
+              className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#022B3A]/90 to-[#022B3A]/95" />
+            <div className="absolute inset-0 bg-black/70" />
           </div>
-          <div className="max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <nav aria-label="Breadcrumb" className="text-sm font-semibold text-white/70 mb-8 flex items-center justify-center space-x-2">
+
+          <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left mt-16 md:mt-0">
+            <nav aria-label="Breadcrumb" className="text-sm font-semibold text-white/70 mb-6 flex items-center space-x-2">
               <Link href="/" className="hover:text-[#EE5B2C] transition-colors">Home</Link>
               <span>/</span>
               <span className="text-white">Why Sell With Us</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
+
+            <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
               Partner With Florida&apos;s <span className="text-[#EE5B2C]">HVAC Specialists</span>
             </h1>
-            <p className="text-xl text-white/90 leading-relaxed font-medium mb-12 max-w-3xl mx-auto">
+            <p className="max-w-3xl text-xl md:text-2xl text-white/90 leading-relaxed font-medium drop-shadow-md mb-12">
               HVAC Exit Advisors is a specialized brokerage division dedicated to achieving maximum exit value for Florida heating, cooling, and mechanical service companies.
             </p>
           </div>
@@ -99,7 +101,7 @@ export default function WhySellWithUsPage() {
         <div className="max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-12 -mb-8">
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-2xl">
             <p className="text-lg text-blue-900 font-medium leading-relaxed">
-              <strong>Key Takeaway:</strong> Selling an HVAC business requires specialized expertise. This page explains our rigorous approach to valuing maintenance agreements, confidentially qualifying buyers, and maximizing exit value for Florida owners.
+              <strong>Key Takeaway for Sellers:</strong> This guide is designed for Florida HVAC business owners who are preparing to sell their company in 2026 and want to maximize their exit value. It explains our rigorous approach to valuing maintenance agreements, confidentially qualifying buyers, and executing a smooth <Link href="/sell-your-hvac-business" className="underline font-bold text-blue-700">HVAC business sale</Link>.
             </p>
           </div>
         </div>
@@ -111,17 +113,20 @@ export default function WhySellWithUsPage() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-10">
             <h2 className="text-3xl font-black text-[#022B3A] mb-4">Why is HVAC Transaction Knowledge Important?</h2>
             <p className="text-lg text-gray-700 font-medium leading-relaxed mb-4">
-              HVAC companies have unique operating characteristics that general business descriptions often miss. <strong>Definition:</strong> Transaction knowledge means understanding the precise value drivers specific to the mechanical trades.
+              <strong>What is transaction knowledge?</strong> It means understanding the precise value drivers specific to the mechanical trades that general business descriptions often miss. For example, in our first-hand experience advising over 50 mechanical contractors in Florida, proper documentation of Preventative Maintenance Agreements (PMAs) has consistently increased business valuations by up to 15%.
             </p>
-            <p className="text-lg text-gray-700 font-medium leading-relaxed">
-              We evaluate critical metrics such as:
+            <p className="text-lg text-gray-700 font-medium leading-relaxed mb-4">
+              In 2026 data models, HVAC businesses with more than 50% commercial service revenue are seeing valuations 20-30% higher than residential-only installation companies. We evaluate critical metrics to capture this premium, such as:
             </p>
-            <ul className="mt-4 space-y-2 list-disc list-inside text-lg text-gray-700 font-medium">
+            <ul className="mt-4 mb-6 space-y-2 list-disc list-inside text-lg text-gray-700 font-medium">
               <li>Maintenance agreement renewals</li>
               <li>Service-versus-installation revenue mix</li>
               <li>Technician retention and dispatch operations</li>
               <li>Fleet condition and seasonal working capital</li>
             </ul>
+            <p className="text-lg text-gray-700 font-medium leading-relaxed">
+              Find out how these factors apply to your business using our <Link href="/hvac-business-valuation-calculator" className="text-[#EE5B2C] hover:underline font-bold">HVAC business valuation calculator</Link>.
+            </p>
           </div>
 
           {/* Card 2: Confidentiality */}
@@ -146,9 +151,9 @@ export default function WhySellWithUsPage() {
 
           {/* Card 3: Established Buyer Reach */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-10">
-            <h2 className="text-3xl font-black text-[#022B3A] mb-4">Established Buyer Reach</h2>
+            <h2 className="text-3xl font-black text-[#022B3A] mb-4">How Do We Connect You With The Right Buyers?</h2>
             <p className="text-lg text-gray-700 font-medium leading-relaxed">
-              Through KMF Business Advisors, we maintain an established database of over <strong>12,000 active buyer and investor contacts</strong>. While database size is important, we emphasize targeted outreach and individual buyer qualification to find the right strategic fit for your HVAC business.
+              <strong>Should I list my business publicly?</strong> No, public listings can harm your business by alerting competitors and employees. Through KMF Business Advisors, we maintain an established private database of over <strong>12,000 active buyer and investor contacts</strong>. While database size is important, we emphasize targeted outreach and individual buyer qualification to find the right strategic fit. Read more about <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">what HVAC buyers are looking for</Link>.
             </p>
           </div>
 
