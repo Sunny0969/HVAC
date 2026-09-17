@@ -47,8 +47,9 @@ export default function tampabayPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
       <main className="min-h-screen bg-gray-50 flex flex-col ">
-        <section className="relative w-full bg-[#022B3A] pt-36 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-start text-left">
-          <div className="max-w-4xl z-10 relative">
+        <section className="relative w-full bg-[#022B3A] pt-36 pb-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="max-w-4xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight drop-shadow-xl">
               Tampa Bay HVAC Business Guide: Buy, Sell, and Value a Company (2026)
             </h1>
@@ -67,10 +68,11 @@ export default function tampabayPage() {
               </a>
             </div>
           </div>
+          </div>
         </section>
 
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid lg:grid-cols-12 gap-12">
-          <div className="lg:col-span-8 space-y-16">
+          <div className="lg:col-span-7 space-y-16">
             <div>
               <h2 className="text-3xl font-black text-[#022B3A] mb-4 border-b border-gray-200 pb-2">Analyzing the Tampa Bay HVAC Market</h2>
               <h3 className="text-xl font-bold text-[#022B3A] mt-8 mb-2">Coastal Corrosion and Shorter Equipment Lifespans</h3>
@@ -121,7 +123,7 @@ export default function tampabayPage() {
             </div>
             
           </div>
-          <div className="lg:col-span-4 mt-12 lg:mt-0" id="contact">
+          <div className="lg:col-span-5 mt-12 lg:mt-0" id="contact">
             <div className="sticky top-32 bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8">
               <h3 className="text-2xl font-black text-[#022B3A] mb-3">Tampa Bay Consultation</h3>
               <p className="text-gray-600 mb-6 font-medium leading-relaxed">Connect with our local advisors for a confidential valuation.</p>
