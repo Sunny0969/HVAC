@@ -25,7 +25,13 @@ function getCityImage(cityName: string) {
     'tampa': 'https://images.unsplash.com/photo-1609964956781-519678450be5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGFtcGF8ZW58MHwwfDB8fHwy',
     'st.-petersburg': 'https://images.unsplash.com/photo-1548834925-e48f8a27ae6f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3QuJTIwcGV0ZXJzYnVyZ3xlbnwwfDB8MHx8fDI%3D',
     'clearwater': 'https://images.unsplash.com/photo-1641219659728-40290893a81a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xlYXJ3YXRlciUyMGZsb3JpZGF8ZW58MHwwfDB8fHwy',
-    'brandon': 'https://images.unsplash.com/photo-1632782588268-ecdd95022bc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJhbmRvbiUyMGZsb3JpZGF8ZW58MHwwfDB8fHwy'
+    'brandon': 'https://images.unsplash.com/photo-1632782588268-ecdd95022bc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJhbmRvbiUyMGZsb3JpZGF8ZW58MHwwfDB8fHwy',
+    'jacksonville': 'https://images.unsplash.com/photo-1613231365704-22aa7ad7cffc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFja3NvbnZpbGxlJTIwZmxvcmlkYXxlbnwwfHwwfHx8Mg%3D%3D',
+    'st.-augustine': 'https://images.unsplash.com/photo-1494112399815-f895b47a0404?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3QlMjBhdWd1c3RpbmUlMjBmbG9yaWRhfGVufDB8fDB8fHww',
+    'palm-bay': 'https://images.unsplash.com/photo-1512936702668-1ab037aced2a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmlkYSUyMGJlYWNofGVufDB8fDB8fHww',
+    'melbourne': 'https://images.unsplash.com/photo-1595434971780-79d5c20c5090?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWVsYm91cm5lfGVufDB8fDB8fHwy',
+    'port-st.-lucie': 'https://images.unsplash.com/photo-1557247177-9e0c630f62bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmlkYSUyMGNvYXN0fGVufDB8fDB8fHwy',
+    'fort-pierce': 'https://images.unsplash.com/photo-1658835830768-c99a05cf0a02?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Rm9ydCUyMFBpZXJjZXxlbnwwfHwwfHx8Mg%3D%3D'
   };
 
   if (customImages[filename]) {
