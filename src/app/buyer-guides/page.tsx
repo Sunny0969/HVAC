@@ -8,25 +8,25 @@ _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').re
 const API_URL = `${_rootUrl}/api/public`;
 
 export const metadata: Metadata = {
-  title: "HVAC Business Resources & Exit Guides | Florida",
+  title: "HVAC Buyer Guides | Florida",
   description: "Explore comprehensive guides, valuation multiples, and market trend reports for Florida HVAC business owners and buyers. Read our expert resources now!",
   alternates: {
-    canonical: "https://www.hvacexitadvisors.com/resources",
+    canonical: "https://www.hvacexitadvisors.com/buyer-guides",
   },
   openGraph: {
-    title: "HVAC Business Resources & Exit Guides | Florida | HVAC Exit Advisors",
+    title: "HVAC Buyer Guides | Florida | HVAC Exit Advisors",
     description: "Explore comprehensive guides, valuation multiples, and market trend reports for Florida HVAC business owners and buyers.",
-    url: "https://www.hvacexitadvisors.com/resources",
+    url: "https://www.hvacexitadvisors.com/buyer-guides",
   },
 };
 
-export default async function ResourcesPage() {
+export default async function BuyerGuidesPage() {
   let cmsBlogs: any[] = [];
   try {
     const res = await fetch(`${API_URL}/blogs`, { next: { revalidate: 60 } });
     if (res.ok) {
       const data = await res.json();
-      cmsBlogs = data.blogs || [];
+      cmsBlogs = (data.blogs || []).filter((b: any) => b.slug === "why-every-hvac-owner-in-florida-needs-an-exit-strategy" || b.slug === "timing-purchase-florida");
     }
   } catch {
     // ignore
@@ -34,13 +34,13 @@ export default async function ResourcesPage() {
 
   const breadcrumbs = [
     { name: "Home", item: "https://www.hvacexitadvisors.com/" },
-    { name: "Resources", item: "https://www.hvacexitadvisors.com/resources" },
+    { name: "Buyer Guides", item: "https://www.hvacexitadvisors.com/buyer-guides" },
   ];
 
   const hubSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Florida HVAC Business Valuation & M&A Resources",
+    "name": "Florida HVAC Buyer Guides",
     "description": "Guides, financial analyses, and educational resources for Florida HVAC business owners and prospective buyers.",
     "mainEntity": {
       "@type": "ItemList",
@@ -49,7 +49,7 @@ export default async function ResourcesPage() {
         "position": index + 1,
         "name": article.title,
         "description": article.metaDescription || article.title,
-        "url": `https://www.hvacexitadvisors.com/resources/${article.slug}`,
+        "url": `https://www.hvacexitadvisors.com/buyer-guides/${article.slug}`,
       })),
     },
   };
@@ -96,10 +96,7 @@ export default async function ResourcesPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: `[${JSON.stringify(hubSchema)}, ${JSON.stringify(faqSchema)}]` }}
-      />
+      
       <main className="min-h-screen flex flex-col bg-[#F7F5F0]">
 
         {/* Hero Section - compact */}
@@ -118,7 +115,7 @@ export default async function ResourcesPage() {
 
           <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-left mt-24 md:mt-28">
             <h1 className="max-w-3xl text-2xl md:text-3xl lg:text-4xl font-black mb-3 leading-tight tracking-tight drop-shadow-xl">
-              HVAC Business <span className="text-[#EE5B2C]">Resources</span> &amp; Advisory
+              HVAC Business <span className="text-[#EE5B2C]">Buyer Guides</span>
             </h1>
             <p className="max-w-xl text-sm md:text-base text-white/85 leading-relaxed font-medium drop-shadow-md">
               In-depth valuation methodologies, market insights, and transition strategies written by Florida HVAC brokerage veterans.

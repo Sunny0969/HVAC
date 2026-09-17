@@ -36,8 +36,8 @@ export const navigationData: NavItem[] = [
     label: "Resources",
     href: "#",
     children: [
-      { label: "Seller Guides", href: "/resources" },
-      { label: "Buyer Guides", href: "/resources" },
+      { label: "Seller Guides", href: "/seller-guides" },
+      { label: "Buyer Guides", href: "/buyer-guides" },
       { label: "FAQs", href: "/faqs" },
       { label: "Gallery", href: "#" },
     ]

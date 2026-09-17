@@ -91,9 +91,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/resources`,
+      url: `${baseUrl}/seller-guides`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/buyer-guides`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
       priority: 0.8,
     },
 
