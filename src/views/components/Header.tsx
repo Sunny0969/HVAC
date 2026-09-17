@@ -21,7 +21,11 @@ function getCityImage(cityName: string) {
     'kissimmee': 'https://images.unsplash.com/photo-1455906876003-298dd8c44ec8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2lzc2ltbWVlfGVufDB8MHwwfHx8Mg%3D%3D',
     'sanford': 'https://images.unsplash.com/photo-1679778170121-48c9c9129c27?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FuZm9yZHxlbnwwfDB8MHx8fDI%3D',
     'lakeland': 'https://images.unsplash.com/photo-1674858766243-fa24ff6a6004?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFrZWxhbmR8ZW58MHwwfDB8fHwy',
-    'winter-haven': 'https://images.unsplash.com/photo-1643674372898-ed5950f83d7c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2ludGVyJTIwaGF2ZW58ZW58MHwwfDB8fHwy'
+    'winter-haven': 'https://images.unsplash.com/photo-1643674372898-ed5950f83d7c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2ludGVyJTIwaGF2ZW58ZW58MHwwfDB8fHwy',
+    'tampa': 'https://images.unsplash.com/photo-1609964956781-519678450be5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGFtcGF8ZW58MHwwfDB8fHwy',
+    'st.-petersburg': 'https://images.unsplash.com/photo-1548834925-e48f8a27ae6f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3QuJTIwcGV0ZXJzYnVyZ3xlbnwwfDB8MHx8fDI%3D',
+    'clearwater': 'https://images.unsplash.com/photo-1641219659728-40290893a81a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xlYXJ3YXRlciUyMGZsb3JpZGF8ZW58MHwwfDB8fHwy',
+    'brandon': 'https://images.unsplash.com/photo-1632782588268-ecdd95022bc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJhbmRvbiUyMGZsb3JpZGF8ZW58MHwwfDB8fHwy'
   };
 
   if (customImages[filename]) {
