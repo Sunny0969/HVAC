@@ -5,12 +5,13 @@ import ContactForm from '@/views/components/ContactForm';
 import { cityDataMap } from '@/lib/florida-city-data';
 
 type Props = {
-  params: Promise<{ city: string }>;
+  params: Promise<{ region: string; city: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolvedParams = await params;
   const citySlug = resolvedParams.city.toLowerCase();
+  const regionSlug = resolvedParams.region.toLowerCase();
   const cityInfo = cityDataMap[citySlug];
   const cityName = cityInfo ? cityInfo.name : citySlug.charAt(0).toUpperCase() + citySlug.slice(1).replace(/-/g, ' ');
 
@@ -18,12 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${cityName} HVAC Business Broker | Sell or Buy`,
     description: `Confidential brokerage, valuation, and acquisition services for heating and air conditioning contractors in ${cityName}, FL. Get a free valuation today!`,
     alternates: {
-      canonical: `https://www.hvacexitadvisors.com/florida/${citySlug}`,
+      canonical: `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}`,
     },
     openGraph: {
       title: `${cityName} HVAC Business Broker | Sell or Buy`,
       description: `Confidential brokerage, valuation, and acquisition services for heating and air conditioning contractors in ${cityName}, FL.`,
-      url: `https://www.hvacexitadvisors.com/florida/${citySlug}`,
+      url: `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}`,
     },
   };
 }
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Page({ params }: Props) {
   const resolvedParams = await params;
   const citySlug = resolvedParams.city.toLowerCase();
+  const regionSlug = resolvedParams.region.toLowerCase();
   
   const city = cityDataMap[citySlug] || {
     name: citySlug.charAt(0).toUpperCase() + citySlug.slice(1).replace(/-/g, ' '),
@@ -44,8 +46,8 @@ export default async function Page({ params }: Props) {
 
   const breadcrumbs = [
     { name: 'Home', item: 'https://www.hvacexitadvisors.com/' },
-    { name: 'Florida Markets', item: 'https://www.hvacexitadvisors.com/florida/miami' },
-    { name: `${city.name}, FL`, item: `https://www.hvacexitadvisors.com/florida/${citySlug}` }
+    { name: `${regionSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`, item: 'https://www.hvacexitadvisors.com/${regionSlug}' },
+    { name: `${city.name}, FL`, item: `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}` }
   ];
 
   const localSchema = {

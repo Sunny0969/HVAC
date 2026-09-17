@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useFooterController } from "../../controllers/useFooterController";
+import { getRegionSlugForCity } from "../../models/navigationModel";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -100,7 +101,7 @@ export default function Footer() {
                 return (
                   <Link 
                     key={city} 
-                    href={`/florida/${slug}`}
+                    href={`/${getRegionSlugForCity(city)}/${slug}`}
                     className="text-white/70 hover:text-secondary transition-colors text-sm block py-2"
                   >
                     {city}

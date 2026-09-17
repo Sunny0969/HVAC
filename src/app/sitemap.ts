@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { floridaCities } from '@/models/navigationModel';
+import { floridaCities, getRegionSlugForCity } from '../models/navigationModel';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.hvacexitadvisors.com';
@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const cityRoutes: MetadataRoute.Sitemap = floridaCities.map(city => {
     const slug = city.toLowerCase().replace(/\s+/g, '-');
     return {
-      url: `${baseUrl}/florida/${slug}`,
+      url: `${baseUrl}/${getRegionSlugForCity(city)}/${slug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,

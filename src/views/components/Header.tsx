@@ -107,7 +107,7 @@ function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onCl
             {items.map((item) => {
             const slug = item.toLowerCase().replace(/\s+/g, '-');
             return (
-              <Link key={item} href={`/florida/${slug}`} onClick={onClose} className="flex items-center gap-3 group cursor-pointer">
+              <Link key={item} href={`/${activeCategory.toLowerCase().replace(/\s+/g, '-')}/${slug}`} onClick={onClose} className="flex items-center gap-3 group cursor-pointer">
                 <div className="w-10 h-10 rounded-full bg-gray-100 overflow-hidden relative flex-shrink-0">
                   <Image 
                     src={getCityImage(item)}
@@ -421,7 +421,7 @@ export default function Header() {
                       {cities.map(city => {
                         const slug = city.toLowerCase().replace(/\s+/g, '-');
                         return (
-                          <Link key={city} href={`/florida/${slug}`} onClick={toggleMobileMenu} className="block py-2 text-base text-gray-300 hover:text-white">
+                          <Link key={city} href={`/${region.toLowerCase().replace(/\s+/g, '-')}/${slug}`} onClick={toggleMobileMenu} className="block py-2 text-base text-gray-300 hover:text-white">
                             {city}
                           </Link>
                         );

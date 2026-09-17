@@ -87,3 +87,11 @@ export const floridaCities = [
   "Sarasota"
 ];
 
+export function getRegionSlugForCity(cityName: string): string {
+  for (const [region, cities] of Object.entries(areasWeServeData)) {
+    if (cities.includes(cityName)) {
+      return region.toLowerCase().replace(/\s+/g, '-');
+    }
+  }
+  return 'florida'; // fallback
+}
