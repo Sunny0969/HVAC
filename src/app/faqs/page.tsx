@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: 'Florida HVAC Broker FAQs | Buying & Selling',
     description: 'Get straight answers on valuing, selling, or buying an HVAC business in Florida. Explore FAQs about confidentiality, financing, and timelines.',
     url: 'https://www.hvacexitadvisors.com/faqs',
-    images: [{ url: 'https://images.unsplash.com/photo-1665789318391-6057c533005e', width: 1200, height: 630, alt: 'HVAC FAQs' }]
+    images: [{ url: 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679438/hvac-assets/unsplash_asset_0_1789679436407.jpg', width: 1200, height: 630, alt: 'HVAC FAQs' }]
   },
 };
 
@@ -77,7 +77,7 @@ export default function FaqsPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1665789318391-6057c533005e?w=1600&auto=format&fit=crop&q=80"
+            src="https://res.cloudinary.com/db05hw4ri/image/upload/v1789679438/hvac-assets/unsplash_asset_0_1789679436407.jpg?w=1600&auto=format&fit=crop&q=80"
             alt="FAQ Hero background"
             className="w-full h-full object-cover object-center"
           />

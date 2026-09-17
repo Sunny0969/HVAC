@@ -13,34 +13,34 @@ function getCityImage(cityName: string) {
   const filename = cityName.toLowerCase().replace(/ /g, '-');
   
   const customImages: Record<string, string> = {
-    'naples': 'https://images.unsplash.com/photo-1710625361134-332bc2801df3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmFwbGVzfGVufDB8MHwwfHx8Mg%3D%3D',
-    'fort-myers': 'https://images.unsplash.com/photo-1667869373278-4cb33c25ee4f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Zm9ydCUyMG15ZXJzfGVufDB8MHwwfHx8Mg%3D%3D',
-    'cape-coral': 'https://images.unsplash.com/photo-1702435445689-0f686b23fd5d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FwZSUyMGNvcmFsfGVufDB8MHwwfHx8Mg%3D%3D',
-    'bonita-springs': 'https://images.unsplash.com/photo-1599622638531-14f74e38699b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9uaXRhJTIwc3ByaW5nfGVufDB8MHwwfHx8Mg%3D%3D',
-    'orlando': 'https://images.unsplash.com/photo-1661231134432-bebf986499a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8b3JsYW5kb3xlbnwwfDB8MHx8fDI%3D',
-    'kissimmee': 'https://images.unsplash.com/photo-1455906876003-298dd8c44ec8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2lzc2ltbWVlfGVufDB8MHwwfHx8Mg%3D%3D',
-    'sanford': 'https://images.unsplash.com/photo-1679778170121-48c9c9129c27?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2FuZm9yZHxlbnwwfDB8MHx8fDI%3D',
-    'lakeland': 'https://images.unsplash.com/photo-1674858766243-fa24ff6a6004?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bGFrZWxhbmR8ZW58MHwwfDB8fHwy',
-    'winter-haven': 'https://images.unsplash.com/photo-1643674372898-ed5950f83d7c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d2ludGVyJTIwaGF2ZW58ZW58MHwwfDB8fHwy',
-    'tampa': 'https://images.unsplash.com/photo-1609964956781-519678450be5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGFtcGF8ZW58MHwwfDB8fHwy',
-    'st.-petersburg': 'https://images.unsplash.com/photo-1548834925-e48f8a27ae6f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3QuJTIwcGV0ZXJzYnVyZ3xlbnwwfDB8MHx8fDI%3D',
-    'clearwater': 'https://images.unsplash.com/photo-1641219659728-40290893a81a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xlYXJ3YXRlciUyMGZsb3JpZGF8ZW58MHwwfDB8fHwy',
-    'brandon': 'https://images.unsplash.com/photo-1632782588268-ecdd95022bc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnJhbmRvbiUyMGZsb3JpZGF8ZW58MHwwfDB8fHwy',
-    'jacksonville': 'https://images.unsplash.com/photo-1613231365704-22aa7ad7cffc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8amFja3NvbnZpbGxlJTIwZmxvcmlkYXxlbnwwfHwwfHx8Mg%3D%3D',
-    'st.-augustine': 'https://images.unsplash.com/photo-1494112399815-f895b47a0404?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3QlMjBhdWd1c3RpbmUlMjBmbG9yaWRhfGVufDB8fDB8fHww',
-    'palm-bay': 'https://images.unsplash.com/photo-1512936702668-1ab037aced2a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmlkYSUyMGJlYWNofGVufDB8fDB8fHww',
-    'melbourne': 'https://images.unsplash.com/photo-1595434971780-79d5c20c5090?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWVsYm91cm5lfGVufDB8fDB8fHwy',
-    'port-st.-lucie': 'https://images.unsplash.com/photo-1557247177-9e0c630f62bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmlkYSUyMGNvYXN0fGVufDB8fDB8fHwy',
-    'fort-pierce': 'https://images.unsplash.com/photo-1658835830768-c99a05cf0a02?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Rm9ydCUyMFBpZXJjZXxlbnwwfHwwfHx8Mg%3D%3D',
-    'sarasota': 'https://images.unsplash.com/photo-1632191245513-ac68f8fbb40b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FyYXNvdGF8ZW58MHx8MHx8fDI%3D',
-    'bradenton': 'https://images.unsplash.com/photo-1583202690115-e9a0bf2ee80f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QnJhZGVudG9ufGVufDB8fDB8fHwy',
-    'venice': 'https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VmVuaWNlfGVufDB8fDB8fHwy',
-    'north-port': 'https://images.unsplash.com/photo-1635380208459-b34560afacb1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Tm9ydGglMjBQb3J0fGVufDB8fDB8fHwy',
-    'tallahassee': 'https://images.unsplash.com/photo-1745610976614-bf51adc509a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VGFsbGFoYXNzZWV8ZW58MHx8MHx8fDI%3D',
-    'gainesville': 'https://images.unsplash.com/photo-1609369752265-fafb640d9cf4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R2FpbmVzdmlsbGV8ZW58MHx8MHx8fDI%3D',
-    'ocala': 'https://images.unsplash.com/photo-1615663573123-db4925280fd4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8T2NhbGF8ZW58MHx8MHx8fDI%3D',
-    'pensacola': 'https://images.unsplash.com/photo-1560381434-5e7025897e65?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVuc2Fjb2xhfGVufDB8fDB8fHwy',
-    'panama-city': 'https://images.unsplash.com/photo-1632505702897-cc41b0ba3b64?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UGFuYW1hJTIwQ2l0eXxlbnwwfHwwfHx8Mg%3D%3D'
+    'naples': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679186/hvac-cities/naples.jpg',
+    'fort-myers': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679187/hvac-cities/fort-myers.jpg',
+    'cape-coral': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679189/hvac-cities/cape-coral.jpg',
+    'bonita-springs': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679191/hvac-cities/bonita-springs.jpg',
+    'orlando': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679192/hvac-cities/orlando.jpg',
+    'kissimmee': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679193/hvac-cities/kissimmee.jpg',
+    'sanford': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679195/hvac-cities/sanford.jpg',
+    'lakeland': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679196/hvac-cities/lakeland.jpg',
+    'winter-haven': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679197/hvac-cities/winter-haven.jpg',
+    'tampa': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679199/hvac-cities/tampa.jpg',
+    'st.-petersburg': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679200/hvac-cities/st.-petersburg.jpg',
+    'clearwater': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679201/hvac-cities/clearwater.jpg',
+    'brandon': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679203/hvac-cities/brandon.jpg',
+    'jacksonville': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679204/hvac-cities/jacksonville.jpg',
+    'st.-augustine': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679205/hvac-cities/st.-augustine.jpg',
+    'palm-bay': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679207/hvac-cities/palm-bay.jpg',
+    'melbourne': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679209/hvac-cities/melbourne.jpg',
+    'port-st.-lucie': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679210/hvac-cities/port-st.-lucie.jpg',
+    'fort-pierce': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679212/hvac-cities/fort-pierce.jpg',
+    'sarasota': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679215/hvac-cities/sarasota.jpg',
+    'bradenton': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679216/hvac-cities/bradenton.jpg',
+    'venice': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679217/hvac-cities/venice.jpg',
+    'north-port': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679219/hvac-cities/north-port.jpg',
+    'tallahassee': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679221/hvac-cities/tallahassee.jpg',
+    'gainesville': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679223/hvac-cities/gainesville.jpg',
+    'ocala': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679224/hvac-cities/ocala.jpg',
+    'pensacola': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679225/hvac-cities/pensacola.jpg',
+    'panama-city': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679227/hvac-cities/panama-city.jpg'
   };
 
   if (customImages[filename]) {
@@ -51,7 +51,7 @@ function getCityImage(cityName: string) {
   if (availableCities.includes(filename)) {
     return `/images/cities/${filename}.jpg`;
   }
-  return `https://images.unsplash.com/photo-1449844908441-8829872d2607?w=100&h=100&fit=crop&q=80`;
+  return `https://res.cloudinary.com/db05hw4ri/image/upload/v1789679458/hvac-assets/unsplash_asset_20_1789679457110.jpg`;
 }
 
 function AreasMegaMenu({ data, onClose }: { data: Record<string, string[]>, onClose: () => void }) {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Why Choose Our Florida HVAC Business Broker | HVAC Exit Advisors',
     description: 'Discover why HVAC Exit Advisors is the premier choice for selling your Florida HVAC business. Get unmatched confidentiality and maximum value.',
     url: 'https://www.hvacexitadvisors.com/why-sell-with-us',
-    images: [{ url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=1200&h=630&fit=crop', width: 1200, height: 630, alt: 'Why Sell With Us' }]
+    images: [{ url: 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679441/hvac-assets/unsplash_asset_3_1789679440217.jpg', width: 1200, height: 630, alt: 'Why Sell With Us' }]
   },
 };
 
