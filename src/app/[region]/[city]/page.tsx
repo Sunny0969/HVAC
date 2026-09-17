@@ -46,7 +46,7 @@ export default async function Page({ params }: Props) {
 
   const breadcrumbs = [
     { name: 'Home', item: 'https://www.hvacexitadvisors.com/' },
-    { name: `${regionSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`, item: 'https://www.hvacexitadvisors.com/${regionSlug}' },
+    { name: `${regionSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}`, item: `https://www.hvacexitadvisors.com/${regionSlug}` },
     { name: `${city.name}, FL`, item: `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}` }
   ];
 
@@ -85,6 +85,8 @@ export default async function Page({ params }: Props) {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
           <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">
             <Link href="/" className="hover:text-[#EE5B2C] transition-colors">Home</Link>
+            <span>/</span>
+            <Link href={`/${regionSlug}`} className="hover:text-[#EE5B2C] transition-colors">{regionSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</Link>
             <span>/</span>
             <span className="text-[#022B3A]">{city.name}, Florida</span>
           </nav>
