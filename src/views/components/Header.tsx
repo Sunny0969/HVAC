@@ -31,7 +31,16 @@ function getCityImage(cityName: string) {
     'palm-bay': 'https://images.unsplash.com/photo-1512936702668-1ab037aced2a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmlkYSUyMGJlYWNofGVufDB8fDB8fHww',
     'melbourne': 'https://images.unsplash.com/photo-1595434971780-79d5c20c5090?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TWVsYm91cm5lfGVufDB8fDB8fHwy',
     'port-st.-lucie': 'https://images.unsplash.com/photo-1557247177-9e0c630f62bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmxvcmlkYSUyMGNvYXN0fGVufDB8fDB8fHwy',
-    'fort-pierce': 'https://images.unsplash.com/photo-1658835830768-c99a05cf0a02?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Rm9ydCUyMFBpZXJjZXxlbnwwfHwwfHx8Mg%3D%3D'
+    'fort-pierce': 'https://images.unsplash.com/photo-1658835830768-c99a05cf0a02?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8Rm9ydCUyMFBpZXJjZXxlbnwwfHwwfHx8Mg%3D%3D',
+    'sarasota': 'https://images.unsplash.com/photo-1632191245513-ac68f8fbb40b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2FyYXNvdGF8ZW58MHx8MHx8fDI%3D',
+    'bradenton': 'https://images.unsplash.com/photo-1583202690115-e9a0bf2ee80f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8QnJhZGVudG9ufGVufDB8fDB8fHwy',
+    'venice': 'https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VmVuaWNlfGVufDB8fDB8fHwy',
+    'north-port': 'https://images.unsplash.com/photo-1635380208459-b34560afacb1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Tm9ydGglMjBQb3J0fGVufDB8fDB8fHwy',
+    'tallahassee': 'https://images.unsplash.com/photo-1745610976614-bf51adc509a7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VGFsbGFoYXNzZWV8ZW58MHx8MHx8fDI%3D',
+    'gainesville': 'https://images.unsplash.com/photo-1609369752265-fafb640d9cf4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R2FpbmVzdmlsbGV8ZW58MHx8MHx8fDI%3D',
+    'ocala': 'https://images.unsplash.com/photo-1615663573123-db4925280fd4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8T2NhbGF8ZW58MHx8MHx8fDI%3D',
+    'pensacola': 'https://images.unsplash.com/photo-1560381434-5e7025897e65?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVuc2Fjb2xhfGVufDB8fDB8fHwy',
+    'panama-city': 'https://images.unsplash.com/photo-1632505702897-cc41b0ba3b64?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UGFuYW1hJTIwQ2l0eXxlbnwwfHwwfHx8Mg%3D%3D'
   };
 
   if (customImages[filename]) {
