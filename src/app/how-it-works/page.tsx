@@ -159,7 +159,7 @@ export default function HowItWorksPage() {
                   <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Related Resources</h3>
                   <ul className="space-y-2 text-sm font-medium text-gray-700">
                     <li><Link href="/hvac-business-valuation" className="hover:text-orange-600 underline">HVAC Business Valuation — What Drives Your Multiple</Link></li>
-                    <li><Link href="/hvac-business-valuation-calculator" className="hover:text-orange-600 underline">Free Online Valuation Calculator</Link></li>
+                    <li><Link href="/hvac-business-valuation" className="hover:text-orange-600 underline">Free Online Valuation Calculator</Link></li>
                     <li><Link href="/resources/hvac-business-multiples-explained" className="hover:text-orange-600 underline">HVAC Business Multiples Explained</Link></li>
                   </ul>
                 </div>

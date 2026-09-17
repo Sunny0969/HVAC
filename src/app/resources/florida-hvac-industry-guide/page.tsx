@@ -72,7 +72,7 @@ export default function FloridaHvacIndustryGuidePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
           
           <div className="mb-6 flex justify-between items-center">
-            <Link href="/resources" className="inline-flex items-center text-sm font-bold text-[#EE5B2C] hover:text-[#c44922] transition-colors">
+            <Link href="/seller-guides" className="inline-flex items-center text-sm font-bold text-[#EE5B2C] hover:text-[#c44922] transition-colors">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
               Back to Resources
             </Link>
@@ -85,7 +85,7 @@ export default function FloridaHvacIndustryGuidePage() {
               <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">
                 <Link href="/" className="hover:text-[#EE5B2C] transition-colors">Home</Link>
                 <span>/</span>
-                <Link href="/resources" className="hover:text-[#EE5B2C] transition-colors">Resources</Link>
+                <Link href="/seller-guides" className="hover:text-[#EE5B2C] transition-colors">Resources</Link>
                 <span>/</span>
                 <span className="text-[#022B3A] truncate">Florida HVAC Industry Guide</span>
               </nav>

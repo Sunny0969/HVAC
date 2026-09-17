@@ -125,7 +125,7 @@ export default function WhySellWithUsPage() {
               <li>Fleet condition and seasonal working capital</li>
             </ul>
             <p className="text-lg text-gray-700 font-medium leading-relaxed">
-              Find out how these factors apply to your business using our <Link href="/hvac-business-valuation-calculator" className="text-[#EE5B2C] hover:underline font-bold">HVAC business valuation calculator</Link>.
+              Find out how these factors apply to your business using our <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">HVAC business valuation calculator</Link>.
             </p>
           </div>
 

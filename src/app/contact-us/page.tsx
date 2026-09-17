@@ -121,7 +121,7 @@ export default function ContactPage() {
           {/* Additional internal links */}
           <p className="mt-6 text-gray-700">
             Ready to explore available businesses? Browse our <Link href="/listings" className="text-[#EE5B2C] hover:underline font-bold">active HVAC listings</Link>.<br/>
-            Explore our <Link href="/resources" className="text-[#EE5B2C] hover:underline font-bold">HVAC business resources</Link> to learn about the market before we speak.
+            Explore our <Link href="/seller-guides" className="text-[#EE5B2C] hover:underline font-bold">HVAC business resources</Link> to learn about the market before we speak.
           </p>
         </div>
       </div>

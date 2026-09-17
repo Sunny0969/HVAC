@@ -43,7 +43,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const breadcrumbs = [
     { name: "Home", item: "https://www.hvacexitadvisors.com/" },
-    { name: "Resources", item: "https://www.hvacexitadvisors.com/resources" },
+    { name: "Guides", item: "https://www.hvacexitadvisors.com/seller-guides" },
     { name: blog.title, item: `https://www.hvacexitadvisors.com/resources/${slug}` },
   ];
 
@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="mb-8 flex justify-between items-center">
-            <Link href="/resources" className="inline-flex items-center text-sm font-bold text-[#EE5B2C] hover:text-[#c44922] transition-colors">
+            <Link href="/seller-guides" className="inline-flex items-center text-sm font-bold text-[#EE5B2C] hover:text-[#c44922] transition-colors">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
               Back to Resources
             </Link>

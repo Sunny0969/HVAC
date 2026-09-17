@@ -215,7 +215,7 @@ export default function BuyPageContent() {
           >
             <div className="flex justify-between items-end mb-8 px-2">
               <h2 className="text-3xl font-black text-[#022B3A]">Learn More Before You Buy</h2>
-              <Link href="/resources" className="text-[#EE5B2C] font-bold hover:underline hidden sm:block">View All Resources &rarr;</Link>
+              <Link href="/buyer-guides" className="text-[#EE5B2C] font-bold hover:underline hidden sm:block">View All Resources &rarr;</Link>
             </div>
             <div className="grid sm:grid-cols-2 gap-6">
               <Link href="/resources/real-number-evaluating-hvac" className="group block bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-xl hover:border-orange-200 transition-all">
@@ -230,7 +230,7 @@ export default function BuyPageContent() {
               </Link>
             </div>
             <div className="mt-6 text-center sm:hidden">
-              <Link href="/resources" className="text-[#EE5B2C] font-bold hover:underline">View All Resources &rarr;</Link>
+              <Link href="/buyer-guides" className="text-[#EE5B2C] font-bold hover:underline">View All Resources &rarr;</Link>
             </div>
           </motion.div>
       {/* Block 9: SEO Keywords Section for Buyers */}

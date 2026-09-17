@@ -65,7 +65,7 @@ export default function RealNumberEvaluatingHvacPage() {
           <nav aria-label="Breadcrumb" className="text-sm font-semibold text-gray-500 mb-6 flex items-center space-x-2">
             <Link href="/" className="hover:text-[#EE5B2C] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/resources" className="hover:text-[#EE5B2C] transition-colors">Resources</Link>
+            <Link href="/seller-guides" className="hover:text-[#EE5B2C] transition-colors">Resources</Link>
             <span>/</span>
             <span className="text-[#022B3A] truncate">Evaluating an HVAC Business</span>
           </nav>
