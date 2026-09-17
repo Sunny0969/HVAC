@@ -3,8 +3,11 @@ import Link from 'next/link';
 import ContactForm from '../../views/components/ContactForm';
 
 export const metadata: Metadata = {
-  title: "Atlantic Coast HVAC Business Guide: Buy & Sell (2026)",
+  title: { absolute: "Atlantic Coast HVAC Business Guide: Buy & Sell (2026)" },
   description: "Market report and valuation guide for HVAC businesses along Florida's Atlantic Coast, from Jacksonville to Port St. Lucie.",
+  alternates: {
+    canonical: "https://www.hvacexitadvisors.com/atlantic-coast"
+  },
 };
 
 export default function atlanticcoastPage() {
@@ -43,10 +46,10 @@ export default function atlanticcoastPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }} />
-      <main className="min-h-screen bg-gray-50 flex flex-col pt-36">
-        <section className="relative w-full bg-[#022B3A] py-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-          <div className="max-w-4xl mx-auto z-10 relative">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight drop-shadow-xl">
+      <main className="min-h-screen bg-gray-50 flex flex-col ">
+        <section className="relative w-full bg-[#022B3A] pt-36 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-start text-left">
+          <div className="max-w-4xl z-10 relative">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight drop-shadow-xl">
               Atlantic Coast HVAC Business Guide: Buy, Sell, and Value a Company (2026)
             </h1>
             <div className="bg-white/10 backdrop-blur-sm border border-white/20 p-6 rounded-2xl mb-8 text-left inline-block">
@@ -55,7 +58,7 @@ export default function atlanticcoastPage() {
                 Whether you want to buy or sell a Atlantic Coast HVAC business, valuations currently average 2.5x to 4.0x SDE. This market is uniquely driven by space coast aerospace demand, logistics, steady residential. Use this guide to understand regional multiples and evaluate local acquisitions.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
+            <div className="flex flex-col sm:flex-row items-start justify-start gap-4 mt-4">
               <a href="#contact" className="px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
                 Get a Confidential Valuation
               </a>
@@ -122,7 +125,7 @@ export default function atlanticcoastPage() {
             <div className="sticky top-32 bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 border border-gray-100 p-8">
               <h3 className="text-2xl font-black text-[#022B3A] mb-3">Atlantic Coast Consultation</h3>
               <p className="text-gray-600 mb-6 font-medium leading-relaxed">Connect with our local advisors for a confidential valuation.</p>
-              <ContactForm buttonText="Request Confidential Consultation" />
+              <div className="max-h-[500px] overflow-y-auto custom-scrollbar pr-4 w-full"><ContactForm buttonText="Request Confidential Consultation" /></div>
             </div>
           </div>
         </section>
