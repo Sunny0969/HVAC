@@ -24,7 +24,11 @@ async function getListing(slug: string) {
     const res = await fetch(`${API_URL}/listings/${slug}`, { next: { revalidate: 60 } });
     if (!res.ok) return null;
     const data = await res.json();
-    return data.listing;
+    let listing = data.listing;
+    if (listing && listing.coverImage && listing.coverImage.includes('1622322363167')) {
+      listing.coverImage = "https://res.cloudinary.com/db05hw4ri/image/upload/v1789679440/hvac-assets/unsplash_asset_2_1789679439333.jpg";
+    }
+    return listing;
   } catch {
     return null;
   }

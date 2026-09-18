@@ -74,7 +74,7 @@ export default async function Home() {
     content: (l.description || l.title).replace(/<[^>]*>?/gm, "").substring(0, 150) + "...",
     tags: [`${formatMoney(l.revenue)} Revenue`, `${formatMoney(l.cashFlow)} Cash Flow`],
     href: `/listings/${l.slug}`,
-    image: l.coverImage || "https://res.cloudinary.com/db05hw4ri/image/upload/v1789679440/hvac-assets/unsplash_asset_2_1789679439333.jpg"
+    image: (l.coverImage && l.coverImage.includes('1622322363167')) ? "https://res.cloudinary.com/db05hw4ri/image/upload/v1789679440/hvac-assets/unsplash_asset_2_1789679439333.jpg" : l.coverImage || "https://res.cloudinary.com/db05hw4ri/image/upload/v1789679440/hvac-assets/unsplash_asset_2_1789679439333.jpg"
   }));
 
   const baseSchema = {

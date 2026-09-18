@@ -43,6 +43,11 @@ const nextConfig: NextConfig = {
     async redirects() {
     return [
       {
+        source: '/free-valuation',
+        destination: '/free-confidential-valuation',
+        permanent: true,
+      },
+      {
         source: '/about-us/team',
         destination: '/about-us',
         permanent: true,
