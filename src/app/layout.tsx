@@ -24,6 +24,7 @@ export const viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.hvacexitadvisors.com"),
+  publisher: "HVAC Exit Advisors",
   title: {
     template: "%s | HVAC Exit Advisors",
     default: "Florida HVAC Business Broker | HVAC Exit Advisors",
@@ -129,7 +130,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   const isRealGa = gaId && gaId !== "G-XXXXXXXXXX";
 
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en-US" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
