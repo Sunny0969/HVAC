@@ -30,13 +30,16 @@ async function getListing(slug: string) {
   }
 }
 
+export async function generateStaticParams() {
+  const listings = await getAllListings();
+  return listings.map((listing: any) => ({
+    slug: listing.slug,
+  }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const [listing, allListings] = await Promise.all([
-    getListing(slug),
-    getAllListings()
-  ]);
-  const otherListings = allListings.filter((l: any) => l._id !== listing?._id).slice(0, 10);
+  const listing = await getListing(slug);
   if (!listing) return { title: 'Not Found' };
 
   const title = listing.seo?.metaTitle || `${listing.title} | HVAC Business for Sale`;
