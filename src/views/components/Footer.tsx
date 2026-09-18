@@ -2,12 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useFooterController } from "../../controllers/useFooterController";
-import { getRegionSlugForCity } from "../../models/navigationModel";
 
 export default function Footer() {
   const pathname = usePathname();
-  const { navigationData, floridaCities, isAreasOpen, toggleAreas } = useFooterController();
 
   if (pathname?.startsWith("/admin")) return null;
 
@@ -75,16 +72,34 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {navigationData.map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className="text-white/80 hover:text-secondary transition-colors text-sm block py-2">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
               <li>
-                <Link href="/faqs" className="text-white/80 hover:text-secondary transition-colors text-sm block py-2">
+                <Link href="/sell-your-hvac-business" className="text-white/80 hover:text-secondary transition-colors text-sm block py-1.5">
+                  Sell your HVAC Business
+                </Link>
+              </li>
+              <li>
+                <Link href="/buy-an-hvac-business" className="text-white/80 hover:text-secondary transition-colors text-sm block py-1.5">
+                  Buy an HVAC Business
+                </Link>
+              </li>
+              <li>
+                <Link href="/listings" className="text-white/80 hover:text-secondary transition-colors text-sm block py-1.5">
+                  Business for sale
+                </Link>
+              </li>
+              <li>
+                <Link href="/hvac-business-valuation" className="text-white/80 hover:text-secondary transition-colors text-sm block py-1.5">
+                  HVAC business valuation
+                </Link>
+              </li>
+              <li>
+                <Link href="/faqs" className="text-white/80 hover:text-secondary transition-colors text-sm block py-1.5">
                   FAQs
+                </Link>
+              </li>
+              <li>
+                <Link href="/about-us" className="text-white/80 hover:text-secondary transition-colors text-sm block py-1.5">
+                  About us
                 </Link>
               </li>
             </ul>
