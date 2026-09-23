@@ -2,6 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import WhatsAppTracker from "@/views/components/WhatsAppTracker";
+import FloatingWhatsAppButton from "@/views/components/FloatingWhatsAppButton";
 import Header from "../views/components/Header";
 import Footer from "../views/components/Footer";
 import Script from "next/script";
@@ -152,6 +153,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-grow pb-20 md:pb-0">{children}</main>
         <Footer />
         <WhatsAppTracker />
+        <FloatingWhatsAppButton />
       </body>
     </html>
   );
