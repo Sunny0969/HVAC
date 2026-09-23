@@ -79,10 +79,10 @@ export default function SellPageContent() {
           {/* Opening Copy */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
-              Selling an HVAC business can involve several connected decisions: timing, value, confidentiality, buyer selection, financing, employee transition and the owner’s role after closing. A properly managed <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">structured process</Link> gives buyers the information they need while protecting the company’s day-to-day operations.
+              Selling an HVAC business can involve several connected decisions. When evaluating hvac companies for sale, buyers consider: timing, value, confidentiality, buyer selection, financing, employee transition and the owner’s role after closing. A properly managed <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">structured process</Link> gives buyers the information they need while protecting the company’s day-to-day operations.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed font-medium">
-              We help owners prepare the business, present its strengths accurately, screen prospective buyers and evaluate the complete economics of each offer.
+              We help owners prepare the business, present its strengths accurately among other hvac companies for sale, screen prospective buyers looking for an hvac business for sale, and evaluate the complete economics of each offer.
             </p>
           </div>
 
@@ -90,7 +90,7 @@ export default function SellPageContent() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Before the Business Goes to Market</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-              Preparation reduces surprises during buyer review. We organize the information buyers and lenders commonly request and identify issues that may affect value or closing risk. If you are unsure where you stand, utilizing an <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">HVAC valuation calculator</Link> can set a baseline before gathering these documents.
+              Preparation reduces surprises during buyer review, as buyers often compare multiple hvac companies for sale. We organize the information buyers and lenders commonly request and identify issues that may affect value or closing risk. If you are unsure where you stand, utilizing an <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">HVAC valuation calculator</Link> can set a baseline before gathering these documents.
             </p>
             <ul className="space-y-4 text-lg text-gray-700 font-medium">
               <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Three years of business tax returns and profit-and-loss statements</li>
@@ -102,7 +102,7 @@ export default function SellPageContent() {
               <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Technician, salesperson and management roles without premature disclosure</li>
               <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Fleet, equipment, inventory and lease information</li>
               <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Licenses, permits, qualifying-agent arrangements and service territories</li>
-              <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Major customer, vendor and commercial-contract information</li>
+              <li className="flex items-start"><span className="text-[#EE5B2C] mr-3 mt-1">✔</span> Major customer, vendor and commercial-contract information (crucial when listing hvac companies for sale)</li>
             </ul>
           </div>
 
@@ -111,7 +111,7 @@ export default function SellPageContent() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#EE5B2C] opacity-10 rounded-full blur-[80px]" />
             <h2 className="text-3xl font-black mb-6 relative z-10">Confidential Marketing</h2>
             <p className="text-lg text-white/90 leading-relaxed font-medium relative z-10">
-              A confidential sale should not expose the company’s identity before a buyer is properly screened. Initial marketing can describe the opportunity without revealing information that employees, customers or competitors could use to identify the business. Detailed information is released in stages after the buyer signs a confidentiality agreement and satisfies financial qualification requirements.
+              A confidential sale should not expose the company’s identity before a buyer is properly screened. Initial marketing for an hvac business for sale can describe the opportunity without revealing information that employees, customers or competitors could use to identify the business among other hvac companies for sale. Detailed information is released in stages after the buyer signs a confidentiality agreement and satisfies financial qualification requirements.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ export default function SellPageContent() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Comparing Buyer Types</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
-              When screening prospective buyers, we categorize them based on their operational background and financing strategy. Here is a brief comparison of typical HVAC buyers.
+              When screening prospective buyers for hvac companies for sale, we categorize them based on their operational background and financing strategy. Here is a brief comparison of typical buyers looking for an hvac business for sale or broader hvac companies for sale.
             </p>
             <div className="overflow-x-auto rounded-xl border border-gray-200">
               <table className="w-full text-left border-collapse">
@@ -155,7 +155,7 @@ export default function SellPageContent() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Evaluating Offers</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium">
-              The highest headline price is not always the strongest offer. We help the seller compare cash at closing, financing conditions (including <a href="https://www.sba.gov/funding-programs/loans" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">SBA loan requirements</a>), seller notes, earnouts, working capital, assumed liabilities, real-estate terms, transition requirements and the buyer’s ability to close.
+              The highest headline price is not always the strongest offer when reviewing hvac companies for sale. We help the seller of an hvac business for sale compare cash at closing, financing conditions (including <a href="https://www.sba.gov/funding-programs/loans" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">SBA loan requirements</a>), seller notes, earnouts, working capital, assumed liabilities, real-estate terms, transition requirements and the buyer’s ability to close.
             </p>
           </div>
 

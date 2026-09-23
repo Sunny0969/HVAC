@@ -80,7 +80,7 @@ export default function Hero() {
       >
         <Image
           src="/florida-hvac-business-broker-home.jpg"
-          alt="Florida commercial rooftop HVAC units at dusk"
+          alt="hvac business for sale - Florida commercial rooftop HVAC units at dusk"
           fill
           priority
           sizes="100vw"

@@ -4,24 +4,24 @@ import React, { useState } from 'react';
 
 const faqs = [
   {
-    q: "What should I prepare before selling my HVAC business?",
-    a: "Prepare three years of tax returns and profit-and-loss statements, current year-to-date financials, a balance sheet, payroll and owner compensation details, maintenance-agreement data, revenue by service category, fleet and equipment schedules, lease information, licensing arrangements, and major customer or vendor information."
+    q: "What should I prepare before listing hvac companies for sale?",
+    a: "When preparing an hvac business for sale, gather three years of tax returns and profit-and-loss statements, current year-to-date financials, a balance sheet, payroll and owner compensation details, maintenance-agreement data, revenue by service category, fleet and equipment schedules, lease information, licensing arrangements, and major customer or vendor information."
   },
   {
-    q: "Will employees and customers be told that the business is for sale?",
-    a: "Not during confidential marketing. Employees, customers, vendors, and competitors should not be contacted without the seller's prior written authorization and the permissions established in the transaction documents."
+    q: "Will employees know the hvac business for sale is on the market?",
+    a: "Not during confidential marketing of hvac companies for sale. Employees, customers, vendors, and competitors should not be contacted without the seller's prior written authorization and the permissions established in the transaction documents."
   },
   {
     q: "Is the highest offer always the best offer?",
     a: "No. A seller should compare cash at closing, financing contingencies, escrow, seller financing, earnouts, working-capital requirements, assumed liabilities, transition obligations, licensing conditions, and the buyer's actual ability to close."
   },
   {
-    q: "How long does it take to sell an HVAC business?",
-    a: "Timing varies with preparation, price, buyer qualification, financing, licensing, landlord approval, due diligence, and legal documentation. A well-prepared cash transaction may close faster, while an SBA-financed or more complex transaction can take several months."
+    q: "How long does it take to sell an hvac business for sale?",
+    a: "For hvac companies for sale, timing varies with preparation, price, buyer qualification, financing, licensing, landlord approval, due diligence, and legal documentation. A well-prepared cash transaction may close faster, while an SBA-financed or more complex transaction can take several months."
   },
   {
-    q: "How do maintenance agreements affect the final valuation?",
-    a: "Active preventative maintenance agreements (PMAs) demonstrate predictable, recurring cash flow to a potential buyer. Properly documented and transferable PMAs can often increase the final exit multiple significantly compared to a purely install-driven company, as they reduce risk for the acquirer."
+    q: "How do maintenance agreements affect the value of hvac companies for sale?",
+    a: "For any hvac business for sale, active preventative maintenance agreements (PMAs) demonstrate predictable, recurring cash flow to buyers reviewing hvac companies for sale. Properly documented and transferable PMAs can often increase the final exit multiple significantly compared to a purely install-driven company, as they reduce risk for the acquirer."
   }
 ];
 

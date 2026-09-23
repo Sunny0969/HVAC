@@ -4,18 +4,19 @@ import Link from 'next/link';
 import BreadcrumbSchema from '../../views/components/BreadcrumbSchema';
 import ContactForm from '../../views/components/ContactForm';
 import HvacValuationFaq from '../../views/components/HvacValuationFaq';
+import HowMuchWorth from '../../views/components/HowMuchWorth';
 import ValuationTopSummary from '../../views/components/ValuationTopSummary';
 import ValuationPeopleAlsoAsk from '../../views/components/ValuationPeopleAlsoAsk';
 
 export const metadata: Metadata = {
-  title: "HVAC Business Valuation in Florida",
-  description: "Learn how earnings, recurring agreements, technicians, service mix and owner dependence affect the value of an HVAC business.",
+  title: "How to Value a Heating and Air Conditioning Business",
+  description: "Learn how to value a heating and air conditioning business based on earnings, recurring agreements, technicians, service mix and owner dependence.",
   alternates: {
     canonical: "https://www.hvacexitadvisors.com/hvac-business-valuation"
   },
   openGraph: {
-    title: "HVAC Business Valuation in Florida",
-    description: "Learn how earnings, recurring agreements, technicians, service mix and owner dependence affect the value of an HVAC business.",
+    title: "How to Value a Heating and Air Conditioning Business",
+    description: "Learn how to value a heating and air conditioning business based on earnings, recurring agreements, technicians, service mix and owner dependence.",
     url: "https://www.hvacexitadvisors.com/hvac-business-valuation",
     images: [{ url: "/florida-hvac-business-valuation.jpg", width: 1200, height: 630, alt: "HVAC Business Valuation in Florida" }]
   }
@@ -145,6 +146,7 @@ export default function HVACBusinessValuationPage() {
                 </div>
               </div>
 
+              <HowMuchWorth />
               {/* FAQs */}
               <ValuationPeopleAlsoAsk />
               <HvacValuationFaq />

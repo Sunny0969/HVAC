@@ -5,8 +5,8 @@ import BuyTopSummary from "@/views/components/BuyTopSummary";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Buy an HVAC Business in Florida",
-  description: "Search for Florida HVAC and mechanical-service acquisitions with a confidential and financially qualified buyer process.",
+  title: "Business HVAC | Buy an HVAC Business in Florida",
+  description: "Looking for a business hvac opportunity? Search for Florida HVAC and mechanical-service acquisitions with a confidential and financially qualified buyer process.",
   alternates: {
     canonical: "https://www.hvacexitadvisors.com/buy-an-hvac-business",
   },
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Buy an HVAC Business in Florida",
-    description: "Search for Florida HVAC and mechanical-service acquisitions with a confidential and financially qualified buyer process.",
+    title: "Business HVAC | Buy an HVAC Business in Florida",
+    description: "Looking for a business hvac opportunity? Search for Florida HVAC and mechanical-service acquisitions with a confidential and financially qualified buyer process.",
     images: [
       {
         url: "/buy-an-hvac-business.jpg",
@@ -144,7 +144,7 @@ export default function BuyHvacBusinessPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/buy-an-hvac-business.jpg"
-            alt="Business meeting for HVAC acquisition"
+            alt="business hvac - Business meeting for HVAC acquisition"
             fill
             priority
             sizes="100vw"
@@ -161,7 +161,7 @@ export default function BuyHvacBusinessPage() {
             <span className="text-white">Buy an HVAC Business</span>
           </nav>
           <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">
-            Acquire an HVAC Business That Fits Your Objectives
+            Business HVAC
           </h1>
           
           <p className="max-w-3xl text-xl text-white/90 leading-relaxed font-medium mb-10 drop-shadow-md">

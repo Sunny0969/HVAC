@@ -5,8 +5,8 @@ import SellPageContent from '../../views/components/SellPageContent';
 import SellTopSummary from '../../views/components/SellTopSummary';
 
 export const metadata: Metadata = {
-  title: 'Sell Your HVAC Business in Florida',
-  description: 'Prepare, value and confidentially market your Florida HVAC business to qualified buyers with transaction support through closing.',
+  title: 'HVAC Business for Sale | Sell Your Florida HVAC Business',
+  description: 'Looking for an HVAC business for sale? Prepare, value and confidentially market your Florida HVAC business to qualified buyers with transaction support.',
   alternates: {
     canonical: 'https://www.hvacexitadvisors.com/sell-your-hvac-business',
   },
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'Sell Your HVAC Business in Florida',
-    description: 'Prepare, value and confidentially market your Florida HVAC business to qualified buyers with transaction support through closing.',
+    title: 'HVAC Business for Sale | Sell Your Florida HVAC Business',
+    description: 'Looking for an HVAC business for sale? Prepare, value and confidentially market your Florida HVAC business to qualified buyers with transaction support.',
     images: [
       {
         url: '/images/og-hvac-rooftop-florida.webp',
@@ -137,7 +137,7 @@ export default function SellYourHVACBusiness() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/sell-your-hvac-business.jpg"
-            alt="Selling Florida HVAC Business"
+            alt="hvac companies for sale - Selling Florida HVAC Business"
             fill
             priority
             sizes="100vw"
@@ -148,7 +148,7 @@ export default function SellYourHVACBusiness() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left relative z-10 w-full mt-16 md:mt-0">
-          <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">A Structured Process for Selling Your HVAC Business</h1>
+          <h1 className="max-w-4xl text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight drop-shadow-xl">HVAC Companies for Sale</h1>
           <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl leading-relaxed font-medium">
             HVAC Exit Advisors helps Florida heating and air conditioning business owners sell for top dollar confidentially, with buyers who are actually qualified to close.
           </p>
