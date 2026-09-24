@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   description: "Premier Florida HVAC business broker. Buy or sell your heating and air conditioning company with our confidential, expert guidance. Contact us today!",
   keywords: ["Florida HVAC Business Broker", "Sell HVAC business in Florida", "Buy HVAC company Florida", "HVAC brokerage firm FL", "HVAC business valuation"],
   verification: {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION,
+    google: "gABNog4AJ9yVqmqpSNq5I3zNcIR3BbeM_Tqdq8y_T2I",
   },
   robots: {
     index: true,
