@@ -127,8 +127,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     ],
   };
 
-  const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const isRealGa = gaId && gaId !== "G-XXXXXXXXXX";
+  const gaId = "G-N89TK8JF9G";
+  const isRealGa = true;
 
   return (
     <html lang="en-US" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
