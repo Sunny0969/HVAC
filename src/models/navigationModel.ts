@@ -19,7 +19,7 @@ export const navigationData: NavItem[] = [
     href: "#",
     children: [
       { label: "Buy an HVAC Business", href: "/buy-an-hvac-business" },
-      { label: "Buyer Process", href: "#" },
+      { label: "Buyer Process", href: "/buyer-process" },
       { label: "Businesses for Sale", href: "/listings" },
     ]
   },
