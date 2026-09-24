@@ -93,8 +93,8 @@ export default function Hero() {
       {/* Foreground Real DOM Content (SEO + LCP) */}
       <div className="relative z-20 px-4 max-w-7xl w-full mx-auto mt-16 md:mt-0 text-left">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-5 drop-shadow-xl tracking-tight leading-tight max-w-3xl">
-          Sell Your HVAC Business <span className="text-[#EE5B2C]">Confidentially and With Confidence</span>
-        </h1>
+            HVAC Business for Sale <br className="hidden md:block" /> <span className="text-[#EE5B2C]">- Sell Your Business Confidentially.</span>
+          </h1>
         <p className="text-base md:text-lg text-white/90 mb-4 max-w-2xl font-medium drop-shadow-md leading-relaxed">
           You spent years building your company, serving customers and developing a skilled team. When you begin considering a sale, you deserve clear information about value, preparation, buyer qualifications and the terms that can affect what you ultimately receive.
         </p>
