@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { floridaCities, getRegionSlugForCity } from '../models/navigationModel';
+import { areasWeServeData } from '../models/navigationModel';
 
 let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
 _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
@@ -19,15 +19,31 @@ async function getListings() {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.hvacexitadvisors.com';
   
-  const cityRoutes = floridaCities.map(city => {
-    const slug = city.toLowerCase().replace(/\s+/g, '-');
-    return {
-      url: `${baseUrl}/${getRegionSlugForCity(city)}/${slug}`,
+  const regionRoutes: MetadataRoute.Sitemap = [];
+  const cityRoutes: MetadataRoute.Sitemap = [];
+
+  for (const [regionName, cities] of Object.entries(areasWeServeData)) {
+    const regionSlug = regionName.toLowerCase().replace(/\s+/g, '-');
+    
+    // Add Region Page
+    regionRoutes.push({
+      url: `${baseUrl}/${regionSlug}`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.7,
-    };
-  });
+      priority: 0.8,
+    });
+
+    // Add City Pages
+    for (const city of cities) {
+      const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+      cityRoutes.push({
+        url: `${baseUrl}/${regionSlug}/${citySlug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      });
+    }
+  }
 
   const listingsData = await getListings();
   const listingRoutes = listingsData.map((listing) => ({
@@ -57,8 +73,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/resources/timing-purchase-florida`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/resources/hvac-business-multiples-explained`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     { url: `${baseUrl}/resources/florida-hvac-industry-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
-    ...listingRoutes,
+    ...regionRoutes,
     ...cityRoutes,
+    ...listingRoutes,
     { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/terms-of-service`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 }
   ];
