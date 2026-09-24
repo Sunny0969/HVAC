@@ -16,6 +16,17 @@ async function getListings() {
   }
 }
 
+async function getBlogs() {
+  try {
+    const res = await fetch(`${API_URL}/blogs`);
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.blogs || [];
+  } catch (error) {
+    return [];
+  }
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://www.hvacexitadvisors.com';
   
@@ -25,7 +36,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   for (const [regionName, cities] of Object.entries(areasWeServeData)) {
     const regionSlug = regionName.toLowerCase().replace(/\s+/g, '-');
     
-    // Add Region Page
     regionRoutes.push({
       url: `${baseUrl}/${regionSlug}`,
       lastModified: new Date(),
@@ -33,7 +43,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     });
 
-    // Add City Pages
     for (const city of cities) {
       const citySlug = city.toLowerCase().replace(/\s+/g, '-');
       cityRoutes.push({
@@ -46,12 +55,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   const listingsData = await getListings();
-  const listingRoutes = listingsData.map((listing) => ({
+  const listingRoutes = listingsData.map((listing: any) => ({
     url: `${baseUrl}/listings/${listing.slug}`,
     lastModified: new Date(listing.updatedAt || new Date()),
     changeFrequency: 'weekly',
     priority: 0.8,
   }));
+
+  const blogsData = await getBlogs();
+  const sellerBlogSlugs = ["hvac-business-in-florida", "florida-hvac-industry-guide"];
+  const buyerBlogSlugs = ["why-every-hvac-owner-in-florida-needs-an-exit-strategy", "timing-purchase-florida"];
+  
+  const blogRoutes = blogsData.map((blog: any) => {
+    let prefix = 'resources';
+    if (sellerBlogSlugs.includes(blog.slug)) {
+      prefix = 'seller-guides';
+    } else if (buyerBlogSlugs.includes(blog.slug)) {
+      prefix = 'buyer-guides';
+    }
+    
+    return {
+      url: `${baseUrl}/${prefix}/${blog.slug}`,
+      lastModified: new Date(blog.updatedAt || new Date()),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+    };
+  });
 
   return [
     { url: `${baseUrl}`, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
@@ -69,13 +98,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${baseUrl}/faqs`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/seller-guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${baseUrl}/buyer-guides`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
-    { url: `${baseUrl}/resources/real-number-evaluating-hvac`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/resources/timing-purchase-florida`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/resources/hvac-business-multiples-explained`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
-    { url: `${baseUrl}/resources/florida-hvac-industry-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.75 },
     ...regionRoutes,
     ...cityRoutes,
     ...listingRoutes,
+    ...blogRoutes,
     { url: `${baseUrl}/privacy-policy`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/terms-of-service`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.3 }
   ];

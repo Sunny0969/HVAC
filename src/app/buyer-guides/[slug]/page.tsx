@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: blog.seoTitle || blog.title,
     description: blog.seoDescription || blog.excerpt,
-    alternates: { canonical: (blog.seo?.canonicalUrl || "").replace("/blog/", "/resources/").replace("/resources/", "/resources/") || `https://www.hvacexitadvisors.com/resources/${slug}` },
+    alternates: { canonical: (blog.seo?.canonicalUrl || "").replace("/blog/", "/buyer-guides/").replace("/resources/", "/buyer-guides/") || `https://www.hvacexitadvisors.com/buyer-guides/${slug}` },
     openGraph: {
       title: blog.seoTitle || blog.title,
       description: blog.seoDescription || blog.excerpt,
@@ -56,8 +56,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const breadcrumbs = [
     { name: "Home", item: "https://www.hvacexitadvisors.com/" },
-    { name: "Resources", item: "https://www.hvacexitadvisors.com/resources" },
-    { name: blog.title, item: `https://www.hvacexitadvisors.com/resources/${slug}` },
+    { name: "Buyer Guides", item: "https://www.hvacexitadvisors.com/buyer-guides" },
+    { name: blog.title, item: `https://www.hvacexitadvisors.com/buyer-guides/${slug}` },
   ];
 
   // Extract H2 headings for Table of Contents

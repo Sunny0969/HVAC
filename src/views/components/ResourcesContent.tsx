@@ -25,9 +25,10 @@ interface CmsBlog {
 interface Props {
   staticArticles: StaticArticle[];
   cmsBlogs: CmsBlog[];
+  basePath?: string;
 }
 
-export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
+export default function ResourcesContent({ staticArticles, cmsBlogs, basePath = "/resources" }: Props) {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
@@ -48,7 +49,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
     })),
     ...cmsBlogs.map((b) => ({
       id: b.id,
-      slug: `/resources/${b.slug}`,
+      slug: `${basePath}/${b.slug}`,
       title: b.title,
       description: b.description,
       image: b.image,
@@ -57,7 +58,7 @@ export default function ResourcesContent({ staticArticles, cmsBlogs }: Props) {
       category: b.category || "Blog",
       readTime: "",
       isStatic: false,
-      href: `/resources/${b.slug}`,
+      href: `${basePath}/${b.slug}`,
     })),
   ], [staticArticles, cmsBlogs]);
 

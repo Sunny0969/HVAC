@@ -125,7 +125,7 @@ export default async function BuyerGuidesPage() {
 
         {/* Main Content - two columns with sticky sidebar */}
         <div id="articles">
-          <ResourcesContent staticArticles={[]} cmsBlogs={cmsBlogs} />
+          <ResourcesContent staticArticles={[]} cmsBlogs={cmsBlogs} basePath="/buyer-guides" />
         </div>
 
       </main>
