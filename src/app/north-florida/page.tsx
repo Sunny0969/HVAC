@@ -76,7 +76,7 @@ export default function northfloridaPage() {
               <a href="#contact" className="px-8 py-4 bg-[#EE5B2C] hover:bg-orange-600 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto">
                 Get a Confidential Valuation
               </a>
-              <a href="https://wa.me/19548649161" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center">
+              <a href="https://wa.me/19548649161?text=Hi%20HVAC%20Exit%20Advisors%2C%20I%20have%20a%20query%20about%20your%20services%20and%20would%20like%20some%20more%20information." target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all w-full sm:w-auto flex items-center justify-center">
                 Chat on WhatsApp
               </a>
             </div>

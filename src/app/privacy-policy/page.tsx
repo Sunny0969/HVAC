@@ -131,7 +131,7 @@ export default function PrivacyPolicyPage() {
                   Sunrise, FL 33351
                 </a>
                 <p className="text-gray-600 mb-1">Email: <a href="mailto:contact@hvacexitadvisors.com" className="text-[#EE5B2C] hover:underline">contact@hvacexitadvisors.com</a></p>
-                <p className="text-gray-600">Phone: <a href="https://wa.me/19548649161" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">(954) 864-9161</a></p>
+                <p className="text-gray-600">Phone: <a href="https://wa.me/19548649161?text=Hi%20HVAC%20Exit%20Advisors%2C%20I%20have%20a%20query%20about%20your%20services%20and%20would%20like%20some%20more%20information." target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">(954) 864-9161</a></p>
               </div>
             </section>
 

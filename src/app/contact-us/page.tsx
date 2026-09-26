@@ -111,7 +111,7 @@ export default function ContactPage() {
               Call us directly or send a message via WhatsApp to speak with a dedicated broker immediately. We are available to answer your questions and guide you through the process.
             </p>
             <p className="font-bold text-lg mb-2">
-              Direct Line / WhatsApp: <a href="https://wa.me/19548649161" className="text-[#EE5B2C] hover:underline">+1 (954) 864-9161</a>
+              Direct Line / WhatsApp: <a href="https://wa.me/19548649161?text=Hi%20HVAC%20Exit%20Advisors%2C%20I%20have%20a%20query%20about%20your%20services%20and%20would%20like%20some%20more%20information." className="text-[#EE5B2C] hover:underline">+1 (954) 864-9161</a>
             </p>
             <p className="text-white/80 text-sm">
               Office: 10242 NW 47th St, Ste 39C, Sunrise, FL 33351

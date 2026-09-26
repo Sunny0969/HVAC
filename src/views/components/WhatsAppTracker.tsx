@@ -5,14 +5,11 @@ export default function WhatsAppTracker() {
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       let target = e.target as HTMLElement | null;
+      const anchor = target?.closest('a');
       
-      // Traverse up to find if clicked inside an anchor tag
-      while (target && target.tagName !== 'A') {
-        target = target.parentElement;
-      }
-      
-      if (target && target.tagName === 'A') {
-        const href = (target as HTMLAnchorElement).href || '';
+      if (anchor) {
+        const href = anchor.href || '';
+        
         if (href.includes('api.whatsapp.com') || href.includes('wa.me')) {
           // Track whatsapp click
           fetch('/api/contact', {
