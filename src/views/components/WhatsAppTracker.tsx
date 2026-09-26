@@ -18,6 +18,7 @@ export default function WhatsAppTracker() {
           fetch('/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            keepalive: true,
             body: JSON.stringify({
               formType: 'WhatsApp Click',
               name: 'WhatsApp User',

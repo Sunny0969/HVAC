@@ -5,7 +5,7 @@ import React from 'react';
 export default function FloatingWhatsAppButton() {
   return (
     <a
-      href="https://wa.me/19548649161"
+      href="https://wa.me/19548649161?text=Hi%20HVAC%20Exit%20Advisors!%20I%20would%20like%20to%20learn%20more%20about%20selling%20or%20buying%20an%20HVAC%20business.%20Can%20you%20please%20provide%20more%20information%3F"
       target="_blank"
       rel="noopener noreferrer"
       className="fixed right-0 top-1/2 -translate-y-1/2 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-l-xl shadow-2xl hover:w-16 hover:bg-[#20bd5a] transition-all duration-300 group"
