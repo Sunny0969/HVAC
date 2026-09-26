@@ -278,6 +278,7 @@ export default function AdminLeads() {
                 <th>Placement</th>
                 <th>Location (page)</th>
                 <th>Page URL</th>
+                <th>Visitor Info</th>
                 <th />
               </tr>
             </thead>

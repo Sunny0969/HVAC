@@ -4,6 +4,17 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, phone, message, formType, additionalData } = body;
+    
+    // Extract headers for better WhatsApp tracking
+    const city = request.headers.get('x-vercel-ip-city') || request.headers.get('x-real-ip') || 'Unknown City';
+    const region = request.headers.get('x-vercel-ip-region') || '';
+    const country = request.headers.get('x-vercel-ip-country') || '';
+    const userAgent = request.headers.get('user-agent') || 'Unknown Device';
+    
+    const locationString = city !== 'Unknown City' ? `${city}${region ? ', ' + region : ''}${country ? ', ' + country : ''}` : 'Unknown Location';
+    
+    const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(userAgent) ? 'Mobile' : 'Desktop';
+    
 
     const apiKey = process.env.RESEND_API_KEY || ('re_' + 'ARAabH7H_' + 'BqohdKgcqb22a7GSZua2ywoz');
     const FROM_EMAIL = 'HVAC Exit Advisors <contact@hvacexitadvisors.com>';
@@ -15,7 +26,9 @@ export async function POST(request: Request) {
       <p><strong>Email:</strong> ${email || 'N/A'}</p>
       <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
       <p><strong>Message:</strong> ${message || 'N/A'}</p>
-      ${additionalData ? `<p><strong>Additional Info:</strong> <pre>${JSON.stringify(additionalData, null, 2)}</pre></p>` : ''}
+      ${'<p><strong>System Captured Location:</strong> ' + locationString + '</p>'}
+      ${'<p><strong>Device Type:</strong> ' + isMobile + '</p>'}
+      ${additionalData ? `<p><strong>Additional Info:</strong> <pre>${JSON.stringify(enrichedAdditionalData || additionalData, null, 2)}</pre></p>` : ''}
     `;
 
     const adminRes = await fetch('https://api.resend.com/emails', {
@@ -82,7 +95,15 @@ export async function POST(request: Request) {
       _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
       const API_URL = `${_rootUrl}/api`;
 
+      const enrichedAdditionalData = {
+        ...additionalData,
+        capturedLocation: locationString,
+        deviceType: isMobile,
+        userAgent: userAgent
+      };
+
       const payload = {
+
         type: formType === 'WhatsApp Click' ? 'whatsapp' : 'contact',
         source: formType || 'Contact Form',
         name: name || 'N/A',
@@ -93,7 +114,8 @@ export async function POST(request: Request) {
         pageUrl: additionalData?.pageUrl || '',
         placement: formType || 'contact_form',
         company: additionalData?.company || '',
-        location: additionalData?.pagePath || ''
+        location: locationString !== 'Unknown Location' ? locationString : (additionalData?.pagePath || ''),
+        metadata: enrichedAdditionalData
       };
 
       const cmsRes = await fetch(`${API_URL}/public/leads`, {

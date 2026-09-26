@@ -163,7 +163,7 @@ router.post('/leads', async (req, res, next) => {
     }
 
     const lead = await Lead.create({
-      type: 'form',
+      type: req.body?.type === 'whatsapp' ? 'whatsapp' : 'form',
       source,
       status: 'new',
       name,
@@ -175,6 +175,7 @@ router.post('/leads', async (req, res, next) => {
       pagePath,
       pageUrl: clip(req.body?.pageUrl || '', 500),
       placement: clip(req.body?.placement || '', 80),
+        extra: req.body?.metadata || req.body?.extra || {},
       extra: typeof req.body?.extra === 'object' && req.body.extra ? req.body.extra : {},
     });
 
