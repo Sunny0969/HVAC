@@ -277,7 +277,6 @@ export default function AdminLeads() {
                 <th>Event</th>
                 <th>Placement</th>
                 <th>Location (page)</th>
-                <th>Page URL</th>
                 <th>Visitor Info</th>
                 <th />
               </tr>
@@ -297,12 +296,14 @@ export default function AdminLeads() {
                     <code className="admin-code">{lead.location || lead.pagePath || '—'}</code>
                   </td>
                   <td>
-                    {lead.pageUrl ? (
-                      <a href={lead.pageUrl} target="_blank" rel="noreferrer">
-                        Open page
-                      </a>
+                    {lead.extra && Object.keys(lead.extra).length > 0 ? (
+                      <div style={{fontSize: '0.85em', color: '#999', lineHeight: '1.4'}}>
+                        {lead.extra.capturedLocation && <div><strong style={{color: '#fff'}}>Loc:</strong> {lead.extra.capturedLocation}</div>}
+                        {lead.extra.deviceType && <div><strong style={{color: '#fff'}}>Device:</strong> {lead.extra.deviceType}</div>}
+                        {lead.extra.userAgent && <div style={{fontSize: '0.8em', opacity: 0.7, marginTop: '2px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '200px'}} title={lead.extra.userAgent}>{lead.extra.userAgent}</div>}
+                      </div>
                     ) : (
-                      '—'
+                      <span className="admin-muted">N/A</span>
                     )}
                   </td>
                   <td className="admin-actions-cell">
