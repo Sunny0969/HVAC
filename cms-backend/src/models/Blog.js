@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+guideType: this.guideType || 'seller-guide',import mongoose from 'mongoose';
 import { toSlug } from '../utils/slug.js';
 
 const faqSchema = new mongoose.Schema(
@@ -67,7 +67,7 @@ const blogSchema = new mongoose.Schema(
     guideType: {
       type: String,
       enum: ['seller-guide', 'buyer-guide', 'resource'],
-      default: 'resource',
+      default: 'seller-guide',
     },
     tags: {
       type: [String],

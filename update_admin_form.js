@@ -3,43 +3,46 @@ const fs = require('fs');
 const path = 'src/admin/AdminBlogForm.tsx';
 let content = fs.readFileSync(path, 'utf8');
 
-if (!content.includes('guideType')) {
-  content = content.replace(
-    'const [categoryId, setCategoryId] = useState(\'\');',
-    'const [categoryId, setCategoryId] = useState(\'\');\n  const [guideType, setGuideType] = useState(\'resource\');'
-  );
+// Change default state to seller-guide
+content = content.replace(
+  "const [guideType, setGuideType] = useState('resource');",
+  "const [guideType, setGuideType] = useState('seller-guide');"
+);
 
-  content = content.replace(
-    /setTags\(\(blog\.tags \|\| \[\]\)\.join\(', '\)\);/,
-    `setTags((blog.tags || []).join(', '));
-        setGuideType(blog.guideType || 'resource');`
-  );
+// Change fallback to seller-guide
+content = content.replace(
+  "setGuideType(blog.guideType || 'resource');",
+  "setGuideType(blog.guideType || 'seller-guide');"
+);
 
-  content = content.replace(
-    /category:\s*categoryId\s*\|\|\s*null,/,
-    `category: categoryId || null,
-      guideType,`
-  );
+// We need to insert the guideType dropdown right before the tags input if category fails, or right before category.
+// Let's replace the whole Category row safely using Regex.
+const categoryRowRegex = /<div className="admin-row">\s*<label className="admin-field">\s*<span>Category<\/span>[\s\S]*?<\/button>\s*<\/div>/;
 
-  // Inject UI right above the category dropdown
-  const categoryUI = `<div className="admin-row">
-          <label className="admin-field">
-            <span>Category</span>`;
-  const guideTypeUI = `<div className="admin-row">
+const newSection = `<div className="admin-row">
           <label className="admin-field">
             <span>Show In Section</span>
             <select value={guideType} onChange={(e) => setGuideType(e.target.value)}>
               <option value="seller-guide">Seller Guides</option>
               <option value="buyer-guide">Buyer Guides</option>
-              <option value="resource">Resources</option>
             </select>
           </label>
-        </div>\n        ` + categoryUI;
+        </div>`;
 
-  content = content.replace(categoryUI, guideTypeUI);
-
-  fs.writeFileSync(path, content);
-  console.log("Added guideType to AdminBlogForm.tsx");
+if (!content.includes('Show In Section')) {
+  // First, capture the exact category row
+  const match = content.match(categoryRowRegex);
+  if (match) {
+    content = content.replace(categoryRowRegex, newSection + '\n\n          ' + match[0]);
+  } else {
+    // If we can't find the category row, let's put it before the tags input
+    const tagsRegex = /<label className="admin-field">\s*<span>Tags/;
+    content = content.replace(tagsRegex, newSection + '\n\n          $&');
+  }
 } else {
-  console.log("guideType already exists");
+  // If 'Show In Section' is already there but has 'resource', remove it
+  content = content.replace(/<option value="resource">Resources<\/option>/, '');
 }
+
+fs.writeFileSync(path, content);
+console.log("Updated AdminBlogForm.tsx with Section dropdown and removed Resources");

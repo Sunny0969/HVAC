@@ -46,7 +46,7 @@ export default function AdminBlogForm() {
   const [coverImage, setCoverImage] = useState('');
   const [coverImageAlt, setCoverImageAlt] = useState('');
   const [categoryId, setCategoryId] = useState('');
-  const [guideType, setGuideType] = useState('resource');
+  const [guideType, setGuideType] = useState('seller-guide');
   const [tags, setTags] = useState('');
   const [faqs, setFaqs] = useState<BlogFaq[]>([{ question: '', answer: '' }]);
   const [seo, setSeo] = useState<BlogSeo>(emptySeo);
@@ -84,7 +84,7 @@ export default function AdminBlogForm() {
               : ''
         );
         setTags((blog.tags || []).join(', '));
-        setGuideType(blog.guideType || 'resource');
+        setGuideType(blog.guideType || 'seller-guide');
         setFaqs(blog.faqs?.length ? blog.faqs : [{ question: '', answer: '' }]);
         setSeo({ ...emptySeo, ...blog.seo });
         setStatus(blog.status);
@@ -264,6 +264,16 @@ export default function AdminBlogForm() {
         />
 
         <div className="admin-row">
+          <label className="admin-field">
+            <span>Show In Section</span>
+            <select value={guideType} onChange={(e) => setGuideType(e.target.value)}>
+              <option value="seller-guide">Seller Guides</option>
+              <option value="buyer-guide">Buyer Guides</option>
+            </select>
+          </label>
+        </div>
+
+          <div className="admin-row">
           <label className="admin-field">
             <span>Category</span>
             <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
