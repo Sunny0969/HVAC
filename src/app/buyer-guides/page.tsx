@@ -26,7 +26,7 @@ export default async function BuyerGuidesPage() {
     const res = await fetch(`${API_URL}/blogs`, { next: { revalidate: 60 } });
     if (res.ok) {
       const data = await res.json();
-      cmsBlogs = (data.blogs || []).filter((b: any) => b.slug === "why-every-hvac-owner-in-florida-needs-an-exit-strategy" || b.slug === "timing-purchase-florida");
+      cmsBlogs = (data.blogs || []).filter((b: any) => b.guideType === "buyer-guide");
     }
   } catch {
     // ignore

@@ -64,6 +64,11 @@ const blogSchema = new mongoose.Schema(
       ref: 'Category',
       default: null,
     },
+    guideType: {
+      type: String,
+      enum: ['seller-guide', 'buyer-guide', 'resource'],
+      default: 'resource',
+    },
     tags: {
       type: [String],
       default: [],
@@ -145,6 +150,7 @@ blogSchema.methods.toFrontendCard = function toFrontendCard() {
         : this.createdAt?.toISOString?.().slice(0, 10) || '',
     tags: this.tags || [],
     category: categoryName,
+    guideType: this.guideType || 'resource',
     // Listing must carry CMS SEO so SPA/prerender meta never falls back to placeholders.
     seoTitle: seo.metaTitle || undefined,
     seoDescription: seo.metaDescription || undefined,

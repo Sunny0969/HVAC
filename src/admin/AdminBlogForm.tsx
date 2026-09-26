@@ -46,6 +46,7 @@ export default function AdminBlogForm() {
   const [coverImage, setCoverImage] = useState('');
   const [coverImageAlt, setCoverImageAlt] = useState('');
   const [categoryId, setCategoryId] = useState('');
+  const [guideType, setGuideType] = useState('resource');
   const [tags, setTags] = useState('');
   const [faqs, setFaqs] = useState<BlogFaq[]>([{ question: '', answer: '' }]);
   const [seo, setSeo] = useState<BlogSeo>(emptySeo);
@@ -83,6 +84,7 @@ export default function AdminBlogForm() {
               : ''
         );
         setTags((blog.tags || []).join(', '));
+        setGuideType(blog.guideType || 'resource');
         setFaqs(blog.faqs?.length ? blog.faqs : [{ question: '', answer: '' }]);
         setSeo({ ...emptySeo, ...blog.seo });
         setStatus(blog.status);
@@ -134,6 +136,7 @@ export default function AdminBlogForm() {
       coverImage: coverImage.trim(),
       coverImageAlt: coverImageAlt.trim(),
       category: categoryId || null,
+      guideType,
       tags: tags
         .split(',')
         .map((t) => t.trim())

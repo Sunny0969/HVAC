@@ -63,14 +63,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const blogsData = await getBlogs();
-  const sellerBlogSlugs = ["hvac-business-in-florida", "florida-hvac-industry-guide"];
-  const buyerBlogSlugs = ["why-every-hvac-owner-in-florida-needs-an-exit-strategy", "timing-purchase-florida"];
-  
   const blogRoutes = blogsData.map((blog: any) => {
     let prefix = 'resources';
-    if (sellerBlogSlugs.includes(blog.slug)) {
+    if (blog.guideType === 'seller-guide') {
       prefix = 'seller-guides';
-    } else if (buyerBlogSlugs.includes(blog.slug)) {
+    } else if (blog.guideType === 'buyer-guide') {
       prefix = 'buyer-guides';
     }
     

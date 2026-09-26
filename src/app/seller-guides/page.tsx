@@ -26,7 +26,7 @@ export default async function SellerGuidesPage() {
     const res = await fetch(`${API_URL}/blogs`, { next: { revalidate: 60 } });
     if (res.ok) {
       const data = await res.json();
-      cmsBlogs = (data.blogs || []).filter((b: any) => b.slug === "hvac-business-in-florida" || b.slug === "florida-hvac-industry-guide");
+      cmsBlogs = (data.blogs || []).filter((b: any) => b.guideType === "seller-guide");
     }
   } catch {
     // ignore

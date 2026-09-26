@@ -14,6 +14,7 @@ function applyBlogFields(blog, body) {
   if (body.content != null) blog.content = String(body.content);
   if (body.coverImage != null) blog.coverImage = String(body.coverImage).trim();
   if (body.coverImageAlt != null) blog.coverImageAlt = String(body.coverImageAlt).trim();
+  if (body.guideType != null) blog.guideType = String(body.guideType).trim();
   if (body.category !== undefined) {
     blog.category = body.category || null;
   }
