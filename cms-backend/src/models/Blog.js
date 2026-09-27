@@ -1,4 +1,4 @@
-guideType: this.guideType || 'seller-guide',import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import { toSlug } from '../utils/slug.js';
 
 const faqSchema = new mongoose.Schema(

@@ -31,7 +31,7 @@ export default function AdminApp() {
           <Route path="listings/:id/edit" element={<AdminListingForm />} />
           <Route path="blogs" element={<AdminBlogList />} />
           <Route path="blogs/new" element={<AdminBlogForm />} />
-          <Route path="blogs/edit/:id" element={<AdminBlogForm />} />
+          <Route path="blogs/:id/edit" element={<AdminBlogForm />} />
           <Route path="leads" element={<AdminLeads />} />
           <Route path="comments" element={<AdminCommentList />} />
         </Route>
