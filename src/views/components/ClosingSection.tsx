@@ -9,7 +9,7 @@ export default function ClosingSection() {
           Ready for the Next Step?
         </h2>
         <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed font-medium">
-          A confidential conversation can help you understand what buyers may value, which records will be needed and whether your company is ready for the market.
+          A confidential conversation can help you understand <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline">what buyers may value</Link>, <Link href="/seller-guides" className="text-[#EE5B2C] hover:underline">which records will be needed</Link> and whether your company is <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline">ready for the market</Link>.
         </p>
         <Link 
           href="/free-confidential-valuation"

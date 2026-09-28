@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 export default function WhyOwnersContactUs() {
   return (
@@ -8,7 +9,7 @@ export default function WhyOwnersContactUs() {
           Why Owners Contact Us
         </h2>
         <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-medium">
-          Owners contact us at different stages. Some are ready to sell. Others want to understand value, strengthen the business or plan an eventual exit. We begin with the owner's goals and provide a practical next step without requiring an immediate decision to sell.
+          Owners contact us at different stages. Some are <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">ready to sell</Link>. Others want to <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">understand value</Link>, strengthen the business or <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">plan an eventual exit</Link>. We begin with the owner's goals and provide a practical next step without requiring an immediate decision to sell.
         </p>
       </div>
     </section>

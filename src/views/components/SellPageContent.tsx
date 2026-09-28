@@ -119,7 +119,7 @@ export default function SellPageContent() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Comparing Buyer Types</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
-              When screening prospective buyers for hvac companies for sale, we categorize them based on their operational background and financing strategy. Here is a brief comparison of typical buyers looking for an hvac business for sale or broader hvac companies for sale.
+              When screening prospective <Link href="/buy-an-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">buyers</Link> for hvac companies for sale, we categorize them based on their operational background and <Link href="/buyer-process" className="text-[#EE5B2C] hover:underline font-bold">financing strategy</Link>. Here is a brief comparison of typical buyers looking for an hvac business for sale or broader hvac companies for sale.
             </p>
             <div className="overflow-x-auto rounded-xl border border-gray-200">
               <table className="w-full text-left border-collapse">
@@ -155,7 +155,7 @@ export default function SellPageContent() {
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Evaluating Offers</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium">
-              The highest headline price is not always the strongest offer when reviewing hvac companies for sale. We help the seller of an hvac business for sale compare cash at closing, financing conditions (including <a href="https://www.sba.gov/funding-programs/loans" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">SBA loan requirements</a>), seller notes, earnouts, working capital, assumed liabilities, real-estate terms, transition requirements and the buyer’s ability to close.
+              The highest headline <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">price</Link> is not always the strongest offer when reviewing hvac companies for sale. We help the seller of an hvac business for sale compare cash at closing, financing conditions (including <a href="https://www.sba.gov/funding-programs/loans" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">SBA loan requirements</a>), <Link href="/hvac-business-valuation-calculator" className="text-[#EE5B2C] hover:underline font-bold">seller notes</Link>, earnouts, working capital, assumed liabilities, real-estate terms, transition requirements and the buyer’s ability to close.
             </p>
           </div>
 

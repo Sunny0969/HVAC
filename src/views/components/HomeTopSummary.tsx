@@ -11,7 +11,7 @@ export default function HomeTopSummary() {
           <div className="absolute top-0 left-0 w-2 h-full bg-[#EE5B2C]"></div>
           <h2 className="text-2xl font-black text-[#022B3A] mb-4">Bottom Line Summary</h2>
           <p className="text-lg text-gray-700 font-medium leading-relaxed mb-6">
-            Selling a Florida HVAC business requires specialized valuation methods that general business brokers often miss. By properly valuing preventative maintenance agreements (PMAs) and recasting financials to <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">IBBA (International Business Brokers Association)</a> standards, owners can secure significantly higher exit multiples.
+            <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">Selling a Florida HVAC business</Link> requires specialized valuation methods that general business brokers often miss. By properly <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">valuing preventative maintenance</Link> agreements (PMAs) and recasting financials to <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">IBBA (International Business Brokers Association)</a> standards, owners can secure significantly higher exit multiples.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 mt-6 border-t border-gray-200 pt-6">
@@ -19,7 +19,7 @@ export default function HomeTopSummary() {
               <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Audience & Use Case</h3>
               <ul className="space-y-2 text-sm font-medium text-gray-700">
                 <li><strong className="text-[#022B3A]">Target Audience:</strong> Florida-based HVAC, refrigeration, and plumbing business owners.</li>
-                <li><strong className="text-[#022B3A]">Primary Use Case:</strong> Preparing a company for sale, determining fair market value, and securing a qualified buyer confidentially.</li>
+                <li><strong className="text-[#022B3A]">Primary Use Case:</strong> <Link href="/hvac-business-valuation-calculator" className="text-[#EE5B2C] hover:underline font-bold">determining fair market value</Link>, and securing a qualified <Link href="/buyer-process" className="text-[#EE5B2C] hover:underline font-bold">buyer</Link> confidentially.</li>
               </ul>
             </div>
             <div>
@@ -33,7 +33,7 @@ export default function HomeTopSummary() {
 
         {/* Comparison Table for Decision Support */}
         <div className="mb-12">
-          <h2 className="text-3xl font-black text-[#022B3A] mb-6 text-center">Decision Guide: How to Sell Your HVAC Business</h2>
+          <h2 className="text-3xl font-black text-[#022B3A] mb-6 text-center">Decision Guide: <Link href="/how-it-works" className="hover:underline text-[#022B3A]">How to Sell Your HVAC Business</Link></h2>
           <div className="overflow-x-auto bg-white rounded-2xl shadow-lg border border-gray-100 p-2">
             <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
@@ -67,7 +67,7 @@ export default function HomeTopSummary() {
         {/* Checklist for Sellers */}
         <div className="bg-gray-50 rounded-[2rem] p-8 md:p-12 border border-gray-200">
           <h2 className="text-2xl font-black text-[#022B3A] mb-6">Exit Readiness Checklist</h2>
-          <p className="text-gray-700 font-medium mb-6">Before engaging buyers, ensure you have the following operational benchmarks documented:</p>
+          <p className="text-gray-700 font-medium mb-6">Before engaging <Link href="/buyer-process" className="text-[#EE5B2C] hover:underline font-bold">buyers</Link>, ensure you have the following operational benchmarks documented:</p>
           <ul className="grid md:grid-cols-2 gap-4 text-gray-700 font-medium">
             <li className="flex items-start">
               <span className="text-[#EE5B2C] mr-3 font-bold text-xl">✓</span>

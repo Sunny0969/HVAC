@@ -65,11 +65,11 @@ export default function BuyPageContent() {
           {/* Opening Copy */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-12">
             <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8">
-              An HVAC acquisition should match the buyer&apos;s experience, available capital, financing capacity, preferred geography and operational plan. We help qualified buyers define their criteria, review appropriate opportunities and follow a structured transaction process.
+              An HVAC acquisition should match the buyer&apos;s experience, available capital, financing capacity, preferred geography and operational plan. We help qualified buyers define their criteria, review appropriate opportunities and follow a <Link href="/buyer-process" className="text-[#EE5B2C] hover:underline font-bold">structured transaction process</Link>.
             </p>
             <h2 className="text-3xl font-black text-[#022B3A] mb-5">Buyer Qualification</h2>
             <p className="text-lg text-gray-700 leading-relaxed font-medium">
-              Before receiving confidential company information or speaking with a seller, prospective buyers may be required to sign a nondisclosure agreement and provide proof of funds, a lender letter or other evidence of financial capacity. These requirements protect the seller and reduce unnecessary disclosure.
+              Before receiving <Link href="/listings" className="text-[#EE5B2C] hover:underline font-bold">confidential company information</Link> or <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">speaking with a seller</Link>, prospective buyers may be required to sign a nondisclosure agreement and provide proof of funds, a lender letter or other evidence of financial capacity. These requirements protect the seller and reduce unnecessary disclosure.
             </p>
           </div>
 

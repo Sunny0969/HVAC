@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const insights = [
   {
@@ -35,7 +36,7 @@ export default function MarketInsightsFAQ() {
             The Florida HVAC Market Advantage
           </h2>
           <p className="text-lg text-gray-600 font-medium leading-relaxed mb-8">
-            Whether you are building your business for a future exit or actively preparing to sell, understanding the dynamics of the Florida market is the key to maximizing your valuation.
+            Whether you are <Link href="/how-it-works" className="text-[#EE5B2C] hover:underline font-bold">building your business for a future exit</Link> or actively <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">preparing to sell</Link>, understanding the dynamics of the Florida market is the key to <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">maximizing your valuation</Link>.
           </p>
           <div className="w-16 h-2 bg-[#EE5B2C] rounded-full"></div>
         </div>

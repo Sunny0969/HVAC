@@ -21,10 +21,10 @@ export default function AboutPageContent() {
           >
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Our Mission</h2>
             <p className="text-lg text-gray-700 font-medium leading-relaxed mb-6">
-              HVAC Exit Advisors is a specialized division supported by KMF Business Advisors. We work with owners and qualified buyers of HVAC and related mechanical-service businesses, with particular attention to Florida opportunities.
+              HVAC Exit Advisors is a specialized division supported by KMF Business Advisors. We work with owners and <Link href="/buyer-process" className="text-[#EE5B2C] hover:underline font-bold">qualified buyers</Link> of HVAC and related mechanical-service businesses, with particular attention to Florida opportunities.
             </p>
             <p className="text-lg text-gray-700 font-medium leading-relaxed">
-              Our role is to help owners understand the information buyers will require, prepare a confidential market presentation, screen prospective buyers and coordinate the transaction process. We believe owners should understand both the value and the terms of an offer before making a decision.
+              Our role is to help owners understand the <Link href="/seller-guides" className="text-[#EE5B2C] hover:underline font-bold">information buyers will require</Link>, prepare a <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">confidential market presentation</Link>, screen prospective buyers and coordinate the transaction process. We believe owners should understand both the <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">value and the terms of an offer</Link> before making a decision.
             </p>
           </motion.div>
 

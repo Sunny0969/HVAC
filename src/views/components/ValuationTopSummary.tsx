@@ -20,13 +20,13 @@ export default function ValuationTopSummary() {
           <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Audience & Use Case</h3>
           <ul className="space-y-2 text-sm font-medium text-gray-700">
             <li><strong className="text-[#022B3A]">Target Audience:</strong> Florida HVAC, plumbing, and mechanical-service business owners.</li>
-            <li><strong className="text-[#022B3A]">Primary Use Case:</strong> Determining the market value of your business for retirement planning, a partnership buyout, or preparation for a confidential sale.</li>
+            <li><strong className="text-[#022B3A]">Primary Use Case:</strong> Determining the market value of your business for retirement planning, a partnership buyout, or preparation for a <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">confidential sale</Link>.</li>
           </ul>
         </div>
         <div>
           <h3 className="font-bold text-[#EE5B2C] mb-2 text-sm uppercase tracking-wider">Original Market Insight</h3>
           <p className="text-sm font-medium text-gray-700">
-            Based on our internal valuation data of over 60 active Florida HVAC listings, companies generating over $1M in EBITDA with less than 20% owner-dependent sales see valuation multiples increase by an average of <strong>1.2x to 1.8x</strong> higher than heavily owner-reliant competitors.
+            Based on our internal valuation data of over 60 active Florida HVAC <Link href="/listings" className="text-[#EE5B2C] hover:underline font-bold">listings</Link>, companies generating over $1M in EBITDA with less than 20% owner-dependent sales see valuation multiples increase by an average of <strong>1.2x to 1.8x</strong> higher than heavily owner-reliant competitors.
           </p>
         </div>
       </div>
