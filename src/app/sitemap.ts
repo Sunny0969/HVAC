@@ -64,7 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogsData = await getBlogs();
   const blogRoutes = blogsData.map((blog: any) => {
-    let prefix = 'resources';
+    let prefix = 'seller-guides'; // fallback to seller-guides if missing
     if (blog.guideType === 'seller-guide') {
       prefix = 'seller-guides';
     } else if (blog.guideType === 'buyer-guide') {

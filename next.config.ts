@@ -55,7 +55,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/blog/:slug*',
-        destination: '/resources/:slug*',
+        destination: '/seller-guides/:slug*',
         permanent: true,
       },
       {
