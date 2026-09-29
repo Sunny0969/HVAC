@@ -27,12 +27,12 @@ export default function FloridaHvacIndustryGuidePage() {
   ];
 
   const tocItems = [
-    { id: 'how-much-do-hvac-owners-make', title: 'How much do HVAC owners make in Florida?' },
-    { id: 'is-hvac-in-high-demand', title: 'Is HVAC in high demand in Florida?' },
-    { id: 'is-florida-a-good-place', title: 'Is Florida a good place for HVAC?' },
-    { id: 'what-is-the-5000-rule', title: 'What is the $5000 rule for HVAC?' },
-    { id: 'how-to-open-hvac-business', title: 'How to open HVAC business in Florida?' },
-    { id: 'what-field-pays-most', title: 'What field of HVAC pays the most?' }
+    { id: 'how-much-do-hvac-owners-make', title: 'How much do HVAC owners make in Florida?', level: 2 },
+    { id: 'is-hvac-in-high-demand', title: 'Is HVAC in high demand in Florida?', level: 2 },
+    { id: 'is-florida-a-good-place', title: 'Is Florida a good place for HVAC?', level: 2 },
+    { id: 'what-is-the-5000-rule', title: 'What is the $5000 rule for HVAC?', level: 2 },
+    { id: 'how-to-open-hvac-business', title: 'How to open HVAC business in Florida?', level: 2 },
+    { id: 'what-field-pays-most', title: 'What field of HVAC pays the most?', level: 2 }
   ];
 
   const articleSchema = {

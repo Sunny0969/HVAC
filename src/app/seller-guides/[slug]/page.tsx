@@ -60,24 +60,34 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     { name: blog.title, item: `https://www.hvacexitadvisors.com/seller-guides/${slug}` },
   ];
 
-  // Extract H2 headings for Table of Contents
-  const tocItems: { id: string; title: string }[] = [];
-  const regex = /<h2[^>]*id="([^"]+)"[^>]*>([^<]+)<\/h2>/gi;
-  let match;
-  while ((match = regex.exec(blog.content)) !== null) {
-    tocItems.push({ id: match[1], title: match[2] });
-  }
-  // Fallback if no IDs are found (for older blogs without IDs)
-  if (tocItems.length === 0) {
-    const backupRegex = /<h2[^>]*>([^<]+)<\/h2>/gi;
-    let bMatch;
-    let count = 0;
-    while ((bMatch = backupRegex.exec(blog.content)) !== null) {
-      // Just extract them but without IDs they can't scroll smoothly unless we replace them
-      // We'll just leave it empty if no IDs are found.
-      count++;
+  // Extract and Inject IDs for H2 and H3 tags
+  const tocItems: { id: string; title: string; level: number }[] = [];
+  
+  let modifiedContent = blog.content || "";
+  const headingRegex = /<(h[23])([^>]*)>([\s\S]*?)<\/\1>/gi;
+
+  modifiedContent = modifiedContent.replace(headingRegex, (fullMatch, tag, attributes, innerHtml) => {
+    const level = tag.toLowerCase() === 'h2' ? 2 : 3;
+    const idMatch = attributes.match(/id="([^"]+)"/i);
+    let id = '';
+    const cleanTitle = innerHtml.replace(/<[^>]+>/g, '').trim();
+
+    if (idMatch) {
+      id = idMatch[1];
+    } else {
+      id = cleanTitle.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      if (!id) id = 'heading-' + Math.random().toString(36).substr(2, 9);
+      attributes = ` id="${id}"${attributes}`;
     }
-  }
+
+    if (id && cleanTitle) {
+      tocItems.push({ id, title: cleanTitle, level });
+    }
+
+    return `<${tag}${attributes}>${innerHtml}</${tag}>`;
+  });
+  
+  blog.content = modifiedContent;
 
   // Generate Article Schema
   const articleSchema = {
