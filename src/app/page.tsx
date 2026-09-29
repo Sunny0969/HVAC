@@ -78,6 +78,19 @@ export default async function Home() {
     image: (l.coverImage && l.coverImage.includes('1622322363167')) ? "https://res.cloudinary.com/db05hw4ri/image/upload/v1789679440/hvac-assets/unsplash_asset_2_1789679439333.jpg" : l.coverImage || "https://res.cloudinary.com/db05hw4ri/image/upload/v1789679440/hvac-assets/unsplash_asset_2_1789679439333.jpg"
   }));
 
+  
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HVAC Exit Advisors",
+    "url": "https://www.hvacexitadvisors.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.hvacexitadvisors.com/listings?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   const baseSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
@@ -181,7 +194,7 @@ export default async function Home() {
     ]
   };
   
-  const homeSchema = [baseSchema, webPageSchema, breadcrumbSchema, faqSchema];
+  const homeSchema = [baseSchema, webPageSchema, websiteSchema, breadcrumbSchema, faqSchema];
 
 
   return (

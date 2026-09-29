@@ -3,7 +3,44 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ContactForm from '@/views/components/ContactForm';
 import { cityDataMap } from '@/lib/florida-city-data';
+import FeaturedOpportunities from '@/views/components/FeaturedOpportunities';
 
+
+
+let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
+_rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
+const API_URL = `${_rootUrl}/api/public`;
+
+async function getCityListings(citySlug: string, county: string, cityName: string) {
+  try {
+    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 } });
+    if (!res.ok) return [];
+    const data = await res.json();
+    const allListings = data.listings || [];
+    
+    // Filter logic
+    const sCity = citySlug.toLowerCase();
+    const sName = cityName.toLowerCase();
+    const sCounty = (county || "").toLowerCase().replace(' county', '');
+    
+    return allListings.filter((l: any) => {
+      if (!l.location) return false;
+      const loc = l.location.toLowerCase();
+      if (loc.includes(sCity) || loc.includes(sName)) return true;
+      if (sCounty && loc.includes(sCounty)) return true;
+      return false;
+    });
+  } catch (error) {
+    return [];
+  }
+}
+
+const formatMoney = (val?: number) => {
+  if (val == null || val === 0) return '---';
+  if (val >= 1000000) return `${(val / 1000000).toFixed(1)}M`;
+  if (val >= 1000) return `${Math.round(val / 1000)}k`;
+  return `${val}`;
+};
 
 const customImages: Record<string, string> = {
   'naples': 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679186/hvac-cities/naples.jpg',
@@ -86,6 +123,17 @@ export default async function CityPage({ params }: Props) {
   
   const regionName = regionSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
   const lastUpdated = new Date().toISOString();
+  
+  const rawListings = await getCityListings(citySlug, cityInfo.county, cityName);
+  const relevantListings = rawListings.slice(0, 3).map((l: any) => ({
+    id: l._id,
+    title: l.title,
+    subtitle: l.location || "Location not specified",
+    content: (l.description || l.title).replace(/<[^>]*>?/gm, "").substring(0, 150) + "...",
+    tags: [`${formatMoney(l.revenue)} Revenue`, `${formatMoney(l.cashFlow)} Cash Flow`],
+    href: `/listings/${l.slug}`,
+    image: l.coverImage || "https://res.cloudinary.com/db05hw4ri/image/upload/v1789679440/hvac-assets/unsplash_asset_2_1789679439333.jpg"
+  }));
 
   // Combine FAQ schema and WebPage Schema
   const schemaOrg = {
@@ -281,6 +329,11 @@ export default async function CityPage({ params }: Props) {
           </div>
 
         </section>
+        {relevantListings.length > 0 && (
+          <div className="bg-white">
+            <FeaturedOpportunities items={relevantListings} />
+          </div>
+        )}
       </main>
     </>
   );
