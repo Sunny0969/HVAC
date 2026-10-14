@@ -15,7 +15,7 @@ export default function SellTopSummary() {
           </div>
           
           <p className="text-lg text-gray-700 font-medium leading-relaxed mb-6">
-            Successfully selling a Florida HVAC business requires meticulous preparation, including recasting three years of financials, organizing preventative maintenance agreements (PMAs), and executing a highly confidential marketing strategy. Aligning your business records with standards set by the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a> ensures you attract premium valuations from qualified private equity groups and strategic consolidators.
+            Successfully selling a Florida HVAC business requires meticulous preparation, including recasting three years of financials, organizing preventative maintenance agreements (PMAs), and executing a highly confidential marketing strategy. Aligning your business records with standards set by the <a href="https://www.masource.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">M&A Source</a> and <a href="https://www.bvresources.com/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">BVR (Business Valuation Resources)</a> ensures you attract premium valuations from qualified private equity groups and strategic consolidators.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 mt-6 border-t border-gray-200 pt-6">

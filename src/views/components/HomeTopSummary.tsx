@@ -11,7 +11,7 @@ export default function HomeTopSummary() {
           <div className="absolute top-0 left-0 w-2 h-full bg-[#EE5B2C]"></div>
           <h2 className="text-2xl font-black text-[#022B3A] mb-4">Bottom Line Summary</h2>
           <p className="text-lg text-gray-700 font-medium leading-relaxed mb-6">
-            <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">Selling a Florida HVAC business</Link> requires specialized valuation methods that general business brokers often miss. By properly <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">valuing preventative maintenance</Link> agreements (PMAs) and recasting financials to <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">IBBA (International Business Brokers Association)</a> standards, owners can secure significantly higher exit multiples.
+            <Link href="/sell-your-hvac-business" className="text-[#EE5B2C] hover:underline font-bold">Selling a Florida HVAC business</Link> requires specialized valuation methods that general business brokers often miss. By properly <Link href="/hvac-business-valuation" className="text-[#EE5B2C] hover:underline font-bold">valuing preventative maintenance</Link> agreements (PMAs) and recasting financials to <a href="https://www.bvresources.com/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">BVR (Business Valuation Resources)</a> standards, owners can secure significantly higher exit multiples.
           </p>
           
           <div className="grid md:grid-cols-2 gap-6 mt-6 border-t border-gray-200 pt-6">

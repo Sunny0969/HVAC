@@ -67,23 +67,23 @@ export default function ContactForm({ buttonText = "Submit Inquiry" }: ContactFo
     <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#022B3A] mb-2">Full name *</label>
-          <input type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="fullName" placeholder="Jane Doe" />
+          <label htmlFor="fullName" className="block text-sm font-bold text-[#022B3A] mb-2">Full name *</label>
+          <input id="fullName" type="text" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="fullName" placeholder="Jane Doe" />
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#022B3A] mb-2">Phone number *</label>
-          <input type="tel" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="phone" placeholder="(555) 123-4567" />
+          <label htmlFor="phone" className="block text-sm font-bold text-[#022B3A] mb-2">Phone number *</label>
+          <input id="phone" type="tel" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="phone" placeholder="(555) 123-4567" />
         </div>
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-[#022B3A] mb-2">Email address *</label>
-          <input type="email" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="email" placeholder="jane@example.com" />
+          <label htmlFor="email" className="block text-sm font-bold text-[#022B3A] mb-2">Email address *</label>
+          <input id="email" type="email" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="email" placeholder="jane@example.com" />
         </div>
         <div>
-          <label className="block text-sm font-bold text-[#022B3A] mb-2">Preferred contact method *</label>
-          <select required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="preferredContact">
+          <label htmlFor="preferredContact" className="block text-sm font-bold text-[#022B3A] mb-2">Preferred contact method *</label>
+          <select id="preferredContact" required className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none transition-all text-base" name="preferredContact">
             <option value="">Select an option...</option>
             <option value="Phone">Phone</option>
             <option value="Email">Email</option>

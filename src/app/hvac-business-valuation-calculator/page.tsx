@@ -172,7 +172,7 @@ export default function ValuationCalculatorPage() {
               <div className="mt-16 prose prose-lg max-w-none text-gray-700">
                 <h2 className="text-3xl font-black text-[#022B3A] mb-6">How to Calculate Your Florida HVAC Business Value</h2>
                 <p>
-                  Calculating the value of an HVAC business isn't just about punching numbers into a spreadsheet. While generalist brokers often rely on basic revenue multiples, specialized M&A advisors use advanced metrics endorsed by the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">International Business Brokers Association (IBBA)</a>. Here are the core factors:
+                  Calculating the value of an HVAC business isn't just about punching numbers into a spreadsheet. While generalist brokers often rely on basic revenue multiples, specialized M&A advisors use advanced metrics endorsed by the <a href="https://www.appraisers.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">American Society of Appraisers</a> and industry transaction databases like <a href="https://www.bizbuysell.com/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">BizBuySell</a>. Here are the core factors:
                 </p>
                 <ul className="list-disc pl-6 mb-8 space-y-2">
                   <li><strong>Seller's Discretionary Earnings (SDE):</strong> The true cash flow generated for a single owner-operator after adding back personal expenses and one-time costs.</li>

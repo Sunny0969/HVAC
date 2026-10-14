@@ -114,7 +114,7 @@ export default function FaqsPage() {
             </div>
             
             <p className="text-gray-700 font-medium leading-relaxed mb-6">
-              <strong>Key Takeaway:</strong> Selling an HVAC business requires specialized knowledge of maintenance agreements, tech retention, and local licensing laws. <strong>Definition:</strong> An HVAC Broker is a specialized M&A advisor who manages the confidential sale of mechanical contracting businesses. We use <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">IBBA standards</a> to ensure accuracy.
+              <strong>Key Takeaway:</strong> Selling an HVAC business requires specialized knowledge of maintenance agreements, tech retention, and local licensing laws. <strong>Definition:</strong> An HVAC Broker is a specialized M&A advisor who manages the confidential sale of mechanical contracting businesses. We align with recognized appraisal standards from the <a href="https://www.appraisers.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">American Society of Appraisers</a> and verified market data on <a href="https://www.bizbuysell.com/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline">BizBuySell</a> to ensure valuation accuracy.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">

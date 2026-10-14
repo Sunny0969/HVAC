@@ -175,10 +175,10 @@ export default function FreeConfidentialValuationPage() {
                   Valuing an HVAC company isn't as simple as applying a rule-of-thumb multiple to top-line revenue. A proper valuation requires analyzing normalized cash flow (SDE or EBITDA), recurring maintenance agreements, and operational risk.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
-                  In our experience with Florida HVAC businesses, those with high commercial contract retention and low owner-dependence command premium multiples. According to official documentation and market reports published by the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a>, strictly adhering to standardized valuation methods ensures the most accurate pricing. 
+                  In our experience with Florida HVAC businesses, those with high commercial contract retention and low owner-dependence command premium multiples. According to market data and valuation guidelines published by <a href="https://www.bvresources.com/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">Business Valuation Resources (BVR)</a> and appraisal standards from the <a href="https://www.appraisers.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">American Society of Appraisers</a>, strictly adhering to standardized valuation methods ensures the most accurate pricing. 
                 </p>
                 <p className="text-sm text-gray-500 font-medium italic mb-6">
-                  Source: International Business Brokers Association (IBBA) Official Documentation on Business Valuation Standards.
+                  Source: Business Valuation Resources (BVR) and American Society of Appraisers (ASA) Valuation Guidelines.
                 </p>
                 
                 <h3 className="text-2xl font-bold text-[#022B3A] mt-10 mb-4">Certified Appraisal vs. Broker Opinion of Value</h3>

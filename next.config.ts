@@ -68,6 +68,26 @@ const nextConfig: NextConfig = {
         destination: '/:path*',
         permanent: true,
       },
+      {
+        source: '/selling',
+        destination: '/sell-your-hvac-business',
+        permanent: true,
+      },
+      {
+        source: '/selling/:path*',
+        destination: '/sell-your-hvac-business',
+        permanent: true,
+      },
+      {
+        source: '/buying',
+        destination: '/buy-an-hvac-business',
+        permanent: true,
+      },
+      {
+        source: '/buying/:path*',
+        destination: '/buy-an-hvac-business',
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

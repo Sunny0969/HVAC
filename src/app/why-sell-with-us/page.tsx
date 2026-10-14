@@ -133,10 +133,10 @@ export default function WhySellWithUsPage() {
           <div className="bg-[#022B3A] rounded-[2rem] p-8 md:p-12 shadow-xl text-white mb-10">
             <h2 className="text-3xl font-black text-white mb-4">How Do We Ensure Complete Confidentiality?</h2>
             <p className="text-lg text-white/85 font-medium leading-relaxed mb-4">
-              Protecting your business identity is our top priority. According to official documentation from the <a href="https://www.ibba.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">International Business Brokers Association (IBBA)</a>, maintaining strict confidentiality prevents disruption to your staff and customers.
+              Protecting your business identity is our top priority. According to best practices established across premier transaction networks like <a href="https://www.bizbuysell.com/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">BizBuySell</a> and the <a href="https://www.masource.org/" target="_blank" rel="noopener noreferrer" className="text-[#EE5B2C] hover:underline font-bold">M&A Source</a>, maintaining strict confidentiality prevents disruption to your staff and customers.
             </p>
             <p className="text-sm text-white/60 font-medium italic mb-4">
-              Source: IBBA Professional Standards on Confidential Marketing.
+              Source: M&A Source and BizBuySell Standards on Confidential Deal Marketing.
             </p>
             <p className="text-lg text-white/85 font-medium leading-relaxed">
               We control the release of identifying information through a rigorous step-by-step process:
