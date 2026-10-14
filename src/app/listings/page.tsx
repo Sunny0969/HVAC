@@ -39,7 +39,7 @@ export default async function ListingsPage() {
   try {
     const fetchUrl = `${API_URL}/listings`;
     debug += `Fetching: ${fetchUrl} | `;
-    const res = await fetch(fetchUrl, { next: { revalidate: 60 } });
+    const res = await fetch(fetchUrl, { next: { revalidate: 60 }, signal: AbortSignal.timeout(3000) });
     debug += `Status: ${res.status} ${res.statusText} | `;
     if (res.ok) {
       const data = await res.json();

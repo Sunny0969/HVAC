@@ -20,7 +20,7 @@ const API_URL = `${_rootUrl}/api/public`;
 
 async function getFeaturedListings() {
   try {
-    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 } });
+    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 }, signal: AbortSignal.timeout(3000) });
     if (!res.ok) return [];
     const data = await res.json();
     return data.listings || [];

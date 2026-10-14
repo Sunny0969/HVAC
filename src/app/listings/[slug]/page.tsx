@@ -10,7 +10,7 @@ const API_URL = `${_rootUrl}/api/public`;
 
 async function getAllListings() {
   try {
-    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 } });
+    const res = await fetch(`${API_URL}/listings`, { next: { revalidate: 60 }, signal: AbortSignal.timeout(3000) });
     if (!res.ok) return [];
     const data = await res.json();
     return data.listings || [];
@@ -21,7 +21,7 @@ async function getAllListings() {
 
 async function getListing(slug: string) {
   try {
-    const res = await fetch(`${API_URL}/listings/${slug}`, { next: { revalidate: 60 } });
+    const res = await fetch(`${API_URL}/listings/${slug}`, { next: { revalidate: 60 }, signal: AbortSignal.timeout(3000) });
     if (!res.ok) return null;
     const data = await res.json();
     let listing = data.listing;

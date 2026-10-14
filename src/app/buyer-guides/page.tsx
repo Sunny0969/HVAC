@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default async function BuyerGuidesPage() {
   let cmsBlogs: any[] = [];
   try {
-    const res = await fetch(`${API_URL}/blogs`, { next: { revalidate: 60 } });
+    const res = await fetch(`${API_URL}/blogs`, { next: { revalidate: 60 }, signal: AbortSignal.timeout(3000) });
     if (res.ok) {
       const data = await res.json();
       cmsBlogs = (data.blogs || []).filter((b: any) => b.guideType === "buyer-guide");

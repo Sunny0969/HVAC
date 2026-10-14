@@ -7,7 +7,7 @@ const API_URL = `${_rootUrl}/api/public`;
 
 async function getListings() {
   try {
-    const res = await fetch(`${API_URL}/listings`);
+    const res = await fetch(`${API_URL}/listings`, { signal: AbortSignal.timeout(3000) });
     if (!res.ok) return [];
     const data = await res.json();
     return data.listings || [];
@@ -18,7 +18,7 @@ async function getListings() {
 
 async function getBlogs() {
   try {
-    const res = await fetch(`${API_URL}/blogs`);
+    const res = await fetch(`${API_URL}/blogs`, { signal: AbortSignal.timeout(3000) });
     if (!res.ok) return [];
     const data = await res.json();
     return data.blogs || [];

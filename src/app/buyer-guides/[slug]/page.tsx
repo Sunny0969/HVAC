@@ -11,7 +11,7 @@ const API_URL = `${_rootUrl}/api/public`;
 
 async function getBlog(slug: string) {
   try {
-    const res = await fetch(`${API_URL}/blogs/${slug}`, { next: { revalidate: 60 } });
+    const res = await fetch(`${API_URL}/blogs/${slug}`, { next: { revalidate: 60 }, signal: AbortSignal.timeout(3000) });
     if (!res.ok) return null;
     const data = await res.json();
     return data.blog;
@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   try {
     let _rootUrl = (process.env.NEXT_PUBLIC_CMS_API_URL || "http://127.0.0.1:4000").trim();
     _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
-    const res = await fetch(`${_rootUrl}/api/public/blogs`);
+    const res = await fetch(`${_rootUrl}/api/public/blogs`, { signal: AbortSignal.timeout(3000) });
     if (!res.ok) return [];
     const data = await res.json();
     return (data.blogs || []).map((blog: any) => ({ slug: blog.slug }));
