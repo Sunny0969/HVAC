@@ -38,14 +38,14 @@ const formatMoney = (val?: number) => {
 
 
 export const metadata: Metadata = {
-  title: 'HVAC Business for Sale | Florida HVAC Businesses',
-  description: 'Explore HVAC businesses for sale in Florida. Find established HVAC companies and acquisition opportunities with expert guidance from HVAC Exit Advisors.',
+  title: 'Florida HVAC Business Broker | Sell or Buy HVAC Companies',
+  description: 'Looking for a premier Florida HVAC business broker? We provide confidential business valuations, buyer vetting, and M&A sales for heating & AC contractors.',
   alternates: {
     canonical: 'https://www.hvacexitadvisors.com',
   },
   openGraph: {
-    title: 'Florida HVAC Business Broker and Valuation Advisor',
-    description: 'Explore HVAC businesses for sale in Florida. Find established HVAC companies and acquisition opportunities with expert guidance from HVAC Exit Advisors.',
+    title: 'Florida HVAC Business Broker | HVAC Exit Advisors',
+    description: 'Looking for a premier Florida HVAC business broker? We provide confidential business valuations, buyer vetting, and M&A sales for heating & AC contractors.',
     url: 'https://www.hvacexitadvisors.com',
     type: 'website',
     images: [{ url: "https://www.hvacexitadvisors.com/why-sell-with-us.jpg" }]

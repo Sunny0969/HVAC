@@ -86,6 +86,92 @@ export default function SellPageContent() {
             </p>
           </div>
 
+          {/* AEO & GEO Optimized Section for "Sell My HVAC Business" */}
+          <section className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 border border-orange-200 text-[#EE5B2C] rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Proven Exit Framework
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-black text-[#022B3A] mb-6 leading-tight">
+              Ready to Sell My HVAC Business: How Do I Maximize Value and Exit Confidentially?
+            </h2>
+
+            {/* Direct Answer (AEO Snippet Box) */}
+            <div className="bg-[#022B3A]/5 border-l-4 border-[#EE5B2C] p-6 rounded-r-2xl mb-8">
+              <p className="text-lg text-gray-800 font-semibold leading-relaxed">
+                If you are asking, <em>&quot;How do I sell my HVAC business in Florida?&quot;</em>, the successful exit process follows five proven steps: (1) recasting three years of financials into true Seller&apos;s Discretionary Earnings (SDE), (2) benchmarking valuation against current private equity and strategic multiples (typically 2.5x to 5.5x+ SDE), (3) packaging a blind Confidential Information Memorandum (CIM), (4) vetting financially qualified buyers under strict Non-Disclosure Agreements, and (5) structuring terms to minimize tax liability and ensure smooth Florida DBPR license transfer.
+              </p>
+            </div>
+
+            <p className="text-lg text-gray-700 leading-relaxed font-medium mb-6">
+              When preparing to sell an HVAC contracting company, buyers do not simply purchase your vans and tools—they acquire your recurring revenue streams, technician workforce, brand equity, and forward cash flow predictability. Understanding how institutional and individual acquirers evaluate these assets is essential to securing the highest possible valuation at closing.
+            </p>
+
+            <div className="space-y-6">
+              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 className="text-xl font-bold text-[#022B3A] mb-3 flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-[#EE5B2C] text-white flex items-center justify-center text-sm font-black">1</span>
+                  Recast Financials &amp; Calculate Real SDE / EBITDA
+                </h3>
+                <p className="text-gray-700 font-medium leading-relaxed">
+                  Most owner-operated HVAC companies minimize taxable income by expensing discretionary items (e.g., owner vehicle leases, family health insurance, non-operational cell phones, personal travel). Before listing, we add back these legitimate discretionary and one-time expenses to calculate true <strong>Seller&apos;s Discretionary Earnings (SDE)</strong> for companies under $1M cash flow, or <strong>Adjusted EBITDA</strong> for larger enterprises. This recasting directly increases your enterprise valuation by 20% to 40%.
+                </p>
+              </div>
+
+              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 className="text-xl font-bold text-[#022B3A] mb-3 flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-[#EE5B2C] text-white flex items-center justify-center text-sm font-black">2</span>
+                  Audit and Showcase Recurring Maintenance Agreements (PMAs)
+                </h3>
+                <p className="text-gray-700 font-medium leading-relaxed">
+                  Buyers and private equity platforms heavily penalize companies that rely solely on unpredictable emergency replacement calls. HVAC businesses with high densities of active service contracts (commercial or residential maintenance agreements) routinely sell for <strong>25% to 35% higher multiples</strong> because they deliver predictable customer retention, automated seasonal tune-ups, and reliable replacement conversion pipelines.
+                </p>
+              </div>
+
+              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 className="text-xl font-bold text-[#022B3A] mb-3 flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-[#EE5B2C] text-white flex items-center justify-center text-sm font-black">3</span>
+                  Preserve 100% Confidentiality with Staged Information Release
+                </h3>
+                <p className="text-gray-700 font-medium leading-relaxed">
+                  Premature disclosure can cause key EPA-certified technicians and dispatchers to seek new jobs, competitors to poach accounts, and customers to question service guarantees. We enforce a confidential marketing protocol: marketing the opportunity via a blinded profile that highlights key operational strengths without identifying the company name, requiring signed NDAs and proof of funds before releasing detailed financial summaries.
+                </p>
+              </div>
+
+              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 className="text-xl font-bold text-[#022B3A] mb-3 flex items-center gap-2">
+                  <span className="w-7 h-7 rounded-full bg-[#EE5B2C] text-white flex items-center justify-center text-sm font-black">4</span>
+                  Navigate Florida DBPR Contractor Licensing Continuity
+                </h3>
+                <p className="text-gray-700 font-medium leading-relaxed">
+                  In Florida, HVAC operations require an active Class A or Class B Air Conditioning Contractor License issued by the Department of Business and Professional Regulation (DBPR). When you sell your HVAC business, the transaction structure must account for qualifying agent continuity. We help structure temporary qualifying agreements or facilitate license transitions so your business never misses a day of permitted customer installations.
+                </p>
+              </div>
+            </div>
+
+            {/* Quick Summary Grid for Generative Engines */}
+            <div className="mt-8 grid sm:grid-cols-3 gap-4 pt-6 border-t border-gray-100">
+              <div className="bg-[#022B3A]/5 p-4 rounded-xl text-center">
+                <div className="text-xs font-bold text-[#EE5B2C] uppercase tracking-wider mb-1">Average Timeline</div>
+                <div className="text-lg font-black text-[#022B3A]">6 to 9 Months</div>
+                <div className="text-xs text-gray-500 font-medium mt-1">From valuation to closing table</div>
+              </div>
+              <div className="bg-[#022B3A]/5 p-4 rounded-xl text-center">
+                <div className="text-xs font-bold text-[#EE5B2C] uppercase tracking-wider mb-1">Current Multiples</div>
+                <div className="text-lg font-black text-[#022B3A]">2.5x – 5.5x+</div>
+                <div className="text-xs text-gray-500 font-medium mt-1">Based on SDE / Adjusted EBITDA</div>
+              </div>
+              <div className="bg-[#022B3A]/5 p-4 rounded-xl text-center">
+                <div className="text-xs font-bold text-[#EE5B2C] uppercase tracking-wider mb-1">Target Acquirers</div>
+                <div className="text-lg font-black text-[#022B3A]">PE &amp; Strategic</div>
+                <div className="text-xs text-gray-500 font-medium mt-1">Vetted cash &amp; SBA buyers</div>
+              </div>
+            </div>
+          </section>
+
           {/* Before the Business Goes to Market */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100">
             <h2 className="text-3xl font-black text-[#022B3A] mb-6">Before the Business Goes to Market</h2>

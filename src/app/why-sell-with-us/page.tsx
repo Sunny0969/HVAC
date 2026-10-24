@@ -6,14 +6,14 @@ import ContactForm from '../../views/components/ContactForm';
 import WhySellFaq from '../../views/components/WhySellFaq';
 
 export const metadata: Metadata = {
-  title: 'Why Choose Our Florida HVAC Business Broker',
-  description: 'Discover why HVAC Exit Advisors is the premier choice for selling your Florida HVAC business. Get unmatched confidentiality and maximum value. Learn more!',
+  title: 'Why Choose Our Florida HVAC Business Broker | HVAC Exit Advisors',
+  description: 'Looking for an experienced HVAC business broker? Learn why Florida contractors trust HVAC Exit Advisors for confidential valuation, buyer vetting, and maximum exit value.',
   alternates: {
     canonical: 'https://www.hvacexitadvisors.com/why-sell-with-us',
   },
   openGraph: {
     title: 'Why Choose Our Florida HVAC Business Broker | HVAC Exit Advisors',
-    description: 'Discover why HVAC Exit Advisors is the premier choice for selling your Florida HVAC business. Get unmatched confidentiality and maximum value.',
+    description: 'Looking for an experienced HVAC business broker? Learn why Florida contractors trust HVAC Exit Advisors for confidential valuation, buyer vetting, and maximum exit value.',
     url: 'https://www.hvacexitadvisors.com/why-sell-with-us',
     images: [{ url: 'https://res.cloudinary.com/db05hw4ri/image/upload/v1789679441/hvac-assets/unsplash_asset_3_1789679440217.jpg', width: 1200, height: 630, alt: 'Why Sell With Us' }]
   },
@@ -108,6 +108,40 @@ export default function WhySellWithUsPage() {
 
         {/* Main Content */}
         <div className="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+
+          {/* New H2: Why Work With an HVAC Business Broker */}
+          <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 border border-orange-200 text-[#EE5B2C] rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              Trade Specialization
+            </div>
+
+            <h2 className="text-3xl font-black text-[#022B3A] mb-4">
+              How an HVAC Business Broker Protects Your Value and Maximizes Net Proceeds
+            </h2>
+
+            <p className="text-lg text-gray-700 font-medium leading-relaxed mb-6">
+              General business brokers list dry cleaners, pizza parlors, and retail boutiques. An <strong>HVAC business broker</strong> specializes exclusively in mechanical contracting. This distinct industry expertise allows us to position your business to attract the most aggressive strategic buyers and private equity roll-up platforms in the country.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 text-gray-700">
+              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 className="font-bold text-[#022B3A] mb-2 text-lg">Defending SDE &amp; EBITDA Multiples</h3>
+                <p className="text-base text-gray-600 leading-relaxed font-medium">
+                  We meticulously document add-backs, seasonal working capital, and preventative maintenance contracts (PMAs) to prevent buyers from chipping away at your enterprise valuation during due diligence.
+                </p>
+              </div>
+
+              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+                <h3 className="font-bold text-[#022B3A] mb-2 text-lg">Confidential Buyer Vetting</h3>
+                <p className="text-base text-gray-600 leading-relaxed font-medium">
+                  We pre-screen buyer balance sheets, verify proof of funds, and require customized NDAs before disclosing your location, customer concentration, or financial records.
+                </p>
+              </div>
+            </div>
+          </div>
 
           {/* Card 1: HVAC Transaction Knowledge */}
           <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 mb-10">

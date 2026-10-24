@@ -88,13 +88,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: { absolute: `${cityName} HVAC Business Broker | Sell or Buy` },
-    description: `Confidential brokerage, valuation, and acquisition services for heating and air conditioning contractors in ${cityName}, FL. Get a free valuation today!`,
+    description: `Trusted ${cityName} HVAC business broker providing confidential business valuation, buyer vetting, and M&A exit advisory across ${cityName}, FL. Get a free valuation today!`,
     alternates: {
       canonical: `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}`,
     },
     openGraph: {
       title: `${cityName} HVAC Business Broker | Sell or Buy`,
-      description: `Confidential brokerage, valuation, and acquisition services for heating and air conditioning contractors in ${cityName}, FL.`,
+      description: `Trusted ${cityName} HVAC business broker providing confidential business valuation, buyer vetting, and M&A exit advisory across ${cityName}, FL.`,
       url: `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}`,
       images: [{ url: heroImage, width: 1200, height: 630, alt: `${cityName} HVAC Broker` }]
     },
@@ -143,7 +143,7 @@ export default async function CityPage({ params }: Props) {
         "@type": "WebPage",
         "@id": `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}`,
         "name": `${cityName} HVAC Business Broker | Sell or Buy`,
-        "description": `Confidential brokerage and valuation services for HVAC contractors in ${cityName}.`,
+        "description": `Trusted ${cityName} HVAC business broker providing confidential valuation, M&A advisory, and business sales for heating & AC contractors.`,
         "url": `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}`,
         "dateModified": lastUpdated,
         "breadcrumb": { "@id": `https://www.hvacexitadvisors.com/${regionSlug}/${citySlug}#breadcrumb` }
@@ -216,6 +216,47 @@ export default async function CityPage({ params }: Props) {
           
           <div className="lg:col-span-7 space-y-12 w-full">
             
+            {/* Dedicated New H2: Why Work With an HVAC Business Broker */}
+            <article className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 border border-orange-200 text-[#EE5B2C] rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                Specialized Advisory
+              </div>
+
+              <h2 className="text-3xl font-black text-[#022B3A] mb-4">
+                Why Work With an HVAC Business Broker to Sell Your Company in {cityName}?
+              </h2>
+
+              <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                Selling a heating and cooling enterprise in {cityName} is fundamentally different from selling a retail storefront or generic franchise. An experienced <strong>HVAC business broker</strong> understands trade-specific economics: recurring preventative maintenance agreements (PMAs), certified technician retention, seasonal cash flow peaks, EPA refrigerant regulations, and Florida DBPR contractor license continuity.
+              </p>
+
+              <div className="space-y-4 text-gray-700 text-lg">
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                  <h3 className="font-bold text-[#022B3A] mb-1">1. Trade-Specific Financial Recasting</h3>
+                  <p className="text-base text-gray-600">
+                    A generalist broker often misses industry-standard add-backs. An HVAC business broker properly recasts owner compensation, personal vehicle expenses, and non-operational overhead to calculate true Seller&apos;s Discretionary Earnings (SDE), frequently boosting asking prices by 20% to 35%.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                  <h3 className="font-bold text-[#022B3A] mb-1">2. Access to Institutional HVAC Acquirers</h3>
+                  <p className="text-base text-gray-600">
+                    Instead of relying solely on public listing portals, a dedicated HVAC business broker connects directly with private equity platforms, national consolidators, and well-capitalized strategic buyers who actively pay premium multiples for {cityName} service routes.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                  <h3 className="font-bold text-[#022B3A] mb-1">3. Ironclad Confidentiality &amp; License Compliance</h3>
+                  <p className="text-base text-gray-600">
+                    Premature rumors can cause your top technicians to jump ship and competitors to poach customer accounts. An HVAC business broker screens prospective buyers under strict Non-Disclosure Agreements (NDAs) before releasing financial data, while structuring seamless qualifying agent license transfers under Florida DBPR regulations.
+                  </p>
+                </div>
+              </div>
+            </article>
+
             {/* SEO Block 1: Definitions & Audience */}
             <article className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
               <h2 className="text-3xl font-black text-[#022B3A] mb-4">What Is an HVAC Business Broker in {cityName}?</h2>

@@ -59,6 +59,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/resources/sell-a-business',
+        destination: '/seller-guides/sell-a-business',
+        permanent: true,
+      },
+      {
+        source: '/resources/how-to-sell-an-hvac-company',
+        destination: '/seller-guides/how-to-sell-an-hvac-company',
+        permanent: true,
+      },
+      {
         source: '/en',
         destination: '/',
         permanent: true,

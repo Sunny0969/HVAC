@@ -5,8 +5,8 @@ import SellPageContent from '../../views/components/SellPageContent';
 import SellTopSummary from '../../views/components/SellTopSummary';
 
 export const metadata: Metadata = {
-  title: 'HVAC Business for Sale | Sell Your Florida HVAC Business',
-  description: 'Looking for an HVAC business for sale? Prepare, value and confidentially market your Florida HVAC business to qualified buyers with transaction support.',
+  title: 'Sell My HVAC Business | Florida HVAC Exit Advisors & Brokerage',
+  description: 'Ready to sell my HVAC business in Florida? Discover confidential exit planning, accurate business valuation, and connect with qualified buyers to maximize value.',
   alternates: {
     canonical: 'https://www.hvacexitadvisors.com/sell-your-hvac-business',
   },
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: 'HVAC Business for Sale | Sell Your Florida HVAC Business',
-    description: 'Looking for an HVAC business for sale? Prepare, value and confidentially market your Florida HVAC business to qualified buyers with transaction support.',
+    title: 'Sell My HVAC Business | Florida HVAC Exit Advisors & Brokerage',
+    description: 'Ready to sell my HVAC business in Florida? Discover confidential exit planning, accurate business valuation, and connect with qualified buyers to maximize value.',
     images: [
       {
         url: '/images/og-hvac-rooftop-florida.webp',
@@ -36,8 +36,8 @@ export default function SellYourHVACBusiness() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Sell Your Florida HVAC Business",
-    "description": "Expert guidance on selling your HVAC business in Florida, including valuations, process, and finding the right buyer.",
+    "headline": "Sell My HVAC Business in Florida | Exit Advisory",
+    "description": "Expert guidance on how to sell my HVAC business in Florida, including valuations, financial recasting, confidential marketing, and buyer qualification.",
     "author": {
       "@type": "Organization",
       "name": "HVAC Exit Advisors"

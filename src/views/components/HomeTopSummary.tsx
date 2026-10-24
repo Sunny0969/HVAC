@@ -64,6 +64,47 @@ export default function HomeTopSummary() {
           </div>
         </div>
 
+        {/* New H2 Section: The Value of a Specialized HVAC Business Broker */}
+        <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-gray-100 mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 border border-orange-200 text-[#EE5B2C] rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            Specialized M&amp;A Representation
+          </div>
+
+          <h2 className="text-3xl font-black text-[#022B3A] mb-6">
+            Why Choose a Specialized Florida HVAC Business Broker?
+          </h2>
+
+          <p className="text-lg text-gray-700 font-medium leading-relaxed mb-6">
+            Unlike generalist brokers who list retail shops and restaurants, an <strong>HVAC business broker</strong> focuses exclusively on the heating, cooling, refrigeration, and mechanical service sectors. This specialization protects your company&apos;s enterprise value and ensures you capture maximum equity when exiting your business.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 text-gray-700">
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <h3 className="font-bold text-[#022B3A] mb-2 text-lg">PMA &amp; Contract Valuation</h3>
+              <p className="text-sm font-medium text-gray-600 leading-relaxed">
+                We audit and package preventative maintenance agreements (PMAs) to prove recurring cash flow, justifying premium 3.5x to 5.5x+ valuation multiples to private equity acquirers.
+              </p>
+            </div>
+
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <h3 className="font-bold text-[#022B3A] mb-2 text-lg">Strict Deal Confidentiality</h3>
+              <p className="text-sm font-medium text-gray-600 leading-relaxed">
+                Every prospective buyer is pre-screened for financial liquidity and bound by strict Non-Disclosure Agreements (NDAs) before sensitive business information is shared.
+              </p>
+            </div>
+
+            <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
+              <h3 className="font-bold text-[#022B3A] mb-2 text-lg">Florida DBPR Compliance</h3>
+              <p className="text-sm font-medium text-gray-600 leading-relaxed">
+                We navigate complex Florida contractor licensing transfers, qualifying agent agreements, and escrow requirements to prevent post-closing delays.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Checklist for Sellers */}
         <div className="bg-gray-50 rounded-[2rem] p-8 md:p-12 border border-gray-200">
           <h2 className="text-2xl font-black text-[#022B3A] mb-6">Exit Readiness Checklist</h2>
