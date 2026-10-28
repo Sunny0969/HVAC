@@ -21,30 +21,99 @@ export default function FreeConfidentialValuationPage() {
     setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name'),
-      contactInfo: formData.get('contactInfo'),
-      location: formData.get('location'),
-      years: formData.get('years'),
-      revenue: formData.get('revenue'),
-      earnings: formData.get('earnings'),
-      split: formData.get('split'),
-      employees: formData.get('employees'),
-      agreements: formData.get('agreements'),
-      reason: formData.get('reason'),
-      timing: formData.get('timing'),
+    const fullName = (formData.get('name') as string)?.trim() || '';
+    const email = (formData.get('email') as string)?.trim() || '';
+    const phone = (formData.get('phone') as string)?.trim() || '';
+    const location = (formData.get('location') as string)?.trim() || '';
+    const years = (formData.get('years') as string)?.trim() || '';
+    const revenue = (formData.get('revenue') as string)?.trim() || '';
+    const earnings = (formData.get('earnings') as string)?.trim() || '';
+    const split = (formData.get('split') as string)?.trim() || '';
+    const employees = (formData.get('employees') as string)?.trim() || '';
+    const agreements = (formData.get('agreements') as string)?.trim() || '';
+    const reason = (formData.get('reason') as string)?.trim() || '';
+    const timing = (formData.get('timing') as string)?.trim() || '';
+    const sourcePage = typeof window !== 'undefined' ? window.location.href : 'https://www.hvacexitadvisors.com/free-confidential-valuation';
+
+    // 1. Webhook payload for Make.com lead system
+    const webhookData = {
+      full_name: fullName,
+      email: email,
+      phone: phone,
+      location_territory: location,
+      years_in_business: years,
+      annual_revenue: revenue,
+      sde_ebitda: earnings,
+      residential_commercial_split: split,
+      employees_techs: employees,
+      active_pmas: agreements,
+      reason_for_selling: reason,
+      timing: timing,
+      source_page: sourcePage,
+    };
+
+    // 2. Internal email and CRM database logging payload
+    const internalPayload = {
+      name: fullName,
+      email: email,
+      phone: phone,
+      message: `Location: ${location} | Years: ${years} | Revenue: ${revenue} | SDE/EBITDA: ${earnings} | Split: ${split} | Employees: ${employees} | PMAs: ${agreements} | Reason: ${reason} | Timing: ${timing}`,
+      formType: 'Confidential Valuation Request',
+      additionalData: {
+        location_territory: location,
+        years_in_business: years,
+        annual_revenue: revenue,
+        sde_ebitda: earnings,
+        residential_commercial_split: split,
+        employees_techs: employees,
+        active_pmas: agreements,
+        reason_for_selling: reason,
+        timing: timing,
+        pagePath: '/free-confidential-valuation',
+        pageUrl: sourcePage,
+      },
+    };
+
+    // 3. Legacy payload for backward compatibility
+    const legacyPayload = {
+      name: fullName,
+      email: email,
+      phone: phone,
+      contactInfo: `${email} / ${phone}`,
+      location,
+      years,
+      revenue,
+      earnings,
+      split,
+      employees,
+      agreements,
+      reason,
+      timing,
       formType: 'Confidential Valuation Request',
     };
 
     try {
-      await fetch('/api/public/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      await Promise.allSettled([
+        fetch('https://hook.us2.make.com/swdq48pqmmmwpcvmqfc53ny59f3la4ra', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(webhookData),
+        }),
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(internalPayload),
+        }),
+        fetch('/api/public/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(legacyPayload),
+        }),
+      ]);
       setSubmitted(true);
     } catch (err) {
-      console.error(err);
+      console.error('Submission error:', err);
+      setSubmitted(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -275,14 +344,18 @@ export default function FreeConfidentialValuationPage() {
                         <h3 className="text-2xl font-black text-[#022B3A] mb-1">Confidential Review Request</h3>
                         <p className="text-sm text-gray-500 font-medium mb-2">Fields marked * are required.</p>
                       </div>
+                      <div>
+                        <label className="block text-sm font-bold text-[#022B3A] mb-1">Owner Name *</label>
+                        <input required type="text" name="name" className="w-full bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none p-3 font-medium transition-all text-base" placeholder="Full Name" />
+                      </div>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                          <label className="block text-sm font-bold text-[#022B3A] mb-1">Owner Name *</label>
-                          <input required type="text" name="name" className="w-full bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none p-3 font-medium transition-all text-base" placeholder="Full Name" />
+                          <label className="block text-sm font-bold text-[#022B3A] mb-1">Email *</label>
+                          <input required type="email" name="email" className="w-full bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none p-3 font-medium transition-all text-base" placeholder="john@example.com" />
                         </div>
                         <div>
-                          <label className="block text-sm font-bold text-[#022B3A] mb-1">Preferred Contact *</label>
-                          <input required type="text" name="contactInfo" className="w-full bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none p-3 font-medium transition-all text-base" placeholder="Email or Phone" />
+                          <label className="block text-sm font-bold text-[#022B3A] mb-1">Phone *</label>
+                          <input required type="tel" name="phone" className="w-full bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#EE5B2C] focus:border-transparent outline-none p-3 font-medium transition-all text-base" placeholder="(555) 123-4567" />
                         </div>
                       </div>
                       <div>

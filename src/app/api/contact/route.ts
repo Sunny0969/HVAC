@@ -15,6 +15,12 @@ export async function POST(request: Request) {
     
     const isMobile = /Mobile|Android|iP(hone|od|ad)/i.test(userAgent) ? 'Mobile' : 'Desktop';
     
+    const enrichedAdditionalData = additionalData ? {
+      ...additionalData,
+      capturedLocation: locationString,
+      deviceType: isMobile,
+      userAgent: userAgent
+    } : null;
 
     const apiKey = process.env.RESEND_API_KEY || ('re_' + 'ARAabH7H_' + 'BqohdKgcqb22a7GSZua2ywoz');
     const FROM_EMAIL = 'HVAC Exit Advisors <contact@hvacexitadvisors.com>';
@@ -95,15 +101,7 @@ export async function POST(request: Request) {
       _rootUrl = _rootUrl.replace(/\/api\/public\/?$/, '').replace(/\/api\/?$/, '').replace(/\/$/, '');
       const API_URL = `${_rootUrl}/api`;
 
-      const enrichedAdditionalData = {
-        ...additionalData,
-        capturedLocation: locationString,
-        deviceType: isMobile,
-        userAgent: userAgent
-      };
-
       const payload = {
-
         type: formType === 'WhatsApp Click' ? 'whatsapp' : 'contact',
         source: formType || 'Contact Form',
         name: name || 'N/A',
@@ -115,7 +113,7 @@ export async function POST(request: Request) {
         placement: formType || 'contact_form',
         company: additionalData?.company || '',
         location: locationString !== 'Unknown Location' ? locationString : (additionalData?.pagePath || ''),
-        metadata: enrichedAdditionalData
+        metadata: enrichedAdditionalData || additionalData || {}
       };
 
       const cmsRes = await fetch(`${API_URL}/public/leads`, {
