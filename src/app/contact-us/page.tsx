@@ -115,7 +115,7 @@ export default function ContactPage() {
             </p>
             <p className="text-white/80 text-sm">
               Office: 10242 NW 47th St, Ste 39C, Sunrise, FL 33351<br/>
-              Hours: Mon-Fri 9:00 AM - 5:00 PM, Saturday by appointment only
+              Hours: Mon-Fri 9:00 AM - 5:00 PM, Saturday by appointment only, Sunday: Closed
             </p>
           </div>
 

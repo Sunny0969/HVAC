@@ -57,7 +57,7 @@ export default function Footer() {
               <div className="flex items-start">
                 <svg className="w-5 h-5 text-secondary mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 <div className="text-white/80 text-sm">
-                  Mon-Fri 9:00 AM - 5:00 PM, Saturday by appointment only
+                  Mon-Fri 9:00 AM - 5:00 PM, Saturday by appointment only, Sunday: Closed
                 </div>
               </div>
             </div>

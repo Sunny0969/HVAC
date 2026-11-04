@@ -110,6 +110,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           "https://www.facebook.com/kmfbusinessadvisors",
           "https://www.instagram.com/sanjaykmfba",
         ],
+        openingHours: "Mo-Fr 09:00-17:00",
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "17:00",
+          },
+        ],
       },
       {
         "@type": "WebSite",
