@@ -93,6 +93,36 @@ export default function FreeConfidentialValuationPage() {
     };
 
     try {
+      // 1. Fire Meta Pixel Lead event
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+        (window as any).fbq('track', 'Lead', {
+          content_name: 'Confidential Valuation Request',
+          content_category: 'Valuation',
+        });
+      }
+
+      // 2. Fire Google Ads Conversion and GA4 Lead event
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'conversion', {
+          send_to: 'AW-16480728828',
+          event_category: 'Lead',
+          event_label: 'Confidential Valuation Request',
+        });
+        (window as any).gtag('event', 'generate_lead', {
+          event_category: 'Lead',
+          event_label: 'Confidential Valuation Request',
+        });
+      }
+
+      // 3. Push to GTM dataLayer
+      if (typeof window !== 'undefined' && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: 'valuation_form_submission',
+          event_category: 'Lead',
+          event_label: 'Confidential Valuation Request',
+        });
+      }
+
       await Promise.allSettled([
         fetch('https://hook.us2.make.com/swdq48pqmmmwpcvmqfc53ny59f3la4ra', {
           method: 'POST',

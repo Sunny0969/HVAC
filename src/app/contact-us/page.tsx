@@ -52,8 +52,8 @@ export default function ContactPage() {
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "18:00"
+          "opens": "09:00",
+          "closes": "17:00"
         }
       ],
       "areaServed": {
@@ -114,7 +114,8 @@ export default function ContactPage() {
               Direct Line / WhatsApp: <a href="https://wa.me/19548649161?text=Hi%20HVAC%20Exit%20Advisors%2C%20I%20have%20a%20query%20about%20your%20services%20and%20would%20like%20some%20more%20information." className="text-[#EE5B2C] hover:underline">+1 (954) 864-9161</a>
             </p>
             <p className="text-white/80 text-sm">
-              Office: 10242 NW 47th St, Ste 39C, Sunrise, FL 33351
+              Office: 10242 NW 47th St, Ste 39C, Sunrise, FL 33351<br/>
+              Hours: Mon-Fri 9:00 AM - 5:00 PM, Saturday by appointment only
             </p>
           </div>
 

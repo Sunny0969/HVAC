@@ -100,6 +100,7 @@ export default async function Home() {
     "image": "https://www.hvacexitadvisors.com/florida-hvac-business-broker-home.jpg",
     "description": "Florida's premier HVAC business broker helping owners sell and buyers acquire profitable commercial and residential HVAC businesses.",
     "telephone": "+1-954-864-9161",
+    "email": "contact@hvacexitadvisors.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -124,8 +125,8 @@ export default async function Home() {
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
+        "opens": "09:00",
+        "closes": "17:00"
       }
     ]
   };
